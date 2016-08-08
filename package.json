@@ -41,7 +41,10 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-cookies": "^1.5.8",
+    "angular-materialize": "^0.1.9",
     "angular-ui-router": "^0.3.1",
-    "bulma": "^0.1.2"
+    "bulma": "^0.1.2",
+    "materialize-css": "^0.97.7"
   }
 }
