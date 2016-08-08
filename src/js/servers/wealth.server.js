@@ -1,5 +1,5 @@
-const SERVER = {
+const WEALTHSERVER = {
 	URL: "https://api-sandbox.wealthengine.com/v1/"
 }
 
-export { SERVER };
+export { WEALTHSERVER };

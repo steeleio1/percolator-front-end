@@ -2,22 +2,22 @@ import angular from 'angular';
 import 'angular-ui-router';
 
 //import SERVER
-import { SERVER } from './server';
+import { WEALTHSERVER } from './servers/wealth.server';
 
 //import constants
-import { headers } from './credentials';
+import { headers } from './credentials/wealth.credentials';
 
 //import services
-import { DataService } from './data.service';
+import { WealthService } from './services/wealth.service';
 
 //import Controllers
-import { HomeController } from './controllers/home.controller';
+import { EventController } from './controllers/event.controller';
 
 
 angular
 	.module('app', [])
-	.constant('SERVER', SERVER)
+	.constant('WEALTHSERVER', WEALTHSERVER)
 	.constant('headers', headers)
-	.service('DataService', DataService)
-	.controller('HomeController', HomeController)
+	.service('WealthService', WealthService)
+	.controller('EventController', EventController)
 	;
