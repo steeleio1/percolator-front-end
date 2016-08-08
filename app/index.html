@@ -6,6 +6,8 @@
     <title>Percolator</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>    
   </head>
   <body ng-app="app">
     <h1 class="title">
@@ -13,7 +15,13 @@
     </h1>
     <h2 class="subtitle">
       Where great ideas from nonprofits and their partners come together
-    </h2>              
+    </h2>   
+    <div input-field>
+      <input type="text" ng-model="dummyInputs.inputFieldInput" length="150">
+      <label>Input label</label>
+    </div>           
     <script src="js/bundle.js"></script>
   </body>
 </html>
+
+
