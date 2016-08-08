@@ -9,3 +9,7 @@ app/js/bundle.js
 app/js/bundle.js.map
 
 src/js/credentials.js
+
+src/js/credentials/
+src/js/credentials/credentials.js
+src/js/credentials/wealth.credentials.js

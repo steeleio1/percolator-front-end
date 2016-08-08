@@ -1,4 +1,4 @@
-function HomeController ($scope, DataService){
+function EventController ($scope, WealthService){
 
 	let vm = this;
 	vm.profileCallByEmail = profileCallByEmail;
@@ -8,16 +8,14 @@ function HomeController ($scope, DataService){
 	};
 
 	function profileCallByEmail(registrant){
-		DataService.getProfileByEmail(registrant).then((res)=>{
+		WealthService.getProfileByEmail(registrant).then((res)=>{
 			console.log(res.data);
 			vm.profiles.push(res.data);
 			console.log(vm.profiles);
 		});
 	};
 
-	profileCallByEmail(vm.registrant);
-
 }
 
-HomeController.$inject = ['$scope', 'DataService'];
-export { HomeController };
+EventController.$inject = ['$scope', 'WealthService'];
+export { EventController };
