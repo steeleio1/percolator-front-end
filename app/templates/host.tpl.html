@@ -1,1 +1,50 @@
-host.tpl.html
+<div class="hostContainer">
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-128x128">
+          <img src="http://placehold.it/256x256" alt="Image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>John Smith</strong>
+            <br>
+           <small>johnsmith@gmail.com</small>
+           <br>
+           <small>Home Phone: 555-555-5555</small>
+           <br>
+           <small>Mobile Phone: 555-555-6666</small>
+           <br>
+           <small>Organization: Vision City</small>
+           <br>
+           <small>Category: Non-profit</small>
+           <br>
+           <small>Address:<br>
+           1 Infinite Loop <br>
+           Cupertino, CA 95014 <br>
+           </small>
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="tabs is-boxed">
+    <ul>
+      <li>
+        <a href="/#/host/my-events">
+          <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+          <span>My Events</span>
+        </a>
+      </li>
+      <li>
+        <a href="/#/host/my-contacts">
+          <span class="icon is-small"><i class="fa fa-users" aria-hidden="true"></i></span>
+          <span>My Contacts</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div ui-view></div>  
+</div>
