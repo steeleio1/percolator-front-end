@@ -10,7 +10,7 @@ import { WEALTHSERVER } from './servers/wealth.server';
 import { config } from './utilities/config';
 
 //import constants
-import { headers } from './credentials/wealth.credentials';
+// import { headers } from './credentials/wealth.credentials';
 
 //import services
 import { WealthService } from './services/wealth.service';
@@ -33,7 +33,7 @@ angular
 	.module('app', ['ui.router', 'ngCookies'])
 	.constant('WEALTHSERVER', WEALTHSERVER)
 	.config(config)
-	.constant('headers', headers)
+	// .constant('headers', headers)
 	.service('WealthService', WealthService)
 	.controller('WealthController', WealthController)
 	.controller('LayoutController', LayoutController)

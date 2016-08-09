@@ -3,10 +3,10 @@
       <img class="Logo" src="images/JavaHuddleLogo.png">
         <div class="btnWrapper">
           <a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.showLogin()">Sign in</a>
-          <a class="Btn button is-primary is-outlined">Create</a> 
+          <a href="/#/create-account" class="Btn button is-primary is-outlined">Create</a> 
 
-			<div class="signInForm" /*ng-show="vm.login"*/>
-				<form>
+			<div  ng-show="vm.login">
+				<form class="signInForm">
 						<p class="control has-icon has-icon-right">
 						  <input class="input is-success" type="text" placeholder="Email" required>
 						  <i class="fa fa-check"></i>
@@ -18,6 +18,8 @@
 						  <i class="fa fa-check"></i>
 						  <span class="help is-success">Password Incorrect</span>
 						</p>
+
+						<a ng-submit class="button is-primary is-outlined">Submit</a>
 				</form>
 
 			</div>
