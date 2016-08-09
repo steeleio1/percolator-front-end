@@ -25,10 +25,11 @@ $primary: $orange;
 	width: 250px;
 }
 
-.formDiv {
-	form{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+
+.signInForm {
+	form {
+	border: solid red 1px;
+	display: flex;
+	flex-direction: column;
+   }
 }
