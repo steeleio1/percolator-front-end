@@ -3,22 +3,22 @@
       <img class="Logo" src="images/JavaHuddleLogo.png">
         <div class="btnWrapper">
           <a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.showLogin()">Sign in</a>
-          <a href="/#/create-account" class="Btn button is-primary is-outlined" ng-click="vm.cancelLogin()">Create</a> 
+          <a href="/#/create-account" class="Btn button is-primary is-outlined" ng-click="vm.cancelLogin()">Create</a>
 			<div  ng-show="vm.login">
-				<form class="signInForm">
+				<form class="signInForm" ng-submit="vm.loginUser(user)">
 						<p class="control has-icon has-icon-right">
-						  <input class="input is-success" type="text" placeholder="Email" required>
+						  <input class="input is-success" type="text" ng-model="user.email" placeholder="Email" required>
 						  <i class="fa fa-check"></i>
 						  <span class="help is-success">Username is Incorrect</span>
 						</p>
 
 						<p class="control has-icon has-icon-right">
-						  <input class="input is-success" type="text" placeholder="Password"  required>
+						  <input class="input is-success" type="text" ng-model="user.password" placeholder="Password"  required>
 						  <i class="fa fa-check"></i>
 						  <span class="help is-success">Password Incorrect</span>
 						</p>
 
-						<a ng-submit class="button is-primary is-outlined">Submit</a>
+						<a ng-click="vm.loginUser(user)" class="button is-primary is-outlined">Submit</a>
 				</form>
 
 			</div>
@@ -26,4 +26,3 @@
     </nav>
 <div ui-view></div>
 </div>
-
