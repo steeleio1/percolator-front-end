@@ -1,1 +1,104 @@
-create-account.tpl.html
+<div class="creatAccountBox">
+
+  <form ng-submit="CreateAccountController()">
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="text" placeholder="First Name">
+        <i class="fa fa-user" aria-hidden="true"></i>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="text" placeholder="Last Name">
+        <i class="fa fa-user" aria-hidden="true"></i>
+    </p>
+
+    
+    <p class="control has-icon has-icon-left">
+      <input class="input is-danger" type="text" placeholder="jsmith@gmail.com" value="" required>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+      <!-- <i class="fa fa-warning"></i> -->
+      <span class="help is-danger">This email is invalid</span>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input is-danger" type="password" placeholder="Password" value="" required>
+        <i class="fa fa-key" aria-hidden="true"></i>
+      <!-- <i class="fa fa-warning"></i> -->
+      <span class="help is-danger">This password is invalid</span>
+    </p>
+
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="tel" placeholder="555-867-5309" value="" >
+      <i class="fa fa-phone" aria-hidden="true"></i>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="tel" placeholder="555-867-5309" value="" >
+      <i class="fa fa-mobile" aria-hidden="true"></i>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="text" placeholder="Organization">
+       <i class="fa fa-building" aria-hidden="true"></i>
+    </p>
+
+    <p class="control">
+      <span class="select">
+        <select>
+          <option>Catagory</option>
+          <option>Nonprofit</option>
+          <option>For Profit</option>
+          <option>Hospital</option>
+          <option>Education</option>
+          <option>Arts</option>
+        </select>
+      </span>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="text" placeholder="Street">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="text" placeholder="Street-alt">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="text" placeholder="City">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+    </p>
+
+    <p class="control">
+      <span class="select">
+        <select>
+          <option>State</option>
+          <option>Alabama</option>
+          <option>Arkansas</option>
+          <option>Mental</option>
+        </select>
+      </span>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="text" placeholder="Zip">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+    </p>
+
+    <p class="control">
+      <label class="checkbox">
+        <input type="checkbox">
+        Remember me
+      </label>
+    </p>
+
+  </form>
+
+
+  <p class="control">
+    <button class="button is-primary">Submit</button>
+    <button class="button is-link">Cancel</button>
+  </p>
+  
+</div>
