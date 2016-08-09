@@ -7,7 +7,7 @@ import 'angular-ui-router';
 import { WEALTHSERVER } from './servers/wealth.server';
 
 //import config
-import config from './utilities/config';
+import { config } from './utilities/config';
 
 //import constants
 // import { headers } from './credentials/wealth.credentials';
