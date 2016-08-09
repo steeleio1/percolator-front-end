@@ -1,6 +1,5 @@
 import angular from 'angular';
 import 'angular-ui-router';
-import angularMaterialize from 'angular-materialize';
 
 //import SERVER
 import { WEALTHSERVER } from './servers/wealth.server';
@@ -16,7 +15,7 @@ import { EventController } from './controllers/event.controller';
 
 
 angular
-	.module('app', [angularMaterialize])
+	.module('app', ['ui.router'])
 	.constant('WEALTHSERVER', WEALTHSERVER)
 	// .constant('headers', headers)
 	.service('WealthService', WealthService)
