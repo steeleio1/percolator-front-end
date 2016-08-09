@@ -1,4 +1,4 @@
-function EventController ($scope, WealthService){
+function WealthController ($scope, WealthService){
 
 	let vm = this;
 	vm.profileCallByEmail = profileCallByEmail;
@@ -17,5 +17,5 @@ function EventController ($scope, WealthService){
 
 }
 
-EventController.$inject = ['$scope', 'WealthService'];
-export { EventController };
+WealthController.$inject = ['$scope', 'WealthService'];
+export { WealthController };
