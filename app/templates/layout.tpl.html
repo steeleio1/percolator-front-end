@@ -1,11 +1,10 @@
-
-  <div class="MainBox">
-
+<div class="MainBox">
     <nav class="navBar">
       <img class="Logo" src="images/JavaHuddleLogo.png">
         <div class="btnWrapper">
-          <a class="Btn button is-primary is-outlined" href="/#/">Sign in</a>
+          <a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.showLogin()">Sign in</a>
           <a class="Btn button is-primary is-outlined">Create</a> 
+
 			<div class="signInForm" /*ng-show="vm.login"*/>
 				<form>
 						<p class="control has-icon has-icon-right">
@@ -27,8 +26,6 @@
 
 
 
-
 <div ui-view></div>
-
 </div>
 
