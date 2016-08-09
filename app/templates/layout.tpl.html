@@ -6,8 +6,27 @@
         <div class="btnWrapper">
           <a class="Btn button is-primary is-outlined" href="/#/">Sign in</a>
           <a class="Btn button is-primary is-outlined">Create</a> 
+			<div class="signInForm" /*ng-show="vm.login"*/>
+				<form>
+						<p class="control has-icon has-icon-right">
+						  <input class="input is-success" type="text" placeholder="Email" required>
+						  <i class="fa fa-check"></i>
+						  <span class="help is-success">Username is Incorrect</span>
+						</p>
+
+						<p class="control has-icon has-icon-right">
+						  <input class="input is-success" type="text" placeholder="Password"  required>
+						  <i class="fa fa-check"></i>
+						  <span class="help is-success">Password Incorrect</span>
+						</p>
+				</form>
+
+			</div>
         </div>
     </nav>
+
+
+
 
 <div ui-view></div>
 
