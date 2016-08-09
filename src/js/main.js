@@ -11,6 +11,7 @@ import { config } from './utilities/config';
 
 //import constants
 // import { headers } from './credentials/wealth.credentials';
+import { serverConstant } from './constants/server.constant';
 
 //import services
 import { WealthService } from './services/wealth.service';
@@ -35,6 +36,7 @@ angular
 	.config(config)
 	// .constant('headers', headers)
 	.service('WealthService', WealthService)
+	.constant('SERVER', serverConstant)
 	.controller('WealthController', WealthController)
 	.controller('LayoutController', LayoutController)
 	.controller('HomeController', HomeController)
