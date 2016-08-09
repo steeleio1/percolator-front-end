@@ -1,6 +1,6 @@
 <div class="creatAccountBox">
 
-<form>
+  <form ng-submit="CreateAccountController()">
     <p class="control has-icon has-icon-left">
       <input class="input" type="text" placeholder="First Name">
         <i class="fa fa-user" aria-hidden="true"></i>
@@ -20,20 +20,21 @@
     </p>
 
     <p class="control has-icon has-icon-left">
-      <input class="input" type="tel" placeholder="555-867-5309" value="" required>
-      <i class="fa fa-phone" aria-hidden="true"></i>
-    </p>
-
-    <p class="control has-icon has-icon-left">
-      <input class="input" type="tel" placeholder="555-867-5309" value="" required>
-      <i class="fa fa-mobile" aria-hidden="true"></i>
-    </p>
-
-      <p class="control has-icon has-icon-left">
       <input class="input is-danger" type="password" placeholder="Password" value="" required>
         <i class="fa fa-key" aria-hidden="true"></i>
       <!-- <i class="fa fa-warning"></i> -->
       <span class="help is-danger">This password is invalid</span>
+    </p>
+
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="tel" placeholder="555-867-5309" value="" >
+      <i class="fa fa-phone" aria-hidden="true"></i>
+    </p>
+
+    <p class="control has-icon has-icon-left">
+      <input class="input" type="tel" placeholder="555-867-5309" value="" >
+      <i class="fa fa-mobile" aria-hidden="true"></i>
     </p>
 
     <p class="control has-icon has-icon-left">
@@ -94,15 +95,10 @@
 
   </form>
 
-<!--   <label class="label">Message</label>
-  <p class="control">
-    <textarea class="textarea" placeholder="Textarea"></textarea>
-  </p> -->
-
 
   <p class="control">
     <button class="button is-primary">Submit</button>
     <button class="button is-link">Cancel</button>
   </p>
-
-  </div>
+  
+</div>
