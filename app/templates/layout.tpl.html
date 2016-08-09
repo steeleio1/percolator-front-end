@@ -2,9 +2,15 @@
     <nav class="navBar">
       <img class="Logo" src="images/JavaHuddleLogo.png">
         <div class="btnWrapper">
-          <a class="Btn button is-primary is-outlined" href="/#/">Sign in</a>
+          <a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.showLogin()">Sign in</a>
           <a class="Btn button is-primary is-outlined">Create</a> 
-        </div>
+	      	<div class="formDiv" ng-show="vm.login">
+	      		<form>
+	      			<input type="email" placeholder="Email">
+	      			<input type="password" placeholder="Password">
+	      		</form>
+	      	</div>
+        </div>        
     </nav>
 <div ui-view></div>
 </div>
