@@ -9,6 +9,8 @@ $primary: $orange;
 	border: solid black 1px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	width: 95vw;
 	margin: 2vw auto;
 }
@@ -19,15 +21,14 @@ $primary: $orange;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	width: 95vw;
 }
 
 .Logo {
 	width: 250px;
 }
 
-
 .signInForm {
-	form {
 	border: solid red 1px;
 	display: flex;
 	flex-direction: column;
@@ -74,4 +75,12 @@ li {
 		}
 
 	}
+}
+
+.creatAccountBox {
+	border: solid $orange 1px;
+	width: 60vw;
+	margin: 3vw;
+	padding: 1vw;
+	border-radius: 10px;
 }
