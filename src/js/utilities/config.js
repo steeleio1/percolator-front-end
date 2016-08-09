@@ -22,12 +22,12 @@ function config ($stateProvider, $urlRouterProvider) {
       controller: 'HostController as vm'
     })
     .state('root.host.myEvents', {
-      url: '/host/my-events',
+      url: '/my-events',
       templateUrl: 'templates/host.my-events.tpl.html',
       controller: 'HostMyEventsController as vm'
     })    
     .state('root.host.myContacts', {
-      url: '/host/my-contacts',
+      url: '/my-contacts',
       templateUrl: 'templates/host.my-contacts.tpl.html',
       controller: 'HostMyContactsController as vm'
     })  
