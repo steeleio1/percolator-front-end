@@ -32,6 +32,49 @@ $primary: $orange;
 	border: solid red 1px;
 	display: flex;
 	flex-direction: column;
+   }
+}
+
+.hostContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.eventContainer{
+	display: flex;
+	justify-content:center;
+}
+
+.media{
+	padding: 20px;
+    border: 1px solid lightgray;
+}
+
+.attending {
+	color: green;
+	font-weight: bold;
+}
+
+.declined {
+	color: red;
+	font-weight: bold;
+}
+
+.maybe {
+	color: darken(gold, 20%);
+	font-weight: bold;
+}
+
+li {
+	&:hover{
+		a {
+			span{
+		color: orange;				
+			}
+		}
+
+	}
 }
 
 .creatAccountBox {
