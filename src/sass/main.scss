@@ -1,0 +1,27 @@
+
+$orange:  #f68b39;
+$primary: $orange;
+
+@import "bulma";
+
+
+.MainBox {
+	border: solid black 1px;
+	display: flex;
+	flex-direction: column;
+	width: 95vw;
+	margin: 2vw auto;
+}
+
+.navBar {
+	border: solid red 1px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.Logo {
+	width: 250px;
+}
+
