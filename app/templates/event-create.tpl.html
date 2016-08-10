@@ -1,1 +1,81 @@
-event-create.tpl.html
+<div class="eventContainer">
+  <article class="media eventMedia">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="http://www.fillmurray.com/100/100">
+      </p>
+    </figure>
+
+		<label class="label">Event</label>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="Event Name">
+		        <i class="fa fa-calendar" aria-hidden="true"></i>
+		    </p>
+
+		<label class="label">Location</label>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="Street">
+		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="Street-alt">
+		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="City">
+		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+		    <p class="control">
+		      <span class="select">
+		        <select>
+		          <option>State</option>
+		          <option>Alabama</option>
+		          <option>Arkansas</option>
+		          <option>Mental</option>
+		        </select>
+		      </span>
+		    </p>
+
+		    <p class="control has-icon has-icon-left">
+		      <input class="input" type="text" placeholder="Zip">
+		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+
+		<label class="label">Event Description</label>
+		<p class="control">
+		  <textarea class="textarea eventInput" placeholder="Textarea"></textarea>
+		</p>
+
+		<p class="control">
+		  <button class="button is-primary">Submit</button>
+		  <button class="button is-link">Cancel</button>
+		</p>
+
+
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <br>
+          <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
+          <br>
+        </p>
+      </div>
+      <nav class="level">
+        <div class="level-left">
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-reply"></i></span>
+          </a>
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+          </a>
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-heart"></i></span>
+          </a>
+        </div>
+      </nav>
+    </div>
+<!--     <div class="media-right">
+      <button class="delete"></button>
+    </div> -->
+  </article>    
+</div>

@@ -6,7 +6,7 @@ $primary: $orange;
 
 
 .MainBox {
-	border: solid black 1px;
+	// border: solid black 1px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -16,7 +16,7 @@ $primary: $orange;
 }
 
 .navBar {
-	border: solid red 1px;
+	// border: solid red 1px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -40,14 +40,23 @@ $primary: $orange;
 	align-items: center;
 }
 
-.eventContainer{
-	display: flex;
-	justify-content:center;
-}
+// .eventContainer{
+// 	display: flex;
+// 	justify-content:center;
+// }
 
 .media{
 	padding: 20px;
-    border: 1px solid lightgray;
+    border: 1px solid $orange;
+    border-radius: 10px;
+}
+
+.eventMedia {
+	display: flex;
+	flex-direction: column;
+	margin: 2vw;
+	width: 70vw;
+	background: #F2EFDF;
 }
 
 .attending {
@@ -69,7 +78,7 @@ li {
 	&:hover{
 		a {
 			span{
-		color: orange;				
+		color: $orange;				
 			}
 		}
 
@@ -83,3 +92,14 @@ li {
 	padding: 1vw;
 	border-radius: 10px;
 }
+
+.eventInput {
+	width: 40vw;
+}
+// .eventContainer {
+// 	border: solid red 1px;
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	width: 50vw;
+// }
