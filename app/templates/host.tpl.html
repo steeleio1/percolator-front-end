@@ -2,7 +2,7 @@
   <div class="box">
     <article class="media">
       <div class="media-left">
-        <figure class="image is-128x128">
+        <figure class="image is-128x128 hostPhoto">
           <img src="http://placehold.it/256x256" alt="Image">
         </figure>
       </div>
@@ -32,7 +32,7 @@
   </div>
   <div class="tabs is-boxed">
     <ul>
-      <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1 = true; vm.active2=false;">
+      <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1=true; vm.active2=false;">
         <a href="/#/host/my-events">
           <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>
           <span>My Events</span>
