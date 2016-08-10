@@ -116,3 +116,17 @@ $primary: $orange;
     animation-name: fadeInRight; 
 }
 
+.searchForm {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.searchInput{
+	width: 40vw;
+	height: 35px;
+}
+
+.searchButton {
+	height: 35px;
+}
