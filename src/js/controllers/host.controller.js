@@ -1,8 +1,10 @@
 function HostController ($state) {
 
 	let vm = this;
+	vm.active1 = true;
+	vm.active2 = false;
 
-	init()
+	init ();
 
   function init () {
       $state.go('root.host.myEvents');

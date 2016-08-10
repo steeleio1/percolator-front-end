@@ -65,17 +65,6 @@ $primary: $orange;
 	font-weight: bold;
 }
 
-li {
-	&:hover{
-		a {
-			span{
-		color: orange;				
-			}
-		}
-
-	}
-}
-
 .creatAccountBox {
 	border: solid $orange 1px;
 	width: 60vw;
