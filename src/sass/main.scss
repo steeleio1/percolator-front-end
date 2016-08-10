@@ -1,3 +1,4 @@
+@import "event-create";
 
 $orange:  #f68b39;
 $primary: $orange;
@@ -40,12 +41,10 @@ $primary: $orange;
 	align-items: center;
 }
 
-// .eventContainer{
-// 	display: flex;
-// 	justify-content:center;
-// }
+
 
 .media{
+
 	padding: 20px;
     border: 1px solid $orange;
     border-radius: 10px;
@@ -93,13 +92,6 @@ li {
 	border-radius: 10px;
 }
 
-.eventInput {
-	width: 40vw;
-}
-// .eventContainer {
-// 	border: solid red 1px;
-// 	display: flex;
-// 	flex-direction: column;
-// 	align-items: center;
-// 	width: 50vw;
-// }
+
+
+
