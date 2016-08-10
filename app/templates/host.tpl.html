@@ -32,13 +32,13 @@
   </div>
   <div class="tabs is-boxed">
     <ul>
-      <li>
+      <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1=true; vm.active2=false;">
         <a href="/#/host/my-events">
           <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>
           <span>My Events</span>
         </a>
       </li>
-      <li>
+      <li ng-class="{'is-active': vm.active2 }" ng-click="vm.active2=true; vm.active1=false;">
         <a href="/#/host/my-contacts">
           <span class="icon is-small"><i class="fa fa-users" aria-hidden="true"></i></span>
           <span>My Contacts</span>

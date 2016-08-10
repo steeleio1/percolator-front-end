@@ -1,4 +1,4 @@
-function LayoutController () {
+function LayoutController ($http, SERVER, $cookies, $state) {
 
 // Sets up this as vm.
 	let vm = this;
@@ -7,6 +7,8 @@ function LayoutController () {
 // Adds the function to the vm object.
 	vm.showLogin = showLogin;
 	vm.cancelLogin = cancelLogin;
+	vm.loginUser = loginUser;
+
 
 // Defines the function and hoists to top of file.
 	function showLogin(){
@@ -18,7 +20,21 @@ function LayoutController () {
 	function cancelLogin(){
 		vm.login = false;
 	}
+
+
+  function loginUser (user) {
+		console.log(user);
+		$http.post('http://localhost:3333/login', user).then( res => {
+			console.log(res);
+		// Next line is for production code
+    // $http.post(SERVER.URL + 'login', user).then( res => {
+      $cookies.put('access_token', res.data.access_token);
+      $state.go('root.host');
+    });
+  }
+
+
 }
 
-LayoutController.$inject = [];
+LayoutController.$inject = ['$http', 'SERVER', '$cookies', '$state'];
 export { LayoutController };

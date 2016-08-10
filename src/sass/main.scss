@@ -43,6 +43,11 @@ $primary: $orange;
 
 
 
+.contactContainer {
+	display: flex;
+	justify-content:center;
+}
+
 .media{
 
 	padding: 20px;
@@ -73,16 +78,6 @@ $primary: $orange;
 	font-weight: bold;
 }
 
-li {
-	&:hover{
-		a {
-			span{
-		color: $orange;				
-			}
-		}
-
-	}
-}
 
 .creatAccountBox {
 	border: solid $orange 1px;
@@ -93,5 +88,41 @@ li {
 }
 
 
+.hostPhoto {
+	border-radius: 100%;
+	overflow: hidden;
+}
 
+.animated { 
+   -webkit-animation-duration: 1s; 
+   animation-duration: 1s; 
+   -webkit-animation-fill-mode: both; 
+   animation-fill-mode: both; 
+}  
+
+@-webkit-keyframes fadeInRight { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateX(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateX(0); 
+    } 
+} 
+@keyframes fadeInRight { 
+    0% { 
+        opacity: 0; 
+        transform: translateX(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateX(0); 
+    } 
+} 
+
+.fadeInRight { 
+    -webkit-animation-name: fadeInRight; 
+    animation-name: fadeInRight; 
+}
 
