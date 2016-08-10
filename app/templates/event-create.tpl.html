@@ -1,1 +1,75 @@
-event-create.tpl.html
+<div class="eventContainer">
+  <article class="media eventMedia animated fadeInRight">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="http://www.fillmurray.com/100/100">
+      </p>
+    </figure>
+
+		<label class="label">Event</label>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="Event Name">
+		        <i class="fa fa-calendar" aria-hidden="true"></i>
+		    </p>
+
+		<label class="label">Location</label>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="Street">
+		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="Street-alt">
+		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="City">
+		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+		    <p class="control">
+		      <span class="select">
+		        <select>
+		          <option>State</option>
+		          <option>Alabama</option>
+		          <option>Arkansas</option>
+		          <option>Mental</option>
+		        </select>
+		      </span>
+		    </p>
+
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" placeholder="Zip">
+		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+
+		<label class="label">Event Description</label>
+		<p class="control">
+		  <textarea class="textarea eventInput" placeholder="Description"></textarea>
+		</p>
+
+		<p class="control">
+		  <button class="button is-primary is-outlined">Submit</button>
+		  <button class="button is-link">Cancel</button>
+		</p>
+
+
+    <div class="media-content">
+
+      <nav class="level">
+        <div class="level-left">
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-reply"></i></span>
+          </a>
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+          </a>
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-heart"></i></span>
+          </a>
+        </div>
+      </nav>
+    </div>
+<!--     <div class="media-right">
+      <button class="delete"></button>
+    </div> -->
+  </article>    
+</div>
