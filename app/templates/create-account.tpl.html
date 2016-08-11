@@ -41,6 +41,11 @@
     </p>
 
     <p class="control has-icon has-icon-left">
+      <input class="input" type="text" ng-model="user.street" placeholder="Street">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+    </p>
+
+    <p class="control has-icon has-icon-left">
       <input class="input" type="text" ng-model="user.street_2" placeholder="Street-alt">
         <i class="fa fa-map-marker" aria-hidden="true"></i>
     </p>
@@ -137,8 +142,8 @@
     <p class="control has-icon has-icon-left">
       <label class="photo-label" ng-click="vm.uploadImage()">Profile photo: </label>
       <a class="button is-primary is-outlined" ng-click="vm.uploadImage()">Upload Image</a>
-
     </p>
+
     <p class="control">
       <label class="checkbox">
         <input type="checkbox">
