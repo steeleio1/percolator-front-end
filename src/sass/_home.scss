@@ -1,37 +1,52 @@
 $orange:  #f68b39;
 
-
-.sect {
-	height: 100vh !important;
-	width: 95vw !important;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	img {
-	   width:100%;
-        height:100%;
-}
-}
-
-
-
 .subSection {
-	height:30vh !important;
-	background-color: #ffffff;
-	// opacity: 0.3;
+	display: flex;
+	align-items: center;
+	padding-left: 10%;
+	height: 21.25vw !important;
+	background-color: #f2efdf;
 	color: white;
 	font-size: 6vw;
 	color: $orange;
 }
 
-.sectOne {
+.photo{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 130% auto;
+    height: 56.25vw;
+    width: 100vw;
+    position: relative;
+    display: flex;
+	justify-content: center;
+}
+
+.textDiv {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    background: black;
+    opacity: 0.5;
+    height: 100%;
+    width: 100vw;
+	    p {
+	   	text-align: center;
+	    color: white;
+	    font-weight: bold;
+	    font-size: 8vw;
+	    padding: 20px;
+	    }
+}
+
+.panel1{
 	background-image: url("../images/CoffeePaper.jpg");
 }
 
-.sectTwo {
+.panel2{
 	background-image: url("../images/CoffeeMeeting.jpg");
 }
 
-.sectThree {
+.panel3{
 	background-image: url("../images/CoffeeCups.jpg");
 }

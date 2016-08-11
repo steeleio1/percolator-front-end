@@ -1,6 +1,7 @@
 import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-cookies';
+import './app.parallax';
 
 
 //import SERVER
@@ -31,7 +32,7 @@ import { EventCreateController } from './controllers/event.create.controller';
 
 
 angular
-	.module('app', ['ui.router', 'ngCookies'])
+	.module('app', ['angular-parallax', 'ui.router', 'ngCookies'])
 	.constant('WEALTHSERVER', WEALTHSERVER)
 	.config(config)
 	// .constant('headers', headers)
