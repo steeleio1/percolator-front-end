@@ -42,23 +42,25 @@
 	    </article>
   	</div>
   	<div class="inviteButtonRow">
-  		<button ng-click="vm.showInviteNew()">
+  		<button ng-click="vm.showInviteNew(); vm.hideInviteMyContacts()">
   			Invite New
   		</button>
-  		<button ng-click="vm.showInviteMyContacts()">
+  		<button ng-click="vm.showInviteMyContacts(); vm.hideInviteNew()">
   			Invite My Contacts
   		</button>
   	</div>
-  	<div class="inviteNewContainer" ng-show="vm.showInviteNew">
+  	<div class="inviteNewContainer" ng-show="vm.inviteNew">
   		<form>
   			<input type="text" placeholder="First Name" required>
   			<input type="text" placeholder="Last Name" required>
   			<input type="email" placeholder="Email" required>
-  			<button>Send Invite</button>
-  			<button ng-click="vm.hideInviteNew()">Cancel</button>
+  			<div class="buttonContainer">
+  				<button>Send Invite</button>
+  				<button ng-click="vm.hideInviteNew()">Cancel</button>
+  			</div>
   		</form>
   	</div>
-  	<div class="inviteMyContactsContainer" ng-show="vm.showInviteMyContacts">
+  	<div class="inviteMyContactsContainer" ng-show="vm.inviteMyContacts">
   		<form>
   			<input type="text" placeholder="First Name" required>
   			<input type="text" placeholder="Last Name" required>
@@ -66,20 +68,69 @@
   			<button ng-click=vm.hideInviteMyContacts()>Cancel</button>
   		</form>
   	</div>
-	<div class="contactContainer">
-	    <article class="media animated fadeInRight">
-	      	<div class="media-content">
-		        <div class="content">
-		          <p>
-		            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
-		            <br>
-		            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-		          </p>
-		        </div>
-	      	</div>
-	      	<div class="media-right">
-	        	<button class="delete"></button>
-	      	</div>
-	    </article>
+	<div class="RSVPContainer">
+		<div class="RSVPYesList">
+			<p class="attending">
+				Yes
+			</p>
+			<div class="contactContainer">
+			    <article class="media animated fadeInRight">
+			      	<div class="media-content">
+				        <div class="content">
+				          <p>
+				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
+				            <br>
+				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+				          </p>
+				        </div>
+			      	</div>
+			      	<div class="media-right">
+			        	<button class="delete"></button>
+			      	</div>
+			    </article>
+			</div>		
+		</div>
+		<div class="RSVPNoList">
+			<p class="declined">
+			No
+			</p>
+			<div class="contactContainer">
+			    <article class="media animated fadeInRight">
+			      	<div class="media-content">
+				        <div class="content">
+				          <p>
+				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
+				            <br>
+				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+				          </p>
+				        </div>
+			      	</div>
+			      	<div class="media-right">
+			        	<button class="delete"></button>
+			      	</div>
+			    </article>
+			</div>				
+		</div>
+		<div class="RSVPMaybeList">
+			<p class="maybe">
+			Maybe
+			</p>
+			<div class="contactContainer">
+			    <article class="media animated fadeInRight">
+			      	<div class="media-content">
+				        <div class="content">
+				          <p>
+				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
+				            <br>
+				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+				          </p>
+				        </div>
+			      	</div>
+			      	<div class="media-right">
+			        	<button class="delete"></button>
+			      	</div>
+			    </article>
+			</div>				
+		</div>
 	</div>
 </div>
