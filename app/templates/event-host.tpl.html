@@ -42,21 +42,22 @@
 	    </article>
   	</div>
   	<div class="inviteButtonRow">
-  		<button ng-click="vm.showInviteNew(); vm.hideInviteMyContacts()">
+  		<button class="Btn button is-primary is-outlined" ng-click="vm.showInviteNew(); vm.hideInviteMyContacts()">
   			Invite New
   		</button>
-  		<button ng-click="vm.showInviteMyContacts(); vm.hideInviteNew()">
+  		<button class="Btn button is-primary is-outlined" ng-click="vm.showInviteMyContacts(); vm.hideInviteNew()">
   			Invite My Contacts
   		</button>
   	</div>
   	<div class="inviteNewContainer" ng-show="vm.inviteNew">
   		<form>
-  			<input type="text" placeholder="First Name" required>
-  			<input type="text" placeholder="Last Name" required>
-  			<input type="email" placeholder="Email" required>
+  			<input type="text" placeholder="First Name" ng-model="" required> 
+  			<input type="text" placeholder="Last Name" ng-model="" required>
+  			<input type="email" placeholder="Email" ng-model="" required>
+  			<br>
   			<div class="buttonContainer">
-  				<button>Send Invite</button>
-  				<button ng-click="vm.hideInviteNew()">Cancel</button>
+  				<button class="Btn button is-primary is-outlined">Send Invite</button>
+  				<button class="Btn button is-primary is-outlined" ng-click="vm.hideInviteNew()">Cancel</button>
   			</div>
   		</form>
   	</div>
@@ -64,13 +65,14 @@
   		<form>
   			<input type="text" placeholder="First Name" required>
   			<input type="text" placeholder="Last Name" required>
-  			<button>Send Invite</button>
-  			<button ng-click=vm.hideInviteMyContacts()>Cancel</button>
+  			<button class="Btn button is-primary is-outlined">Send Invite</button>
+  			<button class="Btn button is-primary is-outlined" ng-click=vm.hideInviteMyContacts()>Cancel</button>
   		</form>
   	</div>
+
 	<div class="RSVPContainer">
 		<div class="RSVPYesList">
-			<p class="attending">
+			<p class="attending animated fadeInRight">
 				Yes
 			</p>
 			<div class="contactContainer">
@@ -91,7 +93,7 @@
 			</div>		
 		</div>
 		<div class="RSVPNoList">
-			<p class="declined">
+			<p class="declined animated fadeInRight">
 			No
 			</p>
 			<div class="contactContainer">
@@ -112,7 +114,7 @@
 			</div>				
 		</div>
 		<div class="RSVPMaybeList">
-			<p class="maybe">
+			<p class="maybe animated fadeInRight">
 			Maybe
 			</p>
 			<div class="contactContainer">
