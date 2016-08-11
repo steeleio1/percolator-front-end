@@ -1,37 +1,38 @@
-$orange:  #f68b39;
-
-
-.sect {
-	height: 100vh !important;
-	width: 95vw !important;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	img {
-	   width:100%;
-        height:100%;
-}
-}
+$orange:  #e78200;
 
 
 
-.subSection {
-	height:30vh !important;
-	background-color: #ffffff;
-	// opacity: 0.3;
-	color: white;
-	font-size: 6vw;
-	color: $orange;
-}
 
-.sectOne {
-	background-image: url("../images/CoffeePaper.jpg");
-}
+.animated { 
+   -webkit-animation-duration: 1s; 
+   animation-duration: 1s; 
+   -webkit-animation-fill-mode: both; 
+   animation-fill-mode: both; 
+} 
 
-.sectTwo {
-	background-image: url("../images/CoffeeMeeting.jpg");
-}
+@-webkit-keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
 
-.sectThree {
-	background-image: url("../images/CoffeeCups.jpg");
+@keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+.fadeInDown { 
+    -webkit-animation-name: fadeInDown; 
+    animation-name: fadeInDown; 
 }
