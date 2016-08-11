@@ -133,7 +133,9 @@
     </p>
 
     <p class="control has-icon has-icon-left">
-      <label class="photo-label">Profile photo: </label><input type="filepicker" data-fp-apikey="AuoVXagi8TIOn4y06G4urz" onchange="alert(event.fpfile.url)">
+      <label class="photo-label" ng-click="vm.uploadImage()">Profile photo: </label>
+      <button class="button is-primary is-outlined" ng-click="vm.uploadImage()">Upload Image</button>
+
     </p>
     <p class="control">
       <label class="checkbox">

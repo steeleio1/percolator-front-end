@@ -5,10 +5,15 @@ function CreateAccountController ($http, SERVER, $state) {
 
   // Adds the function to the vm object.
   vm.createAccount = createAccount;
+  vm.uploadImage = uploadImage;
+
+  let image = "";
 
   function createAccount(user, address) {
+      user.photo_url = image;
       console.log(user);
       console.log(address);
+
 
       // This line is for development code on localhost
       // $http.post('http://localhost:3333/register', user).then( res => {
@@ -44,6 +49,13 @@ function CreateAccountController ($http, SERVER, $state) {
       //
       //     });
   };
+
+  function uploadImage () {
+      filepicker.pick(function(Blob) {
+        console.log(Blob.url);
+        image = Blob.url;
+      });
+    }
 
 }
 

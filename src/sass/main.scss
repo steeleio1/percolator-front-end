@@ -140,23 +140,3 @@ $primary: $orange;
 .searchButton {
 	height: 35px;
 }
-
-// Jason... the following 3 rules apply to the file picker label, button, & button:hover style
-// The photo-label is obviously blank, but it's there for styling of the label
-// I tried to match the button style to the submit style. :)
-
-.photo-label{
-}
-
-button.fp__btn {
-	background-color: $orange;
-	border: 1px solid #d3d6db;
-  border-radius: 3px;
-	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
-button.fp__btn:hover{
-	background-color: #f16f0b;
-}
-
-// The previous 3 rules apply to the file picker label, button, & button:hover style
