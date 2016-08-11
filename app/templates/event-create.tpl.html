@@ -1,4 +1,5 @@
 <div class="createEventContainer">
+<form ng-submit="">
   <article class="media eventMedia animated fadeInRight">
     <figure class="media-left">
       <p class="image is-64x64">
@@ -6,23 +7,26 @@
       </p>
     </figure>
 
+    <br>
+
 		<label class="label">Event</label>
 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" placeholder="Event Name">
-		        <i class="fa fa-calendar" aria-hidden="true"></i>
+		      <input class="input eventInput" type="text" ng-model="" placeholder="Event Name">
+		        <i class="fa fa-plus-square-o" aria-hidden="true"></i>
 		    </p>
 
 		<label class="label">Location</label>
 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" placeholder="Street">
+		      <input class="input eventInput" type="text" ng-model="" placeholder="Street">
 		        <i class="fa fa-map-marker" aria-hidden="true"></i>
 		    </p>
 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" placeholder="Street-alt">
+		      <input class="input eventInput" type="text"  ng-model="" placeholder="Street-alt">
 		        <i class="fa fa-map-marker" aria-hidden="true"></i>
 		    </p>
 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" placeholder="City">
+		      <input class="input eventInput" type="text" ng-model=""
+		      placeholder="City">
 		        <i class="fa fa-map-marker" aria-hidden="true"></i>
 		    </p>
 		    <p class="control">
@@ -37,19 +41,53 @@
 		    </p>
 
 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" placeholder="Zip">
+		      <input class="input eventInput" type="text" 
+		      ng-model="" placeholder="Zip">
 		        <i class="fa fa-map-marker" aria-hidden="true"></i>
+		    </p>
+
+		<label class="label">Date</label>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" 
+		      ng-model="" placeholder="Date">
+		        <i class="fa fa-calendar" aria-hidden="true"></i>
+		    </p>
+
+		<label class="label">Time</label>
+		    <p class="control has-icon has-icon-left">
+		      <input class="input eventInput" type="text" 
+		      ng-model="" placeholder="Time">
+		        <i class="fa fa-clock-o" aria-hidden="true"></i>
 		    </p>
 
 		<label class="label">Event Description</label>
 		<p class="control">
-		  <textarea class="textarea eventInput" placeholder="Description"></textarea>
+		  <textarea class="textarea eventInput" ng-model="" placeholder="Description"></textarea>
 		</p>
 
-		<p class="control">
-		  <button class="button is-primary is-outlined">Submit</button>
-		  <a href="/#/host"><button href="/#/host" class="button is-link">Cancel</button></a>
+		<label class="label">Donations</label>
+		<p class="control has-addons">
+		  <span class="select">
+		    <select>
+		      <option>$</option>
+		      <option>£</option>
+		      <option>€</option>
+		    </select>
+		  </span>
+		  <input class="input" ng-model="" type="text" placeholder="Price Per Plate">
 		</p>
+
+		<p class="control has-icon has-icon-left">
+		      <input class="input" type="text" ng-model="" placeholder="Suggested Donation">
+		        <i class="fa fa-money" aria-hidden="true"></i>
+		 </p>
+
+	<br>
+	<p class="control">
+	  <a href="/#/event-host"><button href="/#/event-host" class="button is-primary is-outlined" ng-model="">Submit</button></a>
+	  <a href="/#/host"><button href="/#/host" class="button is-link">Cancel</button></a>
+	</p>
+
 
 
     <div class="media-content">
@@ -71,5 +109,6 @@
 <!--     <div class="media-right">
       <button class="delete"></button>
     </div> -->
-  </article>    
+  </article> 
+  </form>   
 </div>
