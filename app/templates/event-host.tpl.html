@@ -1,1 +1,85 @@
-event-host.tpl.html
+<div class="eventHostContainer">
+	<div class="box">
+	    <article class="media">
+	      <div class="media-left">
+	        <figure class="image is-128x128">
+	          <img src="http://placekitten.com/250/250" alt="Image">
+	        </figure>
+	      </div>
+	      <div class="media-content">
+	        <div class="content">
+	          <p>
+	            <strong>A Night with Vision City</strong>
+	            <br>
+	            <br>
+	           <small><strong>Location:</strong> Strongbox West</small>
+	           <br>
+	           <small><strong>Address:</strong></small>
+	           <br>
+	           <small>Street 1</small>
+	           <br>
+	           <small>Street2</small>
+	           <br>
+	           <small>City, </small><small>State </small><small>55555</small>
+	           <br>
+	           <small><strong>Date and Time:</strong></small>
+	           <br>
+	           <small>Friday, June 3, 2016: 7pm-9pm</small>
+	           <br>
+	           <small><strong>RSVPs:</strong></small>
+	          <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
+	           <br>
+	           <small><strong>Organization:</strong> Vision City</small>
+	           <br>
+	           <small><strong>Category:</strong> Nonprofit</small>
+	           <br>
+	            <small><strong>Event Description:</strong></small>
+	            <br>
+	            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</small>	           
+	          </p>
+	        </div>
+	      </div>
+	    </article>
+  	</div>
+  	<div class="inviteButtonRow">
+  		<button ng-click="vm.showInviteNew()">
+  			Invite New
+  		</button>
+  		<button ng-click="vm.showInviteMyContacts()">
+  			Invite My Contacts
+  		</button>
+  	</div>
+  	<div class="inviteNewContainer" ng-show="vm.showInviteNew">
+  		<form>
+  			<input type="text" placeholder="First Name" required>
+  			<input type="text" placeholder="Last Name" required>
+  			<input type="email" placeholder="Email" required>
+  			<button>Send Invite</button>
+  			<button ng-click="vm.hideInviteNew()">Cancel</button>
+  		</form>
+  	</div>
+  	<div class="inviteMyContactsContainer" ng-show="vm.showInviteMyContacts">
+  		<form>
+  			<input type="text" placeholder="First Name" required>
+  			<input type="text" placeholder="Last Name" required>
+  			<button>Send Invite</button>
+  			<button ng-click=vm.hideInviteMyContacts()>Cancel</button>
+  		</form>
+  	</div>
+	<div class="contactContainer">
+	    <article class="media animated fadeInRight">
+	      	<div class="media-content">
+		        <div class="content">
+		          <p>
+		            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
+		            <br>
+		            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+		          </p>
+		        </div>
+	      	</div>
+	      	<div class="media-right">
+	        	<button class="delete"></button>
+	      	</div>
+	    </article>
+	</div>
+</div>
