@@ -1,7 +1,8 @@
 @import "event-create";
 @import "home";
 
-$orange:  #f68b39;
+$coffeewhite: #F2EFDF;
+$orange:  #e78200;
 $primary: $orange;
 
 @import "bulma";
@@ -31,9 +32,13 @@ $primary: $orange;
 }
 
 .signInForm {
-	border: solid red 1px;
+	// border: solid $orange 1px;
 	display: flex;
 	flex-direction: column;
+	background: $coffeewhite;
+	padding: 10px;
+	margin: 0.6vw;
+	border-radius: 10px;
 }
 
 .hostContainer {
@@ -78,16 +83,6 @@ $primary: $orange;
 	color: darken(gold, 20%);
 	font-weight: bold;
 }
-
-
-.creatAccountBox {
-	border: solid $orange 1px;
-	width: 60vw;
-	margin: 3vw;
-	padding: 1vw;
-	border-radius: 10px;
-}
-
 
 .hostPhoto {
 	border-radius: 100%;

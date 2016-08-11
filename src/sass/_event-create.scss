@@ -1,3 +1,15 @@
+$coffeewhite: #F3EEDF;
+$orange:  #e78200;
+
+.creatAccountBox {
+    // border: solid $orange 1px;
+    background: $coffeewhite;
+    width: 60vw;
+    margin: 3vw;
+    padding: 1vw;
+    border-radius: 10px;
+}
+
 .animated { 
    -webkit-animation-duration: 1s; 
    animation-duration: 1s; 
@@ -32,4 +44,12 @@
 
 .eventInput {
     width: 40vw !important;
+}
+
+input {
+    transition: .2s linear;
+}
+
+input:focus {
+    transform: scale(1.01);
 }

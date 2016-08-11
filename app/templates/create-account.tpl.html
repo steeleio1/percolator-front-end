@@ -1,6 +1,9 @@
 <div class="creatAccountBox">
 
+
+
   <form ng-submit="vm.createAccount(user)">
+   <large><strong>Account Details:</strong></large>
     <p class="control has-icon has-icon-left">
       <input class="input" type="text" ng-model="user.first_name" placeholder="First Name">
         <i class="fa fa-user" aria-hidden="true"></i>
@@ -25,7 +28,8 @@
       <span class="help is-danger">This password is invalid</span>
     </p>
 
-
+    <br>
+    <large><strong>Personal Details:</strong></large>
     <p class="control has-icon has-icon-left">
       <input class="input" type="tel" ng-model="user.home_number" placeholder="555-867-5309" value="" >
       <i class="fa fa-phone" aria-hidden="true"></i>
@@ -34,29 +38,6 @@
     <p class="control has-icon has-icon-left">
       <input class="input" type="tel" ng-model="user.mobile_number" placeholder="555-867-5309" value="" >
       <i class="fa fa-mobile" aria-hidden="true"></i>
-    </p>
-
-    <p class="control has-icon has-icon-left">
-      <input class="input" type="text" ng-model="user.organization" placeholder="Organization">
-       <i class="fa fa-building" aria-hidden="true"></i>
-    </p>
-
-    <p class="control">
-      <span class="select">
-        <select ng-model="user.category">
-          <option>Category</option>
-          <option>Nonprofit</option>
-          <option>For Profit</option>
-          <option>Hospital</option>
-          <option>Education</option>
-          <option>Arts</option>
-        </select>
-      </span>
-    </p>
-
-    <p class="control has-icon has-icon-left">
-      <input class="input" type="text" ng-model="user.street" placeholder="Street">
-        <i class="fa fa-map-marker" aria-hidden="true"></i>
     </p>
 
     <p class="control has-icon has-icon-left">
@@ -132,6 +113,27 @@
         <i class="fa fa-map-marker" aria-hidden="true"></i>
     </p>
 
+
+    <br>
+    <large><strong>Organization Details:</strong></large>
+      <p class="control has-icon has-icon-left">
+      <input class="input" type="text" ng-model="user.organization" placeholder="Organization">
+       <i class="fa fa-building" aria-hidden="true"></i>
+    </p>
+
+    <p class="control">
+      <span class="select">
+        <select ng-model="user.category">
+          <option>Nonprofit</option>
+          <option>For Profit</option>
+          <option>Hospital</option>
+          <option>Education</option>
+          <option>Arts</option>
+        </select>
+      </span>
+    </p>
+
+
     <p class="control has-icon has-icon-left">
       <label class="photo-label" ng-click="vm.uploadImage()">Profile photo: </label>
       <a class="button is-primary is-outlined" ng-click="vm.uploadImage()">Upload Image</a>
@@ -143,6 +145,10 @@
         Remember me
       </label>
     </p>
+
+
+
+
     <p class="control">
       <button type="submit" class="button is-primary">Submit</button>
       <button class="button is-link">Cancel</button>
