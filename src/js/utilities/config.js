@@ -17,7 +17,7 @@ function config ($stateProvider, $urlRouterProvider) {
       controller: 'CreateAccountController as vm'
     })
     .state('root.host', {
-      url: '/host',
+      url: '/host/:id',
       templateUrl: 'templates/host.tpl.html',
       controller: 'HostController as vm'
     })
@@ -25,12 +25,12 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/my-events',
       templateUrl: 'templates/host.my-events.tpl.html',
       controller: 'HostMyEventsController as vm'
-    })    
+    })
     .state('root.host.myContacts', {
       url: '/my-contacts',
       templateUrl: 'templates/host.my-contacts.tpl.html',
       controller: 'HostMyContactsController as vm'
-    })  
+    })
     .state('root.guest', {
     	url: '/guest',
     	templateUrl: 'templates/guest.tpl.html',
@@ -50,7 +50,7 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/event-create',
       templateUrl: 'templates/event-create.tpl.html',
       controller: 'EventCreateController as vm'
-    })    
+    })
 
   $urlRouterProvider.otherwise('/');
 
