@@ -11,10 +11,11 @@ function EventCreateController ($state, $scope, $http, SERVER, $cookies) {
 
   function createEvent(eventInfo) {
       eventInfo.photo_url = image;
-      console.log(eventInfo);
-
-      $http.post(SERVER.URL + 'event-create', eventInfo).then(function successCallback(res) {
-        console.log(res);
+      let token = $cookies.get('access_token');
+      let config = {
+        headers: { 'Authorization': `Bearer ${token}` }
+      };
+      $http.post(SERVER.URL + 'event-create', eventInfo, config).then(function successCallback(res) {
               if (res.status == 200) {
                   alert("200 OK");
                   $state.go('root.host.myEvents');
