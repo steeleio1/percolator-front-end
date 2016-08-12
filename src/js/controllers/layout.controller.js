@@ -27,7 +27,7 @@ function LayoutController($http, SERVER, $cookies, $state) {
                     alert("200 OK");
                     $cookies.put('access_token', res.data.access_token);
                     $state.go('root.host');
-                }
+                } 
             },
             function errorCallback(res) {
                 if (res.status == 401) {
