@@ -1,18 +1,19 @@
-    <div class="eventContainer">
+    <div class="eventContainer" ng-repeat="event in vm.events">
       <article class="media animated fadeInRight">
         <figure class="media-left">
           <p class="image is-128x128">
-            <img src="http://placehold.it/128x128">
+            <img src="{{event.photo_url}}" alt="photo url">
           </p>
         </figure>
         <div class="media-content">
           <div class="content">
             <p>
-              <strong>A Night with Vision City</strong> | <small>Location: Strongbox West</small> | <small>Friday, June 3, 2016: 7pm-9pm</small>
+              <strong >{{event.title}}</strong> | <small>Location: {{event.street}} {{event.street_2}}, {{event.city}} {{event.state}} {{event.post_code}}</small> |
+              <small>{{event.date}} {{event.start_time}} -{{event.end_time}}</small>
               <br>
               <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
-              <br>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+              <br>{{event.message}}
+              <p>This event is index: {{vm.events.indexOf(event)}}</p>
             </p>
           </div>
           <nav class="level">
@@ -27,36 +28,5 @@
         <div class="media-right">
           <button class="delete"></button>
         </div>
-      </article>    
+      </article>
     </div>
-    <div class="eventContainer">
-      <article class="media animated fadeInRight">
-        <figure class="media-left">
-          <p class="image is-128x128">
-            <img src="http://placehold.it/128x128">
-          </p>
-        </figure>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>A Night with Vision City</strong> | <small>Location: Strongbox West</small> | <small>Friday, June 3, 2016: 7pm-9pm</small>
-              <br>
-              <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
-              <br>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-            </p>
-          </div>
-          <nav class="level">
-            <div class="level-left">
-              <a class="level-item">
-                <span class="icon is-small"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                <span>Send Invites</span>
-              </a>
-            </div>
-          </nav>
-        </div>
-        <div class="media-right">
-          <button class="delete"></button>
-        </div>
-      </article>    
-    </div>    

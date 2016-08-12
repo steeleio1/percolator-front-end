@@ -1,4 +1,4 @@
-function HostController($state, $scope, $stateParams, $http, SERVER, $cookies) {
+function HostController($state, $scope, $http, SERVER, $cookies) {
 
     let vm = this;
     vm.active1 = true;
@@ -12,7 +12,6 @@ function HostController($state, $scope, $stateParams, $http, SERVER, $cookies) {
 					headers: { 'Authorization': `Bearer ${token}` }
 				};
 			  $http.get(SERVER.URL + 'profile', config).then((res) => {
-					console.log(res);
 					vm.user = res.data;
           $state.go('root.host.myEvents');
         });
@@ -20,5 +19,5 @@ function HostController($state, $scope, $stateParams, $http, SERVER, $cookies) {
 
 }
 
-HostController.$inject = ['$state', '$scope', '$stateParams', '$http', 'SERVER', '$cookies'];
+HostController.$inject = ['$state', '$scope', '$http', 'SERVER', '$cookies'];
 export { HostController };
