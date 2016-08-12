@@ -1,4 +1,4 @@
-function EventHostController () {
+function EventHostController (MailService) {
 
 	let vm = this;
 
@@ -8,6 +8,7 @@ function EventHostController () {
 	vm.hideInviteMyContacts = hideInviteMyContacts;
 	vm.inviteNew = false;
 	vm.inviteMyContacts- false;
+	vm.sendInvite = sendInvite;
 
 	function showInviteNew() {
 		vm.inviteNew = true;
@@ -25,7 +26,11 @@ function EventHostController () {
 		vm.inviteMyContacts=false;
 	}
 
+	function sendInvite(){
+		MailService.sendMsg();
+	}
+
 }
 
-EventHostController.$inject = [];
+EventHostController.$inject = ['MailService'];
 export { EventHostController };

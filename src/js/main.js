@@ -11,14 +11,16 @@ import { WEALTHSERVER } from './servers/wealth.server';
 import { config } from './utilities/config';
 
 //import constants
-// import { headers } from './credentials/wealth.credentials';
+import { headers } from './credentials/wealth.credentials';
+import { mailCreds } from './credentials/mail.credentials';
 import { serverConstant } from './constants/server.constant';
+import { MAILSERVER } from './servers/mailgun.server';
 
 //import services
 import { WealthService } from './services/wealth.service';
+import { MailService } from './services/mailgun.service';
 
 //import Controllers
-import { WealthController } from './controllers/wealth.controller';
 import { LayoutController } from './controllers/layout.controller';
 import { HomeController } from './controllers/home.controller';
 import { CreateAccountController } from './controllers/create.account.controller';
@@ -35,10 +37,12 @@ angular
 	.module('app', ['angular-parallax', 'ui.router', 'ngCookies'])
 	.constant('WEALTHSERVER', WEALTHSERVER)
 	.config(config)
-	// .constant('headers', headers)
+	.constant('headers', headers)
 	.service('WealthService', WealthService)
+	.service('MailService', MailService)
+	.constant('mailCreds', mailCreds)
 	.constant('SERVER', serverConstant)
-	.controller('WealthController', WealthController)
+	.constant('MAILSERVER', MAILSERVER)
 	.controller('LayoutController', LayoutController)
 	.controller('HomeController', HomeController)
 	.controller('CreateAccountController', CreateAccountController)
