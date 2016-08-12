@@ -1,4 +1,4 @@
-function EventCreateController () {
+function EventCreateController ($state, $scope, $http, SERVER, $cookies) {
 
   // Sets up this as vm.
   let vm = this;
@@ -11,11 +11,16 @@ function EventCreateController () {
 
   function createEvent(eventInfo) {
       eventInfo.photo_url = image;
+      console.log(eventInfo);
 
-      $http.post(SERVER.URL + 'register', user).then(function successCallback(res) {
+      $http.post(SERVER.URL + 'event-create', eventInfo).then(function successCallback(res) {
+        console.log(res);
               if (res.status == 200) {
                   alert("200 OK");
-                  $state.go('root.host');
+                  $state.go('root.host.myEvents');
+              } else if (res.status == 201) {
+                  alert("201 OK");
+                  $state.go('root.host.myEvents');
               }
           },
           function errorCallback(res) {
@@ -36,5 +41,5 @@ function EventCreateController () {
 
 }
 
-EventCreateController.$inject = [];
+EventCreateController.$inject = ['$state', '$scope', '$http', 'SERVER', '$cookies'];
 export { EventCreateController };

@@ -1,5 +1,5 @@
 <div class="createEventContainer">
-<form ng-submit="">
+<form ng-submit="vm.createEvent(eventInfo)">
   <article class="media eventMedia animated fadeInRight">
     <figure class="media-left">
       <p class="image is-64x64">
@@ -97,19 +97,19 @@
 
 		<label class="label">Date</label>
 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" 
+		      <input class="input eventInput" type="text"
 		      ng-model="eventInfo.date" placeholder="Date">
 		        <i class="fa fa-calendar" aria-hidden="true"></i>
 		    </p>
 
 		<label class="label">Time</label>
 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" 
+		      <input class="input eventInput" type="text"
 		      ng-model="eventInfo.start_time" placeholder="Start time">
 		        <i class="fa fa-clock-o" aria-hidden="true"></i>
 		    </p>
 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" 
+		      <input class="input eventInput" type="text"
 		      ng-model="eventInfo.end_time" placeholder="End time">
 		        <i class="fa fa-clock-o" aria-hidden="true"></i>
 		    </p>
@@ -117,22 +117,22 @@
 		<label class="label">Event Description</label>
 		<p class="control">
 
-		  <textarea class="textarea eventInput" ng-model="" placeholder="Description"></textarea>
+		  <textarea class="textarea eventInput" ng-model="eventInfo.message" placeholder="Description"></textarea>
 		</p>
 
 		<label class="label">Donations</label>
 		<p class="control has-addons">
 		  <span class="select">
-		    <select>
+		    <select ng-model="eventInfo.per_plate_currency">
 		      <option>$</option>
 		      <option>£</option>
 		      <option>€</option>
 		    </select>
 		  </span>
-		  <input class="input" ng-model="" type="text" placeholder="Price Per Plate">
+		  <input class="input" type="text" ng-model="eventInfo.per_plate" placeholder="Price Per Plate">
 
 		<p class="control has-icon has-icon-left">
-		      <input class="input" type="text" ng-model="" placeholder="Suggested Donation">
+		      <input class="input" type="text" ng-model="eventInfo.suggested_donation" placeholder="Suggested Donation">
 		        <i class="fa fa-money" aria-hidden="true"></i>
 		 </p>
 
@@ -157,7 +157,7 @@
 
     <p class="control">
       <label class="checkbox">
-        <input type="checkbox"ng-model="eventInfo.notify_rsvp">
+        <input type="checkbox" ng-model="eventInfo.notify_rsvp">
         Notify host of RSVPs
       </label>
     </p>
@@ -179,8 +179,11 @@
 
 	<br>
 	<p class="control">
-	  <a href="/#/event-host"><button href="/#/event-host" class="button is-primary is-outlined" ng-model="">Submit</button></a>
-	  <a href="/#/host"><button href="/#/host" class="button is-link">Cancel</button></a>
+	  <!-- <a href="/#/event-host"><button type="submit" href="/#/event-host" class="button is-primary is-outlined">Submit</button></a>
+	  <a href="/#/host"><button href="/#/host" class="button is-link">Cancel</button></a> -->
+    <button type="submit" class="button is-primary is-outlined">Submit</button>
+    <button href="/#/host" class="button is-link">Cancel</button>
+
 	</p>
 
 
@@ -204,7 +207,6 @@
 <!--     <div class="media-right">
       <button class="delete"></button>
     </div> -->
-  </article> 
-  </form>   
+  </article>
+  </form>
 </div>
-
