@@ -9,13 +9,199 @@
 
     <br>
 
-		<label class="label">Event</label>
+<!--     <div class="eventFields">
+        <input class="transText transTextAlt" placeholder="NAME">
+      <input type="text" name="" placeholder="name">
+    </div> -->
+
+<form>
+    <label>
+      <input type="text" ng-model="eventInfo.title" required>
+      <div class="label-text">Event Name:</div>
+    </label>
+    <br>
+
+    <label>
+      <input type="text" ng-model="eventInfo.street" required>
+      <div class="label-text">Location Address:</div>
+    </label>
+
+    <label>
+      <input type="text" ng-model="eventInfo.street_2" required>
+      <div class="label-text">Location Address-alt:</div>
+    </label>
+
+    <label>
+      <input type="text" ng-model="eventInfo.city" required>
+      <div class="label-text">Location City:</div>
+    </label> 
+
+
+      <select name="state" ng-model="eventInfo.state" placeholder="State">
+<!--       <option selected="true">State:</option>
+ -->            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+      </select>
+      <br>
+    <label>
+      <input type="text" ng-model="eventInfo.post_code" required>
+      <div class="label-text">Location Zip:</div>
+    </label> 
+    <br>
+    <br>
+
+    <label>
+      <input type="text" ng-model="eventInfo.date" required>
+      <div class="label-text">Event Date:</div>
+    </label>
+    <br> 
+
+    <label>
+      <input type="text" ng-model="eventInfo.start_time" required>
+      <div class="label-text">Start Time:</div>
+    </label>
+
+    <label>
+      <input type="text" ng-model="eventInfo.end_time" required>
+      <div class="label-text">End Time:</div>
+    </label>
+    <br>
+    <br>
+
+    <label>
+      <textarea type="text" placeholder="Event Description" ng-model="eventInfo.description" required>
+      <div class="label-text">Event Description:</div>
+    </textarea>
+    <br>
+    <br>
+    <label>
+      <input type="number" ng-model="eventInfo.plate_price" required>
+      <div class="label-text">Price per plate:</div>
+    </label>
+
+    <label>
+      <input type="number" ng-model="eventInfo.donation" required>
+      <div class="label-text">Suggested Donation:</div>
+    </label>
+    <br>
+      <label class="photo-label" ng-click="vm.uploadImage()">Event photo: </label>
+      <a class="button is-primary is-outlined" ng-click="vm.uploadImage()">Upload Image</a>
+    <br>
+    <br>
+    <label>
+      <input type="number" ng-model="eventInfo.max_size" required>
+      <div class="label-text">Max amount of guests:</div>
+    </label>
+    <br>
+    <br>
+
+
+        <input type="checkbox" ng-model="eventInfo.donate">
+        Allow Donations
+
+        <input type="checkbox" ng-model="eventInfo.notify_rsvp">
+        Notify host of RSVPs
+
+        <input type="checkbox" ng-model="eventInfo.hide_list">
+        Hide guest list from other guests
+
+
+
+        <input type="checkbox" ng-model="eventInfo.allow_guest_invites">
+        Allow guests to invite others
+        <br>
+
+          <br>
+  <p class="control">
+    <a href="/#/event-host"><button href="/#/event-host" class="button is-primary is-outlined" ng-model="">Submit</button></a>
+    <a href="/#/host"><button href="/#/host" class="button is-link">Cancel</button></a>
+  </p>
+
+
+
+    <div class="media-content">
+
+      <nav class="level">
+        <div class="level-left">
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-reply"></i></span>
+          </a>
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+          </a>
+          <a class="level-item">
+            <span class="icon is-small"><i class="fa fa-heart"></i></span>
+          </a>
+        </div>
+      </nav>
+    </div>
+<!--     <div class="media-right">
+      <button class="delete"></button>
+    </div> -->
+  </article> 
+  </form>   
+</div>
+
+</form>
+
+
+
+<!-- 		<label class="label">Event</label>
 		    <p class="control has-icon has-icon-left">
 
 		      <input class="input eventInput" type="text" ng-model="eventInfo.title" placeholder="Event Name">
 		        <i class="fa fa-calendar" aria-hidden="true"></i>
-		    </p>
-
+		    </p> -->
+<!-- 
 		<label class="label">Location</label>
 		    <p class="control has-icon has-icon-left">
 
@@ -25,13 +211,14 @@
 		    <p class="control has-icon has-icon-left">
 		      <input class="input eventInput" type="text" ng-model="eventInfo.street_2" placeholder="Street-alt">
 		        <i class="fa fa-map-marker" aria-hidden="true"></i>
-		    </p>
-		    <p class="control has-icon has-icon-left">
+		    </p> -->
+<!-- 		    <p class="control has-icon has-icon-left">
 		      <input class="input eventInput" type="text" ng-model="eventInfo.city" placeholder="City">
 
 		        <i class="fa fa-map-marker" aria-hidden="true"></i>
-		    </p>
-		    <p class="control">
+		    </p> -->
+
+<!-- 		    <p class="control">
           <span class="select">
             <select name="state" ng-model="eventInfo.state">
             <option value="AL">Alabama</option>
@@ -87,40 +274,39 @@
             <option value="WY">Wyoming</option>
           </select>
 		      </span>
-		    </p>
+		    </p> -->
 
-		    <p class="control has-icon has-icon-left">
-
+<!-- 		    <p class="control has-icon has-icon-left">
 		      <input class="input eventInput" type="text" ng-model="eventInfo.post_code" placeholder="Zip">
 		        <i class="fa fa-map-marker" aria-hidden="true"></i>
-		    </p>
+		    </p> -->
 
-		<label class="label">Date</label>
+<!-- 		<label class="label">Date</label>
 		    <p class="control has-icon has-icon-left">
 		      <input class="input eventInput" type="text" 
 		      ng-model="eventInfo.date" placeholder="Date">
 		        <i class="fa fa-calendar" aria-hidden="true"></i>
-		    </p>
+		    </p> -->
 
-		<label class="label">Time</label>
+<!-- 		<label class="label">Time</label>
 		    <p class="control has-icon has-icon-left">
 		      <input class="input eventInput" type="text" 
 		      ng-model="eventInfo.start_time" placeholder="Start time">
 		        <i class="fa fa-clock-o" aria-hidden="true"></i>
-		    </p>
-		    <p class="control has-icon has-icon-left">
+		    </p> -->
+<!-- 		    <p class="control has-icon has-icon-left">
 		      <input class="input eventInput" type="text" 
 		      ng-model="eventInfo.end_time" placeholder="End time">
 		        <i class="fa fa-clock-o" aria-hidden="true"></i>
-		    </p>
+		    </p> -->
 
-		<label class="label">Event Description</label>
+<!-- 		<label class="label">Event Description</label>
 		<p class="control">
 
 		  <textarea class="textarea eventInput" ng-model="" placeholder="Description"></textarea>
-		</p>
+		</p> -->
 
-		<label class="label">Donations</label>
+<!-- 		<label class="label">Donations</label>
 		<p class="control has-addons">
 		  <span class="select">
 		    <select>
@@ -134,77 +320,48 @@
 		<p class="control has-icon has-icon-left">
 		      <input class="input" type="text" ng-model="" placeholder="Suggested Donation">
 		        <i class="fa fa-money" aria-hidden="true"></i>
-		 </p>
+		 </p> -->
 
-<br>
+<!-- <br>
     <p class="control has-icon has-icon-left">
       <label class="photo-label" ng-click="vm.uploadImage()">Event photo: </label>
       <a class="button is-primary is-outlined" ng-click="vm.uploadImage()">Upload Image</a>
-    </p>
+    </p> -->
 
-<br>
+<!-- <br>
     <p class="control has-icon has-icon-left">
       <input class="input eventInput" type="text" ng-model="eventInfo.max_size" placeholder="Max Size">
         <i class="fa fa-users" aria-hidden="true"></i>
-    </p>
+    </p> -->
 
-    <p class="control">
+<!--     <p class="control">
       <label class="checkbox">
-        <input type="checkbox"ng-model="eventInfo.donate">
+        <input type="checkbox" ng-model="eventInfo.donate">
         Allow Donations
       </label>
-    </p>
+    </p> -->
 
-    <p class="control">
+<!--     <p class="control">
       <label class="checkbox">
-        <input type="checkbox"ng-model="eventInfo.notify_rsvp">
+        <input type="checkbox" ng-model="eventInfo.notify_rsvp">
         Notify host of RSVPs
       </label>
-    </p>
+    </p> -->
 
-    <p class="control">
+<!--     <p class="control">
       <label class="checkbox">
-        <input type="checkbox"ng-model="eventInfo.hide_list">
+        <input type="checkbox" ng-model="eventInfo.hide_list">
         Hide guest list from other guests
       </label>
     </p>
 
     <p class="control">
       <label class="checkbox">
-        <input type="checkbox"ng-model="eventInfo.allow_guest_invites">
+        <input type="checkbox" ng-model="eventInfo.allow_guest_invites">
         Allow guests to invite others
       </label>
-    </p>
-
-
-	<br>
-	<p class="control">
-	  <a href="/#/event-host"><button href="/#/event-host" class="button is-primary is-outlined" ng-model="">Submit</button></a>
-	  <a href="/#/host"><button href="/#/host" class="button is-link">Cancel</button></a>
-	</p>
+    </p> -->
 
 
 
-    <div class="media-content">
-
-      <nav class="level">
-        <div class="level-left">
-          <a class="level-item">
-            <span class="icon is-small"><i class="fa fa-reply"></i></span>
-          </a>
-          <a class="level-item">
-            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
-          </a>
-          <a class="level-item">
-            <span class="icon is-small"><i class="fa fa-heart"></i></span>
-          </a>
-        </div>
-      </nav>
-    </div>
-<!--     <div class="media-right">
-      <button class="delete"></button>
-    </div> -->
-  </article> 
-  </form>   
-</div>
 
