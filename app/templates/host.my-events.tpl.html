@@ -14,7 +14,6 @@
               <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
               <br>{{event.message}}
               <p>This event is index: {{vm.events.indexOf(event)}}</p>
-            </p>
           </div>
           <nav class="level">
             <div class="level-left">
@@ -26,7 +25,7 @@
           </nav>
         </div>
         <div class="media-right">
-          <button class="delete"></button>
+          <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>
         </div>
       </article>
     </div>
