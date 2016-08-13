@@ -1,16 +1,18 @@
-function EventHostController ($state, $scope, $http, SERVER, $cookies, $location) {
+function EventHostController (MailService, $state, $scope, $http, SERVER, $cookies, $location) {
 
 	// Sets up this as vm.
 	let vm = this;
 	// Sets up variables
 	vm.inviteNew = false;
 	vm.inviteMyContacts- false;
+
 	// Adds the function to the vm object
 	vm.showInviteNew = showInviteNew;
 	vm.showInviteMyContacts = showInviteMyContacts;
 	vm.hideInviteNew = hideInviteNew;
 	vm.hideInviteMyContacts = hideInviteMyContacts;
 	vm.deleteEvent = deleteEvent;
+	vm.sendInvite = sendInvite;
 
 	init();
 
@@ -42,7 +44,6 @@ function EventHostController ($state, $scope, $http, SERVER, $cookies, $location
 			}
 	}
 
-
 	function showInviteNew() {
 		vm.inviteNew = true;
 	}
@@ -59,7 +60,12 @@ function EventHostController ($state, $scope, $http, SERVER, $cookies, $location
 		vm.inviteMyContacts=false;
 	}
 
+	function sendInvite(){
+		MailService.sendMsg();
+	}
+
 }
 
-EventHostController.$inject = ['$state', '$scope', '$http', 'SERVER', '$cookies', '$location'];
+
+EventHostController.$inject = ['MailService', '$state', '$scope', '$http', 'SERVER', '$cookies', '$location'];
 export { EventHostController };
