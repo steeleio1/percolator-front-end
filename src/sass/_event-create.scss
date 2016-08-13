@@ -116,19 +116,34 @@ select {
     background: none !important;
     outline: none;
     color: $orange;
-    border: solid $darkorange 1px;
+    border: solid $orange 1px;
 }
 
 textarea {
     background: none !important; 
-    border: solid $darkorange 1px;
+    border: solid $orange 1px;
     outline: none;
     width: 40vw; 
     color: $orange; 
 }
 
-.checkbox {
+// .checkbox {
+//     transform: translate(0vw, 0vw) !important;
+//     font-size: 2vw !important;
+//     text-align: center !important;
+// }
+
+.checkBoxWrapper {
+    border: solid red 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     transform: translate(0vw, 0vw) !important;
     font-size: 2vw !important;
-    text-align: center !important;
+}
+
+.perPlateBox {
+    // border: solid red 1px;
+    display: flex;
+    justify-content: center;
 }
