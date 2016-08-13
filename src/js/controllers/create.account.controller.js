@@ -15,7 +15,11 @@ function CreateAccountController($http, SERVER, $state) {
         $http.post(SERVER.URL + 'register', user).then(function successCallback(res) {
                 if (res.status == 200) {
                     alert("200 OK");
-                    $state.go('root.host');
+                    $state.go('root.home');
+                }
+                else if (res.status == 201) {
+                  alert(res.status + " Account Created Successfully!");
+                  $state.go('root.home')
                 }
             },
             function errorCallback(res) {
