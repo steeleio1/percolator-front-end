@@ -16,30 +16,36 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/create-account.tpl.html',
       controller: 'CreateAccountController as vm'
     })
+    // Root - host states
+    // Basic host state
     .state('root.host', {
       url: '/host',
       templateUrl: 'templates/host.tpl.html',
       controller: 'HostController as vm'
     })
+    // Host state - view all events for authorized user
     .state('root.host.myEvents', {
       url: '/my-events',
       templateUrl: 'templates/host.my-events.tpl.html',
       controller: 'HostMyEventsController as vm'
     })
+    // Host state - view single event for authorized user
+    .state('root.host.eventHost', {
+      url: '/my-events/:id',
+      templateUrl: 'templates/host.event.tpl.html',
+      controller: 'EventHostController as vm'
+    })
+    // Host state - view all contacts for authorized user
     .state('root.host.myContacts', {
       url: '/my-contacts',
       templateUrl: 'templates/host.my-contacts.tpl.html',
       controller: 'HostMyContactsController as vm'
     })
+
     .state('root.guest', {
     	url: '/guest',
     	templateUrl: 'templates/guest.tpl.html',
     	controller: "GuestController as vm"
-    })
-    .state('root.eventHost', {
-      url: '/event-host',
-      templateUrl: 'templates/event-host.tpl.html',
-      controller: 'EventHostController as vm'
     })
     .state('root.eventGuest', {
       url: '/event-guest',
