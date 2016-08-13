@@ -1,4 +1,4 @@
-
+$darkorange: #F44B0C;
 $orange:  #e78200;
 
 
@@ -41,8 +41,9 @@ $orange:  #e78200;
 	display: flex;
 	align-items: center;
 	padding-left: 10%;
+    padding-bottom: 5%;
 	height: 21.25vw !important;
-	background-color: #f2efdf;
+	background-color: white;
 	color: white;
 	font-size: 6vw;
 	color: $orange;
@@ -81,9 +82,9 @@ $orange:  #e78200;
 }
 
 .panel2{
-	background-image: url("../images/CoffeeMeeting.jpg");
+	background-image: url("../images/CoffeeMeetingSepia.jpg");
 }
 
 .panel3{
-	background-image: url("../images/CoffeeCups.jpg");
+	background-image: url("../images/CoffeeCupsSepia.jpg");
 }
