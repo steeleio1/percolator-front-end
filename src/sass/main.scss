@@ -1,6 +1,7 @@
 @import "event-create";
 @import "event-host";
 @import "home";
+@import "create-account";
 
 $coffeewhite: #F2EFDF;
 $brown: #673A00;
@@ -78,7 +79,7 @@ html {
 	margin: 2vw;
 	width: 70vw;
     background-image: url("../images/old-white-paper.jpg");
-
+  	box-shadow: 5px 5px 5px 0px #C2C2C2;
 	// background: #F2EFDF;
 }
 

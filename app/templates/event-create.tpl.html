@@ -8,36 +8,39 @@
         </figure>
 
         <br>
-
-    <!--     <div class="eventFields">
-            <input class="transText transTextAlt" placeholder="NAME">
-          <input type="text" name="" placeholder="name">
-        </div> -->
-
-
         <label>
-          <input type="text" ng-model="eventInfo.title" required>
+          <input type="text" 
+                 ng-model="eventInfo.title" 
+                 required>
           <div class="label-text">Event Name:</div>
         </label>
         <br>
 
         <label>
-          <input type="text" ng-model="eventInfo.street" required>
+          <input type="text" 
+                 ng-model="eventInfo.street" 
+                 required>
           <div class="label-text">Location Address:</div>
         </label>
 
         <label>
-          <input type="text" ng-model="eventInfo.street_2" required>
+          <input type="text" 
+                 ng-model="eventInfo.street_2" 
+                 required>
           <div class="label-text">Location Address-alt:</div>
         </label>
 
         <label>
-          <input type="text" ng-model="eventInfo.city" required>
+          <input type="text" 
+                 ng-model="eventInfo.city" 
+                 required>
           <div class="label-text">Location City:</div>
         </label> 
 
 
-          <select name="state" ng-model="eventInfo.state" placeholder="State">
+          <select name="state" 
+                  ng-model="eventInfo.state" 
+                  placeholder="State">
     <!--       <option selected="true">State:</option>
      -->            <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -93,41 +96,47 @@
           </select>
           <br>
         <label>
-          <input type="text" ng-model="eventInfo.post_code" required>
+          <input type="text" 
+                 ng-model="eventInfo.post_code" 
+                 required>
           <div class="label-text">Location Zip:</div>
         </label> 
         <br>
         <br>
 
         <label>
-          <input type="text" ng-model="eventInfo.date" required>
+          <input type="text" 
+                 ng-model="eventInfo.date" 
+                 required>
           <div class="label-text">Event Date:</div>
         </label>
         <br> 
 
         <label>
-          <input type="text" ng-model="eventInfo.start_time" required>
+          <input type="text" 
+                 ng-model="eventInfo.start_time" 
+                 required>
           <div class="label-text">Start Time:</div>
         </label>
 
         <label>
-          <input type="text" ng-model="eventInfo.end_time" required>
+          <input type="text" 
+                 ng-model="eventInfo.end_time" 
+                 required>
           <div class="label-text">End Time:</div>
         </label>
         <br>
         <br>
 
+      <h3>Event Description:</h3>
         <label>
-          <textarea type="text" placeholder="Event Description" ng-model="eventInfo.message" required>
-          <div class="label-text">Event Description:</div>
+          <textarea type="text"
+                     ng-model="eventInfo.message" 
+                     required>
+          <div class="label-text"></div>
         </textarea>
         <br>
         <br>
-
-    <!--     <label>
-          <input type="number" ng-model="eventInfo.per_plate" required>
-          <div class="label-text">Price per plate:</div>
-        </label> -->
 
     <div class="perPlateBox">
         <p class="control has-addons">
@@ -143,25 +152,34 @@
     </div>
 
         <label>
-          <input type="number" ng-model="eventInfo.donation" required>
+          <input type="number" 
+                 ng-model="eventInfo.donation" 
+                 required>
           <div class="label-text">Suggested Donation:</div>
         </label>
         <br>
-          <label class="photo-label" ng-click="vm.uploadImage()">Event photo: </label>
-          <a class="button is-primary is-outlined" ng-click="vm.uploadImage()">Upload Image</a>
+
+      <div class="photoUploadBox">
+          <label class="photo-label" 
+                 ng-click="vm.uploadImage()">Event photo: </label>
+          <a class="button is-primary is-outlined" 
+             ng-click="vm.uploadImage()">Upload Image</a>
+      </div>
         <br>
         <br>
         <label>
-          <input type="number" ng-model="eventInfo.max_size" required>
+          <input type="number" 
+                 ng-model="eventInfo.max_size"  
+                 required>
           <div class="label-text">Max amount of guests:</div>
         </label>
         <br>
         <br>
 
         <div class="checkBoxWrapper">
-            <div><input type="checkbox" ng-model="eventInfo.donate">
+            <input type="checkbox" ng-model="eventInfo.donate">
             Allow Donations
-            </div>
+          
 
             <input type="checkbox" ng-model="eventInfo.notify_rsvp">
             Notify host of RSVPs
@@ -177,8 +195,12 @@
 
               <br>
       <p class="control">
-        <a href="/#/event-host"><button href="/#/event-host" class="button is-primary is-outlined" ng-model="">Submit</button></a>
-        <a href="/#/host"><button href="/#/host" class="button is-link">Cancel</button></a>
+        <a href="/#/event-host">
+          <button href="/#/event-host" 
+                  class="button is-primary is-outlined" ng-model="">Submit</button></a>
+        <a href="/#/host">
+          <button href="/#/host" 
+                  class="button is-link">Cancel</button></a>
       </p>
 
 
@@ -206,7 +228,7 @@
   </form>   
 </div>
 
-</div>
+</>
 
 
 <!-- 		<label class="label">Event</label>
