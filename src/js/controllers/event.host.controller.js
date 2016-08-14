@@ -66,6 +66,5 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 
 }
 
-
 EventHostController.$inject = ['MailService', '$state', '$scope', '$http', 'SERVER', '$cookies', '$location'];
 export { EventHostController };
