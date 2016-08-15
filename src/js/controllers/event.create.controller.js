@@ -1,12 +1,10 @@
 function EventCreateController ($state, $scope, $http, SERVER, $cookies) {
 
-  // Sets up this as vm.
   let vm = this;
-
-  // Adds the function to the vm object.
   vm.createEvent = createEvent;
   vm.uploadImage = uploadImage;
 
+  // Variable for storing uploadImage() filepicker image-url to hand to createEvent() eventInfo object
   let image = "";
 
   function createEvent(eventInfo) {
