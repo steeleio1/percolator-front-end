@@ -1,18 +1,12 @@
-function WealthService ($http, WEALTHSERVER, headers) {
-	this.getProfileByEmail = getProfileByEmail;
+function WealthService ($http, SERVER) {
+	this.getProfileByAddress = getProfileByAddress;
 
-	function getProfileByEmail (registrant){
-		console.log(registrant)
-			var req = {
-				 method: 'POST',
-				 url: WEALTHSERVER.URL + "profile/find_one/by_email/full",
-				 headers: headers,
-				 data: {email: registrant.email},
-				 json: true
-				}
-		return $http(req);
+	function getProfileByAddress (registrantData){
+		return $http.post(SERVER.URL + 'runwe', registrantData).then((res)=>{
+			console.log(res.data);
+		});
 	}
 }
 
-WealthService.$inject = ['$http', 'WEALTHSERVER', 'headers'];
+WealthService.$inject = ['$http', 'SERVER'];
 export { WealthService };
