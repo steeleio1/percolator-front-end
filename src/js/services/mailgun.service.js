@@ -1,30 +1,14 @@
-function MailService ($http, MAILSERVER, mailCreds) {
+function MailService ($http, SERVER) {
 
-	this.sendMsg = sendMsg;
-	this.email = email;
+	this.sendEmail = sendEmail;
 
-	let email = {
-		from: 'Billy <billy@mg.javahuddle.com>',
-		to: 'Will <williamterryjohnsonjr@gmail.com>',
-		subject: 'OH YEAH!',
-		text: 'This is a MailGun Test!'
-	}
-
-	function sendMsg() {
-		$http({
-			method : 'POST',
-		    url: MAILSERVER.URL + "messages",
-			headers: {
-				"Authorization": "Basic "+btoa("api:"+mailCreds.key)
-				},
-		    dataType: 'json',
-		    data: email
-		}).then ((res)=>{
-			console.log(res.data);
-		})
+	function sendEmail(data) {
+		$http.post(SERVER.URL, data).then((res)=>{
+			console.log(res);
+		});
 	}
 
 }
 
-MailService.$inject = ['$http', 'MAILSERVER', 'mailCreds'];
+MailService.$inject = ['$http', 'SERVER'];
 export { MailService };
