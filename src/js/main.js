@@ -12,6 +12,13 @@ import { serverConstant } from './servers/server.constant';
 //import config
 import { config } from './utilities/config';
 
+//import constants
+
+import { headers } from './credentials/wealth.credentials';
+// import { mailCreds } from './credentials/mail.credentials';
+import { serverConstant } from './constants/server.constant';
+import { MAILSERVER } from './servers/mailgun.server';
+
 //import services
 import { WealthService } from './services/wealth.service';
 import { MailService } from './services/mailgun.service';
