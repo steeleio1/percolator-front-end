@@ -26,6 +26,23 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 	    $http.get(SERVER.URL + 'host/my-events/' + eventID, config).then((res) => {
 	        vm.event = res.data;
 	        console.log(vm.event);
+
+	 //Dummy data inserted for development
+	 		vm.event = 
+				 {
+			    photo_url: 'http://placecage.com/300/300',
+			    title: 'A Night with Vision City',
+			    street: '123 Infinite Loop',
+			    street_2: '',
+			    city: 'Cupertino',
+			    state: 'CA',
+			    post_code: 99999,
+			    date: 'August 5th',
+			    start_time: '7pm',
+			    end_time: '9pm',
+			    message: 'Come join us for an exciting evening of vision'
+			  };
+
 	    });
 	}
 
@@ -65,7 +82,6 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 	}
 
 }
-
 
 EventHostController.$inject = ['MailService', '$state', '$scope', '$http', 'SERVER', '$cookies', '$location'];
 export { EventHostController };

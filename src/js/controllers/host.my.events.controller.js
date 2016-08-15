@@ -17,14 +17,12 @@ function HostMyEventsController ($state, $scope, $http, SERVER, $cookies, $locat
 			};
 			$http.get(SERVER.URL + 'my-events', config).then((res) => {
 				vm.events = res.data;
-        console.log(vm.events);
 			});
 	}
 
   function deleteEvent(eventID) {
     var result = confirm("Confirm delete of this event?");
       if (result) {
-        console.log(eventID);
         let token = $cookies.get('access_token');
   			let config = {
   				headers: { 'Authorization': `Bearer ${token}` }

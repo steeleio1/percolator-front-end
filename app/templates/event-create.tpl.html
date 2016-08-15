@@ -9,37 +9,39 @@
 
         <br>
         <label>
-          <input type="text" 
-                 ng-model="eventInfo.title" 
+          <input type="text"
+                 ng-model="eventInfo.title"
                  required>
           <div class="label-text">Event Name:</div>
         </label>
         <br>
 
         <label>
-          <input type="text" 
-                 ng-model="eventInfo.street" 
+          <input type="text"
+                 ng-model="eventInfo.street"
                  required>
           <div class="label-text">Location Address:</div>
         </label>
 
         <label>
-          <input type="text" 
-                 ng-model="eventInfo.street_2" 
+          <input type="text"
+                 ng-model="eventInfo.street_2"
                  required>
           <div class="label-text">Location Address-alt:</div>
         </label>
 
         <label>
-          <input type="text" 
-                 ng-model="eventInfo.city" 
+          <input type="text"
+                 ng-model="eventInfo.city"
                  required>
           <div class="label-text">Location City:</div>
+
         </label> 
         <br>
 
-          <select name="state" 
-                  ng-model="eventInfo.state" 
+
+          <select name="state"
+                  ng-model="eventInfo.state"
                   placeholder="State">
     <!--       <option selected="true">State:</option>
      -->            <option value="AL">Alabama</option>
@@ -96,32 +98,39 @@
           </select>
           <br>
         <label>
-          <input type="text" 
-                 ng-model="eventInfo.post_code" 
+          <input type="text"
+                 ng-model="eventInfo.post_code"
                  required>
           <div class="label-text">Location Zip:</div>
-        </label> 
+        </label>
         <br>
         <br>
 
         <label>
+
           <input type="Date" 
                  ng-model="eventInfo.date" 
+
+
                  required>
           <div class="label-text">Event Date:</div>
         </label>
-        <br> 
+        <br>
 
         <label>
+
           <input type="time" 
                  ng-model="eventInfo.start_time" 
+
                  required>
           <div class="label-text">Start Time:</div>
         </label>
 
         <label>
+
           <input type="time" 
                  ng-model="eventInfo.end_time" 
+
                  required>
           <div class="label-text">End Time:</div>
         </label>
@@ -131,7 +140,7 @@
       <h3>Event Description:</h3>
         <label>
           <textarea type="text"
-                     ng-model="eventInfo.message" 
+                     ng-model="eventInfo.message"
                      required>
           <div class="label-text"></div>
         </textarea>
@@ -152,24 +161,24 @@
     </div>
 
         <label>
-          <input type="number" 
-                 ng-model="eventInfo.donation" 
+          <input type="number"
+                 ng-model="eventInfo.donate"
                  required>
           <div class="label-text">Suggested Donation:</div>
         </label>
         <br>
 
       <div class="photoUploadBox">
-          <label class="photo-label" 
+          <label class="photo-label"
                  ng-click="vm.uploadImage()">Event photo: </label>
-          <a class="button is-primary is-outlined" 
+          <a class="button is-primary is-outlined"
              ng-click="vm.uploadImage()">Upload Image</a>
       </div>
         <br>
         <br>
         <label>
-          <input type="number" 
-                 ng-model="eventInfo.max_size"  
+          <input type="number"
+                 ng-model="eventInfo.max_size"
                  required>
           <div class="label-text">Max amount of guests:</div>
         </label>
@@ -179,7 +188,7 @@
         <div class="checkBoxWrapper">
             <input type="checkbox" ng-model="eventInfo.donate">
             Allow Donations
-          
+
 
             <input type="checkbox" ng-model="eventInfo.notify_rsvp">
             Notify host of RSVPs
@@ -196,10 +205,10 @@
               <br>
       <p class="control">
         <a href="/#/event-host">
-          <button href="/#/event-host" 
+          <button href="/#/event-host"
                   class="button is-primary is-outlined" ng-model="">Submit</button></a>
         <a href="/#/host">
-          <button href="/#/host" 
+          <button href="/#/host"
                   class="button is-link">Cancel</button></a>
       </p>
 
@@ -224,8 +233,8 @@
     <!--     <div class="media-right">
           <button class="delete"></button>
         </div> -->
-      </article> 
-  </form>   
+      </article>
+  </form>
 </div>
 
 </>
@@ -237,7 +246,7 @@
 		      <input class="input eventInput" type="text" ng-model="eventInfo.title" placeholder="Event Name">
 		        <i class="fa fa-calendar" aria-hidden="true"></i>
 		    </p> -->
-<!-- 
+<!--
 		<label class="label">Location</label>
 		    <p class="control has-icon has-icon-left">
 
@@ -332,7 +341,7 @@
 <<<<<<< HEAD
 		    </p> -->
 <!-- 		    <p class="control has-icon has-icon-left">
-		      <input class="input eventInput" type="text" 
+		      <input class="input eventInput" type="text"
 =======
 		    </p>
 		    <p class="control has-icon has-icon-left">
@@ -406,8 +415,3 @@
       </label>
 <<<<<<< HEAD
     </p> -->
-
-
-
-
-
