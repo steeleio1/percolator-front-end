@@ -2,8 +2,9 @@
 @import "event-host";
 @import "home";
 @import "create-account";
+@import "host-page";
 
-$coffeewhite: #F2EFDF;
+$coffeewhite: #fff4e6;
 $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
@@ -49,11 +50,6 @@ html {
 	border-radius: 10px;
 }
 
-.hostContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
 
 
 
@@ -78,7 +74,8 @@ html {
 	flex-direction: column;
 	margin: 2vw;
 	width: 70vw;
-    background-image: url("../images/old-white-paper.jpg");
+	background-color: $coffeewhite;
+    background-image: url("../images/img-noise-900x900.png");
   	box-shadow: 5px 5px 5px 0px #C2C2C2;
 	// background: #F2EFDF;
 }
@@ -136,17 +133,4 @@ html {
     animation-name: fadeInRight;
 }
 
-.searchForm {
-	display: flex;
-	justify-content: center;
-	padding: 20px;
-}
 
-.searchInput{
-	width: 40vw;
-	height: 35px;
-}
-
-.searchButton {
-	height: 35px;
-}

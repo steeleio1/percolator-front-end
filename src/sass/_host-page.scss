@@ -1,0 +1,61 @@
+.hostContainer {
+	// border: solid purple 1px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.hostInfobox {
+// border: solid green 3px;
+width: 95vw;
+margin-bottom: 2vw;
+background-image: url("../images/old-white-paper.jpg");
+box-shadow: 5px 5px 5px 0px #C2C2C2;
+background-size: cover;
+
+// background-size: 100% 100%;
+// object-fit: cover;
+
+
+	 .content {
+		border: solid green 3px;
+
+	}
+		.media {
+		display: flex;
+		flex-direction: row;
+
+	}
+		.media-left {
+			border: solid green 3px;
+			width: 20vh;
+			height: 20vh;
+			object-fit: cover;
+			// margin-left: 7vw;
+			.image {
+			width: 100%;
+    		height: auto;
+			}
+	}	
+}
+
+.searchForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.searchInput{
+	border: $orange solid 1px;
+	width: 40vw;
+	height: 32px;
+	border-radius: 3px;
+	color: $darkorange;
+}
+
+.searchButton {
+	border: $orange solid 1px;
+	// height: 35px;
+}
