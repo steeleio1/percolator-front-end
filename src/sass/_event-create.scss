@@ -1,4 +1,4 @@
-$coffeewhite: #F3EEDF;
+$coffeewhite: #fff4e6;
 $orange:  #e78200;
 $brown: #673A00;
 $darkorange: #F44B0C;
@@ -57,14 +57,14 @@ label .label-text {
   color: $brown;
   // text-shadow:0px 1px 0px #CFCFCF;
   cursor: text;
-  font-size: 2vw;
+  font-size: 1vw;
   // padding-bottom: 1vw;
   // line-height: 20px;
   // text-transform: uppercase;
-  -moz-transform: translateY(-3vw);
-  -ms-transform: translateY(-3vw);
-  -webkit-transform: translateY(-3vw);
-  transform: translateY(-3vw);
+  -moz-transform: translateY(0vw);
+  -ms-transform: translateY(0vw);
+  -webkit-transform: translateY(0vw);
+  transform: translateY(0vw);
   transition: all 0.3s;
 }
 label input {
@@ -72,7 +72,7 @@ label input {
   border: 0;
   border-bottom: 2px solid $brown;
   color: $orange;
-  font-size: 4vw;
+  font-size: 2vw;
   letter-spacing: -1px;
   outline: 0;
   // padding: 5px 0px;
@@ -81,25 +81,25 @@ label input {
   // width: 30vw;
 }
 label input:focus {
-  width: 60vw;
+  width: 40vw;
 }
 label input:focus + .label-text {
   color: $darkorange;
   margin: 0px;
-  font-size: 2.5vw;
-  -moz-transform: translateY(-6vw);
-  -ms-transform: translateY(-6vw);
-  -webkit-transform: translateY(-6vw);
-  transform: translateY(-6vw);
+  font-size: 1.5vw;
+  -moz-transform: translateX(-7vw);
+  -ms-transform: translateX(-7vw);
+  -webkit-transform: translateX(-7vw);
+  transform: translateX(-7vw);
 }
 label input:valid + .label-text {
     margin-left: 4vw;
-    font-size: 1.5vw;
-    -moz-transform: translate(-4vw, 0vw);
-    -webkit-transform: translate(-4vw, 0vw);
-    -o-transform: translate(-4vw, 0vw);
-    -ms-transform: translate(-4vw, 0vw);
-    transform: translate(-4vw, 0vw);
+    font-size: 1vw;
+    -moz-transform: translate(-0vw, 0vw);
+    -webkit-transform: translate(-0vw, 0vw);
+    -o-transform: translate(-0vw, 0vw);
+    -ms-transform: translate(-0vw, 0vw);
+    transform: translate(-0vw, 0vw);
     text-align: left;
 }
 
