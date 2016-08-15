@@ -105,7 +105,7 @@
         <br>
 
         <label>
-          <input type="text"
+          <input type="date"
                  ng-model="eventInfo.date"
                  required>
           <div class="label-text">Event Date:</div>
@@ -113,14 +113,14 @@
         <br>
 
         <label>
-          <input type="text"
+          <input type="time"
                  ng-model="eventInfo.start_time"
                  required>
           <div class="label-text">Start Time:</div>
         </label>
 
         <label>
-          <input type="text"
+          <input type="time"
                  ng-model="eventInfo.end_time"
                  required>
           <div class="label-text">End Time:</div>
@@ -195,10 +195,7 @@
 
               <br>
       <p class="control">
-        <a href="/#/event-host">
-          <button href="/#/event-host"
-                  class="button is-primary is-outlined" ng-model="">Submit</button></a>
-        <a href="/#/host">
+          <button class="button is-primary is-outlined" type="submit">Submit</button>
           <button href="/#/host"
                   class="button is-link">Cancel</button></a>
       </p>

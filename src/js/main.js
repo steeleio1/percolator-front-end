@@ -11,8 +11,8 @@ import { WEALTHSERVER } from './servers/wealth.server';
 import { config } from './utilities/config';
 
 //import constants
-import { headers } from './credentials/wealth.credentials';
-import { mailCreds } from './credentials/mail.credentials';
+// import { headers } from './credentials/wealth.credentials';
+// import { mailCreds } from './credentials/mail.credentials';
 import { serverConstant } from './constants/server.constant';
 import { MAILSERVER } from './servers/mailgun.server';
 
@@ -37,10 +37,10 @@ angular
 	.module('app', ['angular-parallax', 'ui.router', 'ngCookies'])
 	.constant('WEALTHSERVER', WEALTHSERVER)
 	.config(config)
-	.constant('headers', headers)
-	.service('WealthService', WealthService)
-	.service('MailService', MailService)
-	.constant('mailCreds', mailCreds)
+	// .constant('headers', headers)
+	// .service('WealthService', WealthService)
+	// .service('MailService', MailService)
+	// .constant('mailCreds', mailCreds)
 	.constant('SERVER', serverConstant)
 	.constant('MAILSERVER', MAILSERVER)
 	.controller('LayoutController', LayoutController)
