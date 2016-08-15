@@ -12,15 +12,13 @@ function MailService ($http, MAILSERVER, mailCreds) {
 
 	function sendMsg() {
 		$http({
+			method : 'POST',
 		    url: MAILSERVER.URL + "messages",
-		    type: "POST",
+			headers: {
+				"Authorization": "Basic "+btoa("api:"+mailCreds.key)
+				},
 		    dataType: 'json',
-		    username:'api',
-		    password: mailCreds.key,
-		    from: 'Billy <billy@mg.javahuddle.com>',
-			to: 'Will <williamterryjohnsonjr@gmail.com>',
-			subject: 'OH YEAH!',
-			text: 'This is a MailGun Test!'
+		    data: email
 		}).then ((res)=>{
 			console.log(res.data);
 		})
