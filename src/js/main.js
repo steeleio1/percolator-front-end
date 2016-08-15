@@ -4,8 +4,10 @@ import 'angular-cookies';
 import './app.parallax';
 
 
-//import SERVER
-import { WEALTHSERVER } from './servers/wealth.server';
+//import SERVERS
+import { serverConstant } from './servers/server.constant';
+// import { MAILSERVER } from './servers/mailgun.server';
+// import { WEALTHSERVER } from './servers/wealth.server';
 
 //import config
 import { config } from './utilities/config';
@@ -39,11 +41,9 @@ angular
 	.config(config)
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
-	.constant('headers', headers)
-	.constant('WEALTHSERVER', WEALTHSERVER)
-	// .constant('mailCreds', mailCreds)
+	// .constant('WEALTHSERVER', WEALTHSERVER)
 	.constant('SERVER', serverConstant)
-	.constant('MAILSERVER', MAILSERVER)
+	// .constant('MAILSERVER', MAILSERVER)
 	.controller('LayoutController', LayoutController)
 	.controller('HomeController', HomeController)
 	.controller('CreateAccountController', CreateAccountController)
