@@ -16,8 +16,6 @@ import { config } from './utilities/config';
 
 import { headers } from './credentials/wealth.credentials';
 // import { mailCreds } from './credentials/mail.credentials';
-import { serverConstant } from './constants/server.constant';
-import { MAILSERVER } from './servers/mailgun.server';
 
 //import services
 import { WealthService } from './services/wealth.service';
