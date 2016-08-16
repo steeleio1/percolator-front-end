@@ -12,14 +12,20 @@ import { config } from './utilities/config';
 
 //import constants
 
+// import { headers } from './credentials/wealth.credentials';
+// import { mailCreds } from './credentials/mail.credentials';
+
 //import run
 import { run } from './utilities/run';
 
-
 //import services
+import { HostService } from './services/host.service';
 import { WealthService } from './services/wealth.service';
 import { MailService } from './services/mailgun.service';
-import { HostService } from './services/host.service';
+
+//import factories
+import { UniqueIdFactory } from './factories/unique.id.factory';
+
 //import Controllers
 import { LayoutController } from './controllers/layout.controller';
 import { HomeController } from './controllers/home.controller';
@@ -39,6 +45,8 @@ angular
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
 	.service('HostService', HostService)
+	.factory('UniqueIdFactory', UniqueIdFactory)
+	// .constant('WEALTHSERVER', WEALTHSERVER)
 	.constant('SERVER', serverConstant)
 	.run (run)
 	.controller('LayoutController', LayoutController)
