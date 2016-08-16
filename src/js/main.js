@@ -6,21 +6,20 @@ import './app.parallax';
 
 //import SERVERS
 import { serverConstant } from './servers/server.constant';
-// import { MAILSERVER } from './servers/mailgun.server';
-// import { WEALTHSERVER } from './servers/wealth.server';
 
 //import config
 import { config } from './utilities/config';
 
 //import constants
 
-import { headers } from './credentials/wealth.credentials';
-// import { mailCreds } from './credentials/mail.credentials';
+//import run
+import { run } from './utilities/run';
+
 
 //import services
 import { WealthService } from './services/wealth.service';
 import { MailService } from './services/mailgun.service';
-
+import { HostService } from './services/host.service';
 //import Controllers
 import { LayoutController } from './controllers/layout.controller';
 import { HomeController } from './controllers/home.controller';
@@ -39,9 +38,9 @@ angular
 	.config(config)
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
-	// .constant('WEALTHSERVER', WEALTHSERVER)
+	.service('HostService', HostService)
 	.constant('SERVER', serverConstant)
-	// .constant('MAILSERVER', MAILSERVER)
+	.run (run)
 	.controller('LayoutController', LayoutController)
 	.controller('HomeController', HomeController)
 	.controller('CreateAccountController', CreateAccountController)
