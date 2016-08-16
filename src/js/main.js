@@ -2,7 +2,8 @@ import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-cookies';
 import './app.parallax';
-
+import Chart from 'chart.js';
+import 'angular-chart.js';
 
 //import SERVER
 import { WEALTHSERVER } from './servers/wealth.server';
@@ -31,18 +32,18 @@ import { GuestController } from './controllers/guest.controller';
 import { EventHostController } from './controllers/event.host.controller';
 import { EventGuestController } from './controllers/event.guest.controller';
 import { EventCreateController } from './controllers/event.create.controller';
-
+import { ChartController } from './controllers/charts.controller';
 
 angular
-	.module('app', ['angular-parallax', 'ui.router', 'ngCookies'])
+	.module('app', ['angular-parallax', 'ui.router', 'ngCookies', 'chart.js'])
 	.config(config)
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
 	.constant('headers', headers)
 	.constant('WEALTHSERVER', WEALTHSERVER)
-	// .constant('mailCreds', mailCreds)
 	.constant('SERVER', serverConstant)
 	.constant('MAILSERVER', MAILSERVER)
+	// .constant('mailCreds', mailCreds)
 	.controller('LayoutController', LayoutController)
 	.controller('HomeController', HomeController)
 	.controller('CreateAccountController', CreateAccountController)
@@ -53,4 +54,5 @@ angular
 	.controller('EventHostController', EventHostController)
 	.controller('EventGuestController', EventGuestController)
 	.controller('EventCreateController', EventCreateController)
+	.controller('ChartController', ChartController)
 	;

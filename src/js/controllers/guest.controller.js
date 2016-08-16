@@ -6,6 +6,8 @@ function GuestController ($scope, WealthService){
 	vm.registrant = {
 		email: "frank@gmail.com"
 	};
+	 $scope.data = [12, 19, 3, 5, 2, 3];
+
 
 	init();
 
@@ -19,7 +21,7 @@ function GuestController ($scope, WealthService){
 			let profile = {
 				age: res.data.identity.age,
 				city: res.data.locations[0].address.city,
-				relationship: res.data.relationship.spouse.full_name,
+				// relationship: res.data.relationship.spouse.full_name,
 				cashonhandHigh: res.data.wealth.cash_on_hand.text_high,
 				cashonhandLow: res.data.wealth.cash_on_hand.text_low
 			}
@@ -33,6 +35,8 @@ function GuestController ($scope, WealthService){
 
 
 }
+
+
 
 GuestController.$inject = ['$scope', 'WealthService'];
 export { GuestController };

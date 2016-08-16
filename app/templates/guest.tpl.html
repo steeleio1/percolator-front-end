@@ -1,3 +1,7 @@
+<canvas id="base" class="chart-horizontal-bar"
+  chart-data="data" chart-labels="labels" >
+</canvas> 
+
 <div class="guestStatsBox" ng-repeat="profile in vm.profiles">
 	
 <strong >{{profile.age}}</strong>
@@ -6,9 +10,13 @@
 
 <p>Full Name:  {{profile.relationship}}</p>
 
+
 <p>Cash on Hand:  High {{profile.cashonhandHigh}} Low {{profile.cashonhandLow}}</p>
 </div>
 
+<canvas class="chart chart-bar"></canvas>
 
 
-guest.tpl.html
+
+
+<!-- guest.tpl.html -->
