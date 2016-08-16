@@ -3,12 +3,11 @@
     	<a href="/#/">
       		<img class="Logo" src="images/JavaHuddleLogo.png">
       	</a>
-        <div class="btnWrapper">
+        <div class="btnWrapper" ng-hide="vm.loggedIn()">
 
          <a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.showLogin()">Sign in</a>
-          <a href="/#/create-account" class="Btn button is-primary is-outlined" ng-click="vm.cancelLogin()">Create</a>
+          <a href="/#/create-account" class="Btn button is-primary is-outlined" ng-click="vm.cancelLogin()">Create Account</a>
 			<div ng-show="vm.login">
-
   			<form ng-submit="vm.loginUser(user)" class="signInForm">
 						<p class="control has-icon has-icon-right">
 						  <input class="input is primary /*is-danger*/" type="text" ng-model="user.email" placeholder="Email" required>
@@ -25,6 +24,9 @@
 				</form>
 			</div>
 
+        </div>
+        <div class="btnWrapper" ng-show="vm.loggedIn()">
+        	<a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.logOut()">Log Out</a>
         </div>
     </nav>
 <div ui-view></div>
