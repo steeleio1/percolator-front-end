@@ -1,38 +1,30 @@
-function GuestController ($scope, WealthService){
+function GuestController (MailService, WealthService){
 
 	let vm = this;
-	vm.profileCallByEmail = profileCallByEmail;
-	vm.profiles = [];
-	vm.registrant = {
-		email: "frank@gmail.com"
-	};
+
+	vm.getWEReport = getWEReport;
 
 	init();
 
 	function init (){
-		profileCallByEmail(vm.registrant)
-	};
+		vm.getWEReport();
+	}
 
-	function profileCallByEmail(registrant){
-		WealthService.getProfileByEmail(registrant).then((res)=>{
-			console.log(res.data);
-			let profile = {
-				age: res.data.identity.age,
-				city: res.data.locations[0].address.city,
-				relationship: res.data.relationship.spouse.full_name,
-				cashonhandHigh: res.data.wealth.cash_on_hand.text_high,
-				cashonhandLow: res.data.wealth.cash_on_hand.text_low
-			}
+	function getWEReport(){
+		let registrantDummyData = {
+				last_name: 'surname',
+				first_name: 'name',
+				address_line1:	'Address 1',
+				address_line2:	'Address 2 (optional)',
+				city: 'The City',
+				state:	'SC',
+				zip: '99999'
+		}
 
-
-			vm.profiles.push(profile);
-			console.log(vm.profiles);
-		});
-	};
-
-
+		WealthService.getProfileByAddress(registrantDummyData);
+	}
 
 }
 
-GuestController.$inject = ['$scope', 'WealthService'];
+GuestController.$inject = ['MailService', 'WealthService'];
 export { GuestController };
