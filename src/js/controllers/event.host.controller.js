@@ -5,6 +5,7 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 	// Sets up variables
 	vm.inviteNew = false;
 	vm.inviteMyContacts- false;
+	vm.guest = {};
 
 	// Adds the function to the vm object
 	vm.showInviteNew = showInviteNew;
@@ -28,7 +29,7 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 	        console.log(vm.event);
 
 	 //Dummy data inserted for development
-	 		vm.event = 
+	 		vm.event =
 				 {
 			    photo_url: 'http://placecage.com/300/300',
 			    title: 'A Night with Vision City',
@@ -77,8 +78,87 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 		vm.inviteMyContacts=false;
 	}
 
-	function sendInvite(){
-		MailService.sendMsg();
+function createGuest(guestInfo){
+				console.log(guestInfo);
+
+				let token = $cookies.get('access_token');
+				let config = {
+					headers: { 'Authorization': `Bearer ${token}` }
+							};
+				$http.post(SERVER.URL + 'guests', guestInfo, config).then(function successCallback(res) {
+								if (res.status == 200) {
+										alert("200 OK - Guest Created");
+										// $state.go('root.host.myEvents');
+								} else if (res.status == 201) {
+										alert("201 OK - Guest Created");
+										// $state.go('root.host.myEvents');
+								}
+						},
+						function errorCallback(res) {
+								if (res.status == 401) {
+										alert("401 ERROR!!!!!");
+								} else if (res.status == 403) {
+										alert("403 Forbidden");
+								}
+
+						});
+
+
+}
+
+function createEventGuest(guestInfo, eventID){
+// 			console.log('Hi from createEventGuest');
+      let token = $cookies.get('access_token');
+      let config = {
+        headers: { 'Authorization': `Bearer ${token}` }
+			      };
+			var eventID = $location.path().split(/[\s/]+/).pop();
+			let payload = {
+				guestInfo: guestInfo,
+				eventID: eventID
+			}
+
+      $http.post(SERVER.URL + 'createEventGuest', guestInfo, config).then(function successCallback(res) {
+              if (res.status == 200) {
+                  alert("200 OK - EventGuest Created");
+                  // $state.go('root.host.myEvents');
+              } else if (res.status == 201) {
+                  alert("201 OK - EventGuest Created");
+                  // $state.go('root.host.myEvents');
+              }
+          },
+          function errorCallback(res) {
+              if (res.status == 401) {
+                  alert("401 ERROR!!!!!");
+              } else if (res.status == 403) {
+                  alert("403 Forbidden");
+              }
+
+          });
+  };
+
+
+
+	function sendInvite(guest){
+		//check validation of email against eventguest table
+		createGuest(guest);
+		// console.log("Before createEventGuest");
+		createEventGuest(guest);
+		// console.log("After createEventGuest");
+		let guestInfo = guest.first_name + " " + guest.last_name + " " + '<' + guest.email + '>';
+		let eventURL = "http://placecage.com/250/250"; //eventguest.id
+		let emailMessage = vm.event.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
+			var data = {
+			  from: 'Excited User <me@mg.javahuddle.com>',
+			  to: guestInfo,
+			  subject: 'You are invited to join us at ' + vm.event.title,
+			  text: guest.privateMessage + " " + emailMessage
+			};
+			// console.log(data);
+			// MailService.sendEmail(data);
+
+
+		// MailService.sendMsg();
 	}
 
 }

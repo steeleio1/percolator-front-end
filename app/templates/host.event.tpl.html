@@ -53,13 +53,14 @@
   		</button>
   	</div>
   	<div class="inviteNewContainer" ng-show="vm.inviteNew">
-  		<form>
-  			<input type="text" placeholder="First Name" required>
-  			<input type="text" placeholder="Last Name" required>
-  			<input type="email" placeholder="Email" required>
+  		<form ng-submit="vm.sendInvite(guest)">
+  			<input ng-model="guest.first_name" type="text" placeholder="First Name" required>
+  			<input ng-model="guest.last_name" type="text" placeholder="Last Name" required>
+  			<input ng-model="guest.email" placeholder="Email" required>
+				<input ng-model="guest.privateMessage" placeholder="Message to this guest" required>
   			<br>
   			<div class="buttonContainer">
-  				<button class="Btn button is-primary is-outlined" ng-click="vm.sendInvite()">Send Invite</button>
+  				<button class="Btn button is-primary is-outlined" type="submit">Send Invite</button>
   				<button class="Btn button is-primary is-outlined" ng-click="vm.hideInviteNew()">Cancel</button>
   			</div>
   		</form>

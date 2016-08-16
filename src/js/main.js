@@ -14,12 +14,15 @@ import { config } from './utilities/config';
 
 //import constants
 
-import { headers } from './credentials/wealth.credentials';
+// import { headers } from './credentials/wealth.credentials';
 // import { mailCreds } from './credentials/mail.credentials';
 
 //import services
 import { WealthService } from './services/wealth.service';
 import { MailService } from './services/mailgun.service';
+
+//import factories
+import { UniqueIdFactory } from './factories/unique.id.factory';
 
 //import Controllers
 import { LayoutController } from './controllers/layout.controller';
@@ -39,6 +42,7 @@ angular
 	.config(config)
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
+	.factory('UniqueIdFactory', UniqueIdFactory)
 	// .constant('WEALTHSERVER', WEALTHSERVER)
 	.constant('SERVER', serverConstant)
 	// .constant('MAILSERVER', MAILSERVER)
