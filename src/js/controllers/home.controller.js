@@ -7,7 +7,7 @@ function HomeController (MailService, WealthService) {
 	function sendEmail() {
 		var data = {
 		  from: 'Excited User <me@mg.javahuddle.com>',
-		  to: 'Will <williamterryjohnsonjr@gmail.com>',
+		  to: 'Niclas <niclas.willems@gmail.com>',
 		  subject: 'OH YEAH!',
 		  text: 'This is a MailGun Test!'
 		};
