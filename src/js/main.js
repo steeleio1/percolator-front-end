@@ -24,9 +24,6 @@ import { HostService } from './services/host.service';
 import { WealthService } from './services/wealth.service';
 import { MailService } from './services/mailgun.service';
 
-//import factories
-import { UniqueIdFactory } from './factories/unique.id.factory';
-
 //import Controllers
 import { LayoutController } from './controllers/layout.controller';
 import { HomeController } from './controllers/home.controller';
@@ -46,7 +43,6 @@ angular
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
 	.service('HostService', HostService)
-	.factory('UniqueIdFactory', UniqueIdFactory)
 	// .constant('WEALTHSERVER', WEALTHSERVER)
 	.constant('SERVER', serverConstant)
 	.run (run)
