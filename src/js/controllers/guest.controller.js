@@ -24,6 +24,7 @@ function GuestController (MailService, WealthService){
 		}
 
 		WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
+			//Sets property values within vm.profile to more manageable property names
 			let coname2value;
 			if (res.data.jobs[1].org_name !==undefined) {
 				coname2value= res.data.jobs[1].org_name;
