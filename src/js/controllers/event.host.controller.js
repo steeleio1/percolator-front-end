@@ -18,15 +18,13 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 	init();
 
 	function init() {
-	    // Parses the location URL, splits all path sections into items in array,
-			// and returns the last item in that array. This will return the event ID from the URL
 	    var eventID = $stateParams.id;
 	    let token = $cookies.get('access_token');
 	    let config = {headers: {'Authorization': `Bearer ${token}`}};
 
 	    $http.get(SERVER.URL + 'host/my-events/' + eventID, config).then((res) => {
 	        vm.event = res.data;
-	        console.log(vm.event);
+	        // console.log(vm.event);
 
 	 //Dummy data inserted for development
 				// vm.event =
@@ -79,6 +77,7 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 	}
 
 function createGuest(guestInfo){
+				let guestInstance = guestInfo;
 				let token = $cookies.get('access_token');
 				let config = {
 					headers: { 'Authorization': `Bearer ${token}` }
@@ -86,10 +85,10 @@ function createGuest(guestInfo){
 				$http.post(SERVER.URL + 'guests', guestInfo, config).then(function (res) {
 								if (res.status == 200) {
 										alert("200 OK - Guest Created");
-										createEventGuest(res.data);
+										createEventGuest(res.data, guestInstance);
 								} else if (res.status == 201) {
 										alert("201 OK - Guest Created");
-										createEventGuest(res.data);
+										createEventGuest(res.data, guestInstance);
 								}
 						},
 						function (res) {
@@ -101,7 +100,7 @@ function createGuest(guestInfo){
 						});
 }
 
-function createEventGuest(guestInfo){
+function createEventGuest(guestInfo, guestInstance){
       let token = $cookies.get('access_token');
       let config = {
         headers: { 'Authorization': `Bearer ${token}` }
@@ -113,29 +112,31 @@ function createEventGuest(guestInfo){
       $http.post(SERVER.URL + 'createEventGuest', payload, config).then(function (res) {
 				if (res.status == 200) {
 						alert("200 OK - EventGuest Created");
+						emailGuest(res.data, guestInstance);
 				} else if (res.status == 201) {
 						alert("201 OK - EventGuest Created");
+						emailGuest(res.data, guestInstance);
 				}
 		});
   };
 
-
+function emailGuest(egInfo, guestInstance){
+	let guestInfo = guestInstance.first_name + " " + guestInstance.last_name + " " + '<' + guestInstance.email + '>';
+	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.id;
+	let emailMessage = vm.event.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
+		var data = {
+			from: 'Excited User <me@mg.javahuddle.com>',
+			to: guestInfo,
+			subject: 'You are invited to join us at ' + vm.event.title,
+			text: guestInstance.privateMessage + " " + emailMessage
+		};
+		MailService.sendEmail(data);
+}
 
 	function sendInvite(guest){
 		//check validation of email against eventguest table
 		createGuest(guest);
-
-		let guestInfo = guest.first_name + " " + guest.last_name + " " + '<' + guest.email + '>';
-		let eventURL = "http://placecage.com/250/250"; //eventguest.id
-		let emailMessage = vm.event.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
-			var data = {
-			  from: 'Excited User <me@mg.javahuddle.com>',
-			  to: guestInfo,
-			  subject: 'You are invited to join us at ' + vm.event.title,
-			  text: guest.privateMessage + " " + emailMessage
-			};
-			MailService.sendEmail(data);
-			$state.reload('root.host.eventHost');
+		$state.reload('root.host.eventHost');
 	}
 
 }
