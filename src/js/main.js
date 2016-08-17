@@ -13,8 +13,8 @@ import { config } from './utilities/config';
 
 //import constants
 
-// import { headers } from './credentials/wealth.credentials';
-// import { mailCreds } from './credentials/mail.credentials';
+import { headers } from './credentials/wealth.credentials';
+import { mailCreds } from './credentials/mail.credentials';
 
 //import run
 import { run } from './utilities/run';
