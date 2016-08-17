@@ -5,21 +5,27 @@ import './app.parallax';
 import Chart from 'chart.js';
 import 'angular-chart.js';
 
-//import SERVER
-import { WEALTHSERVER } from './servers/wealth.server';
+//import SERVERS
+import { serverConstant } from './servers/server.constant';
 
 //import config
 import { config } from './utilities/config';
 
 //import constants
-import { headers } from './credentials/wealth.credentials';
+
+// import { headers } from './credentials/wealth.credentials';
 // import { mailCreds } from './credentials/mail.credentials';
-import { serverConstant } from './constants/server.constant';
-import { MAILSERVER } from './servers/mailgun.server';
+
+//import run
+import { run } from './utilities/run';
 
 //import services
+import { HostService } from './services/host.service';
 import { WealthService } from './services/wealth.service';
 import { MailService } from './services/mailgun.service';
+
+//import factories
+import { UniqueIdFactory } from './factories/unique.id.factory';
 
 //import Controllers
 import { LayoutController } from './controllers/layout.controller';
@@ -39,11 +45,11 @@ angular
 	.config(config)
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
-	.constant('headers', headers)
-	.constant('WEALTHSERVER', WEALTHSERVER)
+	.service('HostService', HostService)
+	.factory('UniqueIdFactory', UniqueIdFactory)
+	// .constant('WEALTHSERVER', WEALTHSERVER)
 	.constant('SERVER', serverConstant)
-	.constant('MAILSERVER', MAILSERVER)
-	// .constant('mailCreds', mailCreds)
+	.run (run)
 	.controller('LayoutController', LayoutController)
 	.controller('HomeController', HomeController)
 	.controller('CreateAccountController', CreateAccountController)

@@ -1,4 +1,4 @@
-function LayoutController($http, SERVER, $cookies, $state) {
+function LayoutController($http, SERVER, $cookies, $state, HostService) {
 
     // Sets up this as vm.
     let vm = this;
@@ -8,6 +8,8 @@ function LayoutController($http, SERVER, $cookies, $state) {
     vm.showLogin = showLogin;
     vm.cancelLogin = cancelLogin;
     vm.loginUser = loginUser;
+    vm.loggedIn = loggedIn;
+    vm.logOut = logOut;
 
 
     // Defines the function and hoists to top of file.
@@ -39,7 +41,15 @@ function LayoutController($http, SERVER, $cookies, $state) {
             });
     };
 
+    function loggedIn (){
+        return HostService.isLoggedIn();
+    }
+
+    function logOut(){
+         HostService.logOut();
+    }
+
 }
 
-LayoutController.$inject = ['$http', 'SERVER', '$cookies', '$state'];
+LayoutController.$inject = ['$http', 'SERVER', '$cookies', '$state', "HostService"];
 export {LayoutController};

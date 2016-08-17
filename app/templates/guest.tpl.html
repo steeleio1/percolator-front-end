@@ -1,45 +1,45 @@
 <div class="guestPage">
-	<div class="guestStatsBox animateDown fadeInDown" ng-repeat="profile in vm.profiles">
+	<div class="guestStatsBox animateDown fadeInDown">
 	<div class="personalInfoWrapper">
 			<h3>Personal Info:</h3>
 				<div class="statInfoWrapper">
 					<div class="statInfo">
-					{{profile.fullname}}
+					{{vm.profile.fullname}}
 					</div>
 						<span class="statLabel">Full Name</span>
 				</div>
 
 				<div class="statInfoWrapper">
 					<div class="statInfo maritalInfo">
-					{{profile.email}}
+					{{vm.profile.email}}
 					</div>
 						<span class="statLabel">Email</span>
 				</div>
 
 				<div class="statInfoWrapper">
 					<div class="statInfo">
-					{{profile.kids}}
+					{{vm.profile.kids}}
 					</div>
 						<span class="statLabel">Has kids</span>
 				</div>
 
 				<div class="statInfoWrapper">
 					<div class="statInfo">
-					{{profile.spousename}}
+					{{vm.profile.spousename}}
 					</div>
 						<span class="statLabel">Spouse Name</span>
 				</div>
 
 				<div class="statInfoWrapper">
 					<div class="statInfo">
-						{{profile.age}}
+						{{vm.profile.age}}
 					</div>
 						<span class="statLabel">Age</span>
 				</div>
 
 				<div class="statInfoWrapper">
 					<div class="statInfo">
-						{{profile.city}}
+						{{vm.profile.city}}
 					</div>
 						<span class="statLabel">Lives In</span>
 				</div>
@@ -49,14 +49,14 @@
 			<h3>Job Info:</h3>
 				<div class="statInfoWrapper">
 					<div class="statInfo">
-					{{profile.coname1}}
+					{{vm.profile.coname1}}
 					</div>
 						<span class="statLabel">Company Name</span>
 				</div>
 
 				<div class="statInfoWrapper">
 					<div class="statInfo maritalInfo">
-					{{profile.title1}}
+					{{vm.profile.title1}}
 					</div>
 						<span class="statLabel">Title</span>
 				</div>
@@ -65,14 +65,14 @@
 
 				<div class="statInfoWrapper">
 					<div class="statInfo">
-					{{profile.coname2}}
+					{{vm.profile.coname2}}
 					</div>
 						<span class="statLabel">Company Name</span>
 				</div>
 
 				<div class="statInfoWrapper">
 					<div class="statInfo maritalInfo">
-					{{profile.title2}}
+					{{vm.profile.title2}}
 					</div>
 						<span class="statLabel">Title</span>
 				</div>

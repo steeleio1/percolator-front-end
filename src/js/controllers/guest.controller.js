@@ -1,24 +1,45 @@
-function GuestController ($scope, WealthService){
+function GuestController (MailService, WealthService){
 
 	let vm = this;
-	vm.profileCallByEmail = profileCallByEmail;
-	vm.profiles = [];
-	vm.registrant = {
-		email: "frank@gmail.com"
-	};
-	 $scope.data = [12, 19, 3, 5, 2, 3];
+
+	vm.profile = {};
+	vm.getWEReport = getWEReport;
 
 
 	init();
 
 	function init (){
-		profileCallByEmail(vm.registrant)
-	};
+		vm.getWEReport();
+	}
 
-	function profileCallByEmail(registrant){
-		WealthService.getProfileByEmail(registrant).then((res)=>{
-			console.log(res.data);
-			let profile = {
+	function getWEReport(){
+		let registrantDummyData = {
+				last_name: 'surname',
+				first_name: 'name',
+				address_line1:	'Address 1',
+				address_line2:	'Address 2 (optional)',
+				city: 'The City',
+				state:	'SC',
+				zip: '99999'
+		}
+
+		WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
+			let coname2value;
+			if (res.data.jobs[1].org_name !==undefined) {
+				coname2value= res.data.jobs[1].org_name;
+			} else {
+				coname2value= '';
+			}
+
+			let title2value;
+			if (res.data.jobs[1].title !==undefined) {
+				title2value= res.data.jobs[1].title;
+			} else {
+				title2value= '';
+			}
+
+
+			vm.profile = {
 				fullname: res.data.identity.full_name,
 				email: res.data.identity.emails[0].email,
 				kids: res.data.demographics.has_children,
@@ -26,24 +47,14 @@ function GuestController ($scope, WealthService){
 				city: res.data.locations[0].address.city,
 				coname1: res.data.jobs[0].org_name,
 				title1: res.data.jobs[0].title,
-				coname2: res.data.jobs[1].org_name,
-				title2: res.data.jobs[1].title,
-				// spousename: res.data.relationship.spouse.full_name,
-				// cashonhandHigh: res.data.wealth.cash_on_hand.text_high,
-				// cashonhandLow: res.data.wealth.cash_on_hand.text_low
-			}
-
-
-			vm.profiles.push(profile);
-			console.log(vm.profiles);
+				coname2: coname2value,
+				title2: title2value,				
+			};
+			console.log(vm.profile);
 		});
-	};
-
-
+	}
 
 }
 
-
-
-GuestController.$inject = ['$scope', 'WealthService'];
+GuestController.$inject = ['MailService', 'WealthService'];
 export { GuestController };
