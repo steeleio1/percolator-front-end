@@ -1,4 +1,6 @@
 <div class="guestPage">
+<!--       <canvas id="line" class="chart chart-line" chart-data="vm.data" chart-labels="vm.labels" chart-series="vm.series" chart-options="vm.options" chart-dataset-override="vm.datasetOverride" chart-click="vm.onClick"></canvas> -->
+
 	<div class="guestStatsBox animateDown fadeInDown">
 	<div class="personalInfoWrapper">
 			<h3>Personal Info:</h3>
@@ -45,7 +47,7 @@
 				</div>
 	</div>
 
-	<div class="jobInfoWrapper">
+		<div class="jobInfoWrapper">
 			<h3>Job Info:</h3>
 				<div class="statInfoWrapper">
 					<div class="statInfo">
@@ -77,26 +79,16 @@
 						<span class="statLabel">Title</span>
 				</div>
 
-<!-- 				<div class="statInfoWrapper">
-					<div class="statInfo">
-						{{profile.age}}
-					</div>
-						<span class="statLabel">Age</span>
-				</div>
+		</div>
 
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-						{{profile.city}}
-					</div>
-						<span class="statLabel">Lives In</span>
-				</div> -->
-	</div>
-
-<!-- 		<p>Cash on Hand:  High {{profile.cashonhandHigh}} Low {{profile.cashonhandLow}}</p>
-		</div> -->
 	</div>
 </div>
 
-	<canvas id="base" class="chart-horizontal-bar"
-	  chart-data="data" chart-labels="labels" >
+<div class="givingChart">
+	<canvas id="base" 
+			class="chart-horizontal-bar"
+	  			chart-data="vm.data" 
+	  			chart-labels="vm.labels" 
+	  			chart-colors="vm.colors">
 	</canvas> 
+</div>

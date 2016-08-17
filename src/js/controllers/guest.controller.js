@@ -1,10 +1,16 @@
-function GuestController (MailService, WealthService){
+function GuestController (MailService, WealthService, $scope){
 
 	let vm = this;
 
 	vm.profile = {};
 	vm.getWEReport = getWEReport;
-
+	// vm.givingStats = {};
+	vm.labels = ['Charitable Donations', 
+				'Estimated Annual Donations', 
+				'Gift Capacity', 
+				'Total Donations', 
+				'Total Political Donations', '2011', '2012'];
+	vm.colors = ['rgba(255, 99, 132, 0.2)'];	
 
 	init();
 
@@ -25,6 +31,7 @@ function GuestController (MailService, WealthService){
 
 		WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
 			let coname2value;
+			console.log(res);
 			if (res.data.jobs[1].org_name !==undefined) {
 				coname2value= res.data.jobs[1].org_name;
 			} else {
@@ -51,10 +58,29 @@ function GuestController (MailService, WealthService){
 				title2: title2value,				
 			};
 			console.log(vm.profile);
+			let data = res.data;
+			let charMax = data.giving.charitable_donations.max;
+			let charMin = data.giving.charitable_donations.min;
+
+			vm.data = [
+		      [charMax, 10, 20, 50, 100, 500],
+		      [charMin, 7, 7, 23, 86, 380]
+		    ];
 		});
 	}
 
+
+function parseData(stuff){
+	return {
+		charitable_donations_max: stuff.giving.charitable_donations.max
 }
 
-GuestController.$inject = ['MailService', 'WealthService'];
+// vm.givingStats.charitable_donations = 1250
+
+// console.log(vm.givingStats.charitable_donations_max);
+}
+	 
+}
+
+GuestController.$inject = ['MailService', 'WealthService', "$scope"];
 export { GuestController };
