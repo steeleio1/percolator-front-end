@@ -2,8 +2,9 @@ import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-cookies';
 import './app.parallax';
-import Chart from 'chart.js';
+import  'chart.js';
 import 'angular-chart.js';
+
 
 //import SERVERS
 import { serverConstant } from './servers/server.constant';
@@ -38,7 +39,6 @@ import { GuestController } from './controllers/guest.controller';
 import { EventHostController } from './controllers/event.host.controller';
 import { EventGuestController } from './controllers/event.guest.controller';
 import { EventCreateController } from './controllers/event.create.controller';
-import { ChartController } from './controllers/charts.controller';
 
 angular
 	.module('app', ['angular-parallax', 'ui.router', 'ngCookies', 'chart.js'])
@@ -60,5 +60,4 @@ angular
 	.controller('EventHostController', EventHostController)
 	.controller('EventGuestController', EventGuestController)
 	.controller('EventCreateController', EventCreateController)
-	.controller('ChartController', ChartController)
 	;
