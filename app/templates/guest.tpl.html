@@ -1,22 +1,102 @@
-<canvas id="base" class="chart-horizontal-bar"
-  chart-data="data" chart-labels="labels" >
-</canvas> 
+<div class="guestPage">
+	<div class="guestStatsBox animateDown fadeInDown" ng-repeat="profile in vm.profiles">
+	<div class="personalInfoWrapper">
+			<h3>Personal Info:</h3>
+				<div class="statInfoWrapper">
+					<div class="statInfo">
+					{{profile.fullname}}
+					</div>
+						<span class="statLabel">Full Name</span>
+				</div>
 
-<div class="guestStatsBox" ng-repeat="profile in vm.profiles">
-	
-<strong >{{profile.age}}</strong>
+				<div class="statInfoWrapper">
+					<div class="statInfo maritalInfo">
+					{{profile.email}}
+					</div>
+						<span class="statLabel">Email</span>
+				</div>
 
-<strong >{{profile.city}}</strong>
+				<div class="statInfoWrapper">
+					<div class="statInfo">
+					{{profile.kids}}
+					</div>
+						<span class="statLabel">Has kids</span>
+				</div>
 
-<p>Full Name:  {{profile.relationship}}</p>
+				<div class="statInfoWrapper">
+					<div class="statInfo">
+					{{profile.spousename}}
+					</div>
+						<span class="statLabel">Spouse Name</span>
+				</div>
 
+				<div class="statInfoWrapper">
+					<div class="statInfo">
+						{{profile.age}}
+					</div>
+						<span class="statLabel">Age</span>
+				</div>
 
-<p>Cash on Hand:  High {{profile.cashonhandHigh}} Low {{profile.cashonhandLow}}</p>
+				<div class="statInfoWrapper">
+					<div class="statInfo">
+						{{profile.city}}
+					</div>
+						<span class="statLabel">Lives In</span>
+				</div>
+	</div>
+
+	<div class="jobInfoWrapper">
+			<h3>Job Info:</h3>
+				<div class="statInfoWrapper">
+					<div class="statInfo">
+					{{profile.coname1}}
+					</div>
+						<span class="statLabel">Company Name</span>
+				</div>
+
+				<div class="statInfoWrapper">
+					<div class="statInfo maritalInfo">
+					{{profile.title1}}
+					</div>
+						<span class="statLabel">Title</span>
+				</div>
+
+				<br>
+
+				<div class="statInfoWrapper">
+					<div class="statInfo">
+					{{profile.coname2}}
+					</div>
+						<span class="statLabel">Company Name</span>
+				</div>
+
+				<div class="statInfoWrapper">
+					<div class="statInfo maritalInfo">
+					{{profile.title2}}
+					</div>
+						<span class="statLabel">Title</span>
+				</div>
+
+<!-- 				<div class="statInfoWrapper">
+					<div class="statInfo">
+						{{profile.age}}
+					</div>
+						<span class="statLabel">Age</span>
+				</div>
+
+				<div class="statInfoWrapper">
+					<div class="statInfo">
+						{{profile.city}}
+					</div>
+						<span class="statLabel">Lives In</span>
+				</div> -->
+	</div>
+
+<!-- 		<p>Cash on Hand:  High {{profile.cashonhandHigh}} Low {{profile.cashonhandLow}}</p>
+		</div> -->
+	</div>
 </div>
 
-<canvas class="chart chart-bar"></canvas>
-
-
-
-
-<!-- guest.tpl.html -->
+	<canvas id="base" class="chart-horizontal-bar"
+	  chart-data="data" chart-labels="labels" >
+	</canvas> 

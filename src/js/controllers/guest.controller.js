@@ -19,11 +19,18 @@ function GuestController ($scope, WealthService){
 		WealthService.getProfileByEmail(registrant).then((res)=>{
 			console.log(res.data);
 			let profile = {
+				fullname: res.data.identity.full_name,
+				email: res.data.identity.emails[0].email,
+				kids: res.data.demographics.has_children,
 				age: res.data.identity.age,
 				city: res.data.locations[0].address.city,
-				// relationship: res.data.relationship.spouse.full_name,
-				cashonhandHigh: res.data.wealth.cash_on_hand.text_high,
-				cashonhandLow: res.data.wealth.cash_on_hand.text_low
+				coname1: res.data.jobs[0].org_name,
+				title1: res.data.jobs[0].title,
+				coname2: res.data.jobs[1].org_name,
+				title2: res.data.jobs[1].title,
+				// spousename: res.data.relationship.spouse.full_name,
+				// cashonhandHigh: res.data.wealth.cash_on_hand.text_high,
+				// cashonhandLow: res.data.wealth.cash_on_hand.text_low
 			}
 
 
