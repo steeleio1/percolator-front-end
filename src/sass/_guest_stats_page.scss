@@ -1,0 +1,112 @@
+$coffeewhite: #fff4e6;
+$brown: #673A00;
+$orange:  #e78200;
+$darkorange: #F44B0C;
+
+
+h3 {
+    // text-align: left;
+    font-weight: bold !important;
+    font-size: 1.5vmax !important;
+}
+
+.guestPage {
+	display: flex;
+	align-items: center;
+	flex-direction: column;	
+}
+
+.guestStatsBox {
+	// border: solid red 1px;
+	display: flex;
+	justify-content: space-around;
+	background: $coffeewhite;
+	width: 70vw;
+	margin-top: 3vw;
+	margin-bottom: 1vw;
+	border-radius: 10px;
+	padding: 3vw;
+    box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+}
+
+.personalInfoWrapper{
+	// border: solid red 1px;
+	border-right: solid $brown 1px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	width: 30vw;
+}
+
+.jobInfoWrapper {
+	// border: solid red 1px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	width: 30vw;	
+}
+
+.statInfoWrapper {
+	// border: solid green 1px;
+	// display: flex;
+	// flex-direction: column;
+	margin: 0.3vw;
+}
+
+.statInfo {
+	// border: solid yellow 1px;
+	border-bottom: solid $brown 1px; 
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	font-size: 1.2vmax;
+	// width: 10vmax;
+	white-space: nowrap;
+	color: $orange;
+	height: 20px;
+}
+
+// .maritalInfo {
+// 	margin-right: 3vw;
+// }
+
+.statLabel {
+	// border: solid green 1px; 
+	display: flex;
+	flex-direction: flex-start;
+	font-size: 0.8vmax;
+}
+
+.animateDown { 
+   -webkit-animation-duration: 2s; 
+   animation-duration: 2s; 
+   -webkit-animation-fill-mode: both; 
+   animation-fill-mode: both; 
+} 
+
+@-webkit-keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+@keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+.fadeInDown { 
+    -webkit-animation-name: fadeInDown; 
+    animation-name: fadeInDown; 
+}

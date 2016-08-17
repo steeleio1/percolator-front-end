@@ -2,7 +2,9 @@ function GuestController (MailService, WealthService){
 
 	let vm = this;
 
+	vm.profile = {};
 	vm.getWEReport = getWEReport;
+
 
 	init();
 
@@ -21,7 +23,35 @@ function GuestController (MailService, WealthService){
 				zip: '99999'
 		}
 
-		WealthService.getProfileByAddress(registrantDummyData);
+		WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
+			let coname2value;
+			if (res.data.jobs[1].org_name !==undefined) {
+				coname2value= res.data.jobs[1].org_name;
+			} else {
+				coname2value= '';
+			}
+
+			let title2value;
+			if (res.data.jobs[1].title !==undefined) {
+				title2value= res.data.jobs[1].title;
+			} else {
+				title2value= '';
+			}
+
+
+			vm.profile = {
+				fullname: res.data.identity.full_name,
+				email: res.data.identity.emails[0].email,
+				kids: res.data.demographics.has_children,
+				age: res.data.identity.age,
+				city: res.data.locations[0].address.city,
+				coname1: res.data.jobs[0].org_name,
+				title1: res.data.jobs[0].title,
+				coname2: coname2value,
+				title2: title2value,				
+			};
+			console.log(vm.profile);
+		});
 	}
 
 }

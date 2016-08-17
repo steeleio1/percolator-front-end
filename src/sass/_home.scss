@@ -1,6 +1,7 @@
 $darkorange: #F44B0C;
 $orange:  #e78200;
-
+$coffeewhite: #fff4e6;
+$brown: #673A00;
 
 .animated { 
    -webkit-animation-duration: 2s; 
@@ -40,13 +41,32 @@ $orange:  #e78200;
 .subSection {
 	display: flex;
 	align-items: center;
-	padding-left: 10%;
-    padding-bottom: 5%;
+    justify-content: center;
+	// padding-left: 10%;
+ //    padding-bottom: 5%;
 	height: 21.25vw !important;
 	background-color: white;
-	color: white;
-	font-size: 6vw;
-	color: $orange;
+    border-radius: 30px;
+}
+
+.subSectBkg {
+    background-color: $coffeewhite;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    height: 13.1vw !important;
+    width: 75vw;
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+}
+
+.subSectText {
+    // border: solid yellow 1px;
+    // border-bottom: solid $brown 1px;
+    font-size: 6vw !important;
+    color: $orange !important;
 }
 
 .photo{
@@ -58,6 +78,7 @@ $orange:  #e78200;
     position: relative;
     display: flex;
 	justify-content: center;
+
 }
 
 .textDiv {

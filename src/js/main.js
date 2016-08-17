@@ -2,7 +2,8 @@ import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-cookies';
 import './app.parallax';
-
+import Chart from 'chart.js';
+import 'angular-chart.js';
 
 //import SERVERS
 import { serverConstant } from './servers/server.constant';
@@ -23,9 +24,6 @@ import { HostService } from './services/host.service';
 import { WealthService } from './services/wealth.service';
 import { MailService } from './services/mailgun.service';
 
-//import factories
-import { UniqueIdFactory } from './factories/unique.id.factory';
-
 //import Controllers
 import { LayoutController } from './controllers/layout.controller';
 import { HomeController } from './controllers/home.controller';
@@ -37,15 +35,14 @@ import { GuestController } from './controllers/guest.controller';
 import { EventHostController } from './controllers/event.host.controller';
 import { EventGuestController } from './controllers/event.guest.controller';
 import { EventCreateController } from './controllers/event.create.controller';
-
+import { ChartController } from './controllers/charts.controller';
 
 angular
-	.module('app', ['angular-parallax', 'ui.router', 'ngCookies'])
+	.module('app', ['angular-parallax', 'ui.router', 'ngCookies', 'chart.js'])
 	.config(config)
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
 	.service('HostService', HostService)
-	.factory('UniqueIdFactory', UniqueIdFactory)
 	// .constant('WEALTHSERVER', WEALTHSERVER)
 	.constant('SERVER', serverConstant)
 	.run (run)
@@ -59,4 +56,5 @@ angular
 	.controller('EventHostController', EventHostController)
 	.controller('EventGuestController', EventGuestController)
 	.controller('EventCreateController', EventCreateController)
+	.controller('ChartController', ChartController)
 	;

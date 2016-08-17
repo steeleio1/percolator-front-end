@@ -3,7 +3,7 @@ function WealthService ($http, SERVER) {
 
 	function getProfileByAddress (registrantData){
 		return $http.post(SERVER.URL + 'runwe', registrantData).then((res)=>{
-			console.log(res);
+			return res;
 		});
 	}
 }
