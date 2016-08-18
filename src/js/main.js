@@ -5,7 +5,7 @@ import './app.parallax';
 import  'chart.js';
 import 'angular-chart.js';
 
-Chart.defaults.global.colors = ['#ffccff', '#000000', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'];
+Chart.defaults.global.colors = ['#84DB2E', '#50CCEB', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'];
 
 //import SERVERS
 import { serverConstant } from './servers/server.constant';
