@@ -109,7 +109,8 @@ function GuestController (MailService, WealthService){
 			let netWorthDifference = netWorthMax - netWorthVal;
 
 			vm.data = [
-		      [netWorthVal, netWorthDifference]
+		      [netWorthVal],
+		      [netWorthDifference]
 		    ];
 		});
 	}
