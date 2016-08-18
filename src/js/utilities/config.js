@@ -48,7 +48,7 @@ function config ($stateProvider, $urlRouterProvider) {
     	controller: "GuestController as vm"
     })
     .state('root.eventGuest', {
-      url: '/event-guest/rsvp/:id',
+      url: '/event-guest/rsvp/:uuid',
       templateUrl: 'templates/event-guest.tpl.html',
       controller: 'EventGuestController as vm'
     })

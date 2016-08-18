@@ -122,7 +122,7 @@ function createEventGuest(guestInfo, guestInstance){
 
 function emailGuest(egInfo, guestInstance){
 	let guestInfo = guestInstance.first_name + " " + guestInstance.last_name + " " + '<' + guestInstance.email + '>';
-	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.id;
+	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.uuid;
 	let emailMessage = vm.event.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
 		var data = {
 			from: 'Excited User <me@mg.javahuddle.com>',
