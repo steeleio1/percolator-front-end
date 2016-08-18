@@ -5,27 +5,52 @@ function EventGuestController ($state, $http, SERVER, $stateParams) {
 	// Sets up variables
 
 	// Adds the function to the vm object
+  vm.submitRSVP = submitRSVP;
 
 
   init();
 
-	function init() {
-    let payload = {
-      guestInfo: "Hello there",
-      eventGuestID: $stateParams.id
-    }
+  function init() {
+	    // var eventID = $stateParams.id;
 
-
-	    $http.get(SERVER.URL + '/event-guest/rsvp/:id' + payload).then((res) => {
-	        vm.eventGuest = res.data;
-	        console.log(vm.eventGuest);
-
-	    });
+	    // $http.get(SERVER.URL + '/event-guest/rsvp/:uuid').then((res) => {
+	    //     // vm.event = res.data;
+      //     console.log(res);
+	    // });
 	}
 
+  function submitRSVP(egInfo, guestInfo){
+    // console.log(egInfo);
+    // console.log(guestInfo);
+    let uuid = $stateParams.uuid
+    let payload = {
+    			egInfo: egInfo,
+    			guestInfo: guestInfo
+    			}
 
+    $http.post(SERVER.URL + 'event-guest/rsvp/' + uuid, payload).then(function (res) {
+            if (res.status == 200) {
+                alert("200 OK");
+                console.log(res);
+                // $state.go('root.host.myEvents');
+            } else if (res.status == 201) {
+                alert("201 OK");
+                console.log(res);
+                // $state.go('root.host.myEvents');
+            }
+        },
+        function (res) {
+            if (res.status == 401) {
+                alert("401 ERROR!!!!!");
+            } else if (res.status == 403) {
+                alert("403 Forbidden");
+            }
+
+        });
+
+  }
 
 }
 
-EventGuestController.$inject = ['MailService', '$state', '$scope', '$http', 'SERVER', '$cookies', '$stateParams'];
+EventGuestController.$inject = ['$state', '$http', 'SERVER', '$stateParams'];
 export { EventGuestController };
