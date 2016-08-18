@@ -6,6 +6,7 @@ function GuestController (MailService, WealthService, $scope){
 	vm.getWEReport = getWEReport;
 	// vm.givingStats = {};
 
+
 	// We cannot use vm. notation for the charts to update with Asynchronous data correctly.
 	// This is because we have to call $scope.$applyAsync() below in order to populate our
 	// charts correctly.
