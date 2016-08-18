@@ -9,12 +9,16 @@ function GuestController (MailService, WealthService, $scope){
 	// We cannot use vm. notation for the charts to update with Asynchronous data correctly.
 	// This is because we have to call $scope.$applyAsync() below in order to populate our
 	// charts correctly.
-	$scope.netWorthLabels = ['Net Worth Tier', 
-				'Placeholder'];
-	
+	$scope.netWorthLabels = ['Net Worth Tier', 'Placeholder'];
+	$scope.p2GLabels = ['P2G Tier', 'Placeholder'];
+
 	let netWorthVal;
 	let netWorthDifference;
 	let netWorthMax;
+
+	let p2GVal;
+	let p2GDifference;
+	let p2GMax;
 
 	init();
 
@@ -87,7 +91,25 @@ function GuestController (MailService, WealthService, $scope){
 				netWorthTier = 12;
 			}
 
-
+			let p2GVal;
+			let p2GText;
+			let p2G = res.data.giving.p2g_score.text;
+			if (p2G === "1|5 - Excellent"){
+							p2GVal = 5;
+							p2GText = "Excellent";
+						} else if (p2G === "2|5 - Above Average"){
+							p2GVal = 4;
+							p2GText = "Above Average";
+						} else if (p2G === "3|5 - Average"){
+							p2GVal = 3;
+							p2GText = "Average";
+						} else if (p2G === "4|5 - Fair"){
+							p2GVal = 2;
+							p2GText = "Fair";
+						} else if (p2G === "5|5 - Unmatched"){
+							p2GVal = 1;
+							p2GText = "Unmatched";
+						}
 			vm.profile = {
 				fullname: res.data.identity.full_name,
 				email: res.data.identity.emails[0].email,
@@ -107,7 +129,9 @@ function GuestController (MailService, WealthService, $scope){
 				accreditedInvestor: res.data.wealth.accredited_investor,
 				numberRealEstateProperties: res.data.realestate.total_num_properties,
 				estimatedAnnualDonations: res.data.giving.estimated_annual_donations.text,
-				p2G: res.data.giving.p2g_score.text,
+				p2G: p2G.substring(0,3),
+				p2GVal: p2GVal,
+				p2GText: p2GText,
 				giftCapacity: res.data.giving.gift_capacity.text
 			};
 			console.log(vm.profile);
@@ -115,7 +139,10 @@ function GuestController (MailService, WealthService, $scope){
 			netWorthMax = 12;
 			netWorthDifference = netWorthMax - netWorthVal;
 
+			p2GMax = 5;
+			p2GDifference = p2GMax-vm.profile.p2GVal;
             $scope.$applyAsync($scope.netWorthData = [netWorthVal, netWorthDifference]);
+            $scope.$applyAsync($scope.p2GData = [vm.profile.p2GVal, p2GDifference]);
 		});
 	}
 }
