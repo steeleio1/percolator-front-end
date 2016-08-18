@@ -9,9 +9,9 @@ function GuestController (MailService, WealthService, $scope){
 	// We cannot use vm. notation for the charts to update with Asynchronous data correctly.
 	// This is because we have to call $scope.$applyAsync() below in order to populate our
 	// charts correctly.
-	$scope.labels = ['Net Worth Tier', 
+	$scope.netWorthLabels = ['Net Worth Tier', 
 				'Placeholder'];
-	$scope.data =[netWorthVal, netWorthDifference];
+	
 	let netWorthVal;
 	let netWorthDifference;
 	let netWorthMax;
@@ -100,7 +100,7 @@ function GuestController (MailService, WealthService, $scope){
 				title1: res.data.jobs[0].title,
 				coname2: coname2value,
 				title2: title2value,
-				netWorthTier: 3,
+				netWorthTier: netWorthTier,
 				netWorthRange: netWorthRange,
 				income: res.data.wealth.total_income.text,
 				realEstateTotalVal: res.data.realestate.total_realestate_value.text,
@@ -115,7 +115,7 @@ function GuestController (MailService, WealthService, $scope){
 			netWorthMax = 12;
 			netWorthDifference = netWorthMax - netWorthVal;
 
-            $scope.$applyAsync($scope.data = [netWorthVal, netWorthDifference]);
+            $scope.$applyAsync($scope.netWorthData = [netWorthVal, netWorthDifference]);
 		});
 	}
 }

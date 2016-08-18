@@ -83,11 +83,26 @@
 	</div>
 </div>
 
-<div class="givingChart">
-	<h3>Giving Stats:</h3>
-	<canvas id="doughnut" class="chart chart-doughnut"
-	  chart-data="data" chart-labels="labels" >
-	</canvas> 
+<div class="netWorthChart">
+	<h3>Net Worth:</h3>
+	<div class="chartContainer">
+		<canvas id="netWorth" class="worthCanvas chart-doughnut"
+		  chart-data="netWorthData" chart-labels="netWorthLabels" >
+		</canvas>
+		<p class="tierValue">Tier {{vm.profile.netWorthTier}}</p>
+		<p class="range">{{vm.profile.netWorthRange}}</p>
+	</div>
+</div>
+<div class="netWorthChart">
+	<h3>Net Worth:</h3>
+	<div class="chartContainer">
+		<canvas id="netWorth" class="worthCanvas chart-doughnut"
+		  chart-data="netWorthData" chart-labels="netWorthLabels" >
+		</canvas>
+		<p class="tierValue">Tier {{vm.profile.netWorthTier}}</p>
+		<p class="range">{{vm.profile.netWorthRange}}</p>
+	</div>
+</div>
 	<h3>Net Worth: {{vm.profile.netWorthRange}}</h3>
 	<h3>Income: {{vm.profile.income}}</h3>
 	<h3>Real Estate (Total Value): {{vm.profile.realEstateTotalVal}}</h3>
@@ -96,7 +111,7 @@
 	<h3>Estimated Annual Donations: {{vm.profile.estimatedAnnualDonations}}</h3>
 	<h3>Propensity to Give (P2G) Score: {{vm.profile.p2G}}</h3>
 	<h3>Gift Capacity: {{vm.profile.giftCapacity}}</h3>
-</div>
+
 
 
 

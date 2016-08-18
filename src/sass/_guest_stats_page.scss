@@ -102,7 +102,30 @@ $darkorange: #F44B0C;
     animation-name: fadeInDown; 
 }
 
-.givingChart {
+.netWorthChart {
 	// border: solid green 1px; 
 	margin: 2vw;
+}
+
+.chartContainer{
+	position: relative;
+	width: 40vw;
+}
+
+.tierValue{
+	position: absolute;
+    top: 41%;
+    left: 42%;
+    font-size: 2vw;
+	font-weight: bold;
+	color: $orange;
+}
+
+.range {
+    position: absolute;
+    top: 56%;
+    left: 39.5%;
+    font-size: 1vw;
+    font-weight: bold;
+	color: $orange;
 }
