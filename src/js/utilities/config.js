@@ -48,7 +48,7 @@ function config ($stateProvider, $urlRouterProvider, $ChartJsProvider) {
     	controller: "GuestController as vm"
     })
     .state('root.eventGuest', {
-      url: '/event-guest',
+      url: '/event-guest/rsvp/:id',
       templateUrl: 'templates/event-guest.tpl.html',
       controller: 'EventGuestController as vm'
     })
