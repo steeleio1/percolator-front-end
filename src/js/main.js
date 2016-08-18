@@ -12,11 +12,6 @@ import { serverConstant } from './servers/server.constant';
 //import config
 import { config } from './utilities/config';
 
-//import constants
-
-import { headers } from './credentials/wealth.credentials';
-import { mailCreds } from './credentials/mail.credentials';
-
 //import run
 import { run } from './utilities/run';
 
@@ -43,7 +38,6 @@ angular
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
 	.service('HostService', HostService)
-	// .constant('WEALTHSERVER', WEALTHSERVER)
 	.constant('SERVER', serverConstant)
 	.run (run)
 	.controller('LayoutController', LayoutController)

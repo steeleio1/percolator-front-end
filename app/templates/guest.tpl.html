@@ -26,7 +26,7 @@
 
 				<div class="statInfoWrapper">
 					<div class="statInfo">
-					{{vm.profile.spousename}}
+					{{vm.profile.spouseName}}
 					</div>
 						<span class="statLabel">Spouse Name</span>
 				</div>
@@ -91,6 +91,14 @@
 	  			chart-labels="vm.labels" 
 	  			chart-colors="vm.colors">
 	</canvas> 
+	<h3>Net Worth: {{vm.profile.netWorth}}</h3>
+	<h3>Income: {{vm.profile.income}}</h3>
+	<h3>Real Estate (Total Value): {{vm.profile.realEstateTotalVal}}</h3>
+	<h3>Number of Real Estate Properties: {{vm.profile.numberRealEstateProperties}}</h3>
+	<h3>Accredited Investor: {{vm.profile.accreditedInvestor}}</h3>
+	<h3>Estimated Annual Donations: {{vm.profile.estimatedAnnualDonations}}</h3>
+	<h3>Propensity to Give (P2G) Score: {{vm.profile.p2G}}</h3>
+	<h3>Gift Capacity: {{vm.profile.giftCapacity}}</h3>
 </div>
 
 
