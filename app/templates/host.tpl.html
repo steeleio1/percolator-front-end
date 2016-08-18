@@ -1,37 +1,74 @@
-<div class="hostContainer">
-  <div class="hostInfobox">
-    <article class="media">
-      <div class="media-left">
-        <figure class="image is-128x128 hostPhoto">
+<div class="hostPage">
+
+  <div class="hostInfoWrapper">
+    <div class="hostPhotoBox">
+        <div class="hostPhoto">
           <img src="{{vm.user.photo_url}}" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>{{vm.user.first_name}}</strong>
-            <strong>{{vm.user.last_name}}</strong>
-            <br>
-           <small>{{vm.user.email}}</small>
-           <br>
-           <small>Home Phone: {{vm.user.home_number}}</small>
-           <br>
-           <small>Mobile Phone: {{vm.user.mobile_number}}</small>
-           <br>
-           <small>Organization: {{vm.user.organization}}</small>
-           <br>
-           <small>Category: {{vm.user.category}}</small>
-           <br>
-           <small>Address:<br>
-           {{vm.user.street}}<br>
-           {{vm.user.street_2}}<br>
-           {{vm.user.city}}, {{vm.user.state}} {{vm.user.post_code}} <br>
-           </small>
-          </p>
         </div>
-      </div>
-    </article>
+    </div>
+
+
+        <div class="hostDetailsWrapper1">
+           <h3>Personal Info:</h3>
+
+          <div class="hostDetailWrapper">
+            <div class="hostDetailInfo">
+           {{vm.user.first_name}}    {{vm.user.last_name}}
+            </div>
+              <span class="hostDetailLabel">Full Name</span>
+          </div>
+
+          <div class="hostDetailWrapper">
+            <div class="hostDetailInfo">
+           {{vm.user.email}}  
+            </div>
+              <span class="hostDetailLabel">Email</span>
+          </div>
+
+         <div class="hostDetailWrapper">
+            <div class="hostDetailInfo">
+           {{vm.user.home_number}}  
+            </div>
+              <span class="hostDetailLabel">Home Phone:</span>
+          </div>
+
+         <div class="hostDetailWrapper">
+            <div class="hostDetailInfo">
+           {{vm.user.mobile_number}} 
+            </div>
+              <span class="hostDetailLabel">Mobile Phone:</span>
+          </div>
+          <br>
+
+           <h4>Address:</h4>
+           <div class="addressWrapper">
+             {{vm.user.street}}<br>
+             {{vm.user.street_2}}<br>
+             {{vm.user.city}}, {{vm.user.state}} {{vm.user.post_code}} <br>
+             </div>
+        </div>
+
+        <div class="hostDetailsWrapper2">
+          <h3>Organiztion Info:</h3>
+    
+             <div class="hostDetailWrapper">
+                <div class="hostDetailInfo">
+               {{vm.user.organization}} 
+                </div>
+                  <span class="hostDetailLabel">Name:</span>
+              </div>
+
+             <div class="hostDetailWrapper">
+                <div class="hostDetailInfo">
+              {{vm.user.category}}
+                </div>
+                  <span class="hostDetailLabel">Catergory:</span>
+              </div>
+       </div>
+
   </div>
+
+
   <div class="tabs is-boxed">
     <ul>
       <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1=true; vm.active2=false;">
