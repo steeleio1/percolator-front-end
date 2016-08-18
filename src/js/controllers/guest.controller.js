@@ -1,4 +1,4 @@
-function GuestController (MailService, WealthService, $scope){
+function GuestController (MailService, WealthService){
 
 	let vm = this;
 
@@ -83,5 +83,5 @@ function parseData(stuff){
 	 
 }
 
-GuestController.$inject = ['MailService', 'WealthService', "$scope"];
+GuestController.$inject = ['MailService', 'WealthService'];
 export { GuestController };
