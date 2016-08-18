@@ -3,39 +3,39 @@
 	    <article class="media">
 	      <div class="media-left">
 	        <figure class="image is-128x128">
-	          <img src="{{vm.event.photo_url}}" alt="Image">
+	          <img src="{{vm.event.eventInfo.photo_url  || 'images/JavaHuddleLogo.png'}}" alt="Image">
 	        </figure>
 	      </div>
 	      <div class="media-content">
 	        <div class="content">
 	          <p>
-	            <strong>{{vm.event.title}}</strong>
+	            <strong>{{vm.event.eventInfo.title}}</strong>
 	            <br>
 	            <br>
-	           <small><strong>Location:</strong> {{vm.event.title}}</small>
+	           <small><strong>Location:</strong> {{vm.event.eventInfo.title}}</small>
 	           <br>
 	           <small><strong>Address:</strong></small>
 	           <br>
-	           <small>{{vm.event.street}}</small>
+	           <small>{{vm.event.eventInfo.street}}</small>
 	           <br>
-	           <small>{{vm.event.street_2}}</small>
+	           <small>{{vm.event.eventInfo.street_2}}</small>
 	           <br>
-	           <small>{{vm.event.city}}, </small><small>{{vm.event.state}} </small><small>{{vm.event.post_code}}</small>
+	           <small>{{vm.event.eventInfo.city}}, </small><small>{{vm.event.eventInfo.state}} </small><small>{{vm.event.eventInfo.post_code}}</small>
 	           <br>
 	           <small><strong>Date and Time:</strong></small>
 	           <br>
-	           <small>{{vm.event.date}}: {{vm.event.start_time}}-{{vm.event.end_time}}</small>
+	           <small>{{vm.event.eventInfo.date}}: {{vm.event.eventInfo.start_time}}-{{vm.event.eventInfo.end_time}}</small>
 	           <br>
 	           <small><strong>RSVPs:</strong></small>
-	          <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
+	          <small>{{vm.event.invites}} invited</small> | <small class="attending">{{vm.event.yes}} attending</small> | <small class="declined">{{vm.event.no}} declined</small> | <small class="maybe">{{vm.event.maybe}} maybe</small> | <small class="not responded">{{vm.event.not_responded}} not responded</small>
 	           <br>
-	           <small><strong>Organization:</strong> {{vm.event.organization}}</small>
+	           <small><strong>Organization:</strong> {{vm.event.eventInfo.organization}}</small>
 	           <br>
-	           <small><strong>Category:</strong> {{vm.event.category}}</small>
+	           <small><strong>Category:</strong> {{vm.event.eventInfo.category}}</small>
 	           <br>
 	            <small><strong>Event Description:</strong></small>
 	            <br>
-	            <small>{{vm.event.message}}</small>
+	            <small>{{vm.event.eventInfo.message}}</small>
 	          </p>
 	        </div>
 	      </div>

@@ -3,7 +3,7 @@
   <div class="hostInfoWrapper">
     <div class="hostPhotoBox">
         <div class="hostPhoto">
-          <img src="{{vm.user.photo_url}}" alt="Image">
+          <img src="{{vm.user.photo_url  || 'images/JavaHuddleLogo.png'}}" alt="Image">
         </div>
     </div>
 
@@ -20,21 +20,21 @@
 
           <div class="hostDetailWrapper">
             <div class="hostDetailInfo">
-           {{vm.user.email}}  
+           {{vm.user.email}}
             </div>
               <span class="hostDetailLabel">Email</span>
           </div>
 
          <div class="hostDetailWrapper">
             <div class="hostDetailInfo">
-           {{vm.user.home_number}}  
+           {{vm.user.home_number}}
             </div>
               <span class="hostDetailLabel">Home Phone:</span>
           </div>
 
          <div class="hostDetailWrapper">
             <div class="hostDetailInfo">
-           {{vm.user.mobile_number}} 
+           {{vm.user.mobile_number}}
             </div>
               <span class="hostDetailLabel">Mobile Phone:</span>
           </div>
@@ -50,10 +50,10 @@
 
         <div class="hostDetailsWrapper2">
           <h3>Organiztion Info:</h3>
-    
+
              <div class="hostDetailWrapper">
                 <div class="hostDetailInfo">
-               {{vm.user.organization}} 
+               {{vm.user.organization}}
                 </div>
                   <span class="hostDetailLabel">Name:</span>
               </div>

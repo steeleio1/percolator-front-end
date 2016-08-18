@@ -24,7 +24,8 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 
 	    $http.get(SERVER.URL + 'host/my-events/' + eventID, config).then((res) => {
 	        vm.event = res.data;
-	        // console.log(vm.event);
+	        console.log(vm.event);
+
 
 	 //Dummy data inserted for development
 				// vm.event =
