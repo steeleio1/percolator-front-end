@@ -7,7 +7,7 @@ function GuestController (MailService, WealthService){
 	// vm.givingStats = {};
 	vm.labels = ['Net Worth Tier', 
 				'Placeholder'];
-	vm.colors = ['#84DB2E', '#50CCEB'];	
+	vm.colors = ['ff6600',];	
 
 	init();
 
