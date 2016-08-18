@@ -1,4 +1,4 @@
-function config ($stateProvider, $urlRouterProvider) {
+function config ($stateProvider, $urlRouterProvider, $ChartJsProvider) {
 
   $stateProvider
     .state('root', {
@@ -60,7 +60,11 @@ function config ($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
 
+//   $ChartJsProvider.setOptions(
+//     { colors : [ '#00ADF9', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] }
+// );
+
 }
 
-config.$inject = ['$stateProvider', '$urlRouterProvider'];
+config.$inject = ['$stateProvider', '$urlRouterProvider', 'ChartJsProvider'];
 export { config };

@@ -32,14 +32,14 @@ function GuestController (MailService, WealthService, $scope){
 		WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
 			let coname2value;
 			console.log(res);
-			if (res.data.jobs[1].org_name !==undefined) {
+			if (res.data.jobs[1]) {
 				coname2value= res.data.jobs[1].org_name;
 			} else {
 				coname2value= '';
 			}
 
 			let title2value;
-			if (res.data.jobs[1].title !==undefined) {
+			if (res.data.jobs[1]) {
 				title2value= res.data.jobs[1].title;
 			} else {
 				title2value= '';
@@ -63,9 +63,10 @@ function GuestController (MailService, WealthService, $scope){
 			let charMin = data.giving.charitable_donations.min;
 
 			vm.data = [
-		      [charMax, 10, 20, 50, 100, 500],
-		      [charMin, 7, 7, 23, 86, 380]
+		      [charMax, 10, 20, 30, 40, 50 ],
+		      [charMin, 1, 9, 19, 29, 39]
 		    ];
+		    // vm.colors = 
 		});
 	}
 
