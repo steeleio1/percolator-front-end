@@ -1,13 +1,20 @@
-function GuestController (MailService, WealthService){
+function GuestController (MailService, WealthService, $scope){
 
 	let vm = this;
 
 	vm.profile = {};
 	vm.getWEReport = getWEReport;
 	// vm.givingStats = {};
-	vm.labels = ['Net Worth Tier', 
+
+	// We cannot use vm. notation for the charts to update with Asynchronous data correctly.
+	// This is because we have to call $scope.$applyAsync() below in order to populate our
+	// charts correctly.
+	$scope.labels = ['Net Worth Tier', 
 				'Placeholder'];
-	vm.colors = ['#84DB2E', '#50CCEB'];	
+	$scope.data =[netWorthVal, netWorthDifference];
+	let netWorthVal;
+	let netWorthDifference;
+	let netWorthMax;
 
 	init();
 
@@ -104,33 +111,14 @@ function GuestController (MailService, WealthService){
 				giftCapacity: res.data.giving.gift_capacity.text
 			};
 			console.log(vm.profile);
-			let netWorthVal = vm.profile.netWorthTier;
-			let netWorthMax = 12;
-			let netWorthDifference = netWorthMax - netWorthVal;
+			netWorthVal = vm.profile.netWorthTier;
+			netWorthMax = 12;
+			netWorthDifference = netWorthMax - netWorthVal;
 
-			vm.data = [
-
-		      // [charMax, 10, 20, 30, 40, 50 ],
-		      // [charMin, 1, 9, 19, 29, 39]
-
-		      [netWorthVal, netWorthDifference]
-
-		    ];
+            $scope.$applyAsync($scope.data = [netWorthVal, netWorthDifference]);
 		});
 	}
-
-
-function parseData(stuff){
-	return {
-		charitable_donations_max: stuff.giving.charitable_donations.max
 }
 
-// vm.givingStats.charitable_donations = 1250
-
-// console.log(vm.givingStats.charitable_donations_max);
-}
-	 
-}
-
-GuestController.$inject = ['MailService', 'WealthService'];
+GuestController.$inject = ['MailService', 'WealthService', '$scope'];
 export { GuestController };
