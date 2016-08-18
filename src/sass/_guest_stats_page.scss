@@ -1,14 +1,11 @@
 $coffeewhite: #fff4e6;
+$lightbrown: #804800;
 $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
 
 
-h3 {
-    // text-align: left;
-    font-weight: bold !important;
-    font-size: 1.5vmax !important;
-}
+
 
 .guestPage {
 	display: flex;
@@ -47,15 +44,12 @@ h3 {
 }
 
 .statInfoWrapper {
-	// border: solid green 1px;
-	// display: flex;
-	// flex-direction: column;
 	margin: 0.3vw;
 }
 
 .statInfo {
 	// border: solid yellow 1px;
-	border-bottom: solid $brown 1px; 
+	border-bottom: solid $lightbrown 1px; 
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -66,9 +60,6 @@ h3 {
 	height: 20px;
 }
 
-// .maritalInfo {
-// 	margin-right: 3vw;
-// }
 
 .statLabel {
 	// border: solid green 1px; 
@@ -112,6 +103,6 @@ h3 {
 }
 
 .givingChart {
-	border: solid green 1px; 
+	// border: solid green 1px; 
 	margin: 2vw;
 }
