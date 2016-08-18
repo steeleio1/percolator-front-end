@@ -82,12 +82,44 @@
 
 	</div>
 </div>
-
-<div class="givingChart">
-	<h3>Giving Stats:</h3>
-	<canvas id="doughnut" class="chart chart-doughnut"
-	  chart-data="data" chart-labels="labels" >
-	</canvas> 
+<div class=chartsContainer>
+	<div class="chartContainer">
+		<h3>Net Worth:</h3>
+		<canvas id="netWorth" class="worthCanvas chart-doughnut"
+		  chart-data="netWorthData" chart-labels="netWorthLabels" >
+		</canvas>
+		<p class="tierValue">Tier {{vm.profile.netWorthTier}}</p>
+		<p class="range">{{vm.profile.netWorthRange}}</p>
+	</div>		
+	<div class="chartContainer">
+		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
+		<canvas id="p2G" class="p2GCanvas chart-doughnut"
+		  chart-data="p2GData" chart-labels="p2GLabels" >
+		</canvas>
+		<p class="tierValue">{{vm.profile.p2G}}</p>
+	</div>
+	<div class="chartContainer">
+		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
+		<canvas id="p2G" class="p2GCanvas chart-doughnut"
+		  chart-data="p2GData" chart-labels="p2GLabels" >
+		</canvas>
+		<p class="tierValue">{{vm.profile.p2G}}</p>
+	</div>
+	<div class="chartContainer">
+		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
+		<canvas id="p2G" class="p2GCanvas chart-doughnut"
+		  chart-data="p2GData" chart-labels="p2GLabels" >
+		</canvas>
+		<p class="tierValue">{{vm.profile.p2G}}</p>
+	</div>
+	<div class="chartContainer">
+		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
+		<canvas id="p2G" class="p2GCanvas chart-doughnut"
+		  chart-data="p2GData" chart-labels="p2GLabels" >
+		</canvas>
+		<p class="tierValue">{{vm.profile.p2G}}</p>
+	</div>			
+</div>
 	<h3>Net Worth: {{vm.profile.netWorthRange}}</h3>
 	<h3>Income: {{vm.profile.income}}</h3>
 	<h3>Real Estate (Total Value): {{vm.profile.realEstateTotalVal}}</h3>
@@ -96,7 +128,7 @@
 	<h3>Estimated Annual Donations: {{vm.profile.estimatedAnnualDonations}}</h3>
 	<h3>Propensity to Give (P2G) Score: {{vm.profile.p2G}}</h3>
 	<h3>Gift Capacity: {{vm.profile.giftCapacity}}</h3>
-</div>
+
 
 
 
