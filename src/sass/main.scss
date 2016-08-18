@@ -18,6 +18,20 @@ html {
 	background: white;
 }
 
+h3 {
+	color: $orange;
+    text-align: left;
+    font-weight: bold !important;
+    font-size: 1.5vw !important;
+}
+
+h4 {
+	color: $brown;
+    text-align: left;
+    font-weight: bold !important;
+    font-size: 1vw !important;
+}
+
 .MainBox {
 	// border: solid black 1px;
 	display: flex;
@@ -52,8 +66,6 @@ html {
 }
 
 
-
-
 .contactContainer {
 	display: flex;
 	justify-content:center;
@@ -75,8 +87,7 @@ html {
 	flex-direction: column;
 	margin: 2vw;
 	width: 70vw;
-	background-color: $coffeewhite;
-    background-image: url("../images/img-noise-900x900.png");
+	background-color: $coffeewhite;    // background-image: url("../images/img-noise-900x900.png");
   	box-shadow: 5px 5px 5px 0px #C2C2C2;
 	// background: #F2EFDF;
 }
@@ -96,10 +107,7 @@ html {
 	font-weight: bold;
 }
 
-.hostPhoto {
-	border-radius: 100%;
-	overflow: hidden;
-}
+
 
 .animated {
    -webkit-animation-duration: 1s;
