@@ -24,7 +24,7 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 
 	    $http.get(SERVER.URL + 'host/my-events/' + eventID, config).then((res) => {
 	        vm.event = res.data;
-	        console.log(vm.event);
+	        console.log(res.data);
 
 
 	 //Dummy data inserted for development
@@ -122,6 +122,10 @@ function createEventGuest(guestInfo, guestInstance){
   };
 
 function emailGuest(egInfo, guestInstance){
+	console.log("Inside emailGuest - egInfo");
+	console.log(egInfo);
+	console.log("guestInstance");
+	console.log(guestInstance);
 	let guestInfo = guestInstance.first_name + " " + guestInstance.last_name + " " + '<' + guestInstance.email + '>';
 	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.uuid;
 	let emailMessage = vm.event.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;

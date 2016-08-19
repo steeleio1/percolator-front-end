@@ -37,6 +37,8 @@ function EventGuestController ($state, $http, SERVER, $stateParams) {
                 alert("201 OK");
                 console.log(res);
                 // $state.go('root.host.myEvents');
+            } else {
+              console.log(res);
             }
         },
         function (res) {
@@ -44,6 +46,8 @@ function EventGuestController ($state, $http, SERVER, $stateParams) {
                 alert("401 ERROR!!!!!");
             } else if (res.status == 403) {
                 alert("403 Forbidden");
+            } else {
+              console.log(res);
             }
 
         });
