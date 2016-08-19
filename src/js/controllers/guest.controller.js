@@ -12,7 +12,8 @@ function GuestController (MailService, WealthService, $scope){
 	// charts correctly.
 	$scope.netWorthLabels = ['Net Worth Tier', 'Placeholder'];
 	$scope.p2GLabels = ['P2G Score', 'Max'];
-	$scope.giftCapacityLabels = ['Gift Capacity', 'Placeholder']
+	$scope.giftCapacityLabels = ['Gift Capacity', 'Placeholder'];
+	$scope.realEstateLabels = ['Real Estate Tier', 'Placeholder'];
 
 	init();
 
@@ -237,12 +238,14 @@ function GuestController (MailService, WealthService, $scope){
             let incomeMax = 6;
 			let incomeDifference = incomeMax - incomeVal;
 
+			let realEstateMax = 8;
+			let realEstateDifference = realEstateMax - realEstateTier;
 
             $scope.$applyAsync($scope.netWorthData = [netWorthVal, netWorthDifference]);
             $scope.$applyAsync($scope.incomeData = [incomeVal, incomeDifference]);
             $scope.$applyAsync($scope.p2GData = [vm.profile.p2GVal, p2GMax, 0]);
             $scope.$applyAsync($scope.giftCapacityData = [vm.profile.giftCapacityTier, giftCapacityDifference]);
-
+            $scope.$applyAsync($scope.realEstateData = [vm.profile.realEstateTier, realEstateDifference]);
 		});
 	}
 }
