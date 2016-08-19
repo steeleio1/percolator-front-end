@@ -137,28 +137,6 @@ function GuestController (MailService, WealthService, $scope){
 			}
 			console.log(incomeTier);
 
-			let realEstateTier;
-			let realEstateRange	= res.data.realestate.total_realestate_value.text;
-			if (realEstateRange === "Unable to Rate"){
-				realEstateTier = 0;
-			} else if (realEstateRange === "$1-$250K"){
-				realEstateTier = 1;
-			} else if (realEstateRange === "$250K-$500K"){
-				realEstateTier = 2;
-			} else if (realEstateRange === "$500K-$750K"){
-				realEstateTier = 3;
-			} else if (realEstateRange === "$750K-$1MM"){
-				realEstateTier = 4;
-			} else if (realEstateRange === "$1MM-$2MM"){
-				realEstateTier = 5;
-			} else if (realEstateRange === "$2MM-$5MM"){
-				realEstateTier = 6;
-			} else if (realEstateRange === "$5MM-$10MM"){
-				realEstateTier = 7;
-			} else if (realEstateRange === "$10MM+"){
-				realEstateTier = 8;
-			}
-			console.log(realEstateTier);
 						
 
 			let giftCapacityTier;
@@ -207,6 +185,28 @@ function GuestController (MailService, WealthService, $scope){
 				giftCapacityTier = 20;
 			}			
 
+			let realEstateTier;
+			let realEstateRange	= res.data.realestate.total_realestate_value.text;
+			if (realEstateRange === "Unable to Rate"){
+				realEstateTier = 0;
+			} else if (realEstateRange === "$1-$250K"){
+				realEstateTier = 1;
+			} else if (realEstateRange === "$250K-$500K"){
+				realEstateTier = 2;
+			} else if (realEstateRange === "$500K-$750K"){
+				realEstateTier = 3;
+			} else if (realEstateRange === "$750K-$1MM"){
+				realEstateTier = 4;
+			} else if (realEstateRange === "$1MM-$2MM"){
+				realEstateTier = 5;
+			} else if (realEstateRange === "$2MM-$5MM"){
+				realEstateTier = 6;
+			} else if (realEstateRange === "$5MM-$10MM"){
+				realEstateTier = 7;
+			} else if (realEstateRange === "$10MM+"){
+				realEstateTier = 8;
+			}
+			console.log(realEstateTier);
 
 
 			vm.profile = {
@@ -254,6 +254,7 @@ function GuestController (MailService, WealthService, $scope){
 
             let giftCapacityMax = 20;
             let giftCapacityDifference = giftCapacityMax - vm.profile.giftCapacityTier;
+
 
             $scope.$applyAsync($scope.netWorthData = [netWorthVal, netWorthDifference]);
             $scope.$applyAsync($scope.incomeData = [incomeVal, incomeDifference]);

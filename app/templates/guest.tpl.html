@@ -105,7 +105,7 @@
 
 		<h3>Gift Capacity: {{vm.profile.giftCapacity}}</h3>
 		<canvas id="giftCapacity" class="giftCapacityCanvas chart-doughnut"
-		  chart-data="giftCapacityData" chart-labels="giftCapacityLabels" >
+		  		chart-data="giftCapacityData" chart-labels="giftCapacityLabels" >
 		</canvas>
 		<p class="tierValue">Tier {{vm.profile.giftCapacityTier}}/20</p>
 
@@ -114,7 +114,7 @@
 	<div class="chartContainer">
 		<h3>Income: {{vm.profile.incomeRange}}</h3>
 			<canvas id="p2G" class="p2GCanvas chart-doughnut"
-			  chart-data="incomeData" chart-labels="p2GLabels" >
+			  		chart-data="incomeData" chart-labels="p2GLabels" >
 			</canvas>
 		<p class="tierValue">Tier: {{vm.profile.incomeTier}}/6</p>
 	</div>
@@ -122,8 +122,9 @@
 	<div class="chartContainer">
 		<h3>Real Estate Value: {{vm.profile.realEstateTotalVal}} Properties Owned: {{vm.profile.numberRealEstateProperties}}</h3>
 <!-- 		<h3>Properties Owned: {{vm.profile.numberRealEstateProperties}}</h3> -->
-			<canvas id="p2G" class="p2GCanvas chart-doughnut"
-			  chart-data="p2GData" chart-labels="p2GLabels" >
+			<canvas id="p2G" 
+					class="p2GCanvas chart-doughnut"
+			  		chart-data="REData" chart-labels="p2GLabels" >
 			</canvas>
 		<p class="tierValue">Tier: 
 		{{vm.profile.realEstateTier}}/8</p>
