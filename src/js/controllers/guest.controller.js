@@ -11,7 +11,8 @@ function GuestController (MailService, WealthService, $scope){
 	// This is because we have to call $scope.$applyAsync() below in order to populate our
 	// charts correctly.
 	$scope.netWorthLabels = ['Net Worth Tier', 'Placeholder'];
-	$scope.p2GLabels = ['P2G Tier', 'Placeholder'];
+	$scope.p2GLabels = ['P2G Score', 'Max'];
+	$scope.giftCapacityLabels = ['Gift Capacity', 'Placeholder']
 
 	let netWorthVal;
 	let netWorthDifference;
@@ -114,6 +115,7 @@ function GuestController (MailService, WealthService, $scope){
 						} else if (p2G === "5|5 - Unmatched"){
 							p2GVal = 1;
 							p2GText = "Unmatched";
+
 						}	
 				
 			let incomeTier;
@@ -157,6 +159,55 @@ function GuestController (MailService, WealthService, $scope){
 				realEstateTier = 8;
 			}
 			console.log(realEstateTier);
+						
+
+			let giftCapacityTier;
+			let giftCapacityRaw = res.data.giving.gift_capacity.text;
+			if (giftCapacityRaw === "Unable to Rate"){
+				giftCapacityTier = 0;
+			} else if (giftCapacityRaw === "<$1K"){
+				giftCapacityTier = 1;
+			} else if (giftCapacityRaw === "$1K-$2K"){
+				giftCapacityTier = 2;
+			} else if (giftCapacityRaw === "$2K-$3K"){
+				giftCapacityTier = 3;
+			} else if (giftCapacityRaw === "$3K-$5K"){
+				giftCapacityTier = 4;
+			} else if (giftCapacityRaw === "$5K-$7.5K"){
+				giftCapacityTier = 5;
+			} else if (giftCapacityRaw === "$7.5K-$10K"){
+				giftCapacityTier = 6;
+			} else if (giftCapacityRaw === "$10K-$15K"){
+				giftCapacityTier = 7;
+			} else if (giftCapacityRaw === "$15K-$20K"){
+				giftCapacityTier = 8;
+			} else if (giftCapacityRaw === "$20K-$25K"){
+				giftCapacityTier = 9;
+			} else if (giftCapacityRaw === "$25K-$30K"){
+				giftCapacityTier = 10;
+			} else if (giftCapacityRaw === "$30K-$40K"){
+				giftCapacityTier = 11;		
+			} else if (giftCapacityRaw === "$40K-$50K"){
+				giftCapacityTier = 12;
+			} else if (giftCapacityRaw === "$50K-$75K"){
+				giftCapacityTier = 13;
+			} else if (giftCapacityRaw === "$75K-$100K"){
+				giftCapacityTier = 14;
+			} else if (giftCapacityRaw === "$100K-$200K"){
+				giftCapacityTier = 15;
+			} else if (giftCapacityRaw === "$200K-$300K"){
+				giftCapacityTier = 16;
+			} else if (giftCapacityRaw === "$300K-$500K"){
+				giftCapacityTier = 17;
+			} else if (giftCapacityRaw === "$500K-$1MM"){
+				giftCapacityTier = 18;
+			} else if (giftCapacityRaw === "$1MM-$5MM"){
+				giftCapacityTier = 19;
+			} else if (giftCapacityRaw === "$5MM+"){
+				giftCapacityTier = 20;
+			}			
+
+
 
 			vm.profile = {
 				fullname: res.data.identity.full_name,
@@ -184,7 +235,8 @@ function GuestController (MailService, WealthService, $scope){
 				p2G: p2G.substring(0,3),
 				p2GVal: p2GVal,
 				p2GText: p2GText,
-				giftCapacity: res.data.giving.gift_capacity.text
+				giftCapacityTier: giftCapacityTier,
+				giftCapacity: giftCapacityRaw
 			};
 			console.log(vm.profile);
 
@@ -199,14 +251,14 @@ function GuestController (MailService, WealthService, $scope){
 			p2GMax = 5;
 			p2GDifference = p2GMax-vm.profile.p2GVal;
 
+
+            let giftCapacityMax = 20;
+            let giftCapacityDifference = giftCapacityMax - vm.profile.giftCapacityTier;
+
             $scope.$applyAsync($scope.netWorthData = [netWorthVal, netWorthDifference]);
             $scope.$applyAsync($scope.incomeData = [incomeVal, incomeDifference]);
-            $scope.$applyAsync($scope.p2GData = [vm.profile.p2GVal, p2GDifference]);
-            // $scope.$applyAsync($scope.netWorthData = [netWorthVal, netWorthDifference]);
-
-
-
-            // REMax = 8;
+            $scope.$applyAsync($scope.p2GData = [vm.profile.p2GVal, p2GMax, 0]);
+            $scope.$applyAsync($scope.giftCapacityData = [vm.profile.giftCapacityTier, giftCapacityDifference]);
 
 		});
 	}

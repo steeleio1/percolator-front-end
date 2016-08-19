@@ -1,4 +1,4 @@
-function EventHostController (MailService, $state, $scope, $http, SERVER, $cookies, $stateParams) {
+function EventHostController (MailService, $state, $http, SERVER, $cookies, $stateParams) {
 
 	// Sets up this as vm.
 	let vm = this;
@@ -142,5 +142,5 @@ function emailGuest(egInfo, guestInstance){
 
 }
 
-EventHostController.$inject = ['MailService', '$state', '$scope', '$http', 'SERVER', '$cookies', '$stateParams'];
+EventHostController.$inject = ['MailService', '$state', '$http', 'SERVER', '$cookies', '$stateParams'];
 export { EventHostController };
