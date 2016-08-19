@@ -85,26 +85,25 @@
 
 <div class=chartsContainer>
 	<div class="chartContainer">
-		<h3>Net Worth:</h3>
+		<h3>Net Worth: {{vm.profile.netWorthRange}}</h3>
 		<canvas id="netWorth" class="worthCanvas chart-doughnut"
 		  chart-data="netWorthData" chart-labels="netWorthLabels" >
 		</canvas>
-		<p class="tierValue">Tier {{vm.profile.netWorthTier}}</p>
-		<p class="range">{{vm.profile.netWorthRange}}</p>
+		<p class="tierValue">Tier {{vm.profile.netWorthTier}}/12</p>
 	</div>		
 	<div class="chartContainer">
 		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
-		<canvas id="p2G" class="p2GCanvas chart-doughnut"
+		<canvas id="p2G" class="p2GCanvas chart-horizontal-bar"
 		  chart-data="p2GData" chart-labels="p2GLabels" >
 		</canvas>
 		<p class="tierValue">{{vm.profile.p2G}}</p>
 	</div>
 	<div class="chartContainer">
-		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
-		<canvas id="p2G" class="p2GCanvas chart-doughnut"
-		  chart-data="p2GData" chart-labels="p2GLabels" >
+		<h3>Gift Capacity: {{vm.profile.giftCapacity}}</h3>
+		<canvas id="giftCapacity" class="giftCapacityCanvas chart-doughnut"
+		  chart-data="giftCapacityData" chart-labels="giftCapacityLabels" >
 		</canvas>
-		<p class="tierValue">{{vm.profile.p2G}}</p>
+		<p class="tierValue">Tier {{vm.profile.giftCapacityTier}}/20</p>
 	</div>
 	<div class="chartContainer">
 		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
