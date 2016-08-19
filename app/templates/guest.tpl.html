@@ -86,39 +86,45 @@
 <div class=chartsContainer>
 	<div class="chartContainer">
 		<h3>Net Worth:</h3>
-		<canvas id="netWorth" class="worthCanvas chart-doughnut"
-		  chart-data="netWorthData" chart-labels="netWorthLabels" >
-		</canvas>
+			<canvas id="netWorth" class="worthCanvas chart-doughnut"
+			  chart-data="netWorthData" chart-labels="netWorthLabels" >
+			</canvas>
 		<p class="tierValue">Tier {{vm.profile.netWorthTier}}</p>
 		<p class="range">{{vm.profile.netWorthRange}}</p>
-	</div>		
+	</div>
+
 	<div class="chartContainer">
 		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
-		<canvas id="p2G" class="p2GCanvas chart-doughnut"
-		  chart-data="p2GData" chart-labels="p2GLabels" >
-		</canvas>
+			<canvas id="p2G" class="p2GCanvas chart-doughnut"
+			  chart-data="p2GData" chart-labels="p2GLabels" >
+			</canvas>
 		<p class="tierValue">{{vm.profile.p2G}}</p>
 	</div>
+
 	<div class="chartContainer">
 		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
-		<canvas id="p2G" class="p2GCanvas chart-doughnut"
-		  chart-data="p2GData" chart-labels="p2GLabels" >
-		</canvas>
+			<canvas id="p2G" class="p2GCanvas chart-doughnut"
+			  chart-data="p2GData" chart-labels="p2GLabels" >
+			</canvas>
 		<p class="tierValue">{{vm.profile.p2G}}</p>
 	</div>
+
 	<div class="chartContainer">
-		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
-		<canvas id="p2G" class="p2GCanvas chart-doughnut"
-		  chart-data="p2GData" chart-labels="p2GLabels" >
-		</canvas>
-		<p class="tierValue">{{vm.profile.p2G}}</p>
+		<h3>Income: {{vm.profile.incomeRange}}</h3>
+			<canvas id="p2G" class="p2GCanvas chart-doughnut"
+			  chart-data="incomeData" chart-labels="p2GLabels" >
+			</canvas>
+		<p class="tierValue">Tier: {{vm.profile.incomeTier}}/6</p>
 	</div>
+
 	<div class="chartContainer">
-		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
-		<canvas id="p2G" class="p2GCanvas chart-doughnut"
-		  chart-data="p2GData" chart-labels="p2GLabels" >
-		</canvas>
-		<p class="tierValue">{{vm.profile.p2G}}</p>
+		<h3>Real Estate Value: {{vm.profile.realEstateTotalVal}} Properties Owned: {{vm.profile.numberRealEstateProperties}}</h3>
+<!-- 		<h3>Properties Owned: {{vm.profile.numberRealEstateProperties}}</h3> -->
+			<canvas id="p2G" class="p2GCanvas chart-doughnut"
+			  chart-data="p2GData" chart-labels="p2GLabels" >
+			</canvas>
+		<p class="tierValue">Tier: 
+		{{vm.profile.realEstateTier}}/8</p>
 	</div>			
 </div>
 

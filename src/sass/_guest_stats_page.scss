@@ -110,16 +110,30 @@ $darkorange: #F44B0C;
 }
 
 .chartContainer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	position: relative;
+	margin: 3vw;
 	width: 40vw;
+}
+
+.p2GCanvas {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
 }
 
 .tierValue{
 	position: absolute;
-    top: 41%;
-    left: 42%;
+    // top: 41%;
+    // left: 42%;
     font-size: 2vw;
 	font-weight: bold;
+	margin-top: 0.5vw;
 	color: $orange;
 }
 
