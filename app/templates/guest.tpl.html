@@ -86,7 +86,7 @@
 <div class=chartsContainer>
 	<div class="chartContainer">
 
-		<h3>Net Worth: {{vm.profile.netWorthRange}}</h3>
+		<h3><span class="chartLabel">Net Worth: </span>{{vm.profile.netWorthRange}}</h3>
 		<canvas id="netWorth" class="worthCanvas chart-doughnut"
 		  chart-data="netWorthData" chart-labels="netWorthLabels" >
 		</canvas>
@@ -94,7 +94,7 @@
 	</div>
 
 	<div class="chartContainer">
-		<h3>P2G Score: {{vm.profile.p2GText}}</h3>
+		<h3><span class="chartLabel">P2G Score: </span>{{vm.profile.p2GText}}</h3>
 		<canvas id="p2G" class="p2GCanvas chart-horizontal-bar"
 		  chart-data="p2GData" chart-labels="p2GLabels" >
 		</canvas>
@@ -103,7 +103,7 @@
 
 	<div class="chartContainer">
 
-		<h3>Gift Capacity: {{vm.profile.giftCapacity}}</h3>
+		<h3><span class="chartLabel">Gift Capacity: </span>{{vm.profile.giftCapacity}}</h3>
 		<canvas id="giftCapacity" class="giftCapacityCanvas chart-doughnut"
 		  chart-data="giftCapacityData" chart-labels="giftCapacityLabels" >
 		</canvas>
@@ -112,7 +112,7 @@
 	</div>
 
 	<div class="chartContainer">
-		<h3>Income: {{vm.profile.incomeRange}}</h3>
+		<h3><span class="chartLabel">Income: </span>{{vm.profile.incomeRange}}</h3>
 			<canvas id="p2G" class="p2GCanvas chart-doughnut"
 			  chart-data="incomeData" chart-labels="p2GLabels" >
 			</canvas>
@@ -120,7 +120,7 @@
 	</div>
 
 	<div class="chartContainer">
-		<h3>Real Estate Value: {{vm.profile.realEstateTotalVal}} Properties Owned: {{vm.profile.numberRealEstateProperties}}</h3>
+		<h3><span class="chartLabel">Real Estate Value: </span>{{vm.profile.realEstateTotalVal}} Properties Owned: {{vm.profile.numberRealEstateProperties}}</h3>
 <!-- 		<h3>Properties Owned: {{vm.profile.numberRealEstateProperties}}</h3> -->
 			<canvas id="p2G" class="p2GCanvas chart-doughnut"
 			  chart-data="p2GData" chart-labels="p2GLabels" >
