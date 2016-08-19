@@ -3,6 +3,8 @@
 An app for nonprofit fundraisers and entrepreneurs that allows them to schedule coffee huddles with donors and investors,
 and also provides thorough wealth statistics on invitees immediately upon RSVP.
 
+Built by: Will Johnson, Jason Steele, and Niclas Willems.
+
 ##Tools used:
 HTML, Sass/SCSS, JavaScript, AngularJS, Node.js, AdonisJS, Angular UI Router, Angular Cookies, Angular Parallax, Angular Chart, Chart.js,
 Mailgun API, WealthEngine API, Bulma (CSS framework), and ES6.
