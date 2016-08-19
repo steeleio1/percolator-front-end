@@ -1,52 +1,54 @@
 <div class="guestPage">
 
 	<div class="guestStatsBox animateDown fadeInDown">
-	<div class="personalInfoWrapper">
+		<div class="personalInfoWrapper">
 			<h3>Personal Info:</h3>
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-					{{vm.profile.fullname}}
-					</div>
-						<span class="statLabel">Full Name</span>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+				{{vm.profile.fullname}}
 				</div>
+					<span class="statLabel">Full Name</span>
+			</div>
 
-				<div class="statInfoWrapper">
-					<div class="statInfo maritalInfo">
-					{{vm.profile.email}}
-					</div>
-						<span class="statLabel">Email</span>
+			<div class="statInfoWrapper">
+				<div class="statInfo maritalInfo">
+				{{vm.profile.email}}
 				</div>
+					<span class="statLabel">Email</span>
+			</div>
 
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-					{{vm.profile.kids}}
-					</div>
-						<span class="statLabel">Has kids</span>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+				{{vm.profile.kids}}
 				</div>
+					<span class="statLabel">Has kids</span>
+			</div>
 
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-					{{vm.profile.spouseName}}
-					</div>
-						<span class="statLabel">Spouse Name</span>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+				{{vm.profile.spouseName}}
 				</div>
+					<span class="statLabel">Spouse Name</span>
+			</div>
 
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-						{{vm.profile.age}}
-					</div>
-						<span class="statLabel">Age</span>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+					{{vm.profile.age}}
 				</div>
+					<span class="statLabel">Age</span>
+			</div>
 
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-						{{vm.profile.city}}, {{vm.profile.state}}
-					</div>
-						<span class="statLabel">Lives In</span>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+					{{vm.profile.city}}, {{vm.profile.state}}
 				</div>
-	</div>
-
+					<span class="statLabel">Lives In</span>
+			</div>
+		</div>
 		<div class="jobInfoWrapper">
+			<div class="accredited" ng-show="vm.profile.accreditedInvestor">
+				Accredited Investor
+			</div>		
 			<h3>Job Info:</h3>
 				<div class="statInfoWrapper">
 					<div class="statInfo">
@@ -77,9 +79,7 @@
 					</div>
 						<span class="statLabel">Title</span>
 				</div>
-
 		</div>
-
 	</div>
 </div>
 
