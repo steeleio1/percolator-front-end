@@ -104,8 +104,8 @@ function GuestController (MailService, WealthService, $scope){
 						} else if (p2G === "5|5 - Unmatched"){
 							p2GVal = 1;
 							p2GText = "Unmatched";
-
 						}	
+
 
 			let giftCapacityTier;
 			let giftCapacityRaw = res.data.giving.gift_capacity.text;
@@ -151,7 +151,7 @@ function GuestController (MailService, WealthService, $scope){
 				giftCapacityTier = 19;
 			} else if (giftCapacityRaw === "$5MM+"){
 				giftCapacityTier = 20;
-			}	
+			};
 
 			let incomeTier;
 			let incomeRange	= res.data.wealth.total_income.text;
