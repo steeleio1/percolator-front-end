@@ -5,6 +5,27 @@ $orange:  #e78200;
 $darkorange: #F44B0C;
 $green: #84DB2E;
 
+
+@media screen and (max-width: 1000px){
+	h3{
+		font-size: 18px !important;
+	}
+	p{
+		font-size: 18px !important;
+	}
+	span{
+		font-size: 18px !important;
+	}
+	.statInfo {
+		font-size: 15px !important;
+		justify-content: flex-start !important;
+		padding-left: 2px;
+	}
+	.statLabel{
+		font-size: 13px !important;
+	}	
+}
+
 @media screen and (max-width: 750px){
 	h3{
 		font-size: 16px !important;
@@ -44,12 +65,6 @@ $green: #84DB2E;
 
 	.jobInfoWrapper{
 		padding-left: 0 !important;
-	}
-}
-
-@media screen and (min-width: 751px){
-	h3 {
-		font-size: 1.6vw !important;
 	}
 }
 
