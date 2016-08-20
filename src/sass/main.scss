@@ -79,7 +79,7 @@ h4 {
     // border: 1px solid $orange;
     border-radius: 10px;
     margin: 1vw;
-   	// background: #F2EFDF; 
+   	// background: #F2EFDF;
 }
 
 .eventMedia {
@@ -90,6 +90,12 @@ h4 {
 	background-color: $coffeewhite;    // background-image: url("../images/img-noise-900x900.png");
   	box-shadow: 5px 5px 5px 0px #C2C2C2;
 	// background: #F2EFDF;
+}
+
+.invites{
+	color: black;
+	font-weight: bold;
+
 }
 
 .attending {
@@ -107,6 +113,10 @@ h4 {
 	font-weight: bold;
 }
 
+.notresponded {
+	color: grey;
+	font-weight: bold;
+}
 
 
 .animated {
@@ -141,8 +151,11 @@ h4 {
     -webkit-animation-name: fadeInRight;
     animation-name: fadeInRight;
 }
+<<<<<<< HEAD
+=======
 
 footer {
 	text-align: center;
 	padding: 30px;
 }
+>>>>>>> 1e0344de641cc03400bd4958e414947d922dd910

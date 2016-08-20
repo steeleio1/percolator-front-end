@@ -27,7 +27,7 @@
 	           <small>{{vm.event.eventInfo.date}}: {{vm.event.eventInfo.start_time}}-{{vm.event.eventInfo.end_time}}</small>
 	           <br>
 	           <small><strong>RSVPs:</strong></small>
-	          <small>{{vm.event.invites}} invited</small> | <small class="attending">{{vm.event.yes}} attending</small> | <small class="declined">{{vm.event.no}} declined</small> | <small class="maybe">{{vm.event.maybe}} maybe</small> | <small class="not responded">{{vm.event.not_responded}} not responded</small>
+	          <small class="invites">{{vm.rsvp.invites}} invited</small> | <small class="attending">{{vm.rsvp.yes}} attending</small> | <small class="declined">{{vm.rsvp.no}} declined</small> | <small class="maybe">{{vm.rsvp.maybe}} maybe</small> | <small class="notresponded">{{vm.rsvp.not_responded}} not responded</small>
 	           <br>
 	           <small><strong>Organization:</strong> {{vm.event.eventInfo.organization}}</small>
 	           <br>
@@ -75,7 +75,7 @@
   	</div>
 
 	<div class="RSVPContainer">
-		<div class="RSVPYesList">
+		<div class="RSVPYesList" ng-repeat="yesGuest in vm.yesGuests track by $index">
 			<p class="attending animated fadeInRight">
 				Yes
 			</p>
@@ -84,19 +84,31 @@
 			      	<div class="media-content">
 				        <div class="content">
 				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
+										<strong>{{yesGuest.first_name}} {{yesGuest.last_name}}</strong> <small>{{yesGuest.email}}</small>
 				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+				      			Mobile Number: {{yesGuest.mobile_number}}
+										<br>
+										Home Number: {{yesGuest.home_number}}
 				          </p>
 				        </div>
 			      	</div>
+							<br>
 			      	<div class="media-right">
+								<button class="Btn button is-primary">
+					  			View Contact Details
+					  		</button>
+								<button class="Btn button is-primary">
+									Generate Wealth Report
+								</button>
+							</div>
+							<br>
+							<div>
 			        	<button class="delete"></button>
 			      	</div>
 			    </article>
 			</div>
 		</div>
-		<div class="RSVPNoList">
+		<div class="RSVPNoList" ng-repeat="noGuest in vm.noGuests track by $index">
 			<p class="declined animated fadeInRight">
 			No
 			</p>
@@ -105,19 +117,28 @@
 			      	<div class="media-content">
 				        <div class="content">
 				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
+				            <strong>{{noGuest.first_name}} {{noGuest.last_name}}</strong> <small>{{noGuest.email}}</small>
 				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+				      			Mobile Number: {{noGuest.mobile_number}}
+										<br>
+										Home Number: {{noGuest.home_number}}
 				          </p>
 				        </div>
 			      	</div>
-			      	<div class="media-right">
-			        	<button class="delete"></button>
-			      	</div>
+							<br>
+							<div class="media-right">
+								<button class="Btn button is-primary">
+									View Contact Details
+								</button>
+							</div>
+							<br>
+							<div>
+								<button class="delete"></button>
+							</div>
 			    </article>
 			</div>
 		</div>
-		<div class="RSVPMaybeList">
+		<div class="RSVPMaybeList" ng-repeat="maybeGuest in vm.maybeGuests track by $index">
 			<p class="maybe animated fadeInRight">
 			Maybe
 			</p>
@@ -125,18 +146,56 @@
 			    <article class="media animated fadeInRight">
 			      	<div class="media-content">
 				        <div class="content">
-				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
-				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-				          </p>
+									<strong>{{maybeGuest.first_name}} {{maybeGuest.last_name}}</strong> <small>{{maybeGuest.email}}</small>
+									<br>
+									Mobile Number: {{maybeGuest.mobile_number}}
+									<br>
+									Home Number: {{maybeGuest.home_number}}
+								</p>
 				        </div>
 			      	</div>
-			      	<div class="media-right">
-			        	<button class="delete"></button>
-			      	</div>
+							<br>
+							<div class="media-right">
+								<button class="Btn button is-primary">
+									View Contact Details
+								</button>
+							</div>
+							<br>
+							<div>
+								<button class="delete"></button>
+							</div>
 			    </article>
 			</div>
 		</div>
+		<div class="RSVPNotRespondedList" ng-repeat="nrGuest in vm.nrGuests track by $index">
+			<p class="notresponded animated fadeInRight">
+			Not Responded
+			</p>
+			<div class="contactContainer">
+			    <article class="media animated fadeInRight">
+			      	<div class="media-content">
+				        <div class="content">
+									<strong>{{nrGuest.first_name}} {{nrGuest.last_name}}</strong> <small>{{nrGuest.email}}</small>
+									<br>
+									Mobile Number: {{nrGuest.mobile_number}}
+									<br>
+									Home Number: {{nrGuest.home_number}}
+								</p>
+				        </div>
+			      	</div>
+							<br>
+							<div class="media-right">
+								<button class="Btn button is-primary">
+									View Contact Details
+								</button>
+							</div>
+							<br>
+							<div>
+								<button class="delete"></button>
+							</div>
+			    </article>
+			</div>
+		</div>
+
 	</div>
 </div>
