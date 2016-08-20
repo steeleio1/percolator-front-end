@@ -11,8 +11,9 @@ function GuestController (MailService, WealthService, $scope){
 	// This is because we have to call $scope.$applyAsync() below in order to populate our
 	// charts correctly.
 	$scope.netWorthLabels = ['Net Worth Tier', 'Placeholder'];
-	$scope.p2GLabels = ['P2G Score', 'Max'];
+	$scope.p2GLabels = ['P2G Score', 'PlaceHolder'];
 	$scope.giftCapacityLabels = ['Gift Capacity', 'Placeholder'];
+	$scope.incomeLabels = ['Income Tier', 'Placeholder'];
 	$scope.realEstateLabels = ['Real Estate Tier', 'Placeholder'];
 
 	init();
@@ -257,7 +258,7 @@ function GuestController (MailService, WealthService, $scope){
 
             $scope.$applyAsync($scope.netWorthData = [netWorthVal, netWorthDifference]);
             $scope.$applyAsync($scope.incomeData = [incomeVal, incomeDifference]);
-            $scope.$applyAsync($scope.p2GData = [vm.profile.p2GVal, p2GMax, 0]);
+            $scope.$applyAsync($scope.p2GData = [vm.profile.p2GVal, p2GDifference]);
             $scope.$applyAsync($scope.giftCapacityData = [vm.profile.giftCapacityTier, giftCapacityDifference]);
             $scope.$applyAsync($scope.realEstateData = [vm.profile.realEstateTier, realEstateDifference]);
 		});

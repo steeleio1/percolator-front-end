@@ -47,6 +47,12 @@ $green: #84DB2E;
 	}
 }
 
+@media screen and (min-width: 751px){
+	h3 {
+		font-size: 1.6vw !important;
+	}
+}
+
 .guestPage {
 	display: flex;
 	align-items: center;
@@ -60,12 +66,12 @@ $green: #84DB2E;
     width: 80vw;
     margin: 3vw 0 1vw 0;
     border-radius: 10px;
-    padding: 3vw;
+    padding: 1.5vw 3vw;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
 }
 
 .infoHeader{
-	margin-bottom: 2vw;
+	margin-bottom: 1vw;
 }
 
 .personalInfoWrapper{
@@ -94,7 +100,7 @@ $green: #84DB2E;
 	border-bottom: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-end;
-	font-size: 2vw;
+	font-size: 1.4vw;
 	white-space: nowrap;
 	color: $orange;
 	height: 20px;
@@ -105,7 +111,7 @@ $green: #84DB2E;
 .statLabel {
 	display: flex;
 	flex-direction: flex-start;
-	font-size: 1.6vw;
+	font-size: 1vw;
 	color: $brown;
 }
 

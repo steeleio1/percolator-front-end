@@ -91,7 +91,7 @@
 		</div>
 		<div class="chartContainer">
 			<h3><span class="chartLabel">Propensity to Give (P2G) Score: </span>{{vm.profile.p2GText}}</h3>
-			<canvas id="p2G" class="p2GCanvas chart-horizontal-bar"
+			<canvas id="p2G" class="p2GCanvas chart-pie"
 			  chart-data="p2GData" chart-labels="p2GLabels" >
 			</canvas>
 		</div>
@@ -107,8 +107,8 @@
 		</div>
 		<div class="chartContainer">
 			<h3><span class="chartLabel">Income: </span>{{vm.profile.incomeRange}}</h3>
-				<canvas id="p2G" class="p2GCanvas chart-doughnut"
-				  		chart-data="incomeData" chart-labels="p2GLabels" >
+				<canvas id="income" class="incomeCanvas chart-doughnut"
+				  		chart-data="incomeData" chart-labels="incomeLabels" >
 				</canvas>
 			<div class="tierBox">
 				<p class="tierValue"><span class="chartLabel">Tier</span></p>
