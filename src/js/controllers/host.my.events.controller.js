@@ -17,6 +17,7 @@ function HostMyEventsController ($state, $scope, $http, SERVER, $cookies, $locat
 			};
 			$http.get(SERVER.URL + 'my-events', config).then((res) => {
 				vm.events = res.data;
+        console.log(vm.events);
 			});
 	}
 

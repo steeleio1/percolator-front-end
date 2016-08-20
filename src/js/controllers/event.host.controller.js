@@ -4,8 +4,19 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 	let vm = this;
 	// Sets up variables
 	vm.inviteNew = false;
-	vm.inviteMyContacts- false;
+	vm.inviteMyContacts= false;
 	vm.guest = {};
+	vm.rsvp = {
+		yes: 0,
+		no: 0,
+		maybe: 0,
+		not_responded: 0,
+		invites: 0
+	};
+	vm.yesGuests = [];
+	vm.noGuests = [];
+	vm.maybeGuests = [];
+	vm.nrGuests = [];
 
 	// Adds the function to the vm object
 	vm.showInviteNew = showInviteNew;
@@ -23,27 +34,48 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 	    let config = {headers: {'Authorization': `Bearer ${token}`}};
 
 	    $http.get(SERVER.URL + 'host/my-events/' + eventID, config).then((res) => {
-	        vm.event = res.data;
-	        console.log(res.data);
 
+				let rsvpInfo = res.data.rsvpInfo;
+				rsvpInfo.forEach(function(data, i){
+		      if(data.rsvp === "Yes"){
+		        vm.rsvp.yes++;
+		        vm.rsvp.invites++;
+		      }
+					else if (data.rsvp === "No"){
+		        vm.rsvp.no++;
+		        vm.rsvp.invites++;
+		      } else if (data.rsvp === "Maybe"){
+		        vm.rsvp.maybe++;
+		        vm.rsvp.invites++;
+		      } else if (data.rsvp === "Not responded"){
+		        vm.rsvp.not_responded++;
+		        vm.rsvp.invites++;
+		      }
+		    });
+				 res.data.allGuests.forEach(function(guest, i){
+					guest.rsvpInfo = res.data.rsvpInfo[i].rsvp;
+				});
 
-	 //Dummy data inserted for development
-				// vm.event =
-				//  {
-			  //   photo_url: 'http://placecage.com/300/300',
-			  //   title: 'A Night with Vision City',
-			  //   street: '123 Infinite Loop',
-			  //   street_2: '',
-			  //   city: 'Cupertino',
-			  //   state: 'CA',
-			  //   post_code: 99999,
-			  //   date: 'August 5th',
-			  //   start_time: '7pm',
-			  //   end_time: '9pm',
-			  //   message: 'Come join us for an exciting evening of vision'
-			  // };
+					// Attempt at solving with lodash groupBy
+					// var  = _.groupBy(res.data.allGuests, res.data.allGuests.rsvpInfo);
 
+					res.data.allGuests.forEach(function(guest, i){
+						if (guest.rsvpInfo === "Yes"){vm.yesGuests.push(guest);
+						} else if (guest.rsvpInfo === "No"){vm.noGuests.push(guest);
+						} else if (guest.rsvpInfo === "Maybe"){vm.maybeGuests.push(guest);
+						} else if (guest.rsvpInfo === "Not responded"){vm.nrGuests.push(guest);
+					};
+				});
+
+				console.log(vm.yesGuests);
+				console.log(vm.noGuests);
+				console.log(vm.maybeGuests);
+				console.log(vm.nrGuests);
+
+					vm.event = res.data;
 	    });
+
+
 	}
 
 	function deleteEvent() {
