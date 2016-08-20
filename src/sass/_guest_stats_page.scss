@@ -10,7 +10,7 @@ $darkorange: #F44B0C;
 .guestPage {
 	display: flex;
 	align-items: center;
-	flex-direction: column;	
+	flex-direction: column;
 }
 
 .guestStatsBox {
@@ -40,7 +40,7 @@ $darkorange: #F44B0C;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
-	width: 30vw;	
+	width: 30vw;
 }
 
 .statInfoWrapper {
@@ -49,7 +49,7 @@ $darkorange: #F44B0C;
 
 .statInfo {
 	// border: solid yellow 1px;
-	border-bottom: solid $lightbrown 1px; 
+	border-bottom: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -62,7 +62,7 @@ $darkorange: #F44B0C;
 
 
 .statLabel {
-	// border: solid green 1px; 
+	// border: solid green 1px;
 	display: flex;
 	flex-direction: flex-start;
 	font-size: 0.8vmax;
@@ -108,6 +108,7 @@ $darkorange: #F44B0C;
 .fadeInDown { 
     -webkit-animation-name: fadeInDown; 
     animation-name: fadeInDown; 
+
 }
 
 .chartsContainer{

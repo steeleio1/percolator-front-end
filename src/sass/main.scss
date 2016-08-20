@@ -66,11 +66,6 @@ h4 {
 }
 
 
-.contactContainer {
-	display: flex;
-	justify-content:center;
-}
-
 .media{
 	display: flex;
 	flex-direction: column;
@@ -92,20 +87,6 @@ h4 {
 	// background: #F2EFDF;
 }
 
-.attending {
-	color: green;
-	font-weight: bold;
-}
-
-.declined {
-	color: red;
-	font-weight: bold;
-}
-
-.maybe {
-	color: darken(gold, 20%);
-	font-weight: bold;
-}
 
 
 

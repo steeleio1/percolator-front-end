@@ -1,13 +1,12 @@
 <div class="hostPage">
 
-  <div class="hostInfoWrapper">
+  <div class="hostInfoWrapper animated fadeInDown">
     <div class="hostPhotoBox">
         <div class="hostPhoto">
           <img src="{{vm.user.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
         </div>
     </div>
-
-
+    
         <div class="hostDetailsWrapper1">
            <h3>Personal Info:</h3>
 
@@ -49,7 +48,7 @@
         </div>
 
         <div class="hostDetailsWrapper2">
-          <h3>Organiztion Info:</h3>
+          <h3>Organization Info:</h3>
 
              <div class="hostDetailWrapper">
                 <div class="hostDetailInfo">
@@ -69,27 +68,28 @@
   </div>
 
 
-  <div class="tabs is-boxed">
-    <ul>
-      <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1=true; vm.active2=false;">
-        <a href="/#/host/my-events">
-          <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-          <span>My Events</span>
-        </a>
-      </li>
-      <li ng-class="{'is-active': vm.active2 }" ng-click="vm.active2=true; vm.active1=false;">
-        <a href="/#/host/my-contacts">
-          <span class="icon is-small"><i class="fa fa-vm.users" aria-hidden="true"></i></span>
-          <span>My Contacts</span>
-        </a>
-      </li>
-      <li>
-        <a href="/#/event-create">
-          <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></i></span>
-          <span>Create Event</span>
-        </a>
-      </li>
-    </ul>
+  <div class="tabs is-boxed animated fadeIn">
+      <ul>
+        <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1=true; vm.active2=false;">
+          <a href="/#/host/my-events">
+            <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+            <span>My Events</span>
+          </a>
+        </li>
+        <li ng-class="{'is-active': vm.active2 }" ng-click="vm.active2=true; vm.active1=false;">
+          <a href="/#/host/my-contacts">
+            <span class="icon is-small"><i class="fa fa-vm.users" aria-hidden="true"></i></span>
+            <span>My Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#/event-create">
+            <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></i></span>
+            <span>Create Event</span>
+          </a>
+        </li>
+      </ul>
   </div>
+
   <div ui-view></div>
 </div>
