@@ -66,12 +66,6 @@ function EventHostController (MailService, $state, $scope, $http, SERVER, $cooki
 						} else if (guest.rsvpInfo === "Not responded"){vm.nrGuests.push(guest);
 					};
 				});
-
-				console.log(vm.yesGuests);
-				console.log(vm.noGuests);
-				console.log(vm.maybeGuests);
-				console.log(vm.nrGuests);
-
 					vm.event = res.data;
 	    });
 
@@ -154,17 +148,13 @@ function createEventGuest(guestInfo, guestInstance){
   };
 
 function emailGuest(egInfo, guestInstance){
-	console.log("Inside emailGuest - egInfo");
-	console.log(egInfo);
-	console.log("guestInstance");
-	console.log(guestInstance);
 	let guestInfo = guestInstance.first_name + " " + guestInstance.last_name + " " + '<' + guestInstance.email + '>';
 	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.uuid;
-	let emailMessage = vm.event.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
+	let emailMessage = vm.event.eventInfo.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
 		var data = {
 			from: 'Excited User <me@mg.javahuddle.com>',
 			to: guestInfo,
-			subject: 'You are invited to join us at ' + vm.event.title,
+			subject: 'You are invited to join us at ' + vm.event.eventInfo.title,
 			text: guestInstance.privateMessage + " " + emailMessage
 		};
 		MailService.sendEmail(data);

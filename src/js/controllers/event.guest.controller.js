@@ -20,8 +20,6 @@ function EventGuestController ($state, $http, SERVER, $stateParams) {
 	}
 
   function submitRSVP(egInfo, guestInfo){
-    // console.log(egInfo);
-    // console.log(guestInfo);
     let uuid = $stateParams.uuid
     let payload = {
     			egInfo: egInfo,
@@ -31,12 +29,10 @@ function EventGuestController ($state, $http, SERVER, $stateParams) {
     $http.post(SERVER.URL + 'event-guest/rsvp/' + uuid, payload).then(function (res) {
             if (res.status == 200) {
                 alert("200 OK");
-                console.log(res);
-                // $state.go('root.host.myEvents');
+                // Guest needs to go somewhere after submitting RSVP. "Thanks for RSVPing!"
             } else if (res.status == 201) {
                 alert("201 OK");
-                console.log(res);
-                // $state.go('root.host.myEvents');
+                // Guest needs to go somewhere after submitting RSVP. "Thanks for RSVPing!"
             } else {
               console.log(res);
             }
@@ -51,7 +47,6 @@ function EventGuestController ($state, $http, SERVER, $stateParams) {
             }
 
         });
-
   }
 
 }
