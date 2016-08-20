@@ -10,7 +10,7 @@ $darkorange: #F44B0C;
 .guestPage {
 	display: flex;
 	align-items: center;
-	flex-direction: column;	
+	flex-direction: column;
 }
 
 .guestStatsBox {
@@ -40,7 +40,7 @@ $darkorange: #F44B0C;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
-	width: 30vw;	
+	width: 30vw;
 }
 
 .statInfoWrapper {
@@ -49,7 +49,7 @@ $darkorange: #F44B0C;
 
 .statInfo {
 	// border: solid yellow 1px;
-	border-bottom: solid $lightbrown 1px; 
+	border-bottom: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -62,52 +62,49 @@ $darkorange: #F44B0C;
 
 
 .statLabel {
-	// border: solid green 1px; 
+	// border: solid green 1px;
 	display: flex;
 	flex-direction: flex-start;
 	font-size: 0.8vmax;
 	color: $brown;
-<<<<<<< HEAD
-=======
 }
 
 .chartLabel{
 	color: $brown;
->>>>>>> db5d5a0dae6a7a4535e9cdba49b1f87a7a1e2766
 }
 
-.animateDown { 
-   -webkit-animation-duration: 2s; 
-   animation-duration: 2s; 
-   -webkit-animation-fill-mode: both; 
-   animation-fill-mode: both; 
-} 
+.animateDown {
+   -webkit-animation-duration: 2s;
+   animation-duration: 2s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+}
 
-@-webkit-keyframes fadeInDown { 
-    0% { 
-        opacity: 0; 
-        -webkit-transform: translateY(-20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        -webkit-transform: translateY(0); 
-    } 
-} 
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
 
-@keyframes fadeInDown { 
-    0% { 
-        opacity: 0; 
-        transform: translateY(-20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        transform: translateY(0); 
-    } 
-} 
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-.fadeInDown { 
-    -webkit-animation-name: fadeInDown; 
-    animation-name: fadeInDown; 
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
 }
 
 .chartsContainer{
