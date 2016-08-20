@@ -66,6 +66,14 @@ $darkorange: #F44B0C;
 	display: flex;
 	flex-direction: flex-start;
 	font-size: 0.8vmax;
+	color: $brown;
+<<<<<<< HEAD
+=======
+}
+
+.chartLabel{
+	color: $brown;
+>>>>>>> db5d5a0dae6a7a4535e9cdba49b1f87a7a1e2766
 }
 
 .animateDown { 
@@ -110,16 +118,30 @@ $darkorange: #F44B0C;
 }
 
 .chartContainer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	position: relative;
+	margin: 3vw;
 	width: 40vw;
+}
+
+.p2GCanvas {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
 }
 
 .tierValue{
 	position: absolute;
-    top: 41%;
-    left: 42%;
+    // top: 41%;
+    // left: 42%;
     font-size: 2vw;
 	font-weight: bold;
+	margin-top: 0.5vw;
 	color: $orange;
 }
 
@@ -130,4 +152,12 @@ $darkorange: #F44B0C;
     font-size: 1vw;
     font-weight: bold;
 	color: $orange;
+}
+
+.accredited {
+	padding: 10px;
+	text-align: center;
+	color: white;
+	background: #86D62C;
+	margin-bottom: 1vw;
 }
