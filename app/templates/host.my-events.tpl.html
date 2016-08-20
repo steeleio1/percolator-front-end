@@ -4,15 +4,51 @@
       <div class="eventInfoWrapper animated fadeInRight">
         <div class="eventPhotoBox">
           <div class="eventPhoto">
-            <img src="{{event.photo_url || 'images/JavaHuddleLogo.png'}}" alt="photo url">
+            <img src="{{event.photo_url || 'images/coffeeCupVector.png'}}" alt="photo url">
           </div>
         </div>
 
         <div class="media-content">
           <div class="content">
+
+
+      <h3>Event Info:</h3>
+        <div class="eventCardInfoWrapper">
+          <div class="eventInfo">
+          {{event.title}}
+          </div>
+            <span class="eventLabel">Event Name</span>
+        </div>
+
+           <h4>Address:</h4>
+           <div class="addressWrapper">
+             {{event.street}}<br>
+             {{event.street_2}}<br>
+             {{event.city}}, {{event.state}} {{event.post_code}} <br>
+            </div>
+
+        <div class="eventCardInfoWrapper">
+          <div class="eventInfo">
+          {{event.date}}
+          </div>
+            <span class="eventLabel">Event Date</span>
+        </div>
+
+        <div class="eventCardInfoWrapper">
+          <div class="eventInfo">
+          {{event.start_time}}
+          </div>
+            <span class="eventLabel">Start Time</span>
+        </div>
+
+        <div class="eventCardInfoWrapper">
+          <div class="eventInfo">
+          {{event.end_time}}
+          </div>
+            <span class="eventLabel">End Time</span>
+        </div>
+        
             <p>
-              <strong >{{event.title}}</strong> | <small>Location: {{event.street}} {{event.street_2}}, {{event.city}} {{event.state}} {{event.post_code}}</small> |
-              <small>{{event.date}} {{event.start_time}} -{{event.end_time}}</small>
               <br>
               <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
               <br>{{event.message}}

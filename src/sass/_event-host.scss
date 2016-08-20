@@ -1,4 +1,5 @@
 $coffeewhite: #fff4e6;
+$lightbrown: #804800;
 $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
@@ -72,6 +73,10 @@ input:focus {
 	margin: 2vw;
 }
 
+.eventInfoWrapper {
+	border: solid red 1px;	
+}
+
 .eventPhotoBox {
 	border-radius: 100%;
 	overflow: hidden;
@@ -93,27 +98,44 @@ margin-bottom: 2vw;
 background: $coffeewhite;
 box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
 background-size: cover;
-
-
-
 	 .content {
 		border: solid green 3px;
-
 	}
 		.media {
 		display: flex;
 		flex-direction: row;
-
 	}
-	// 	.media-left {
-	// 		border: solid green 3px;
-	// 		width: 20vh;
-	// 		height: 20vh;
-	// 		object-fit: cover;
-	// 		// margin-left: 7vw;
-	// 		.image {
-	// 		width: 100%;
- //    		height: auto;
-	// 		}
-	// }	
 }
+
+.eventCardInfoWrapper {
+	margin: 0.3vw;
+}
+
+.eventInfo {
+	border: solid yellow 1px;
+	border-bottom: solid $lightbrown 1px; 
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	font-size: 1.2vmax;
+	// width: 10vmax;
+	white-space: nowrap;
+	color: $orange;
+	height: 2vw;
+}
+
+
+.eventLabel {
+	// border: solid green 1px; 
+	display: flex;
+	flex-direction: flex-start;
+	font-size: 0.8vmax;
+	color: $brown;
+
+}
+
+.addressWrapper {
+	color: $orange;
+	font-size: 1vmax;
+}
+

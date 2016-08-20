@@ -57,7 +57,7 @@ $darkorange: #F44B0C;
 	// width: 10vmax;
 	white-space: nowrap;
 	color: $orange;
-	height: 20px;
+	height: 2vw;
 }
 
 
@@ -67,13 +67,13 @@ $darkorange: #F44B0C;
 	flex-direction: flex-start;
 	font-size: 0.8vmax;
 	color: $brown;
-<<<<<<< HEAD
-=======
+
 }
 
 .chartLabel{
 	color: $brown;
->>>>>>> db5d5a0dae6a7a4535e9cdba49b1f87a7a1e2766
+	font-size: 1.2vmax;
+	white-space: nowrap;
 }
 
 .animateDown { 
@@ -114,7 +114,6 @@ $darkorange: #F44B0C;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-
 }
 
 .chartContainer{
@@ -132,17 +131,28 @@ $darkorange: #F44B0C;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-
+    font-size: 2vw;
+    color: $orange;	
 }
 
 .tierValue{
 	position: absolute;
     // top: 41%;
     // left: 42%;
-    font-size: 2vw;
+    font-size: 1.8vw;
 	font-weight: bold;
-	margin-top: 0.5vw;
+	margin-top: 0.8vw;
 	color: $orange;
+}
+
+.tierValue-alt {
+	position: absolute;
+    // top: 41%;
+    // left: 42%;
+    font-size: 1.8vw;
+	font-weight: bold;
+	margin-top: 2.0vw;
+	color: $orange;	
 }
 
 .range {
@@ -155,9 +165,11 @@ $darkorange: #F44B0C;
 }
 
 .accredited {
-	padding: 10px;
+	padding: 1.2vw;
 	text-align: center;
 	color: white;
 	background: #86D62C;
+	font-size: 1.5vmax;
+	white-space: nowrap;
 	margin-bottom: 1vw;
 }
