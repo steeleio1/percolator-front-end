@@ -220,7 +220,14 @@ function GuestController (MailService, WealthService, $scope){
 				p2GVal: p2GVal,
 				p2GText: p2GText,
 				giftCapacityTier: giftCapacityTier,
-				giftCapacity: giftCapacityRaw
+				giftCapacity: giftCapacityRaw,
+				cashOnHand: res.data.wealth.cash_on_hand.text,
+				businessOwnership: res.data.wealth.business_ownership.text,
+				businessSalesVolume: res.data.wealth.business_sales_volume.text,
+				influenceRating: res.data.wealth.influence_rating.text,
+				totalStock: res.data.wealth.total_stock.text,
+				totalPensions: res.data.wealth.total_pensions.text,
+				investableAssets: res.data.wealth.investable_assets.text
 			};
 			console.log(vm.profile);
 
