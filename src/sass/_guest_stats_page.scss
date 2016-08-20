@@ -91,7 +91,6 @@ $green: #84DB2E;
 }
 
 .statInfo {
-	// border: solid yellow 1px;
 	border-bottom: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-end;
@@ -104,10 +103,9 @@ $green: #84DB2E;
 
 
 .statLabel {
-	// border: solid green 1px;
 	display: flex;
 	flex-direction: flex-start;
-	font-size: 1.8vw;
+	font-size: 1.6vw;
 	color: $brown;
 }
 

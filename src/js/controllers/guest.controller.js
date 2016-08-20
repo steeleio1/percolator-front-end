@@ -193,11 +193,18 @@ function GuestController (MailService, WealthService, $scope){
 				realEstateTier = 8;
 			}
 						
+			let kids;
+			if (res.data.demographics.has_children) {
+				kids = "Yes";
+			} else {
+				kids = "No";
+			}
+
 			vm.profile = {
 				fullname: res.data.identity.full_name,
 				email: res.data.identity.emails[0].email,
 				spouseName: spouseName,
-				kids: res.data.demographics.has_children,
+				kids: kids,
 				age: res.data.identity.age,
 				city: res.data.locations[0].address.city,
 				state: res.data.locations[0].address.state.value,
