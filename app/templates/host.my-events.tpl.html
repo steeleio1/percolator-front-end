@@ -11,11 +11,14 @@
         <div class="media-content">
           <div class="content">
             <p>
-              <strong >{{event.title}}</strong> | <small>Location: {{event.street}} {{event.street_2}}, {{event.city}} {{event.state}} {{event.post_code}}</small> |
-              <small>{{event.date}}:{{event.start_time}}-{{event.end_time}}</small>
+              <p class="strong" >{{event.title}}</p><p class="small">Location: {{event.street}} {{event.street_2}}, {{event.city}} {{event.state}} {{event.post_code}}</p> 
+              <p class="block-with-text">
+                <p class="small">{{event.date}}:{{event.start_time}}-{{event.end_time}}</p>
+              </p>
               <br>
-              <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
-              <br>{{event.message}}
+              <p class="small">10 invited</p> | <p class="small attending">6 attending</p> | <p class="small declined">3 declined</p> | <p class="small maybe">1 maybe</p>
+              <br>
+              <p class="eventMessageContainer">{{event.message}}</p>
               <p>This event is index: {{vm.events.indexOf(event)}}</p>
               <p>This event id is: {{event.id}}</p>
               <p class="control">
