@@ -12,7 +12,7 @@
           <div class="content">
             <p>
               <strong >{{event.title}}</strong> | <small>Location: {{event.street}} {{event.street_2}}, {{event.city}} {{event.state}} {{event.post_code}}</small> |
-              <small>{{event.date}} {{event.start_time}} -{{event.end_time}}</small>
+              <small>{{event.date}}:{{event.start_time}}-{{event.end_time}}</small>
               <br>
               <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
               <br>{{event.message}}
@@ -21,23 +21,9 @@
               <p class="control">
                 <button type="submit"
                         class="button is-primary"
-                        ng-click="vm.eventDetails(event.id)">Event Details
+                        ng-click="vm.eventDetails(event.id)">View/Send Invites
                 </button>
               </p>
-        </div>
-
-          <nav class="level">
-            <div class="level-left">
-              <a class="level-item">
-                <span class="icon is-small"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                <span>Send Invites</span>
-              </a>
-            </div>
-          </nav>
-      </div>
-
-        <div class="media-right">
-          <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>
         </div>
       </div>
     </div>
