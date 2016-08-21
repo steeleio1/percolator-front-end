@@ -8,8 +8,9 @@
               <img src="{{event.photo_url || 'images/coffeeCupVector.png'}}" alt="photo url">
            </div>
           </div>
+          
 <!-- ===================================== -->
-        <div class="infoWrapper1">
+        <div class="eventInfoWrapper1">
             <h3>Event Info:</h3>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo">
@@ -26,7 +27,10 @@
                    {{event.post_code}}
                   </div>
                   <br>
-                <h4>Date/Time:</h4>
+          </div>
+
+        <div class="eventInfoWrapper2">
+                <h3>Date/Time:</h3>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
                 {{event.date}}
@@ -47,9 +51,12 @@
                 </div>
                   <span class="eventLabel">End Time</span>
               </div>
-          </div>
+             <br>
+                <h3>Event Description:</h3>
+                  <span class="eventDesription">{{event.message}}</span>
+        </div>
 <!-- ====================================== -->
-         <div class="infoWrapper2">
+         <div class="eventInfoWrapper3">
             <h3>Invite Info:</h3>
              <h4>10 invited</h4>
              <br>
@@ -58,17 +65,12 @@
               <span class="declined">3 declined</span>
               <span class="maybe">1 maybe</span>
               <span class="noResponse">15 no response</span>
-             <br>
-               <div class="eventDesriptionWrapper">
-                  <span class="eventDesription">{{event.message}}</span>
-              </div>
           </div>
 
     </div>
 
 <!-- ======================================= -->
-          <div class="infoButtonWrapper">
-            <div class="infoWrapper3">
+            <div class="eventInfoWrapper4">
               <button type="submit"
                       class="button is-primary is-outlined is-small"
                       ng-click="vm.eventDetails(event.id)">Event Details
@@ -81,7 +83,7 @@
            
               <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>        
             </div>
-          </div>
+         
 
     </div>
   </div>

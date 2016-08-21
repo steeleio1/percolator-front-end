@@ -1,21 +1,15 @@
-<div class="eventHostContainer">
-	<div class="singleEventBox">
+<div class="singleEventContainer">
 
-      <div class="subInfoWrapper">
+	<div class="singleEventBox animateDown fadeInDown">
+
+      <div class="singleInfoWrapper">
           <div class="eventPhotoBox">
             <div class="eventPhoto">
               <img src="{{vm.event.eventInfo.photo_url  || 'images/coffeeCupVector'}}" alt="Image">
            </div>
-           		<br>
-                 <h4>Address:</h4>
-                 <div class="addressWrapper">
-                   {{vm.event.eventInfo.street}}<br>
-                   {{vm.event.eventInfo.street_2}}<br>
-                   {{vm.event.eventInfo.city}}, {{vm.event.eventInfo.state}} <br>{{vm.event.eventInfo.post_code}} <br>
-                  </div>
           </div>
 
-        <div class="infoWrapper1">
+        <div class="singleEventInfoWrapper1">
             <h3>Event Info:</h3>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo">
@@ -23,9 +17,20 @@
                 </div>
                   <span class="eventLabel">Event Name</span>
               </div>
+           		<br>
+                 <h4>Address:</h4>
+                 <div class="addressWrapper">
+                   {{vm.event.eventInfo.street}}<br>
+                   {{vm.event.eventInfo.street_2}}<br>
+                   {{vm.event.eventInfo.city}}, {{vm.event.eventInfo.state}} <br>{{vm.event.eventInfo.post_code}} <br>
+                  </div>
 				<br>
 			  <br>
-                <h4>Date/Time:</h4>
+		</div>
+
+         <div class="singleEventInfoWrapper2">
+            <h3>Event Date/Time:</h3>
+              <br>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
                 {{vm.event.eventInfo.date}}
@@ -46,10 +51,13 @@
                 </div>
                   <span class="eventLabel">End Time</span>
               </div>
+
+              	<br>
+                  <span class="singleEventDesription">{{vm.event.eventInfo.message}}</span>
           </div>
 
 
-         <div class="infoWrapper2">
+         <div class="singleEventInfoWrapper3">
             <h3>RSVPs:</h3>
              <h4>{{vm.rsvp.invites}} invited</h4>
              <br>
@@ -74,9 +82,6 @@
                 </div>
                   <span class="eventLabel">Category</span>
               </div>   
-                <div class="eventDesriptionWrapper">
-                  <span class="eventDesription">{{vm.event.eventInfo.message}}</span>
-              </div>          
 
           </div>
 
@@ -84,6 +89,8 @@
 
           <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>
   </div>
+
+</div>
  	        <!--  =========================== -->
 <!-- 	          <p>
 	            <strong>{{vm.event.eventInfo.title}}</strong>
@@ -126,6 +133,7 @@
   			Invite My Contacts
   		</button>
   	</div>
+
   	<div class="inviteNewContainer" ng-show="vm.inviteNew">
   		<form ng-submit="vm.sendInvite(guest)">
   			<p class="control">
@@ -140,6 +148,7 @@
   			<p class="control">
 			  <input ng-model="guest.privateMessage" class="input is-primary"  placeholder="Message to this guest" required>
 			</p>
+
 <!--   			<input ng-model="guest.first_name" type="text" placeholder="First Name" required> -->
 <!--   			<input ng-model="guest.last_name" type="text" placeholder="Last Name" required> -->
 <!--   			<input ng-model="guest.email" placeholder="Email" required> -->
@@ -151,6 +160,7 @@
   			</div>
   		</form>
   	</div>
+
   	<div class="inviteMyContactsContainer" ng-show="vm.inviteMyContacts">
   		<form>
 
@@ -165,7 +175,11 @@
   		</form>
   	</div>
 
+
+
 	<div class="RSVPContainer">
+
+<!-- YES -->
 		<div class="RSVPYesList" ng-repeat="yesGuest in vm.yesGuests track by $index">
 			<p class="attending animated fadeInRight">
 				Yes
@@ -175,11 +189,11 @@
 			      	<div class="media-content">
 				        <div class="content">
 				          <p>
-										<strong>{{yesGuest.first_name}} {{yesGuest.last_name}}</strong> <small>{{yesGuest.email}}</small>
+							<strong>{{yesGuest.first_name}} {{yesGuest.last_name}}</strong> <small>{{yesGuest.email}}</small>
 				            <br>
 				      			Mobile Number: {{yesGuest.mobile_number}}
-										<br>
-										Home Number: {{yesGuest.home_number}}
+							<br>
+								Home Number: {{yesGuest.home_number}}
 				          </p>
 				        </div>
 			      	</div>
@@ -199,6 +213,8 @@
 			    </article>
 			</div>
 		</div>
+
+<!-- NO -->
 		<div class="RSVPNoList" ng-repeat="noGuest in vm.noGuests track by $index">
 			<p class="declined animated fadeInRight">
 			No
@@ -229,6 +245,8 @@
 			    </article>
 			</div>
 		</div>
+
+<!-- MAYBE -->
 		<div class="RSVPMaybeList" ng-repeat="maybeGuest in vm.maybeGuests track by $index">
 			<p class="maybe animated fadeInRight">
 			Maybe
@@ -258,6 +276,9 @@
 			    </article>
 			</div>
 		</div>
+
+
+<!-- NOT RESPONDED -->
 		<div class="RSVPNotRespondedList" ng-repeat="nrGuest in vm.nrGuests track by $index">
 			<p class="notresponded animated fadeInRight">
 			Not Responded

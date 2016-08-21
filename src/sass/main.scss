@@ -3,13 +3,14 @@
 @import "home";
 @import "create-account";
 @import "host-page";
-@import "guest_stats_page.scss";
+@import "guest_stats_page";
+@import "single-event-info";
 
 $coffeewhite: #fff4e6;
 $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
-$lightbrown: #804800;
+$lightbrown: #995700;
 $primary: $orange;
 
 
@@ -31,6 +32,82 @@ h4 {
     text-align: left;
     font-weight: bold !important;
     font-size: 1vw !important;
+}
+
+.label-text {
+// border: solid red 1px;
+
+}
+
+label .label-text {
+  margin: 0px;
+  color: $brown;
+  // text-shadow:0px 1px 0px #CFCFCF;
+  cursor: text;
+  font-size: 1.4vw;
+  // padding-bottom: 1vw;
+  // line-height: 20px;
+  // text-transform: uppercase;
+  -moz-transform: translateY(0vw);
+  -ms-transform: translateY(0vw);
+  -webkit-transform: translateY(0vw);
+  transform: translateY(0vw);
+  transition: all 0.3s;
+}
+label input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid $lightbrown;
+  color: $orange;
+  font-size: 2vw;
+  letter-spacing: -1px;
+  outline: 0;
+  // padding: 5px 0px;
+  text-align: center;
+  transition: all 0.3s;
+  // width: 30vw;
+}
+label input:focus {
+  width: 24vw;
+}
+label input:focus + .label-text {
+  color: $darkorange;
+  margin: 0px;
+  font-size: 1.6vw;
+  -moz-transform: translateX(0vw);
+  -ms-transform: translateX(0vw);
+  -webkit-transform: translateX(0vw);
+  transform: translateX(0vw);
+  transition: all 0.3s;
+}
+label input:valid + .label-text {
+    margin-left: 4vw;
+    font-size: 1.4vw;
+    -moz-transform: translate(-2vw, 0vw);
+    -webkit-transform: translate(-2vw, 0vw);
+    -o-transform: translate(-2vw, 0vw);
+    -ms-transform: translate(-2vw, 0vw);
+    transform: translate(-2vw, 0vw);
+    text-align: left;
+    transition: all 0.5s;
+}
+
+select {
+    background: none;
+    outline: none;
+    color: $orange;
+    border: solid $orange 1px;
+    width: 20vw;
+}
+
+textarea {
+    background: none !important; 
+    border: solid $orange 1px;
+    outline: none;
+    width: 24vw;
+    height: 10vw; 
+    color: $orange; 
+    // overflow: scroll;
 }
 
 .MainBox {
@@ -88,9 +165,12 @@ h4 {
 	// background: #F2EFDF;
 }
 
+footer {
+	text-align: center;
+	padding: 30px;
+}
 
-
-
+// ==================== animation ===================
 .animated {
    -webkit-animation-duration: 1s;
    animation-duration: 1s;
@@ -124,7 +204,24 @@ h4 {
     animation-name: fadeInRight;
 }
 
-footer {
-	text-align: center;
-	padding: 30px;
+
+.navAnimated { 
+   -webkit-animation-duration: 2s; 
+   animation-duration: 2s; 
+   -webkit-animation-fill-mode: both; 
+   animation-fill-mode: both; 
+} 
+
+@-webkit-keyframes fadeIn { 
+    0% {opacity: 0;} 
+    100% {opacity: 1;} 
+} 
+@keyframes fadeIn { 
+    0% {opacity: 0;} 
+    100% {opacity: 1;} 
+} 
+.navFadeIn { 
+    -webkit-animation-name: fadeIn; 
+    animation-name: fadeIn; 
 }
+
