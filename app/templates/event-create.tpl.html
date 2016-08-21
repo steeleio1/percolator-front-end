@@ -98,7 +98,8 @@
                           <option value="WI">Wisconsin</option>
                           <option value="WY">Wyoming</option>
                     </select>
-                
+                      
+                      <br>
                       <label>
                         <input type="text"
                                ng-model="eventInfo.post_code"
@@ -106,8 +107,10 @@
                         <div class="label-text">Location Zip:</div>
                       </label>
                     <br>
+          </div>
 
                 <div class="eventWrapper2"> 
+                  <h3>Event Date/Time:</h3>
                       <label>
                         <input type="date"
                                ng-model="eventInfo.date"
@@ -128,8 +131,16 @@
                                required>
                         <div class="label-text">End Time:</div>
                       </label>
+
+                      <br>
+                     <h3>Event Description:</h3>
+                        <label>
+                          <textarea type="text"
+                                     ng-model="eventInfo.message">
+                          <div class="label-text"></div>
+                        </textarea>
+                        </label>
                 </div>
-          </div>
 
           <div class="eventWrapper3">
 <!--               <div class="perPlateBox">
@@ -160,14 +171,7 @@
                   </label>
                  <br>
 
-                <h3>Event Description:</h3>
-                  <label>
-                    <textarea type="text"
-                               ng-model="eventInfo.message">
-                    <div class="label-text"></div>
-                  </textarea>
-                  </label>
-
+                 <br>
                 <h3>Event photo:</h3>
                 <div class="photoUploadBox">
                     <label class="photo-label"

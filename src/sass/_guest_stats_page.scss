@@ -6,79 +6,7 @@ $darkorange: #F44B0C;
 $green: #84DB2E;
 
 
-@media screen and (max-width: 1000px){
-	.guestPage{
-		font-size: 18px !important;
-	}
 
-	p{
-		font-size: 18px !important;
-	}
-	.chartLabel{
-	font-size: 18px !important;	
-	}
-
-	.cashOnHandBox p {
-		font-size: 18px !important;
-	}
-
-	.statInfo {
-		font-size: 15px !important;
-		justify-content: flex-start !important;
-		padding-left: 2px;
-	}
-	.statLabel{
-		font-size: 13px !important;
-	}	
-}
-
-@media screen and (max-width: 750px){
-	.guestPage{
-		font-size: 16px !important;
-	}
-	.cashOnHandBox p {
-		font-size: 16px !important;
-	}
-	.chartLabel{
-		font-size: 16px !important;
-	}	
-	.statInfo {
-		font-size: 13px !important;
-		justify-content: flex-start !important;
-		padding-left: 2px;
-	}
-	.statLabel{
-		font-size: 11px !important;
-	}
-}
-
-@media screen and (max-width: 500px){
-	h3{
-		font-size: 12px !important;
-	}
-	.chartLabel{
-		font-size: 12px !important;
-	}
-	.guestStatsBox{
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		overflow: auto;
-	}
-	.dividerDiv{
-		width: 0 !important;
-		height: 0 !important;
-	}
-	.personalInfoWrapper{
-		border-bottom: 3px solid $brown;
-		margin-bottom: 5px;
-		width: 100% !important;
-	}
-
-	.jobInfoWrapper{
-		padding-left: 0 !important;
-	}
-}
 
 .guestPage {
 	display: flex;
@@ -150,6 +78,7 @@ $green: #84DB2E;
 	white-space: nowrap;
 }
 
+// =================animation==============
 .animateDown { 
    -webkit-animation-duration: 2s; 
    animation-duration: 2s; 
@@ -277,4 +206,78 @@ $green: #84DB2E;
 
 .detailsBox{
 	margin-left: 5px;
+}
+
+@media screen and (max-width: 960px){
+	.guestPage{
+		font-size: 18px !important;
+	}
+
+	p{
+		font-size: 18px !important;
+	}
+	.chartLabel{
+	font-size: 18px !important;	
+	}
+
+	.cashOnHandBox p {
+		font-size: 18px !important;
+	}
+
+	.statInfo {
+		font-size: 15px !important;
+		justify-content: flex-start !important;
+		padding-left: 2px;
+	}
+	.statLabel{
+		font-size: 13px !important;
+	}	
+}
+
+@media screen and (max-width: 760px){
+	.guestPage{
+		font-size: 16px !important;
+	}
+	.cashOnHandBox p {
+		font-size: 16px !important;
+	}
+	.chartLabel{
+		font-size: 16px !important;
+	}	
+	.statInfo {
+		font-size: 13px !important;
+		justify-content: flex-start !important;
+		padding-left: 2px;
+	}
+	.statLabel{
+		font-size: 11px !important;
+	}
+}
+
+@media screen and (max-width: 520px){
+	h3{
+		font-size: 12px !important;
+	}
+	.chartLabel{
+		font-size: 12px !important;
+	}
+	.guestStatsBox{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		overflow: auto;
+	}
+	.dividerDiv{
+		width: 0 !important;
+		height: 0 !important;
+	}
+	.personalInfoWrapper{
+		border-bottom: 3px solid $brown;
+		margin-bottom: 5px;
+		width: 100% !important;
+	}
+
+	.jobInfoWrapper{
+		padding-left: 0 !important;
+	}
 }

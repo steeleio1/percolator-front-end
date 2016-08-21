@@ -6,6 +6,13 @@
             <div class="eventPhoto">
               <img src="{{vm.event.eventInfo.photo_url  || 'images/coffeeCupVector'}}" alt="Image">
            </div>
+           		<br>
+                 <h4>Address:</h4>
+                 <div class="addressWrapper">
+                   {{vm.event.eventInfo.street}}<br>
+                   {{vm.event.eventInfo.street_2}}<br>
+                   {{vm.event.eventInfo.city}}, {{vm.event.eventInfo.state}} <br>{{vm.event.eventInfo.post_code}} <br>
+                  </div>
           </div>
 
         <div class="infoWrapper1">
@@ -17,12 +24,6 @@
                   <span class="eventLabel">Event Name</span>
               </div>
 				<br>
-                 <h4>Address:</h4>
-                 <div class="addressWrapper">
-                   {{vm.event.eventInfo.street}}<br>
-                   {{vm.event.eventInfo.street_2}}<br>
-                   {{vm.event.eventInfo.city}}, {{vm.event.eventInfo.state}} {{vm.event.eventInfo.post_code}} <br>
-                  </div>
 			  <br>
                 <h4>Date/Time:</h4>
               <div class="eventCardInfoWrapper">
@@ -127,23 +128,40 @@
   	</div>
   	<div class="inviteNewContainer" ng-show="vm.inviteNew">
   		<form ng-submit="vm.sendInvite(guest)">
-  			<input ng-model="guest.first_name" type="text" placeholder="First Name" required>
-  			<input ng-model="guest.last_name" type="text" placeholder="Last Name" required>
-  			<input ng-model="guest.email" placeholder="Email" required>
-				<input ng-model="guest.privateMessage" placeholder="Message to this guest" required>
+  			<p class="control">
+			  <input ng-model="guest.first_name" class="input is-primary" type="text" placeholder="First Name" required>
+			</p> 
+  			<p class="control">
+			  <input ng-model="guest.last_name" class="input is-primary" type="text" placeholder="Last Name" required>
+			</p>
+  			<p class="control">
+			  <input ng-model="guest.email" class="input is-primary"  placeholder="Email" required>
+			</p>
+  			<p class="control">
+			  <input ng-model="guest.privateMessage" class="input is-primary"  placeholder="Message to this guest" required>
+			</p>
+<!--   			<input ng-model="guest.first_name" type="text" placeholder="First Name" required> -->
+<!--   			<input ng-model="guest.last_name" type="text" placeholder="Last Name" required> -->
+<!--   			<input ng-model="guest.email" placeholder="Email" required> -->
+<!-- 				<input ng-model="guest.privateMessage" placeholder="Message to this guest" required> -->
   			<br>
   			<div class="buttonContainer">
-  				<button class="Btn button is-primary is-outlined" type="submit">Send Invite</button>
-  				<button class="Btn button is-primary is-outlined" ng-click="vm.hideInviteNew()">Cancel</button>
+  				<button class="Btn button is-primary is-outlined is-small" type="submit">Send Invite</button>
+  				<button class="Btn button is-primary is-outlined is-small" ng-click="vm.hideInviteNew()">Cancel</button>
   			</div>
   		</form>
   	</div>
   	<div class="inviteMyContactsContainer" ng-show="vm.inviteMyContacts">
   		<form>
-  			<input type="text" placeholder="First Name" required>
-  			<input type="text" placeholder="Last Name" required>
-  			<button class="Btn button is-primary is-outlined">Send Invite</button>
-  			<button class="Btn button is-primary is-outlined" ng-click=vm.hideInviteMyContacts()>Cancel</button>
+
+			 <p class="control">
+			  <input class="input is-primary" type="text" placeholder="First Name">
+			</p> 	
+			 <p class="control">
+			  <input class="input is-primary" type="text" placeholder="Last Name">
+			</p> 				
+  			<button class="Btn button is-primary is-outlined is-small">Send Invite</button>
+  			<button class="Btn button is-primary is-outlined is-small" ng-click=vm.hideInviteMyContacts()>Cancel</button>
   		</form>
   	</div>
 
@@ -167,10 +185,10 @@
 			      	</div>
 							<br>
 			      	<div class="media-right">
-								<button class="Btn button is-primary is-outlined">
+								<button class="Btn button is-primary is-outlined is-small">
 					  			View Contact Details
 					  		</button>
-								<button class="Btn button is-primary is-outlined">
+								<button class="Btn button is-primary is-outlined is-small">
 									View Wealth Report
 								</button>
 							</div>
