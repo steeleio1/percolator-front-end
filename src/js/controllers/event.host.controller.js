@@ -1,4 +1,4 @@
-function EventHostController (MailService, $state, $http, SERVER, $cookies, $stateParams) {
+function EventHostController (MailService, WealthService, $state, $http, SERVER, $cookies, $stateParams) {
 
 	// Sets up this as vm.
 	let vm = this;
@@ -25,6 +25,7 @@ function EventHostController (MailService, $state, $http, SERVER, $cookies, $sta
 	vm.hideInviteMyContacts = hideInviteMyContacts;
 	vm.deleteEvent = deleteEvent;
 	vm.sendInvite = sendInvite;
+	vm.getWEReport = getWEReport;
 
 	init();
 
@@ -186,7 +187,11 @@ function emailGuest(egInfo, guestInstance){
 		$location.url('host/my-events/' + eventID);
 	}
 
+	function getWEReport(){
+
+	};
+
 }
 
-EventHostController.$inject = ['MailService', '$state', '$http', 'SERVER', '$cookies', '$stateParams'];
+EventHostController.$inject = ['MailService', 'WealthService', '$state', '$http', 'SERVER', '$cookies', '$stateParams'];
 export { EventHostController };
