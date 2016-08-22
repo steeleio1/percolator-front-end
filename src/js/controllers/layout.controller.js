@@ -1,4 +1,4 @@
-function LayoutController($http, SERVER, $cookies, $state, HostService) {
+function LayoutController($http, SERVER, $cookies, $state, HostService, $location, $rootScope) {
 
     // Sets up this as vm.
     let vm = this;
@@ -10,6 +10,8 @@ function LayoutController($http, SERVER, $cookies, $state, HostService) {
     vm.loginUser = loginUser;
     vm.loggedIn = loggedIn;
     vm.logOut = logOut;
+    vm.dashboard = dashboard;
+    vm.showHost = showHost;
 
 
     // Defines the function and hoists to top of file.
@@ -49,7 +51,16 @@ function LayoutController($http, SERVER, $cookies, $state, HostService) {
          HostService.logOut();
     }
 
+    function showHost(){
+        $rootScope.$broadcast('showHost');
+    }
+
+    function dashboard(){
+        $state.go('root.host.myEvents');
+        vm.showHost();
+    }
+
 }
 
-LayoutController.$inject = ['$http', 'SERVER', '$cookies', '$state', "HostService"];
+LayoutController.$inject = ['$http', 'SERVER', '$cookies', '$state', "HostService", '$location', '$rootScope'];
 export {LayoutController};

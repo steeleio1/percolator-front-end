@@ -26,7 +26,10 @@
 
         </div>
         <div class="btnWrapper" ng-show="vm.loggedIn()">
-        	<a class="Btn button is-primary is-outlined" href="/#/host/my-events/">Dashboard</a>
+          <button type="submit"
+                  class="button is-primary is-outlined"
+                  ng-click="vm.dashboard()">Dashboard
+          </button>
         	<a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.logOut()">Log Out</a>
         </div>
     </nav>

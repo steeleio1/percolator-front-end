@@ -1,4 +1,4 @@
-function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
+function HostMyEventsController ($state, $http, SERVER, $cookies, $location, $rootScope) {
 
   // Sets up this as vm.
   let vm = this;
@@ -9,6 +9,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
   vm.eventDetails = eventDetails;
   vm.formatDate = formatDate;
   vm.getTime = getTime;
+  vm.hideHost = hideHost;
 
   init();
 
@@ -86,9 +87,15 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
 
   function eventDetails(eventID) {
     $location.url('host/my-events/' + eventID);
+    vm.hideHost();
+  }
+
+  function hideHost(){
+    console.log('hello')
+    $rootScope.$broadcast('hideHost');
   }
 
 }
 
-HostMyEventsController.$inject = ['$state', '$http', 'SERVER', '$cookies', '$location'];
+HostMyEventsController.$inject = ['$state', '$http', 'SERVER', '$cookies', '$location', '$rootScope'];
 export { HostMyEventsController };
