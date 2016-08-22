@@ -16,12 +16,12 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 			// Need to fetch the event to populate the event info
 			// *********************************************
 
-      //   var egID = $stateParams.uuid;
-			// 	console.log(egID);
-      //   $http.get(SERVER.URL + '/event-guest/rsvp/' + egID).then((res) => {
-      //  // 	vm.event = res.data;
-      //   console.log(res);
-      //   });
+        var egID = $stateParams.uuid;
+				console.log(egID);
+        $http.get(SERVER.URL + 'event-guest/rsvp/' + egID).then((res) => {
+       	vm.event = res.data;
+        console.log(res);
+        });
     }
 
     function submitRSVP(egInfo, guestInfo) {

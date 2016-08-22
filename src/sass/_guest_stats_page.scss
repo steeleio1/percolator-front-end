@@ -74,8 +74,13 @@ $green: #84DB2E;
 
 .chartLabel{
 	color: $brown;
-	font-size: 1.2vmax;
+	font-size: 2vw;
 	white-space: nowrap;
+}
+
+.tierLabel{
+	color: $brown;
+	font-size: 1.6vw;
 }
 
 // =================animation==============
@@ -127,7 +132,7 @@ $green: #84DB2E;
 	flex-direction: column;
 	position: relative;
 	margin: 3vw;
-	width: 40vw;
+	width: 24vw;
 	min-width: 306px;
 	min-height: 168px;
 }
@@ -142,27 +147,27 @@ $green: #84DB2E;
 }
 .tierBox{
     position: absolute;
-    top: 42%;
+    top: 55%;
 }
 
 .tierValue{
 
-    font-size: 2vw;
+    font-size: 1.6vw;
 	font-weight: bold;
-	margin-top: 0.8vw;
+	// margin-top: 0.8vw;
 	color: $orange;
 	text-align: center;
 }
 
-.tierValue-alt {
-	position: absolute;
-    // top: 41%;
-    // left: 42%;
-    font-size: 1.8vw;
-	font-weight: bold;
-	margin-top: 2.0vw;
-	color: $orange;	
-}
+// .tierValue-alt {
+// 	position: absolute;
+//     // top: 41%;
+//     // left: 42%;
+//     font-size: 1.8vw;
+// 	font-weight: bold;
+// 	margin-top: 2.0vw;
+// 	color: $orange;	
+// }
 
 .range {
     position: absolute;
@@ -190,16 +195,19 @@ $green: #84DB2E;
     background: white;
     border: 18px solid $green;
     border-radius: 45px;
-    width: 60%;
-    height: 95%;
     padding: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2vw;
+    width: 14vw;
+    height: 14vw;
+    min-width: 160px;
+    min-height: 160px;
 	p{
 		color: $orange;
 		text-align: center;
-		font-size: 3vw;
+		font-size: 20px;
 		font-weight: bold;
 	}
 }
@@ -214,9 +222,15 @@ $green: #84DB2E;
 	.guestPage{
 		font-size: 18px !important;
 	}
+	.tierBox{
+		top: 47% !important;
+	}
 
 	.chartLabel{
 	font-size: 18px !important;	
+	}
+	.tierLabel{
+		font-size: 18px !important;
 	}
 
 	.cashOnHandBox p {
@@ -242,7 +256,12 @@ $green: #84DB2E;
 	}
 	.chartLabel{
 		font-size: 16px !important;
+	}
+
+	.tierLabel {
+		font-size: 16px !important;
 	}	
+
 	.statInfo {
 		font-size: 13px !important;
 		justify-content: flex-start !important;
@@ -256,8 +275,13 @@ $green: #84DB2E;
 @media screen and (max-width: 520px){
 
 	.chartLabel{
-		font-size: 12px !important;
+		font-size: 14px !important;
 	}
+
+	.tierLabel {
+		font-size: 14px !important;
+	}	
+
 	.guestStatsBox{
 		display: flex;
 		flex-direction: column;

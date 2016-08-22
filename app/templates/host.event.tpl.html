@@ -33,21 +33,21 @@
               <br>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
-                {{vm.event.eventInfo.date}}
+                {{vm.formatDate(vm.event.eventInfo.date)}}
                 </div>
                   <span class="eventLabel">Event Date</span>
               </div>
 
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
-                {{vm.event.eventInfo.start_time}}
+                {{vm.getTime(vm.event.eventInfo.start_time)}}
                 </div>
                   <span class="eventLabel">Start Time</span>
               </div>
 
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
-                {{vm.event.eventInfo.end_time}}
+                {{vm.getTime(vm.event.eventInfo.end_time)}}
                 </div>
                   <span class="eventLabel">End Time</span>
               </div>
@@ -61,7 +61,7 @@
             <span class="singleEventTitle">RSVPs:</span>
              <span class="smallSingleEventTitle">{{vm.rsvp.invites}} invited</span>
              <br>
-           
+
               <span class="attending">{{vm.rsvp.yes}} attending</span>
               <span class="declined">{{vm.rsvp.no}} declined</span>
               <span class="maybe">{{vm.rsvp.maybe}} maybe</span>
@@ -81,7 +81,7 @@
                 {{vm.event.eventInfo.category}}
                 </div>
                   <span class="eventLabel">Category</span>
-              </div>   
+              </div>
 
           </div>
 
@@ -121,7 +121,7 @@
 	            <br>
 	            <small>{{vm.event.eventInfo.message}}</small>
 	          </p> -->
-	     
+
 
 
 
@@ -138,7 +138,7 @@
   		<form ng-submit="vm.sendInvite(guest)">
   			<p class="control">
 			  <input ng-model="guest.first_name" class="input is-primary" type="text" placeholder="First Name" required>
-			</p> 
+			</p>
   			<p class="control">
 			  <input ng-model="guest.last_name" class="input is-primary" type="text" placeholder="Last Name" required>
 			</p>
@@ -166,10 +166,10 @@
 
 			 <p class="control">
 			  <input class="input is-primary" type="text" placeholder="First Name">
-			</p> 	
+			</p>
 			 <p class="control">
 			  <input class="input is-primary" type="text" placeholder="Last Name">
-			</p> 				
+			</p>
   			<button class="Btn button is-primary is-outlined is-small">Send Invite</button>
   			<button class="Btn button is-primary is-outlined is-small" ng-click=vm.hideInviteMyContacts()>Cancel</button>
   		</form>
@@ -199,7 +199,7 @@
 			      	</div>
 							<br>
 			      	<div class="media-right">
-								<button class="Btn button is-primary is-outlined is-small">
+								<button class="Btn button is-primary is-outlined is-small" ng-click=vm.guestDetails(yesGuest.id)>
 					  			View Contact Details
 					  		</button>
 
@@ -236,7 +236,7 @@
 			      	</div>
 							<br>
 							<div class="media-right">
-								<button class="Btn button is-primary">
+								<button class="Btn button is-primary" ng-click=vm.guestDetails(noGuest.id)>
 									View Contact Details
 								</button>
 							</div>
@@ -267,7 +267,7 @@
 			      	</div>
 							<br>
 							<div class="media-right">
-								<button class="Btn button is-primary">
+								<button class="Btn button is-primary" ng-click=vm.guestDetails(maybeGuest.id)>
 									View Contact Details
 								</button>
 							</div>
@@ -299,7 +299,7 @@
 			      	</div>
 							<br>
 							<div class="media-right">
-								<button class="Btn button is-primary">
+								<button class="Btn button is-primary" ng-click=vm.guestDetails(nrGuest.id)>
 									View Contact Details
 								</button>
 							</div>

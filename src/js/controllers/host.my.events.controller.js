@@ -8,6 +8,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
   vm.deleteEvent = deleteEvent;
   vm.eventDetails = eventDetails;
   vm.formatDate = formatDate;
+  vm.getTime = getTime;
 
   init();
 
@@ -17,72 +18,57 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
 				headers: { 'Authorization': `Bearer ${token}` }
 			};
 			$http.get(SERVER.URL + 'my-events', config).then((res) => {
-				let events = res.data;
-        console.log(events);
-        events.map((javahuddle)=>{
-          console.log(javahuddle);
-          javahuddle.date = formatDate(javahuddle.date);
-          vm.events.push(javahuddle);
-        });
+        console.log(res.data);
+				vm.events = res.data;
+        console.log(vm.events);
 			});
+
+
 	}
 
   function formatDate(d){
-    // let aa;
-    // let hours;
-    // let minutes;
+    //Formats UTC Date into mm/dd/yyyy format
     let date = new Date(d)
-    var dd = date.getDate(); 
+    var dd = date.getDate();
     var mm = date.getMonth()+1;
     var yyyy = date.getFullYear();
-    // let UTCHoursVal = date.getUTCHours();
-    // console.log(UTCHoursVal);
-    // if (UTCHoursVal-4 === 0) {
-    //     hours = 12;
-    //     aa = "A.M.";
-    // } else if ((UTCHoursVal-4>0) && (UTCHoursVal-4<12)){
-    //   hours = UTCHoursVal-4;
-    //   aa = "A.M.";
-    // } else if (UTCHoursVal-4>=12){
-    //   hours = hours-4;
-    //   aa= "P.M.";
-    // };
-    //   } else if (hours<10){
-    //     hours = "0"+hours;
-    //     aa = "A.M.";
-    //   } else if (10<=hours<12){
-    //     hours = hours;
-    //     aa = "A.M.";
-    //   } else if (hours>=12){
-    //     hours = hours;
-    //     aa="P.M.";
-    //   }
-    // } else {
-    //   hours =  date.getUTCHours()-4+24;
-    //   if (hours = 0) {
-    //     hours = 12;
-    //     aa = "A.M.";
-    //   } else if (hours<10){
-    //     hours = "0"+hours;
-    //     aa = "A.M.";
-    //   } else if (10<=hours<12){
-    //     hours = hours;
-    //     aa = "A.M.";
-    //   } else if (hours>=12){
-    //     hours = hours;
-    //     aa="P.M.";
-    //   }      
-    // };
-    // var hr = hours;
-    // if(date.getUTCMinutes()<10){
-    //   minutes = "0"+date.getUTCMinutes();
-    // } else {
-    //   minutes = date.getUTCMinutes();
-    // };
-    // var min = minutes;
-    if(dd<10){dd='0'+dd} 
+    if(dd<10){dd='0'+dd}
     if(mm<10){mm='0'+mm};
     return d = mm+'/'+dd+'/'+yyyy;
+  }
+
+  function getTime(timeInfo){
+    //Formats UTCTime into hh:mm A.M./P.M. format
+    let time = new Date(timeInfo);
+    let UTCHoursVal = time.getUTCHours() - 1;
+    var hours = UTCHoursVal;
+    let UTCMinutesVal = time.getUTCMinutes();
+    var minutes;
+    var aa;
+    if (UTCHoursVal === 4) {
+        hours = 12;
+        aa = "A.M.";
+    } else if (UTCHoursVal < 4 && UTCHoursVal>= 0){
+      hours = UTCHoursVal-4+12;
+      aa = "P.M.";
+    } else if (UTCHoursVal<16 && UTCHoursVal>=4){
+      hours = UTCHoursVal-4;
+      aa= "A.M.";
+    } else if (UTCHoursVal===16){
+      hours = 12;
+      aa= "P.M.";
+    } else if (UTCHoursVal<24 && UTCHoursVal >= 16) {
+      hours = UTCHoursVal-4-12;
+      aa="P.M.";
+    };
+
+
+    if(UTCMinutesVal < 10){
+      minutes = "0" + UTCMinutesVal;
+    } else {
+      minutes = UTCMinutesVal;
+    }
+    return hours + ":"+minutes + aa;
   }
 
   function deleteEvent(eventID) {
