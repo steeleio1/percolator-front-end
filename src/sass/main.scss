@@ -44,6 +44,10 @@ $primary: $orange;
   @include multiLineEllipsis($lineHeight: 18px, $lineCount: 1, $bgColor: white);  
 }
 
+.block-with-text-2-lines {
+  @include multiLineEllipsis($lineHeight: 18px, $lineCount: 2, $bgColor: white); 
+}
+
 .block-with-text-3-lines{
 	@include multiLineEllipsis($lineHeight: 18px, $lineCount: 3, $bgColor: white); 
 }
