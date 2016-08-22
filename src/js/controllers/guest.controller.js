@@ -23,8 +23,6 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER){
 	}
 
 	function getWEReport(){
-
-		
 		// let registrantDummyData = {
 		// 		last_name: 'Ricardo',
 		// 		first_name: 'Ricky',
