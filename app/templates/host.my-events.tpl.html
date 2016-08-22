@@ -11,7 +11,7 @@
           
 <!-- ===================================== -->
         <div class="eventInfoWrapper1">
-            <h3>Event Info:</h3>
+            <span class="eventInfoTitle">Event Info:</span>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo">
                 {{event.title}}
@@ -19,7 +19,7 @@
                   <span class="eventLabel">Event Name</span>
               </div>
                 <br>
-                 <h4>Address:</h4>
+                 <span class="smallEventInfoTitle">Address:</span>
                  <div class="addressWrapper">
                    {{event.street}}<br>
                    {{event.street_2}}<br>
@@ -30,7 +30,7 @@
           </div>
 
         <div class="eventInfoWrapper2">
-                <h3>Date/Time:</h3>
+                <span class="eventInfoTitle">Date/Time:</span >
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
                 {{vm.formatDate(event.date)}}
@@ -56,8 +56,8 @@
         </div>
 <!-- ====================================== -->
          <div class="eventInfoWrapper3">
-            <h3>Invite Info:</h3>
-             <h4>10 invited</h4>
+            <span class="eventInfoTitle">Invite Info:</span>
+             <span class="smallEventInfoTitle">10 invited</span>
              <br>
            
               <span class="attending">6 attending</span>

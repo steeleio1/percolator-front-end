@@ -4,6 +4,20 @@ $orange:  #e78200;
 $darkorange: #F44B0C;
 $lightbrown: #804800;
 
+.singleEventTitle {
+  @include responsive-font(2.29vw, 15px, 22px);
+    color: $orange;
+    text-align: left;
+    font-weight: bold !important;
+}
+
+.smallSingleEventTitle {
+  @include responsive-font(1.88vw, 15px, 18px);
+    color: $brown;
+    text-align: left;
+    font-weight: bold !important;
+    border-bottom: solid $lightbrown 1px;
+}
 
 .singleEventContainer {
     // border: solid black 1px;
@@ -63,14 +77,16 @@ $lightbrown: #804800;
 .singleEventDesription {
 	border: solid $orange 1px;
 	padding: 0.5vw;
-	font-size: 1vw;
+	// font-size: 1vw;
 	color: $orange;
 	display: flex;
 	// align-items: center;
 	// flex-direction: row;
 	// flex-flow: row wrap;
-	width: 20vw;
-	overflow: scroll;
+    @include responsive-font(1.35vw, 11px, 13px); 
+    @include responsive-width(18.75vw, 180px);
+	// width: 20vw;
+	// overflow: scroll;
 }
 
 // ============== animation =============

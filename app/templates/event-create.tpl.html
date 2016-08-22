@@ -11,7 +11,7 @@
                 </figure>
 
               <div class="eventWrapper1">
-                  <h3>Event Info:</h3>
+                  <span class="createEventTitle">Event Info:</span>
                   <label>
                     <input type="text"
                            ng-model="eventInfo.title"
@@ -45,8 +45,8 @@
 
                     <select name="state"
                             ng-model="eventInfo.state"
-                            placeholder="State">
-                    <option selected="true">State:</option>
+                            >
+                         <option value="">State:</option>
                           <option value="AL">Alabama</option>
                           <option value="AK">Alaska</option>
                           <option value="AZ">Arizona</option>
@@ -111,7 +111,7 @@
           </div>
 
                 <div class="eventWrapper2"> 
-                  <h3>Event Date/Time:</h3>
+                  <span class="createEventTitle">Event Date/Time:</span>
                       <label>
                         <input type="date"
                                ng-model="eventInfo.date"
@@ -134,7 +134,7 @@
                       </label>
 
                       <br>
-                     <h3>Event Description:</h3>
+                     <span class="createEventTitle">Event Description:</span>
                         <label>
                           <textarea type="text"
                                      ng-model="eventInfo.message">
@@ -156,7 +156,7 @@
                     <input class="input" type="text" ng-model="eventInfo.per_plate" placeholder="Price Per Plate">
                   </p>
               </div> -->
-            <h3>Donation Info:</h3>
+            <span class="createEventTitle">Donation Info:</span>
                   <label>
                     <input type="number"
                            ng-model="eventInfo.suggested_donation"
@@ -173,7 +173,7 @@
                  <br>
 
                  <br>
-                <h3>Event photo:</h3>
+                <span class="createEventTitle">Event photo:</span>
                 <div class="photoUploadBox">
                     <label class="photo-label"
                            ng-click="vm.uploadImage()"> </label>

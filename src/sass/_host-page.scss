@@ -4,11 +4,61 @@ $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
 
-h3 {
-	color: $orange;
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    width: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      width: $max;
+    }
+  }
+  
+  @if $fallback {
+    width: $fallback;
+  }
+  
+  width: $responsive;
+}
+// ========================================
+
+
+.hostInfoTitle {
+  @include responsive-font(2.29vw, 15px, 22px);
+    color: $orange;
     text-align: left;
     font-weight: bold !important;
-    font-size: 1.5vw;
 }
 
 .hostPage {
@@ -86,7 +136,8 @@ h3 {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	font-size: 1.2vmax;
+  	@include responsive-font(2.08vw, 15px, 20px);
+	// font-size: 1.2vmax;
 	// width: 10vmax;
 	white-space: nowrap;
 	color: $orange;
@@ -97,13 +148,16 @@ h3 {
 	// border: solid green 1px; 
 	display: flex;
 	flex-direction: flex-start;
-	font-size: 1.3vmax;
+   @include responsive-font(1.35vw, 11px, 13px); 
+	// font-size: 1.3vmax;
 	color: $brown;
 }
 
 .addressWrapper {
 	color: $orange;
-	font-size: 1.3vmax;
+	// @include responsive-width(18.75vw, 180px);
+    @include responsive-font(1.35vw, 11px, 13px); 
+	// font-size: 1.3vmax;
 }
 
 
