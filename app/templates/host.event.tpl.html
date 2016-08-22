@@ -33,21 +33,21 @@
               <br>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
-                {{vm.event.eventInfo.date}}
+                {{vm.formatDate(vm.event.eventInfo.date)}}
                 </div>
                   <span class="eventLabel">Event Date</span>
               </div>
 
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
-                {{vm.event.eventInfo.start_time}}
+                {{vm.getTime(vm.event.eventInfo.start_time)}}
                 </div>
                   <span class="eventLabel">Start Time</span>
               </div>
 
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
-                {{vm.event.eventInfo.end_time}}
+                {{vm.getTime(vm.event.eventInfo.end_time)}}
                 </div>
                   <span class="eventLabel">End Time</span>
               </div>
