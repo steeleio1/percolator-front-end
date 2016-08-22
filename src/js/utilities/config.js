@@ -43,7 +43,7 @@ function config ($stateProvider, $urlRouterProvider, $ChartJsProvider) {
     })
 
     .state('root.guest', {
-    	url: '/host/guest',
+    	url: '/host/guests/:id',
     	templateUrl: 'templates/guest.tpl.html',
     	controller: "GuestController as vm"
     })
