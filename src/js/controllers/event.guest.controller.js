@@ -32,10 +32,7 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
             guestInfo: guestInfo
         };
 
-				console.log(payload);
-
         $http.post(SERVER.URL + 'event-guest/rsvp/' + uuid, payload).then(function(res) {
-					console.log(res);
                 if (res.status == 200) {
                     alert("200 OK");
 										if (egInfo.rsvp === "Yes") {
@@ -59,7 +56,6 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
     }
 
     function getWEReport(guest) {
-			console.log(guest);
         let registrantData = {
             last_name: guest.last_name,
             first_name: guest.first_name,
