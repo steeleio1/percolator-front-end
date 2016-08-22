@@ -27,9 +27,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
 	}
 
   function formatDate(d){
-    // let aa;
-    // let hours;
-    // let minutes;
+    //Formats UTC Date into mm/dd/yyyy format
     let date = new Date(d)
     var dd = date.getDate();
     var mm = date.getMonth()+1;
@@ -40,6 +38,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
   }
 
   function getTime(timeInfo){
+    //Formats UTCTime into hh:mm A.M./P.M. format
     let time = new Date(timeInfo);
     let UTCHoursVal = time.getUTCHours() - 1;
     var hours = UTCHoursVal;
