@@ -16,7 +16,6 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 			// Need to fetch the event to populate the event info
 			// *********************************************
 
-
       //   var egID = $stateParams.uuid;
 			// 	console.log(egID);
       //   $http.get(SERVER.URL + '/event-guest/rsvp/' + egID).then((res) => {
@@ -26,19 +25,23 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
     }
 
     function submitRSVP(egInfo, guestInfo) {
-        let uuid = $stateParams.uuid
+        let uuid = $stateParams.uuid;
+				let guestName = {};
         let payload = {
             egInfo: egInfo,
             guestInfo: guestInfo
-        }
+        };
+
+				console.log(payload);
 
         $http.post(SERVER.URL + 'event-guest/rsvp/' + uuid, payload).then(function(res) {
+					console.log(res);
                 if (res.status == 200) {
                     alert("200 OK");
-                    // Guest needs to go somewhere after submitting RSVP. "Thanks for RSVPing!"
-                } else if (res.status == 201) {
-                    alert("201 OK");
-                    // Guest needs to go somewhere after submitting RSVP. "Thanks for RSVPing!"
+										if (egInfo.rsvp === "Yes") {
+												vm.getWEReport(res.data);
+                // Guest needs to be directed somewhere after submitting RSVP. "Thanks for RSVPing!"
+										};
                 } else {
                     console.log(res);
                 }
@@ -52,27 +55,35 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
                     console.log(res);
                 }
             });
-        if (egInfo.rsvp === "Yes") {
-            vm.getWEReport();
-        };
+
     }
 
-    function getWEReport() {
-        let registrantDummyData = {
-            last_name: 'Ricardo',
-            first_name: 'Ricky',
-            address_line1: 'Address 1',
-            address_line2: 'Address 2 (optional)',
-            city: 'The City',
-            state: 'SC',
-            zip: '99999'
+    function getWEReport(guest) {
+			console.log(guest);
+        let registrantData = {
+            last_name: guest.last_name,
+            first_name: guest.first_name,
+						// If we need it, guest.email is available here.
+						// email: guest.email,
+            address_line1: guest.street,
+            address_line2: guest.street_2,
+            city: guest.city,
+            state: guest.state,
+            zip: guest.post_code
         }
 
-        WealthService.getProfileByAddress(registrantDummyData).then((res) => {
+        WealthService.getProfileByAddress(registrantData).then((res) => {
             let weInfo = res.data;
+						let payload = {
+							weInfo: weInfo,
+							guestInfo: guest
+						};
+						//**************************************************************************
+						// Get with Brit about this part...
             //**************************************************************************
             // Would prefer to handle the save purely on the backend without front end handling the response at all.
-            $http.post(SERVER.URL + 'guests/we-report', weInfo).then(function(res) {
+						//**************************************************************************
+            $http.post(SERVER.URL + 'guests/we-report', payload).then(function(res) {
                 //**************************************************************************
                 if (res.status == 200) {
                     alert("200 OK - Successful WealthService Write");
