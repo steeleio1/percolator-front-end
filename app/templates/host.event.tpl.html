@@ -1,14 +1,98 @@
-<div class="eventHostContainer">
-	<div class="box">
-	    <article class="media">
-	      <div class="media-left">
-	        <figure class="image is-128x128">
-	          <img src="{{vm.event.eventInfo.photo_url  || 'images/JavaHuddleLogo.png'}}" alt="Image">
-	        </figure>
-	      </div>
-	      <div class="media-content">
-	        <div class="content">
-	          <p>
+<div class="singleEventContainer">
+
+	<div class="singleEventBox animateDown fadeInDown">
+
+      <div class="singleInfoWrapper">
+          <div class="eventPhotoBox">
+            <div class="eventPhoto">
+              <img src="{{vm.event.eventInfo.photo_url  || 'images/coffeeCupVector'}}" alt="Image">
+           </div>
+          </div>
+
+        <div class="singleEventInfoWrapper1">
+            <h3>Event Info:</h3>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo">
+                {{vm.event.eventInfo.title}}
+                </div>
+                  <span class="eventLabel">Event Name</span>
+              </div>
+           		<br>
+                 <h4>Address:</h4>
+                 <div class="addressWrapper">
+                   {{vm.event.eventInfo.street}}<br>
+                   {{vm.event.eventInfo.street_2}}<br>
+                   {{vm.event.eventInfo.city}}, {{vm.event.eventInfo.state}} <br>{{vm.event.eventInfo.post_code}} <br>
+                  </div>
+				<br>
+			  <br>
+		</div>
+
+         <div class="singleEventInfoWrapper2">
+            <h3>Event Date/Time:</h3>
+              <br>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{vm.event.eventInfo.date}}
+                </div>
+                  <span class="eventLabel">Event Date</span>
+              </div>
+
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{vm.event.eventInfo.start_time}}
+                </div>
+                  <span class="eventLabel">Start Time</span>
+              </div>
+
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{vm.event.eventInfo.end_time}}
+                </div>
+                  <span class="eventLabel">End Time</span>
+              </div>
+
+              	<br>
+                  <span class="singleEventDesription">{{vm.event.eventInfo.message}}</span>
+          </div>
+
+
+         <div class="singleEventInfoWrapper3">
+            <h3>RSVPs:</h3>
+             <h4>{{vm.rsvp.invites}} invited</h4>
+             <br>
+           
+              <span class="attending">{{vm.rsvp.yes}} attending</span>
+              <span class="declined">{{vm.rsvp.no}} declined</span>
+              <span class="maybe">{{vm.rsvp.maybe}} maybe</span>
+              <span class="noResponse">{{vm.rsvp.not_responded}} no response</span>
+             <br>
+
+             <h3>Organization:</h3>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo">
+                {{vm.event.eventInfo.organization}}
+                </div>
+                  <span class="eventLabel">Name</span>
+              </div>
+
+               <div class="eventCardInfoWrapper">
+                <div class="eventInfo">
+                {{vm.event.eventInfo.category}}
+                </div>
+                  <span class="eventLabel">Category</span>
+              </div>   
+
+          </div>
+
+	</div>
+
+          <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>
+  </div>
+
+</div>
+ 	        <!--  =========================== -->
+<!-- 	          <p>
 	            <strong>{{vm.event.eventInfo.title}}</strong>
 	            <br>
 	            <br>
@@ -25,10 +109,10 @@
 	           <small><strong>Date and Time:</strong></small>
 	           <br>
 	           <small>{{vm.event.eventInfo.date}}: {{vm.event.eventInfo.start_time}}-{{vm.event.eventInfo.end_time}}</small>
-	           <br>
-	           <small><strong>RSVPs:</strong></small>
-	          <small class="invites">{{vm.rsvp.invites}} invited</small> | <small class="attending">{{vm.rsvp.yes}} attending</small> | <small class="declined">{{vm.rsvp.no}} declined</small> | <small class="maybe">{{vm.rsvp.maybe}} maybe</small> | <small class="notresponded">{{vm.rsvp.not_responded}} not responded</small>
-	           <br>
+	           <br> -->
+<!-- 	           <small><strong>RSVPs:</strong></small>
+	          <small class="invites">{{vm.rsvp.invites}} invited</small> | <small class="attending">{{vm.rsvp.yes}} attending</small> | <small class="declined">{{vm.rsvp.no}} declined</small> | <small class="maybe">{{vm.rsvp.maybe}} maybe</small> | <small class="notresponded">{{vm.rsvp.not_responded}} not responded</small> -->
+<!-- 	           <br>
 	           <small><strong>Organization:</strong> {{vm.event.eventInfo.organization}}</small>
 	           <br>
 	           <small><strong>Category:</strong> {{vm.event.eventInfo.category}}</small>
@@ -36,14 +120,11 @@
 	            <small><strong>Event Description:</strong></small>
 	            <br>
 	            <small>{{vm.event.eventInfo.message}}</small>
-	          </p>
-	        </div>
-	      </div>
-				<div class="media-right">
-          <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>
-        </div>
-	    </article>
-  	</div>
+	          </p> -->
+	     
+
+
+
   	<div class="inviteButtonRow">
   		<button class="Btn button is-primary is-outlined" ng-click="vm.showInviteNew(); vm.hideInviteMyContacts()">
   			Invite New
@@ -52,29 +133,53 @@
   			Invite My Contacts
   		</button>
   	</div>
+
   	<div class="inviteNewContainer" ng-show="vm.inviteNew">
   		<form ng-submit="vm.sendInvite(guest)">
-  			<input ng-model="guest.first_name" type="text" placeholder="First Name" required>
-  			<input ng-model="guest.last_name" type="text" placeholder="Last Name" required>
-  			<input ng-model="guest.email" placeholder="Email" required>
-				<input ng-model="guest.privateMessage" placeholder="Message to this guest" required>
+  			<p class="control">
+			  <input ng-model="guest.first_name" class="input is-primary" type="text" placeholder="First Name" required>
+			</p> 
+  			<p class="control">
+			  <input ng-model="guest.last_name" class="input is-primary" type="text" placeholder="Last Name" required>
+			</p>
+  			<p class="control">
+			  <input ng-model="guest.email" class="input is-primary"  placeholder="Email" required>
+			</p>
+  			<p class="control">
+			  <input ng-model="guest.privateMessage" class="input is-primary"  placeholder="Message to this guest" required>
+			</p>
+
+<!--   			<input ng-model="guest.first_name" type="text" placeholder="First Name" required> -->
+<!--   			<input ng-model="guest.last_name" type="text" placeholder="Last Name" required> -->
+<!--   			<input ng-model="guest.email" placeholder="Email" required> -->
+<!-- 				<input ng-model="guest.privateMessage" placeholder="Message to this guest" required> -->
   			<br>
   			<div class="buttonContainer">
-  				<button class="Btn button is-primary is-outlined" type="submit">Send Invite</button>
-  				<button class="Btn button is-primary is-outlined" ng-click="vm.hideInviteNew()">Cancel</button>
+  				<button class="Btn button is-primary is-outlined is-small" type="submit">Send Invite</button>
+  				<button class="Btn button is-primary is-outlined is-small" ng-click="vm.hideInviteNew()">Cancel</button>
   			</div>
   		</form>
   	</div>
+
   	<div class="inviteMyContactsContainer" ng-show="vm.inviteMyContacts">
   		<form>
-  			<input type="text" placeholder="First Name" required>
-  			<input type="text" placeholder="Last Name" required>
-  			<button class="Btn button is-primary is-outlined">Send Invite</button>
-  			<button class="Btn button is-primary is-outlined" ng-click=vm.hideInviteMyContacts()>Cancel</button>
+
+			 <p class="control">
+			  <input class="input is-primary" type="text" placeholder="First Name">
+			</p> 	
+			 <p class="control">
+			  <input class="input is-primary" type="text" placeholder="Last Name">
+			</p> 				
+  			<button class="Btn button is-primary is-outlined is-small">Send Invite</button>
+  			<button class="Btn button is-primary is-outlined is-small" ng-click=vm.hideInviteMyContacts()>Cancel</button>
   		</form>
   	</div>
 
+
+
 	<div class="RSVPContainer">
+
+<!-- YES -->
 		<div class="RSVPYesList" ng-repeat="yesGuest in vm.yesGuests track by $index">
 			<p class="attending animated fadeInRight">
 				Yes
@@ -84,21 +189,23 @@
 			      	<div class="media-content">
 				        <div class="content">
 				          <p>
-										<strong>{{yesGuest.first_name}} {{yesGuest.last_name}}</strong> <small>{{yesGuest.email}}</small>
+							<strong>{{yesGuest.first_name}} {{yesGuest.last_name}}</strong> <small>{{yesGuest.email}}</small>
 				            <br>
 				      			Mobile Number: {{yesGuest.mobile_number}}
-										<br>
-										Home Number: {{yesGuest.home_number}}
+							<br>
+								Home Number: {{yesGuest.home_number}}
 				          </p>
 				        </div>
 			      	</div>
 							<br>
 			      	<div class="media-right">
-								<button class="Btn button is-primary">
+								<button class="Btn button is-primary is-outlined is-small">
 					  			View Contact Details
 					  		</button>
-								<button class="Btn button is-primary" ng-click=vm.getWEReport()>
-									Generate Wealth Report
+
+								<button class="Btn button is-primary is-outlined is-small">
+									View Wealth Report
+
 								</button>
 							</div>
 							<br>
@@ -108,6 +215,8 @@
 			    </article>
 			</div>
 		</div>
+
+<!-- NO -->
 		<div class="RSVPNoList" ng-repeat="noGuest in vm.noGuests track by $index">
 			<p class="declined animated fadeInRight">
 			No
@@ -138,6 +247,8 @@
 			    </article>
 			</div>
 		</div>
+
+<!-- MAYBE -->
 		<div class="RSVPMaybeList" ng-repeat="maybeGuest in vm.maybeGuests track by $index">
 			<p class="maybe animated fadeInRight">
 			Maybe
@@ -167,6 +278,9 @@
 			    </article>
 			</div>
 		</div>
+
+
+<!-- NOT RESPONDED -->
 		<div class="RSVPNotRespondedList" ng-repeat="nrGuest in vm.nrGuests track by $index">
 			<p class="notresponded animated fadeInRight">
 			Not Responded

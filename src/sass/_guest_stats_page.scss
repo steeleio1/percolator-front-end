@@ -1,67 +1,12 @@
 $coffeewhite: #fff4e6;
-$lightbrown: #804800;
+$lightbrown: #995700;
 $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
 $green: #84DB2E;
 
 
-@media screen and (max-width: 1000px){
-	.guestPage{
-		font-size: 18px !important;
-	}
-	.cashOnHandBox p {
-		font-size: 18px !important;
-	}
 
-	.statInfo {
-		font-size: 15px !important;
-		justify-content: flex-start !important;
-		padding-left: 2px;
-	}
-	.statLabel{
-		font-size: 13px !important;
-	}	
-}
-
-@media screen and (max-width: 750px){
-	.guestPage{
-		font-size: 16px !important;
-	}
-	.cashOnHandBox p {
-		font-size: 16px !important;
-	}	
-	.statInfo {
-		font-size: 13px !important;
-		justify-content: flex-start !important;
-		padding-left: 2px;
-	}
-	.statLabel{
-		font-size: 11px !important;
-	}
-}
-
-@media screen and (max-width: 500px){
-	.guestStatsBox{
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		overflow: auto;
-	}
-	.dividerDiv{
-		width: 0 !important;
-		height: 0 !important;
-	}
-	.personalInfoWrapper{
-		border-bottom: 3px solid $brown;
-		margin-bottom: 5px;
-		width: 100% !important;
-	}
-
-	.jobInfoWrapper{
-		padding-left: 0 !important;
-	}
-}
 
 .guestPage {
 	display: flex;
@@ -113,6 +58,7 @@ $green: #84DB2E;
 	font-size: 1.4vw;
 	white-space: nowrap;
 	color: $orange;
+
 	height: 20px;
 	font-weight: bold;
 }
@@ -123,51 +69,55 @@ $green: #84DB2E;
 	flex-direction: flex-start;
 	font-size: 1vw;
 	color: $brown;
+
 }
 
 .chartLabel{
 	color: $brown;
+	font-size: 1.2vmax;
+	white-space: nowrap;
 }
 
-.animateDown {
-   -webkit-animation-duration: 2s;
-   animation-duration: 2s;
-   -webkit-animation-fill-mode: both;
-   animation-fill-mode: both;
-}
+// =================animation==============
+.animateDown { 
+   -webkit-animation-duration: 2s; 
+   animation-duration: 2s; 
+   -webkit-animation-fill-mode: both; 
+   animation-fill-mode: both; 
+} 
 
-@-webkit-keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-    }
-}
+@-webkit-keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
 
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+@keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
 
-.fadeInDown {
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
+.fadeInDown { 
+    -webkit-animation-name: fadeInDown; 
+    animation-name: fadeInDown; 
+
 }
 
 .chartsContainer{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-
 }
 
 .chartContainer{
@@ -187,7 +137,8 @@ $green: #84DB2E;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-
+    font-size: 2vw;
+    color: $orange;	
 }
 .tierBox{
     position: absolute;
@@ -195,11 +146,22 @@ $green: #84DB2E;
 }
 
 .tierValue{
+
     font-size: 2vw;
 	font-weight: bold;
-	margin-top: 0.5vw;
+	margin-top: 0.8vw;
 	color: $orange;
 	text-align: center;
+}
+
+.tierValue-alt {
+	position: absolute;
+    // top: 41%;
+    // left: 42%;
+    font-size: 1.8vw;
+	font-weight: bold;
+	margin-top: 2.0vw;
+	color: $orange;	
 }
 
 .range {
@@ -215,6 +177,9 @@ $green: #84DB2E;
 	padding: 1.2vw;
 	text-align: center;
 	color: white;
+
+	font-size: 1.5vmax;
+
 	background: $green;
 	white-space: nowrap;
 	margin-bottom: 1vw;
@@ -241,4 +206,78 @@ $green: #84DB2E;
 
 .detailsBox{
 	margin-left: 5px;
+}
+
+@media screen and (max-width: 960px){
+	.guestPage{
+		font-size: 18px !important;
+	}
+
+	p{
+		font-size: 18px !important;
+	}
+	.chartLabel{
+	font-size: 18px !important;	
+	}
+
+	.cashOnHandBox p {
+		font-size: 18px !important;
+	}
+
+	.statInfo {
+		font-size: 15px !important;
+		justify-content: flex-start !important;
+		padding-left: 2px;
+	}
+	.statLabel{
+		font-size: 13px !important;
+	}	
+}
+
+@media screen and (max-width: 760px){
+	.guestPage{
+		font-size: 16px !important;
+	}
+	.cashOnHandBox p {
+		font-size: 16px !important;
+	}
+	.chartLabel{
+		font-size: 16px !important;
+	}	
+	.statInfo {
+		font-size: 13px !important;
+		justify-content: flex-start !important;
+		padding-left: 2px;
+	}
+	.statLabel{
+		font-size: 11px !important;
+	}
+}
+
+@media screen and (max-width: 520px){
+	h3{
+		font-size: 12px !important;
+	}
+	.chartLabel{
+		font-size: 12px !important;
+	}
+	.guestStatsBox{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		overflow: auto;
+	}
+	.dividerDiv{
+		width: 0 !important;
+		height: 0 !important;
+	}
+	.personalInfoWrapper{
+		border-bottom: 3px solid $brown;
+		margin-bottom: 5px;
+		width: 100% !important;
+	}
+
+	.jobInfoWrapper{
+		padding-left: 0 !important;
+	}
 }
