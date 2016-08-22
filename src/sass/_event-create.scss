@@ -4,11 +4,66 @@ $brown: #673A00;
 $darkorange: #F44B0C;
 $lightbrown: #995700;
 
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
 
-h3 {
+
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    width: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      width: $max;
+    }
+  }
+  
+  @if $fallback {
+    width: $fallback;
+  }
+  
+  width: $responsive;
+}
+
+// h3 {
+//     text-align: left;
+//     font-weight: bold !important;
+//     font-size: 2.5vw !important;
+// }
+
+.createEventTitle {
+  @include responsive-font(2.29vw, 15px, 22px);
+    color: $orange;
     text-align: left;
     font-weight: bold !important;
-    font-size: 2.5vw !important;
 }
 
 .createEventPage {
@@ -45,6 +100,8 @@ h3 {
   align-items: flex-start;
   flex-direction: column;
   width: 27vw;
+  // @include responsive-width(31.2vw, 300px);
+
   padding: 1vw;
 }
 
@@ -55,6 +112,8 @@ h3 {
   align-items: flex-start;
   flex-direction: column;
   width: 27vw;
+  // @include responsive-width(31.2vw, 300px);
+
    padding: 1vw;
 }
 
@@ -64,6 +123,8 @@ h3 {
   align-items: flex-start;
   flex-direction: column;
   width: 27vw;
+  // @include responsive-width(31.2vw, 300px);
+
   padding: 1vw;
 }
 .eventWrapper4 {
@@ -140,9 +201,9 @@ h3 {
 
 // =================== media =============
 @media screen and (max-width: 768px){
-    h3{
-        font-size: 12px !important;
-    }
+    // h3{
+    //     font-size: 12px !important;
+    // }
 .createEventUpperRow {
   display: flex;
   // align-items: center;
@@ -150,44 +211,28 @@ h3 {
     }
 
 .eventWrapper1 {
-  // border: solid blue 1px;
   border-right: none;
   border-bottom: solid $brown 1px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 80vw;
-  padding: 1vw;
-}
+  // width: 80vw;
+  @include responsive-width(27vw, 260px);
+  }
 
 .eventWrapper2 {
   // border: solid blue 1px;
   border-right: none;
   border-bottom: solid $brown 1px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 80vw;
-   padding: 1vw;
-}
+  // width: 80vw;
+  @include responsive-width(27vw, 260px);
+  }
 
 .eventWrapper3 {
   // border: solid blue 1px;
   border-right: none;
   border-bottom: solid $brown 1px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 80vw;
-  padding: 1vw;
-}
-.eventWrapper4 {
-  // border: solid blue 1px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: 2vw;
-  // width: 50vw;
-}
+  // width: 80vw;
+  @include responsive-width(27vw, 260px);
+
+  }
+
 
 }

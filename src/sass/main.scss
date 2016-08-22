@@ -81,9 +81,35 @@ $primary: $orange;
   font-size: $responsive;
 }
 
-.limit-min-max {
-  @include responsive-font(3vw, 20px, 50px);
+
+  // Example usage @include responsive-font(3vw, 20px, 50px);
+
+
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    width: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      width: $max;
+    }
+  }
+  
+  @if $fallback {
+    width: $fallback;
+  }
+  
+  width: $responsive;
 }
+
+// Example usage @include responsive-width(3vw, 20px, 50px);
 // ========================
 
 html {
@@ -114,7 +140,8 @@ label .label-text {
   color: $brown;
   // text-shadow:0px 1px 0px #CFCFCF;
   cursor: text;
-  font-size: 1.4vw;
+  // font-size: 1.4vw;
+   @include responsive-font(1.35vw, 11px, 13px); 
   // padding-bottom: 1vw;
   // line-height: 20px;
   // text-transform: uppercase;
@@ -129,7 +156,8 @@ label input {
   border: 0;
   border-bottom: 2px solid $lightbrown;
   color: $orange;
-  font-size: 2vw;
+  // font-size: 2vw;
+  @include responsive-font(2.08vw, 15px, 20px);
   letter-spacing: -1px;
   outline: 0;
   // padding: 5px 0px;
@@ -138,12 +166,14 @@ label input {
   // width: 30vw;
 }
 label input:focus {
-  width: 24vw;
+  // width: 24vw;
+@include responsive-width(18.75vw, 180px);
 }
 label input:focus + .label-text {
   color: $darkorange;
   margin: 0px;
-  font-size: 1.6vw;
+  // font-size: 1.6vw;
+  @include responsive-font(1.67vw, 9px, 16px); 
   -moz-transform: translateX(0vw);
   -ms-transform: translateX(0vw);
   -webkit-transform: translateX(0vw);
@@ -152,7 +182,8 @@ label input:focus + .label-text {
 }
 label input:valid + .label-text {
     margin-left: 4vw;
-    font-size: 1.4vw;
+    // font-size: 1.4vw;
+   @include responsive-font(1.35vw, 11px, 13px); 
     -moz-transform: translate(-2vw, 0vw);
     -webkit-transform: translate(-2vw, 0vw);
     -o-transform: translate(-2vw, 0vw);
@@ -167,14 +198,17 @@ select {
     outline: none;
     color: $orange;
     border: solid $orange 1px;
-    width: 20vw;
+ 	@include responsive-width(16.67vw, 160px);
+
+    // width: 20vw;
 }
 
 textarea {
     background: none !important; 
     border: solid $orange 1px;
     outline: none;
-    width: 24vw;
+    // width: 24vw;
+	@include responsive-width(18.75vw, 180px);
     height: 10vw; 
     color: $orange; 
     // overflow: scroll;

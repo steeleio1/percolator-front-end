@@ -4,6 +4,71 @@ $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
 
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    width: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      width: $max;
+    }
+  }
+  
+  @if $fallback {
+    width: $fallback;
+  }
+  
+  width: $responsive;
+}
+// ========================================
+
+
+.eventInfoTitle {
+  @include responsive-font(2.29vw, 15px, 22px);
+    color: $orange;
+    text-align: left;
+    font-weight: bold !important;
+} 
+
+.smallEventInfoTitle {
+  @include responsive-font(1.88vw, 15px, 18px);
+    color: $brown;
+    text-align: left;
+    font-weight: bold !important;
+    border-bottom: solid $lightbrown 1px;
+}
+
 
 .inviteButtonRow {
 	display: flex;
@@ -132,7 +197,8 @@ input:focus {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	font-size: 1.7vw;
+  	@include responsive-font(2.08vw, 15px, 20px);
+	// font-size: 1.7vw;
 	// width: 10vmax;
 	white-space: nowrap;
 	color: $orange;
@@ -144,7 +210,8 @@ input:focus {
 	// border: solid green 1px; 
 	display: flex;
 	flex-direction: flex-start;
-	font-size: 1.3vmax;
+   @include responsive-font(1.35vw, 11px, 13px); 
+	// font-size: 1.3vmax;
 	color: $brown;
 }
 
@@ -154,7 +221,8 @@ input:focus {
 // }
 
 .dateTime {
-	font-size: 1.1vmax;	
+  	@include responsive-font(2.08vw, 15px, 20px);
+	// font-size: 1.1vmax;	
 }
 
 .eventInfoWrapper1 {
@@ -198,25 +266,29 @@ input:focus {
 .attending {
 	color: green;
 	font-weight: bold;
-	font-size: 1.5vw;
+   @include responsive-font(1.35vw, 11px, 13px); 
+	// font-size: 1.5vw;
 }
 
 .declined {
 	color: red;
 	font-weight: bold;
-	font-size: 1.5vw;
+   @include responsive-font(1.35vw, 11px, 13px); 
+	// font-size: 1.5vw;
 }
 
 .maybe {
 	color: darken(gold, 20%);
 	font-weight: bold;
-	font-size: 1.5vw;
+   @include responsive-font(1.35vw, 11px, 13px); 
+	// font-size: 1.5vw;
 }
 
 .noResponse {
 	color: black;
 	font-weight: bold;
-	font-size: 1.5vw;	
+   @include responsive-font(1.35vw, 11px, 13px); 
+	// font-size: 1.5vw;	
 }
 
 
@@ -229,8 +301,10 @@ input:focus {
 	// align-items: center;
 	// flex-direction: row;
 	// flex-flow: row wrap;
-	width: 20vw;
-	overflow: scroll;
+   @include responsive-font(1.35vw, 11px, 13px); 
+	@include responsive-width(18.75vw, 180px);
+	// width: 20vw;
+	// overflow: scroll;
 }
 
 .contactContainer {
