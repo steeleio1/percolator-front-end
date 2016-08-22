@@ -1,12 +1,28 @@
 <div class="hostPage">
   <div class="hostBox" ng-hide="vm.hideHost">
-    <div class="hostInfoWrapper animated fadeInDown">
-      <div class="hostPhotoBox">
-          <div class="hostPhoto">
-            <img src="{{vm.user.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
+  <div class="hostInfoWrapper animated fadeInDown">
+    <div class="hostPhotoBox">
+        <div class="hostPhoto">
+          <img src="{{vm.user.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
+        </div>
+    </div>
+        <div class="hostDetailsWrapper1">
+            <span class="hostInfoTitle">Personal Info:</span>
+
+          <div class="hostDetailWrapper">
+            <div class="hostDetailInfo">
+           {{vm.user.first_name}}    {{vm.user.last_name}}
+            </div>
+              <span class="hostDetailLabel">Full Name</span>
+          </div>
+
+          <div class="hostDetailWrapper">
+            <div class="hostDetailInfo">
+           {{vm.user.email}}
+            </div>
+              <span class="hostDetailLabel">Email</span>
           </div>
       </div>
-      
           <div class="hostDetailsWrapper1">
              <h3>Personal Info:</h3>
 
