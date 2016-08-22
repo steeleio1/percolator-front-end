@@ -85,6 +85,7 @@ input:focus {
 }
 
 .eventPhotoBox {
+
 	// border: solid green 1px;
 	display: flex;
 	// flex-direction: column;
@@ -104,11 +105,12 @@ input:focus {
 
 	object-fit: cover;
 	// margin-left: 7vw;
+
 		img {
-			width: 100%;
-    		height: auto;
+    		height: 50px;
 	}
 }
+
 
 .eventInfobox {
 		// border: solid green 3px;
@@ -122,6 +124,7 @@ input:focus {
 .eventCardInfoWrapper {
 	margin: 0.3vw;
 }
+
 
 .eventInfo {
 	// border: solid yellow 1px;

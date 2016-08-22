@@ -1,4 +1,4 @@
-function EventHostController (MailService, $state, $http, SERVER, $cookies, $stateParams) {
+function EventHostController (MailService, WealthService, $state, $http, SERVER, $cookies, $stateParams) {
 
 	// Sets up this as vm.
 	let vm = this;
@@ -25,6 +25,7 @@ function EventHostController (MailService, $state, $http, SERVER, $cookies, $sta
 	vm.hideInviteMyContacts = hideInviteMyContacts;
 	vm.deleteEvent = deleteEvent;
 	vm.sendInvite = sendInvite;
+	vm.getWEReport = getWEReport;
 
 	init();
 
@@ -113,6 +114,7 @@ function EventHostController (MailService, $state, $http, SERVER, $cookies, $sta
 // First step of the process kicked off by the sendInvite function
 // this has the backend create the guest in the guest table
 function createGuest(guestInfo){
+			console.log("CreateGuest Start");
 				let guestInstance = guestInfo;
 				let token = $cookies.get('access_token');
 				let config = {
@@ -121,9 +123,11 @@ function createGuest(guestInfo){
 				$http.post(SERVER.URL + 'guests', guestInfo, config).then(function (res) {
 								if (res.status == 200) {
 										alert("200 OK - Guest Created");
+													console.log("CreateGuest End");
 										createEventGuest(res.data, guestInstance);
 								} else if (res.status == 201) {
 										alert("201 OK - Guest Created");
+													console.log("CreateGuest End");
 										createEventGuest(res.data, guestInstance);
 								}
 						},
@@ -139,6 +143,7 @@ function createGuest(guestInfo){
 // Second step of the process kicked off by the sendInvite function
 // this has the backend create the eventguest in the eventguest join table
 function createEventGuest(guestInfo, guestInstance){
+				console.log("CreateEventGuest Start");
       let token = $cookies.get('access_token');
       let config = {
         headers: { 'Authorization': `Bearer ${token}` }
@@ -150,10 +155,14 @@ function createEventGuest(guestInfo, guestInstance){
       $http.post(SERVER.URL + 'createEventGuest', payload, config).then(function (res) {
 				if (res.status == 200) {
 						alert("200 OK - EventGuest Created");
+										console.log("CreateEventGuest End");
 						emailGuest(res.data, guestInstance);
 				} else if (res.status == 201) {
 						alert("201 OK - EventGuest Created");
+						console.log("CreateEventGuest End");
+
 						emailGuest(res.data, guestInstance);
+
 				}
 		});
   };
@@ -162,6 +171,8 @@ function createEventGuest(guestInfo, guestInstance){
 // Third step of the process kicked off by the sendInvite function
 // this composes the email that will go out to the guest via the MailGun service.
 function emailGuest(egInfo, guestInstance){
+	console.log("EmailGuest Start");
+
 	let guestInfo = guestInstance.first_name + " " + guestInstance.last_name + " " + '<' + guestInstance.email + '>';
 	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.uuid;
 	let emailMessage = vm.event.eventInfo.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
@@ -171,14 +182,17 @@ function emailGuest(egInfo, guestInstance){
 			subject: 'You are invited to join us at ' + vm.event.eventInfo.title,
 			text: guestInstance.privateMessage + " " + emailMessage
 		};
+			console.log("EmailGuest End");
 		MailService.sendEmail(data);
 }
 
 // This function kicks off several steps neede to create the guest and send them an email.
 	function sendInvite(guest){
+		console.log("SendInvite Start");
 		//Should probably check validation of email against eventguest table to avoid duplicate invites
 		//Calls first step of sendInvite -> creating the guest
 		createGuest(guest);
+				console.log("SendInvite End");
 		$state.reload('root.host.eventHost');
 	}
 
@@ -186,7 +200,11 @@ function emailGuest(egInfo, guestInstance){
 		$location.url('host/my-events/' + eventID);
 	}
 
+	function getWEReport(){
+
+	};
+
 }
 
-EventHostController.$inject = ['MailService', '$state', '$http', 'SERVER', '$cookies', '$stateParams'];
+EventHostController.$inject = ['MailService', 'WealthService', '$state', '$http', 'SERVER', '$cookies', '$stateParams'];
 export { EventHostController };

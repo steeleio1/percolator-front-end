@@ -13,6 +13,42 @@ $darkorange: #F44B0C;
 $lightbrown: #995700;
 $primary: $orange;
 
+
+/* mixin for ellipsis with multiline text*/
+@mixin multiLineEllipsis($lineHeight: 18px, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: 0px;
+  padding-right: 18px;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    background: $bgColor;
+  }
+}
+
+.block-with-text {
+  @include multiLineEllipsis($lineHeight: 18px, $lineCount: 1, $bgColor: white);  
+}
+
+.block-with-text-3-lines{
+	@include multiLineEllipsis($lineHeight: 18px, $lineCount: 3, $bgColor: white); 
+}
+
+
 @import "bulma";
 
 
