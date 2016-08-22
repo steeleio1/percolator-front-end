@@ -1,4 +1,4 @@
-function GuestController (MailService, WealthService, $scope){
+function GuestController (MailService, WealthService, $scope, $http, SERVER){
 
 	let vm = this;
 
@@ -23,17 +23,21 @@ function GuestController (MailService, WealthService, $scope){
 	}
 
 	function getWEReport(){
-		let registrantDummyData = {
-				last_name: 'Ricardo',
-				first_name: 'Ricky',
-				address_line1:	'Address 1',
-				address_line2:	'Address 2 (optional)',
-				city: 'The City',
-				state:	'SC',
-				zip: '99999'
-		}
 
-		WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
+		
+		// let registrantDummyData = {
+		// 		last_name: 'Ricardo',
+		// 		first_name: 'Ricky',
+		// 		address_line1:	'Address 1',
+		// 		address_line2:	'Address 2 (optional)',
+		// 		city: 'The City',
+		// 		state:	'SC',
+		// 		zip: '99999'
+		// }
+
+		// WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
+		$http.get(SERVER.URL + 'guests/we-report').then((res) => {
+			res.data = JSON.parse(res.data.we_info);
 			//Sets property values within vm.profile to more manageable property names
 			let coname2value;
 			console.log(res);
@@ -105,7 +109,7 @@ function GuestController (MailService, WealthService, $scope){
 						} else if (p2G === "5|5 - Unmatched"){
 							p2GVal = 1;
 							p2GText = "Unmatched";
-						}	
+						}
 
 
 			let giftCapacityTier;
@@ -133,7 +137,7 @@ function GuestController (MailService, WealthService, $scope){
 			} else if (giftCapacityRaw === "$25K-$30K"){
 				giftCapacityTier = 10;
 			} else if (giftCapacityRaw === "$30K-$40K"){
-				giftCapacityTier = 11;		
+				giftCapacityTier = 11;
 			} else if (giftCapacityRaw === "$40K-$50K"){
 				giftCapacityTier = 12;
 			} else if (giftCapacityRaw === "$50K-$75K"){
@@ -193,7 +197,7 @@ function GuestController (MailService, WealthService, $scope){
 			} else if (realEstateRange === "$10MM+"){
 				realEstateTier = 8;
 			}
-						
+
 			let kids;
 			if (res.data.demographics.has_children) {
 				kids = "Yes";
@@ -265,5 +269,5 @@ function GuestController (MailService, WealthService, $scope){
 	}
 }
 
-GuestController.$inject = ['MailService', 'WealthService', '$scope'];
+GuestController.$inject = ['MailService', 'WealthService', '$scope', '$http' ,'SERVER'];
 export { GuestController };

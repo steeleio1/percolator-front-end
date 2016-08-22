@@ -1,31 +1,90 @@
+<div class="mainInfoWrapper">
+  <div class="eventWrapper" ng-repeat="event in vm.events">
+    <div class="eventInfoWrapper animated fadeInRight">
 
-<div class="eventBox">
-    <div class="eventWrapper" ng-repeat="event in vm.events">
-      <div class="eventInfoWrapper animated fadeInRight">
-        <div class="eventPhotoBox">
-          <div class="eventPhoto">
-            <img src="{{event.photo_url || 'images/JavaHuddleLogo.png'}}" alt="photo url">
+      <div class="subInfoWrapper">
+          <div class="eventPhotoBox">
+            <div class="eventPhoto">
+              <img src="{{event.photo_url || 'images/coffeeCupVector.png'}}" alt="photo url">
+           </div>
           </div>
-        </div>
+          
+<!-- ===================================== -->
+        <div class="eventInfoWrapper1">
+            <h3>Event Info:</h3>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo">
+                {{event.title}}
+                </div>
+                  <span class="eventLabel">Event Name</span>
+              </div>
+                <br>
+                 <h4>Address:</h4>
+                 <div class="addressWrapper">
+                   {{event.street}}<br>
+                   {{event.street_2}}<br>
+                   {{event.city}}, {{event.state}}<br> 
+                   {{event.post_code}}
+                  </div>
+                  <br>
+          </div>
 
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <p class="strong" >{{event.title}}</p><p class="small">Location: {{event.street}} {{event.street_2}}, {{event.city}} {{event.state}} {{event.post_code}}</p> 
-              <p class="small">{{event.date}}:{{event.start_time}}-{{event.end_time}}</p>
-              <br>
-              <p class="small">10 invited</p> | <p class="small attending">6 attending</p> | <p class="small declined">3 declined</p> | <p class="small maybe">1 maybe</p>
-              <br>
-              <p class="eventMessageContainer block-with-text-2-lines">{{event.message}}</p>
-              <p>This event is index: {{vm.events.indexOf(event)}}</p>
-              <p>This event id is: {{event.id}}</p>
-              <p class="control">
-                <button type="submit"
-                        class="button is-primary"
-                        ng-click="vm.eventDetails(event.id)">View/Send Invites
-                </button>
-              </p>
+        <div class="eventInfoWrapper2">
+                <h3>Date/Time:</h3>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{event.date}}
+                </div>
+                  <span class="eventLabel">Event Date</span>
+              </div>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{event.start_time}}
+                </div>
+                  <span class="eventLabel">Start Time</span>
+              </div>
+
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{event.end_time}}
+                </div>
+                  <span class="eventLabel">End Time</span>
+              </div>
+             <br>
+                <h3>Event Description:</h3>
+                  <span class="eventDesription">{{event.message}}</span>
         </div>
-      </div>
+<!-- ====================================== -->
+         <div class="eventInfoWrapper3">
+            <h3>Invite Info:</h3>
+             <h4>10 invited</h4>
+             <br>
+           
+              <span class="attending">6 attending</span>
+              <span class="declined">3 declined</span>
+              <span class="maybe">1 maybe</span>
+              <span class="noResponse">15 no response</span>
+          </div>
+
     </div>
+
+<!-- ======================================= -->
+            <div class="eventInfoWrapper4">
+              <button type="submit"
+                      class="button is-primary is-outlined is-small"
+                      ng-click="vm.eventDetails(event.id)">Event Details
+              </button>
+
+              <button type="submit"
+                      class="button is-primary is-outlined is-small"
+                     >Send Invite
+              </button>
+           
+              <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>        
+            </div>
+         
+
+
+    </div>
+  </div>
 </div>
