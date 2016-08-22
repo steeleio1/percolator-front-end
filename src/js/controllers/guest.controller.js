@@ -28,39 +28,40 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 		// WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
 		$http.get(SERVER.URL + 'host/guests/' + guestID).then((res) => {
 			console.log(res);
-			res.data = JSON.parse(res.data.we_info);
-			if (res.data === null || undefined || ''){
+			let proData = res.data.we_info.weInfo;
+			console.log(proData);
+			if (proData === null || undefined || ''){
 				vm.profile = {
 					fullname: res.data.identity.full_name,
 					email: res.data.identity.emails[0].email
 				}
 
 			} else {
-					res.data = res.data.weInfo;
+					// proData = proData.weInfo;
 					//Sets property values within vm.profile to more manageable property names
 					let coname2value;
-					if (res.data.jobs[1]) {
-						coname2value= res.data.jobs[1].org_name;
+					if (proData.jobs[1]) {
+						coname2value= proData.jobs[1].org_name;
 					} else {
 						coname2value= '';
 					}
 
 					let title2value;
-					if (res.data.jobs[1]) {
-						title2value= res.data.jobs[1].title;
+					if (proData.jobs[1]) {
+						title2value= proData.jobs[1].title;
 					} else {
 						title2value= '';
 					}
 
 					let spouseName;
-					if (res.data.identity.marital_status.value === "M"){
-						spouseName= res.data.relationship.spouse.full_name;
+					if (proData.identity.marital_status.value === "M"){
+						spouseName= proData.relationship.spouse.full_name;
 					} else {
 						spouseName = '';
 					}
 
 					let netWorthTier;
-					let netWorthRange = res.data.wealth.networth.text;
+					let netWorthRange = proData.wealth.networth.text;
 					if (netWorthRange === "Unable to Rate"){
 						netWorthTier = 0;
 					} else if (netWorthRange === "< $25K"){
@@ -91,7 +92,7 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 
 					let p2GVal;
 					let p2GText;
-					let p2G = res.data.giving.p2g_score.text;
+					let p2G = proData.giving.p2g_score.text;
 					if (p2G === "1|5 - Excellent"){
 									p2GVal = 5;
 									p2GText = "Excellent";
@@ -111,7 +112,7 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 
 
 					let giftCapacityTier;
-					let giftCapacityRaw = res.data.giving.gift_capacity.text;
+					let giftCapacityRaw = proData.giving.gift_capacity.text;
 					if (giftCapacityRaw === "Unable to Rate"){
 						giftCapacityTier = 0;
 					} else if (giftCapacityRaw === "<$1K"){
@@ -157,7 +158,7 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 					};
 
 					let incomeTier;
-					let incomeRange	= res.data.wealth.total_income.text;
+					let incomeRange	= proData.wealth.total_income.text;
 					if (incomeRange === "Unable to Rate"){
 						incomeTier = 0;
 					} else if (incomeRange === "$1-$50K"){
@@ -175,7 +176,7 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 					}
 
 					let realEstateTier;
-					let realEstateRange	= res.data.realestate.total_realestate_value.text;
+					let realEstateRange	= proData.realestate.total_realestate_value.text;
 					if (realEstateRange === "Unable to Rate"){
 						realEstateTier = 0;
 					} else if (realEstateRange === "$1-$250K"){
@@ -197,47 +198,47 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 					}
 
 					let kids;
-					if (res.data.demographics.has_children) {
+					if (proData.demographics.has_children) {
 						kids = "Yes";
 					} else {
 						kids = "No";
 					}
 
 					vm.profile = {
-						fullname: res.data.identity.full_name,
-						email: res.data.identity.emails[0].email,
+						fullname: proData.identity.full_name,
+						email: proData.identity.emails[0].email,
 						spouseName: spouseName,
 						kids: kids,
-						age: res.data.identity.age,
-						city: res.data.locations[0].address.city,
-						state: res.data.locations[0].address.state.value,
-						coname1: res.data.jobs[0].org_name,
-						title1: res.data.jobs[0].title,
+						age: proData.identity.age,
+						city: proData.locations[0].address.city,
+						state: proData.locations[0].address.state.value,
+						coname1: proData.jobs[0].org_name,
+						title1: proData.jobs[0].title,
 						coname2: coname2value,
 						title2: title2value,
 						netWorthTier: netWorthTier,
 						netWorthRange: netWorthRange,
-						income: res.data.wealth.total_income.text,
+						income: proData.wealth.total_income.text,
 						incomeTier: incomeTier,
 						incomeRange: incomeRange,
-						realEstateTotalVal: res.data.realestate.total_realestate_value.text,
+						realEstateTotalVal: proData.realestate.total_realestate_value.text,
 						realEstateTier: realEstateTier,
 						realEstateRange: realEstateRange,
-						accreditedInvestor: res.data.wealth.accredited_investor,
-						numberRealEstateProperties: res.data.realestate.total_num_properties,
-						estimatedAnnualDonations: res.data.giving.estimated_annual_donations.text,
+						accreditedInvestor: proData.wealth.accredited_investor,
+						numberRealEstateProperties: proData.realestate.total_num_properties,
+						estimatedAnnualDonations: proData.giving.estimated_annual_donations.text,
 						p2G: p2G.substring(0,3),
 						p2GVal: p2GVal,
 						p2GText: p2GText,
 						giftCapacityTier: giftCapacityTier,
 						giftCapacity: giftCapacityRaw,
-						cashOnHand: res.data.wealth.cash_on_hand.text,
-						businessOwnership: res.data.wealth.business_ownership.text,
-						businessSalesVolume: res.data.wealth.business_sales_volume.text,
-						influenceRating: res.data.wealth.influence_rating.text,
-						totalStock: res.data.wealth.total_stock.text,
-						totalPensions: res.data.wealth.total_pensions.text,
-						investableAssets: res.data.wealth.investable_assets.text
+						cashOnHand: proData.wealth.cash_on_hand.text,
+						businessOwnership: proData.wealth.business_ownership.text,
+						businessSalesVolume: proData.wealth.business_sales_volume.text,
+						influenceRating: proData.wealth.influence_rating.text,
+						totalStock: proData.wealth.total_stock.text,
+						totalPensions: proData.wealth.total_pensions.text,
+						investableAssets: proData.wealth.investable_assets.text
 					};
 					console.log(vm.profile);
 
