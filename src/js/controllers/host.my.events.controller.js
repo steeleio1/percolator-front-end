@@ -32,7 +32,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
     // let hours;
     // let minutes;
     let date = new Date(d)
-    var dd = date.getDate(); 
+    var dd = date.getDate();
     var mm = date.getMonth()+1;
     var yyyy = date.getFullYear();
     // let UTCHoursVal = date.getUTCHours();
@@ -71,7 +71,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
     //   } else if (hours>=12){
     //     hours = hours;
     //     aa="P.M.";
-    //   }      
+    //   }
     // };
     // var hr = hours;
     // if(date.getUTCMinutes()<10){
@@ -80,7 +80,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location) {
     //   minutes = date.getUTCMinutes();
     // };
     // var min = minutes;
-    if(dd<10){dd='0'+dd} 
+    if(dd<10){dd='0'+dd}
     if(mm<10){mm='0'+mm};
     return d = mm+'/'+dd+'/'+yyyy;
   }
