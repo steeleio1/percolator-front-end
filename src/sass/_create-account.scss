@@ -4,6 +4,62 @@ $orange:  #e78200;
 $darkorange: #F44B0C;
 $lightbrown: #995700;
 
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    width: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      width: $max;
+    }
+  }
+  
+  @if $fallback {
+    width: $fallback;
+  }
+  
+  width: $responsive;
+}
+// ========================================
+
+
+.createAccountTitle {
+  @include responsive-font(2.29vw, 15px, 22px);
+    color: $orange;
+    text-align: left;
+    font-weight: bold !important;
+}
 .createAccountPage {
     // border: solid black 1px;
     width: 95vw;
@@ -117,41 +173,34 @@ $lightbrown: #995700;
 
 // ================== media ==================
 @media screen and (max-width: 768px){
-    h3{
-        font-size: 12px !important;
-    }
+
 .createUpperRow {
     // border: solid red 1px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     }
 .createAcntWrapper1 {
     // border: solid green 1px;
     border-right: none;
     border-bottom: solid $lightbrown 1px !important;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 80vw;
-    padding: 1vw;
+   @include responsive-width(27vw, 260px);
     }
+
 .createAcntWrapper2 {
     // border: solid green 1px;
     border-right: none;
     border-bottom: solid $lightbrown 1px !important;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 80vw;
-    padding: 1vw;
+   @include responsive-width(27vw, 260px);
+
     }
 .createAcntWrapper3 {
     // border: solid green 1px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 80vw;
-    padding: 1vw;   
+   @include responsive-width(27vw, 260px);
+
 }
 
 }

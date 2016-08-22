@@ -10,7 +10,7 @@
           </div>
 
         <div class="singleEventInfoWrapper1">
-            <h3>Event Info:</h3>
+            <span class="singleEventTitle">Event Info:</span>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo">
                 {{vm.event.eventInfo.title}}
@@ -18,7 +18,7 @@
                   <span class="eventLabel">Event Name</span>
               </div>
            		<br>
-                 <h4>Address:</h4>
+                 <span class="smallSingleEventTitle">Address:</span>
                  <div class="addressWrapper">
                    {{vm.event.eventInfo.street}}<br>
                    {{vm.event.eventInfo.street_2}}<br>
@@ -29,7 +29,7 @@
 		</div>
 
          <div class="singleEventInfoWrapper2">
-            <h3>Event Date/Time:</h3>
+            <span class="singleEventTitle">Event Date/Time:</span>
               <br>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo dateTime">
@@ -58,8 +58,8 @@
 
 
          <div class="singleEventInfoWrapper3">
-            <h3>RSVPs:</h3>
-             <h4>{{vm.rsvp.invites}} invited</h4>
+            <span class="singleEventTitle">RSVPs:</span>
+             <span class="smallSingleEventTitle">{{vm.rsvp.invites}} invited</span>
              <br>
            
               <span class="attending">{{vm.rsvp.yes}} attending</span>
@@ -68,7 +68,7 @@
               <span class="noResponse">{{vm.rsvp.not_responded}} no response</span>
              <br>
 
-             <h3>Organization:</h3>
+             <span class="singleEventTitle">Organization:</span>
               <div class="eventCardInfoWrapper">
                 <div class="eventInfo">
                 {{vm.event.eventInfo.organization}}

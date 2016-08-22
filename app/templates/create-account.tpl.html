@@ -6,7 +6,7 @@
       <div class="createUpperRow">
 <!-- wrapper 1 -->
         <div class="createAcntWrapper1">
-         <h3>Account Details:</h3>
+          <span class="createAccountTitle">Account Details:</span>
             <label class="createLabelAnim">
               <input type="text"
                      class="createInputAnim" 
@@ -41,7 +41,7 @@
 
 <!-- wrapper 2 -->
         <div class="createAcntWrapper2">
-          <h3>Personal Details:</h3>
+          <span class="createAccountTitle">Personal Details:</span>
             <label class="createLabelAnim">
               <input type="tel"
                      class="createInputAnim"
@@ -79,7 +79,7 @@
 
               <br>
               <select name="state" ng-model="user.state">
-                <option selected="true">State:</option>
+                <option value="">State:</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -144,7 +144,7 @@
 
 <!-- wrapper3 -->
         <div class="createAcntWrapper3">
-            <h3>Organization Details:</h3>
+          <span class="createAccountTitle">Organization Details:</span>
             <label class="createLabelAnim">
                 <input type="text"
                        class="createInputAnim" 
@@ -154,7 +154,7 @@
             </label>
               <br>
               <select ng-model="user.category">
-                <option>Nonprofit</option>
+                <option value="">Nonprofit</option>
                 <option>For Profit</option>
                 <option>Hospital</option>
                 <option>Education</option>
@@ -165,10 +165,12 @@
 
           <div class="photoUploadBox">
             <label class="photo-label"
-                   ng-click="vm.uploadImage()">Profile photo: </label>
+                   ng-click="vm.uploadImage()"></label>
+          <span class="createAccountTitle">Profile photo:</span>
             <a class="button is-primary is-outlined is-small"
                ng-click="vm.uploadImage()">Upload Image</a>
           </div>
+          <br>
         </div>
   </div>
 
