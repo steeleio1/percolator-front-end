@@ -17,10 +17,8 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 			// *********************************************
 
         var egID = $stateParams.uuid;
-				console.log(egID);
         $http.get(SERVER.URL + 'event-guest/rsvp/' + egID).then((res) => {
        	vm.event = res.data;
-        console.log(res);
         });
     }
 
