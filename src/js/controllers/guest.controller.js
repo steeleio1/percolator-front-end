@@ -30,11 +30,11 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 			console.log(res);
 			//The following proData line was working, but oddly didn't need to parse the data.
 			//Then... it stopped working. Hooray computers.
-			// let proData = res.data.we_info.weInfo;
+			let proData = res.data.we_info.weInfo;
 
 			//Now, this works.  Honestly, the fact that this works makes more sense
 			//because the weInfo is stringifyed and therefore MUST be parsed to access as JSON
-			let proData = JSON.parse(res.data.we_info);
+			// let proData = JSON.parse(res.data.we_info);
 			proData = proData.weInfo;
 			console.log(proData);
 			if (proData === null || undefined || ''){
