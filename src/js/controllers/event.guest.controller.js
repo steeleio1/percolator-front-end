@@ -1,4 +1,4 @@
-function EventGuestController(WealthService, $state, $http, SERVER, $stateParams) {
+function EventGuestController(WealthService, $state, $http, SERVER, $stateParams, DateService) {
 
     // Sets up this as vm.
     let vm = this;
@@ -18,7 +18,14 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 
         var egID = $stateParams.uuid;
         $http.get(SERVER.URL + 'event-guest/rsvp/' + egID).then((res) => {
-       	vm.event = res.data;
+            console.log(res.data);
+       	let event = res.data;
+        console.log(event);
+        event.date= DateService.formatDate(event.date);
+        event.start_time = DateService.getTime(event.start_time);
+        event.end_time = DateService.getTime(event.end_time);
+        console.log(event);
+        vm.event = event;
         });
     }
 
@@ -94,5 +101,5 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 
 }
 
-EventGuestController.$inject = ['WealthService', '$state', '$http', 'SERVER', '$stateParams'];
+EventGuestController.$inject = ['WealthService', '$state', '$http', 'SERVER', '$stateParams', 'DateService'];
 export { EventGuestController };
