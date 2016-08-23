@@ -17,10 +17,8 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 			// *********************************************
 
         var egID = $stateParams.uuid;
-				console.log(egID);
         $http.get(SERVER.URL + 'event-guest/rsvp/' + egID).then((res) => {
        	vm.event = res.data;
-        console.log(res);
         });
     }
 
@@ -67,7 +65,7 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
             state: guest.state,
             zip: guest.post_code
         }
-				
+
         WealthService.getProfileByAddress(registrantData).then((res) => {
             let weInfo = res.data;
 						let payload = {
