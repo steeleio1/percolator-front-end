@@ -74,7 +74,7 @@ $darkorange: #F44B0C;
 	// border: solid black 1px;
 	display: flex;
 	align-items: center;
-	flex-direction: column;	
+	flex-direction: column;
 	width: 100vw;	
 }
 
@@ -87,12 +87,10 @@ $darkorange: #F44B0C;
 	margin-top: 3vw;
 	margin-bottom: 3vw;
 	border-radius: 10px;
-	// padding: 3vw;
-    box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
-   // width: 791px;
-   // height: 302px;
+	padding: 2.4vw;
+  box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
    @include responsive-width(61.7vw, 260px);
-   height: 23.5vw;
+
 
 }
 
@@ -161,11 +159,11 @@ $darkorange: #F44B0C;
 	// border: solid green 1px;
 	// display: flex;
 	// flex-direction: column;
-	margin: 0.3vw;
+	// margin: 0.3vw;
 }
 
 .hostDetailInfo {
-	// border: solid yellow 1px;
+	// border: solid blue 1px;
 	border-bottom: solid $lightbrown 1px; 
 	display: flex;
 	align-items: flex-end;
