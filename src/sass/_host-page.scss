@@ -74,7 +74,7 @@ $darkorange: #F44B0C;
 	// border: solid black 1px;
 	display: flex;
 	align-items: center;
-	flex-direction: column;	
+	flex-direction: column;
 	width: 100vw;	
 }
 
@@ -91,11 +91,9 @@ $darkorange: #F44B0C;
 	background: $coffeewhite;
 	margin-bottom: 3vw;
 	border-radius: 10px;
-    box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
-   @include responsive-width(61.7vw, 480px);
-   // height: 23.5vw;
-   padding: 3vw;
-    min-height: 185px;
+	padding: 2.4vw;
+  box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+   @include responsive-width(61.7vw, 260px);
 }
 
 
@@ -167,7 +165,7 @@ $darkorange: #F44B0C;
 }
 
 .hostDetailInfo {
-	// border: solid yellow 1px;
+	// border: solid blue 1px;
 	border-bottom: solid $lightbrown 1px; 
 	display: flex;
 	align-items: flex-end;
