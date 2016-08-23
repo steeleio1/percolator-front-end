@@ -1,8 +1,9 @@
-function HostController($state, $scope, $http, SERVER, $cookies) {
+function HostController($state, $scope, $http, SERVER, $cookies, $rootScope) {
 
     let vm = this;
     vm.active1 = true;
     vm.active2 = false;
+    vm.hideHost = false;
 
     init();
 
@@ -17,7 +18,15 @@ function HostController($state, $scope, $http, SERVER, $cookies) {
         });
     }
 
+    $rootScope.$on('hideHost', (event)=>{
+        vm.hideHost = true;
+    });
+
+    $rootScope.$on('showHost',(event)=>{
+        vm.hideHost = false;
+    })
+
 }
 
-HostController.$inject = ['$state', '$scope', '$http', 'SERVER', '$cookies'];
+HostController.$inject = ['$state', '$scope', '$http', 'SERVER', '$cookies', '$rootScope'];
 export { HostController };
