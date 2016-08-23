@@ -28,10 +28,11 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 		// WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
 		$http.get(SERVER.URL + 'host/guests/' + guestID).then((res) => {
 			console.log(res);
+			console.log("This is line 31");
 			//The following proData line was working, but oddly didn't need to parse the data.
 			//Then... it stopped working. Hooray computers.
 			let proData = JSON.parse(res.data.we_info.weInfo);
-
+			console.log("This is line 35");
 			//Now, this works.  Honestly, the fact that this works makes more sense
 			//because the weInfo is stringifyed and therefore MUST be parsed to access as JSON
 			// let proData = JSON.parse(res.data.we_info);
