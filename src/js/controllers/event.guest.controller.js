@@ -67,7 +67,7 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
             state: guest.state,
             zip: guest.post_code
         }
-
+				
         WealthService.getProfileByAddress(registrantData).then((res) => {
             let weInfo = res.data;
 						let payload = {

@@ -10,6 +10,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location, $ro
   vm.formatDate = formatDate;
   vm.getTime = getTime;
   vm.hideHost = hideHost;
+  vm.rsvp = [];
 
   init();
 
@@ -19,9 +20,8 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location, $ro
 				headers: { 'Authorization': `Bearer ${token}` }
 			};
 			$http.get(SERVER.URL + 'my-events', config).then((res) => {
-        console.log(res.data);
+        eventRSVPCount(res.data);
 				vm.events = res.data;
-        console.log(vm.events);
 			});
 
 
@@ -71,6 +71,47 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location, $ro
     }
     return hours + ":"+minutes + aa;
   }
+
+
+    function eventRSVPCount(rsvpInfo) {
+        // forEaches through the EventGuest info and counts the
+        // RSVP status of each EventGuest and a total invite count.
+        rsvpInfo.forEach(function(outerData, i) {
+          if (outerData.event_guest != null){
+            outerData.rsvp = {
+             yes: 0,
+             no: 0,
+             maybe: 0,
+             not_responded: 0,
+             invites: 0
+            };
+            outerData.event_guest.forEach(function(innerData, j){
+                if (innerData.rsvp === "Yes") {
+                    outerData.rsvp.yes++;
+                    outerData.rsvp.invites++;
+                } else if (innerData.rsvp === "No") {
+                    outerData.rsvp.no++;
+                    outerData.rsvp.invites++;
+                } else if (innerData.rsvp === "Maybe") {
+                    outerData.rsvp.maybe++;
+                    outerData.rsvp.invites++;
+                } else if (innerData.rsvp === "Not responded") {
+                    outerData.rsvp.not_responded++;
+                    outerData.rsvp.invites++;
+                }
+              });
+            } else {
+              outerData.rsvp = {
+               yes: 0,
+               no: 0,
+               maybe: 0,
+               not_responded: 0,
+               invites: 0
+              };
+            }
+            return outerData;
+        });
+    }
 
   function deleteEvent(eventID) {
     var result = confirm("Confirm delete of this event?");
