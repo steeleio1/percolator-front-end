@@ -28,7 +28,14 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 		// WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
 		$http.get(SERVER.URL + 'host/guests/' + guestID).then((res) => {
 			console.log(res);
-			let proData = res.data.we_info.weInfo;
+			//The following proData line was working, but oddly didn't need to parse the data.
+			//Then... it stopped working. Hooray computers.
+			// let proData = res.data.we_info.weInfo;
+
+			//Now, this works.  Honestly, the fact that this works makes more sense
+			//because the weInfo is stringifyed and therefore MUST be parsed to access as JSON
+			let proData = JSON.parse(res.data.we_info);
+			proData = proData.weInfo;
 			console.log(proData);
 			if (proData === null || undefined || ''){
 				vm.profile = {
@@ -39,25 +46,32 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 			} else {
 					// proData = proData.weInfo;
 					//Sets property values within vm.profile to more manageable property names
-					let coname2value;
-					if (proData.jobs[1]) {
-						coname2value= proData.jobs[1].org_name;
-					} else {
-						coname2value= '';
+					//If jobs object exists
+						let coname2value;
+						let title2value;
+					if (proData.jobs){
+						if (proData.jobs[1]) {
+							coname2value= proData.jobs[1].org_name;
+						} else {
+							coname2value= '';
+						}
+
+
+						if (proData.jobs[1]) {
+							title2value= proData.jobs[1].title;
+						} else {
+							title2value= '';
+						}
 					}
 
-					let title2value;
-					if (proData.jobs[1]) {
-						title2value= proData.jobs[1].title;
-					} else {
-						title2value= '';
-					}
 
-					let spouseName;
-					if (proData.identity.marital_status.value === "M"){
-						spouseName= proData.relationship.spouse.full_name;
-					} else {
-						spouseName = '';
+						let spouseName;
+					if (proData.identity.marital_status){
+						if (proData.identity.marital_status.value === "M"){
+							spouseName= proData.relationship.spouse.full_name;
+						} else {
+							spouseName = '';
+						}
 					}
 
 					let netWorthTier;
@@ -197,11 +211,13 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 						realEstateTier = 8;
 					}
 
-					let kids;
-					if (proData.demographics.has_children) {
-						kids = "Yes";
-					} else {
-						kids = "No";
+						let kids;
+					if (proData.demographics){
+						if (proData.demographics.has_children) {
+							kids = "Yes";
+						} else {
+							kids = "No";
+						}
 					}
 
 					vm.profile = {
