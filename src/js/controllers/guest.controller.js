@@ -35,7 +35,7 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 			//Now, this works.  Honestly, the fact that this works makes more sense
 			//because the weInfo is stringifyed and therefore MUST be parsed to access as JSON
 			// let proData = JSON.parse(res.data.we_info);
-			proData = proData.weInfo;
+			// proData = proData.weInfo;
 			console.log(proData);
 			if (proData === null || undefined || ''){
 				vm.profile = {
