@@ -2,13 +2,13 @@
   <div class="hostBox" ng-hide="vm.hideHost">
   <div class="hostInfoWrapper animated fadeInDown">
     <div class="hostPhotoBox">
-        <div class="hostPhoto">
-          <img src="{{vm.user.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
+          <div class="hostPhoto">
+            <img src="{{vm.user.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
+          </div>
         </div>
-    </div>
-        <div class="hostDetailsWrapper1">
-            <span class="hostInfoTitle">Personal Info:</span>
 
+        <div class="hostDetailsWrapper1">
+         <span class="hostInfoTitle">Personal Info:</span>
           <div class="hostDetailWrapper">
             <div class="hostDetailInfo">
            {{vm.user.first_name}}    {{vm.user.last_name}}
@@ -22,22 +22,12 @@
             </div>
               <span class="hostDetailLabel">Email</span>
           </div>
-      </div>
-          <div class="hostDetailsWrapper1">
-             <h3>Personal Info:</h3>
 
-            <div class="hostDetailWrapper">
+         <div class="hostDetailWrapper">
               <div class="hostDetailInfo">
-             {{vm.user.first_name}}    {{vm.user.last_name}}
+             {{vm.user.mobile_number}}
               </div>
-                <span class="hostDetailLabel">Full Name</span>
-            </div>
-
-            <div class="hostDetailWrapper">
-              <div class="hostDetailInfo">
-             {{vm.user.email}}
-              </div>
-                <span class="hostDetailLabel">Email</span>
+                <span class="hostDetailLabel">Mobile Phone:</span>
             </div>
 
            <div class="hostDetailWrapper">
@@ -45,30 +35,24 @@
              {{vm.user.home_number}}
               </div>
                 <span class="hostDetailLabel">Home Phone:</span>
-            </div>
+            </div>        
+        </div>
+
+          <br>
+
         <div class="hostDetailsWrapper2">
-            <span class="hostInfoTitle">Organization Info:</span>
-             <div class="hostDetailWrapper">
-                <div class="hostDetailInfo">
-               {{vm.user.organization}}
-                </div>
-                  <span class="hostDetailLabel">Name:</span>
-              </div>
-                <span class="hostDetailLabel">Mobile Phone:</span>
+           <span class="hostInfoTitle">Address:</span>
+           <div class="addressWrapper">
+             {{vm.user.street}}<br>
+             {{vm.user.street_2}}<br>
+             {{vm.user.city}}, {{vm.user.state}}<br> {{vm.user.post_code}} <br>
             </div>
-            <br>
+        </div>
 
-             <h4>Address:</h4>
-             <div class="addressWrapper">
-               {{vm.user.street}}<br>
-               {{vm.user.street_2}}<br>
-               {{vm.user.city}}, {{vm.user.state}} {{vm.user.post_code}} <br>
-              </div>
-          </div>
 
-          <div class="hostDetailsWrapper2">
-            <h3>Organization Info:</h3>
-
+        <div class="hostDetailsWrapper3">
+            <span class="hostInfoTitle">Organization Info:</span>
+ 
                <div class="hostDetailWrapper">
                   <div class="hostDetailInfo">
                  {{vm.user.organization}}
@@ -82,8 +66,10 @@
                   </div>
                     <span class="hostDetailLabel">Category:</span>
                 </div>
-         </div>
-    </div>
+        </div>
+
+  </div>  
+
     <div class="tabs is-boxed animated fadeIn">
         <ul>
           <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1=true; vm.active2=false;">
