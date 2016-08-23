@@ -292,19 +292,15 @@ input:focus {
 }
 
 
-.eventDesription {
+.eventDescription {
 	border: solid $orange 1px;
 	padding: 0.5vw;
 	font-size: 1vw;
 	color: $orange;
 	display: flex;
-	// align-items: center;
-	// flex-direction: row;
-	// flex-flow: row wrap;
+	overflow: hidden;
    @include responsive-font(1.35vw, 11px, 13px); 
-	@include responsive-width(18.75vw, 180px);
-	// width: 20vw;
-	// overflow: scroll;
+	@include responsive-width(18.75vw, 120px);
 }
 
 .contactContainer {
@@ -313,7 +309,7 @@ input:focus {
 }
 
 // ================ media ===================
-@media screen and (max-width: 768px){
+@media screen and (max-width: 500px){
 
 .subInfoWrapper {
 	// border: solid yellow 1px;
