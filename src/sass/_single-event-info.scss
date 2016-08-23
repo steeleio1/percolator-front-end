@@ -79,19 +79,13 @@ $lightbrown: #804800;
     // border: solid red 1px;
     display: flex;
     justify-content: space-around;
-    background: $coffeewhite;
-    // width: 80vw;
+    background: $coffeewhite; 
     margin-top: 3vw;
     margin-bottom: 3vw;
     border-radius: 10px;
-    // padding: 3vw;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
-   // width: 791px;
-   // height: 302px;
    @include responsive-width(61.7vw, 260px);
    padding: 2.4vw;
-   // height: 38.1vw;
-
 }
 
 .singleInfoWrapper {
@@ -114,7 +108,7 @@ $lightbrown: #804800;
 
 .singleEventInfoWrapper2 {
     // border: solid blue 1px;
-    border-left: solid $brown 1px;
+    border-left: solid $lightbrown 1px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -127,7 +121,7 @@ $lightbrown: #804800;
 
 .singleEventInfoWrapper3 {
     // border: solid blue 1px;
-    border-left: solid $brown 1px;
+    border-left: solid $lightbrown 1px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;

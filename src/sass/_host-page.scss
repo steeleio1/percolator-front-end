@@ -70,6 +70,13 @@ $darkorange: #F44B0C;
     border-bottom: solid $lightbrown 1px;
 }
 
+.tabs {
+  border-top: solid $lightbrown 1px;
+  border-bottom: solid $lightbrown 1px;
+  border-radius: 10px;
+  padding: 2vw;
+}
+
 .hostPage {
 	// border: solid black 1px;
 	display: flex;
@@ -133,7 +140,7 @@ $darkorange: #F44B0C;
 
 .hostDetailsWrapper2 {
 	// border: solid blue 1px;
-	border-left: solid $brown 1px;
+	border-left: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
@@ -146,7 +153,7 @@ $darkorange: #F44B0C;
 
 .hostDetailsWrapper3 {
 	// border: solid blue 1px;
-	border-left: solid $brown 1px;
+	border-left: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
@@ -255,7 +262,7 @@ $darkorange: #F44B0C;
 }
 
 // =================== media =============
-@media screen and (max-width: 500px){
+@media screen and (max-width: 568px){
 
 .hostPhoto {
 	height: 55px;
