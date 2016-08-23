@@ -55,10 +55,19 @@ $darkorange: #F44B0C;
 
 
 .hostInfoTitle {
-  @include responsive-font(2.29vw, 15px, 22px);
+  @include responsive-font(1.95vw, 15px, 20px);
     color: $orange;
     text-align: left;
-    font-weight: bold !important;
+    font-weight: bold;
+    // white-space: nowrap
+}
+
+.smallHostTitle {
+  @include responsive-font(1.56vw, 14px, 16px);
+    color: $brown;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: solid $lightbrown 1px;
 }
 
 .hostPage {
@@ -78,14 +87,20 @@ $darkorange: #F44B0C;
 	margin-top: 3vw;
 	margin-bottom: 3vw;
 	border-radius: 10px;
-	padding: 3vw;
+	// padding: 3vw;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+   // width: 791px;
+   // height: 302px;
+   @include responsive-width(61.7vw, 260px);
+   height: 23.5vw;
+
 }
+
 
 .hostPhotoBox {
 	// border: solid green 1px;
 	display: flex;
-	align-items: center;
+	// align-items: center;
 	// margin-right: 1vw;
 }
 
@@ -93,11 +108,10 @@ $darkorange: #F44B0C;
 	// border: solid blue 1px;
 	border-radius: 100%;
 	overflow: hidden;
-	width: 15vh;
-	height: 15vh;
-
+	width: 71px;
+	height: 71px;
+	margin: 0.5vw;
 	object-fit: cover;
-	// margin-left: 7vw;
 		img {
 			width: 100%;
     		height: auto;
@@ -106,21 +120,41 @@ $darkorange: #F44B0C;
 
 .hostDetailsWrapper1 {
 	// border: solid blue 1px;
-	border-right: solid $brown 1px;
+	// border-right: solid $brown 1px;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
-	width: 27vw;
-	padding: 1vw;
+	// width: 16vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	margin-top: 0.3vw;
+	margin-bottom: 0.3vw;
 }
 
 .hostDetailsWrapper2 {
 	// border: solid blue 1px;
+	border-left: solid $brown 1px;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
-	width: 27vw;
-	padding: 1vw;
+	// width: 16vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	margin-top: 0.5vw;
+	margin-bottom: 0.3vw;
+}
+
+.hostDetailsWrapper3 {
+	// border: solid blue 1px;
+	border-left: solid $brown 1px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	// width: 16vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	margin-top: 0.5vw;
+	margin-bottom: 0.3vw;
 }
 
 .hostDetailWrapper {
@@ -136,10 +170,11 @@ $darkorange: #F44B0C;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-  	@include responsive-font(2.08vw, 15px, 20px);
+  	@include responsive-font(1.76vw, 14px, 18px);
 	// font-size: 1.2vmax;
 	// width: 10vmax;
 	white-space: nowrap;
+	overflow: hidden;
 	color: $orange;
 	// height: 20px;
 }
@@ -148,7 +183,7 @@ $darkorange: #F44B0C;
 	// border: solid green 1px; 
 	display: flex;
 	flex-direction: flex-start;
-   @include responsive-font(1.35vw, 11px, 13px); 
+   @include responsive-font(1.27vw, 11px, 13px); 
 	// font-size: 1.3vmax;
 	color: $brown;
 }
@@ -156,7 +191,7 @@ $darkorange: #F44B0C;
 .addressWrapper {
 	color: $orange;
 	// @include responsive-width(18.75vw, 180px);
-    @include responsive-font(1.35vw, 11px, 13px); 
+    @include responsive-font(1.35vw, 12px, 13px); 
 	// font-size: 1.3vmax;
 }
 
@@ -219,4 +254,39 @@ $darkorange: #F44B0C;
 
 }
 
+// =================== media =============
+@media screen and (max-width: 768px){
 
+.hostPhoto {
+	height: 55px;
+	width: 55px;
+}
+.hostInfoWrapper {
+    // border: solid red 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    @include responsive-width(27vw, 260px);
+    }
+.hostDetailsWrapper1 {
+    // border: solid green 1px;
+    border-left: none;
+    border-bottom: solid $lightbrown 1px !important;
+    align-items: center;
+   @include responsive-width(27vw, 260px);
+    }
+.hostDetailsWrapper2 {
+    // border: solid green 1px;
+    border-left: none;
+    align-items: center;
+    border-bottom: solid $lightbrown 1px !important;
+   @include responsive-width(27vw, 260px);
+    }
+.hostDetailsWrapper3 {
+    // border: solid green 1px;
+    border-left: none;
+    align-items: center;
+   @include responsive-width(27vw, 260px);
+    }
+}

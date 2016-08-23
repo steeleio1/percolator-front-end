@@ -8,8 +8,7 @@
     </div>
     
         <div class="hostDetailsWrapper1">
-            <span class="hostInfoTitle">Personal Info:</span>
-
+         <span class="hostInfoTitle">Personal Info:</span>
           <div class="hostDetailWrapper">
             <div class="hostDetailInfo">
            {{vm.user.first_name}}    {{vm.user.last_name}}
@@ -38,16 +37,19 @@
               <span class="hostDetailLabel">Mobile Phone:</span>
           </div>
           <br>
+      </div>
 
-           <h4>Address:</h4>
+        <div class="hostDetailsWrapper2">
+           <span class="hostInfoTitle">Address:</span>
            <div class="addressWrapper">
              {{vm.user.street}}<br>
              {{vm.user.street_2}}<br>
-             {{vm.user.city}}, {{vm.user.state}} {{vm.user.post_code}} <br>
+             {{vm.user.city}}, {{vm.user.state}}<br> {{vm.user.post_code}} <br>
             </div>
         </div>
 
-        <div class="hostDetailsWrapper2">
+
+        <div class="hostDetailsWrapper3">
             <span class="hostInfoTitle">Organization Info:</span>
              <div class="hostDetailWrapper">
                 <div class="hostDetailInfo">
