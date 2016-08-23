@@ -89,15 +89,12 @@ $darkorange: #F44B0C;
 	display: flex;
 	justify-content: space-around;
 	background: $coffeewhite;
-	// width: 80vw;
 	margin-bottom: 3vw;
 	border-radius: 10px;
-	// padding: 3vw;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
-   // width: 791px;
-   // height: 302px;
    @include responsive-width(61.7vw, 480px);
-   height: 23.5vw;
+   // height: 23.5vw;
+   padding: 3vw;
     min-height: 185px;
 }
 
