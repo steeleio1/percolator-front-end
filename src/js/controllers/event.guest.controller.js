@@ -1,4 +1,4 @@
-function EventGuestController(WealthService, $state, $http, SERVER, $stateParams, DateService) {
+function EventGuestController(WealthService, $state, $http, SERVER, $stateParams, DateService, $timeout) {
 
     // Sets up this as vm.
     let vm = this;
@@ -43,9 +43,8 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 										if (egInfo.rsvp === "Yes") {
 												vm.getWEReport(res.data);
                                                 showRSVPConfirm();
-                                                $state.go('root.home');
+                                                $timeout(goHome(), 3000);
 										};
-                } else {
                 }
             },
             function(res) {
@@ -58,6 +57,10 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
                 }
             });
 
+    }
+
+    function goHome () {
+        $state.go('root.home');
     }
 
     function showRSVPConfirm () {
@@ -103,5 +106,5 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 
 }
 
-EventGuestController.$inject = ['WealthService', '$state', '$http', 'SERVER', '$stateParams', 'DateService'];
+EventGuestController.$inject = ['WealthService', '$state', '$http', 'SERVER', '$stateParams', 'DateService', '$timeout'];
 export { EventGuestController };
