@@ -63,8 +63,8 @@ $green: #84DB2E;
 }
 
 .guestStatsBox {
+	border: solid $lightbrown 2px;
     display: flex;
-	display: flex;
 	justify-content: space-around;
 	background: $coffeewhite;
 	margin-bottom: 3vw;
@@ -310,7 +310,8 @@ $green: #84DB2E;
 	}
 	.statLabel{
 		font-size: 13px !important;
-	}	
+	}
+
 }
 
 @media screen and (max-width: 760px){
@@ -365,6 +366,7 @@ $green: #84DB2E;
 	}
 
 	.jobInfoWrapper{
+		border-left: none;
 		padding-left: 0 !important;
 	}
 }
