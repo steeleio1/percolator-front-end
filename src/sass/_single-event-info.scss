@@ -77,6 +77,7 @@ $lightbrown: #804800;
 }
 .singleEventBox {
     // border: solid red 1px;
+    border: solid $lightbrown 1px;
     display: flex;
     justify-content: space-around;
     background: $coffeewhite; 
@@ -84,8 +85,8 @@ $lightbrown: #804800;
     margin-bottom: 3vw;
     border-radius: 10px;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
-   @include responsive-width(61.7vw, 260px);
-   padding: 2.4vw;
+    @include responsive-width(61.7vw, 260px);
+    padding: 2.4vw;
 }
 
 .singleInfoWrapper {
@@ -185,9 +186,7 @@ $lightbrown: #804800;
 
 // ================== media ==================
 @media screen and (max-width: 768px){
-    h3{
-        font-size: 12px !important;
-    }
+
 .singleEventBox {
     // border: solid red 1px;
     display: flex;
@@ -195,7 +194,10 @@ $lightbrown: #804800;
     }
 .singleInfoWrapper {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    @include responsive-width(27vw, 260px);   
     }
 .singleEventInfoWrapper1 {
     // border: solid red 1px;
@@ -218,7 +220,8 @@ $lightbrown: #804800;
     border-left: none;
     border-bottom: solid $lightbrown 1px !important;
     align-items: center;
-   @include responsive-width(27vw, 260px);  
-}
+   @include responsive-width(27vw, 260px);
+  }
 
 }
+

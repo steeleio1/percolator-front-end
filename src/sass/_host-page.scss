@@ -93,6 +93,7 @@ $darkorange: #F44B0C;
 
 .hostInfoWrapper {
 	// border: solid red 1px;
+  border: solid $lightbrown 1px;
 	display: flex;
 	justify-content: space-around;
 	background: $coffeewhite;
@@ -196,7 +197,7 @@ $darkorange: #F44B0C;
 }
 
 .addressWrapper {
-	color: $orange;
+	color: $lightbrown;
 	// @include responsive-width(18.75vw, 180px);
     @include responsive-font(1.35vw, 12px, 13px); 
 	// font-size: 1.3vmax;
