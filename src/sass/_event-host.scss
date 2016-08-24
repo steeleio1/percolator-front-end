@@ -139,6 +139,7 @@ input:focus {
 
 .eventInfoWrapper {
     // border: solid red 1px;
+    // border: solid $orange 1px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -192,7 +193,7 @@ input:focus {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-  	@include responsive-font(2.08vw, 15px, 20px);
+  	@include responsive-font(1.40vw, 15px, 18px);
 	// font-size: 1.7vw;
 	// width: 10vmax;
 	white-space: nowrap;
@@ -214,13 +215,6 @@ input:focus {
   	@include responsive-font(2.08vw, 15px, 20px);
 	// font-size: 1.1vmax;	
 }
-
-
-
-.upperRowEventInfo {
-
-}
-
 
 .eventInfoWrapper1 {
     // border: solid green 1px;
@@ -277,28 +271,32 @@ input:focus {
 .attending {
 	color: green;
 	font-weight: bold;
-   @include responsive-font(1.35vw, 11px, 13px); 
+  margin-left: 1.35vw;
+   @include responsive-font(1.56vw, 11px, 13px); 
 	// font-size: 1.5vw;
 }
 
 .declined {
 	color: red;
+  margin-left: 1.35vw;
 	font-weight: bold;
-   @include responsive-font(1.35vw, 11px, 13px); 
+   @include responsive-font(1.56vw, 11px, 13px); 
 	// font-size: 1.5vw;
 }
 
 .maybe {
 	color: darken(gold, 20%);
+  margin-left: 1.35vw;
 	font-weight: bold;
-   @include responsive-font(1.35vw, 11px, 13px); 
+   @include responsive-font(1.56vw, 11px, 13px); 
 	// font-size: 1.5vw;
 }
 
 .noResponse {
 	color: black;
+  margin-left: 1.35vw;
 	font-weight: bold;
-   @include responsive-font(1.35vw, 11px, 13px); 
+   @include responsive-font(1.56vw, 11px, 13px); 
 	// font-size: 1.5vw;	
 }
 
@@ -318,6 +316,17 @@ input:focus {
 	// border: solid $orange 1px;
 	display: flex;
 	justify-content:center;
+}
+
+.contactsBox {
+	width: 95vw;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;  
+  align-content: flex-end;
 }
 
 // ================ media ===================
@@ -355,8 +364,8 @@ input:focus {
     // border: solid green 1px;
     border-left: none;
 	justify-content: flex-end;
-   @include responsive-width(27vw, 260px);  
-}
+   @include responsive-width(18.75vw, 240px);  
+  }
 
 }
 

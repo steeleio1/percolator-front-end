@@ -5,6 +5,54 @@ $orange:  #e78200;
 $darkorange: #F44B0C;
 $green: #84DB2E;
 
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    width: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      width: $max;
+    }
+  }
+  
+  @if $fallback {
+    width: $fallback;
+  }
+  
+  width: $responsive;
+}
+// ========================================
 
 
 
@@ -15,14 +63,15 @@ $green: #84DB2E;
 }
 
 .guestStatsBox {
+	border: solid $lightbrown 2px;
     display: flex;
-    justify-content: space-around;
-    background: #fff4e6;
-    width: 80vw;
-    margin: 3vw 0 1vw 0;
-    border-radius: 10px;
-    padding: 1.5vw 3vw;
-    box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+	justify-content: space-around;
+	background: $coffeewhite;
+	margin-bottom: 3vw;
+	border-radius: 10px;
+	padding: 2.4vw;
+  	box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+   	@include responsive-width(61.7vw, 260px);
 }
 
 .infoHeader{
@@ -30,37 +79,45 @@ $green: #84DB2E;
 }
 
 .personalInfoWrapper{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	// width: 16vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	margin-top: 0.3vw;
+	margin-bottom: 0.3vw;
 }
 
-.dividerDiv{
-    width: 2px;
-	background: $brown;
-}
 
 .jobInfoWrapper {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    overflow: auto;
+	border-left: solid $lightbrown 1px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	// width: 16vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	margin-top: 0.5vw;
+	margin-bottom: 0.3vw;
 }
 
-.statInfoWrapper {
-	margin: 0.3vw;
-}
+// .statInfoWrapper {
+// 	margin: 0.3vw;
+// }
 
 .statInfo {
 	border-bottom: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-end;
-	font-size: 1.4vw;
+	// font-size: 1.4vw;
 	white-space: nowrap;
-	color: $orange;
-
 	height: 20px;
-	font-weight: bold;
+	// font-weight: bold;
+  @include responsive-font(1.95vw, 15px, 20px);
+    color: $orange;
+    text-align: left;
+    font-weight: bold;
 }
 
 
@@ -69,7 +126,7 @@ $green: #84DB2E;
 	flex-direction: flex-start;
 	font-size: 1vw;
 	color: $brown;
-
+   @include responsive-font(1.27vw, 11px, 13px); 
 }
 
 .chartLabel{
@@ -253,7 +310,8 @@ $green: #84DB2E;
 	}
 	.statLabel{
 		font-size: 13px !important;
-	}	
+	}
+
 }
 
 @media screen and (max-width: 760px){
@@ -308,6 +366,7 @@ $green: #84DB2E;
 	}
 
 	.jobInfoWrapper{
+		border-left: none;
 		padding-left: 0 !important;
 	}
 }
