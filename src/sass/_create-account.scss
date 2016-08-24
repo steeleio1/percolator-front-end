@@ -60,6 +60,7 @@ $lightbrown: #995700;
     text-align: left;
     font-weight: bold !important;
 }
+
 .createAccountPage {
     // border: solid black 1px;
     width: 95vw;
@@ -90,31 +91,41 @@ $lightbrown: #995700;
 
 .createAcntWrapper1 {
     // border: solid green 1px;
-    border-right: solid $lightbrown 1px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 26vw;
-    padding: 1vw;
+  // border-right: solid $brown 1px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  // width: 16vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-top: 0.3vw;
+  margin-bottom: 0.3vw;
 }
 
 .createAcntWrapper2 {
     // border: solid green 1px;
-    border-right: solid $lightbrown 1px;
+    border-left: solid $lightbrown 1px;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    width: 26vw;
-    padding: 1vw;
+    flex-direction: column;
+    // width: 16vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.3vw;
 }
 
 .createAcntWrapper3 {
     // border: solid green 1px;
+    border-left: solid $lightbrown 1px;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    width: 26vw;
-    padding: 1vw;   
+    flex-direction: column;
+    // width: 16vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.3vw;  
 }
 
 .createButtonWrapper {
@@ -182,7 +193,7 @@ $lightbrown: #995700;
     }
 .createAcntWrapper1 {
     // border: solid green 1px;
-    border-right: none;
+    border-left: none;
     border-bottom: solid $lightbrown 1px !important;
     align-items: center;
    @include responsive-width(27vw, 260px);
@@ -190,7 +201,7 @@ $lightbrown: #995700;
 
 .createAcntWrapper2 {
     // border: solid green 1px;
-    border-right: none;
+    border-left: none;
     border-bottom: solid $lightbrown 1px !important;
     align-items: center;
    @include responsive-width(27vw, 260px);
@@ -198,6 +209,8 @@ $lightbrown: #995700;
     }
 .createAcntWrapper3 {
     // border: solid green 1px;
+    border-left: none;
+    border-bottom: solid $lightbrown 1px !important;
     align-items: center;
    @include responsive-width(27vw, 260px);
 
