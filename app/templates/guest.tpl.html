@@ -73,12 +73,13 @@
 		</div>
 	</div>
 	<div class=chartsContainer>
-		<div class="chartContainer">
+		<div class="chartBigBox">
 			<h3 class="guestPage"><span class="guestPage chartLabel">Net Worth: </span>{{vm.profile.netWorthRange}}</h3>
-			<canvas id="netWorth" class="worthCanvas chart-doughnut"
-			  chart-data="netWorthData" chart-labels="netWorthLabels">
-			</canvas>
-
+			<div class="chartContainer">
+				<canvas id="netWorth" class="worthCanvas chart-doughnut"
+				  chart-data="netWorthData" chart-labels="netWorthLabels">
+				</canvas>
+			</div>
 			<div class="tierBox">
 				<p class="guestPage tierValue"><span class="guestPage tierLabel">Tier</span></p>
 				<p class="guestPage tierValue">{{vm.profile.netWorthTier}}/12</p>

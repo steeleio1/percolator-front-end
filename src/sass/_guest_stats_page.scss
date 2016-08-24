@@ -125,6 +125,12 @@ $green: #84DB2E;
 	justify-content: center;
 }
 
+.chartBigBox{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .chartContainer{
 	display: flex;
 	align-items: center;
@@ -146,8 +152,7 @@ $green: #84DB2E;
     color: $orange;	
 }
 .tierBox{
-    position: absolute;
-    top: 55%;
+
 }
 
 .tierValue{
