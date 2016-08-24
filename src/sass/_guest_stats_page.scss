@@ -102,9 +102,9 @@ $green: #84DB2E;
 	margin-bottom: 0.3vw;
 }
 
-// .statInfoWrapper {
-// 	margin: 0.3vw;
-// }
+.statInfoWrapper {
+	margin: 0.3vw;
+}
 
 .statInfo {
 	border-bottom: solid $lightbrown 1px;
@@ -117,13 +117,12 @@ $green: #84DB2E;
   @include responsive-font(1.95vw, 15px, 20px);
     color: $orange;
     text-align: left;
-    font-weight: bold;
 }
 
 
 .statLabel {
 	display: flex;
-	flex-direction: flex-start;
+	justify-content: flex-start;
 	font-size: 1vw;
 	color: $brown;
    @include responsive-font(1.27vw, 11px, 13px); 

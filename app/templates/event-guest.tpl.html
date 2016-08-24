@@ -6,7 +6,7 @@
 	      <div class="singleInfoWrapper">
 	          <div class="eventPhotoBox">
 	            <div class="eventPhoto">
-	              <img src="{{vm.event.photo_url  || 'images/coffeeCupVector'}}" alt="Image">
+	              <img src="{{vm.event.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
 	           </div>
 	          </div>
 
@@ -91,6 +91,7 @@
 
 
 	<div class="attendingContainer">
+		<form class="RSVPForm" ng-submit="vm.submitRSVP(egInfo, guestInfo)">
 		  <div class="createRsvpAccountBox animateDown fadeInDown">
 		      <div class="createUpperRow">
 <!-- wrapper 1 -->
@@ -147,7 +148,7 @@
 		           <label class="createLabelAnim">
 		              <input type="text"
 		                     class="createInputAnim"
-		                     ng-model="guestInfo.street_2" required>
+		                     ng-model="guestInfo.street_2">
 		              <div class="label-text">Address-alt:</div>
 		            </label>
 
@@ -159,7 +160,7 @@
 		            </label>
 
 		              <br>
-		              <select name="state" ng-model="guestInfo.state">
+		              <select name="state" ng-model="guestInfo.state" required>
 		                <option value="">State:</option>
 		                <option value="AL">Alabama</option>
 		                <option value="AK">Alaska</option>
@@ -225,161 +226,40 @@
 <!-- ========== wrapper 3 =============-->
 		<div class="createAcntWrapper3">
 			<div class="RSVPBox">
-				<form ng-submit="vm.submitRSVP(egInfo, guestInfo)">
 				<span class="createAccountTitle">Attending:</span>
-				  <p class="control">
-
 				  <br>
-				  <label class="radio">
-				    <input type="radio" name="question" ng-model="egInfo.rsvp" value="Yes">
-				    Yes
-				  </label>
+				    <span class="radioButton">
+				    <input type="radio" name="question" ng-model="egInfo.rsvp" value="Yes" required>
+				    Yes</span>
 
-				  <label class="radio">
-				    <input type="radio" name="question" ng-model="egInfo.rsvp" value="No">
+				  <span class="radioButton">
+				    <input type="radio" name="question" ng-model="egInfo.rsvp" value="No" required>
 				    No
-				  </label>
+				  </span>
 
-				  <label class="radio">
-				    <input type="radio" name="question" ng-model="egInfo.rsvp" value="Maybe">
+				  <span class="radioButton">
+				    <input type="radio" name="question" ng-model="egInfo.rsvp" value="Maybe" required>
 				    Maybe
-				  </label>
+				  </span>
 
 				  <br>
 				  <br>
 					<label>
-						<input type="text" ng-model="egInfo.rsvp_details">
+						<textarea type="text" class="RSVPMessageText" cols="10" rows="3" ng-model="egInfo.rsvp_details"></textarea>
 						<div class="label-text">Message to host and/or RSVP details:</div>
 					</label>
 
 					<br>
 					<button type="submit" class="button is-primary">Submit RSVP</button>
-				</div>
+					<br>
+					<p class="RSVPConfirm" ng-show="vm.rsvped">
+						Thanks for submitting your RSVP!
+					</p>
+			</div>
 		 </div>
-
-
-
-			</form>
 		</div>
+		</form>
 	</div>
 
 <!-- ============= RSVP container ================ -->
-	<div class="RSVPContainer">
-
-		<div class="RSVPYesList">
-			<p class="attending animated fadeInRight">
-				Yes
-			</p>
-			<div class="contactContainer">
-			    <div class="media animated fadeInRight">
-			      	<div class="media-content">
-				        <div class="contactCardRSVP">
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                John Smith
-			                </div>
-			                  <span class="eventLabel">Name</span>
-			              </div>
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                john@johnsmith.com
-			                </div>
-			                  <span class="eventLabel">Name</span>
-			              </div>
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                31m
-			                </div>
-			                  <span class="eventLabel"></span>
-			              </div>
-					      	<br>
-					        	<button class="delete"></button>
-
-				        </div>
-			      	</div>
-			    </div>
-			</div>
-		</div>
-
-		<div class="RSVPNoList">
-			<p class="declined animated fadeInRight">
-			No
-			</p>
-			<div class="contactContainer">
-			    <div class="media animated fadeInRight">
-			      	<div class="media-content">
-				        <div class="contactCardRSVP">
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                John Smith
-			                </div>
-			                  <span class="eventLabel">Name</span>
-			              </div>
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                john@johnsmith.com
-			                </div>
-			                  <span class="eventLabel">Name</span>
-			              </div>
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                31m
-			                </div>
-			                  <span class="eventLabel"></span>
-			              </div>
-					      	<br>
-					        	<button class="delete"></button>
-
-				        </div>
-			      	</div>
-			    </div>
-			</div>
-		</div>
-
-		<div class="RSVPMaybeList">
-			<p class="maybe animated fadeInRight">
-			Maybe
-			</p>
-			<div class="contactContainer">
-			    <div class="media animated fadeInRight">
-			      	<div class="media-content">
-				        <div class="contactCardRSVP">
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                John Smith
-			                </div>
-			                  <span class="eventLabel">Name</span>
-			              </div>
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                john@johnsmith.com
-			                </div>
-			                  <span class="eventLabel">Name</span>
-			              </div>
-
-			              <div class="eventCardInfoWrapper">
-			                <div class="eventInfo">
-			                31m
-			                </div>
-			                  <span class="eventLabel"></span>
-			              </div>
-					      	<br>
-					        	<button class="delete"></button>
-
-				        </div>
-			      	</div>
-			    </div>
-			</div>
-		</div>
-	</div>
-
-
 </div>

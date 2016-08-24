@@ -1,4 +1,4 @@
-function EventHostController (MailService, WealthService, $state, $http, SERVER, $cookies, $stateParams, $location) {
+function EventHostController (MailService, WealthService, $state, $http, SERVER, $cookies, $stateParams, $location, DateService) {
 
 	// Sets up this as vm.
 	let vm = this;
@@ -28,8 +28,8 @@ function EventHostController (MailService, WealthService, $state, $http, SERVER,
 	// May not need this here due to WE Report being generated on RSVP submit.
 	// vm.getWEReport = getWEReport;
 	vm.guestDetails = guestDetails;
-	vm.formatDate = formatDate;
-	vm.getTime =getTime;
+	vm.formatDate = DateService.formatDate;
+	vm.getTime =DateService.getTime;
 
 	init();
 
@@ -122,16 +122,20 @@ function createGuest(guestInfo){
 					headers: { 'Authorization': `Bearer ${token}` }
 							};
 				$http.post(SERVER.URL + 'guests', guestInfo, config).then(function (res) {
-								if (res.status == 201) {
+								if (res.status == 200) {
+													console.log("200 SUCCESS - CreateGuest End");
+										createEventGuest(res.data, guestInstance);
+								} else if (res.status == 201) {
+													console.log("201 OK - Guest Created - CreateGuest End");
 										createEventGuest(res.data, guestInstance);
 								} else {
 								}
 						},
 						function (res) {
 								if (res.status == 401) {
-										alert("401 ERROR!!!!!");
+										console.log("401: Error");
 								} else if (res.status == 403) {
-										alert("403 Forbidden");
+										console.log("403 Forbidden");
 								}
 						});
 }
@@ -148,9 +152,15 @@ function createEventGuest(guestInfo, guestInstance){
 				eventID: $stateParams.id
 			}
       $http.post(SERVER.URL + 'createEventGuest', payload, config).then(function (res) {
-				if (res.status == 201) {
-							emailGuest(res.data, guestInstance);
-				} else {
+				if (res.status == 200) {
+						console.log("200 OK - EventGuest Created");
+										console.log("CreateEventGuest End");
+						emailGuest(res.data, guestInstance);
+				} else if (res.status == 201) {
+						console.log("201 OK - EventGuest Created");
+						console.log("CreateEventGuest End");
+
+						emailGuest(res.data, guestInstance);
 				}
 		});
   };
@@ -187,54 +197,10 @@ function emailGuest(egInfo, guestInstance){
 	// };
 
 	function guestDetails(guestID) {
+		console.log(guestID);
 		$location.url('host/guests/' + guestID);
 	}
-
-  function formatDate(d){
-    //Formats UTC Date into mm/dd/yyyy format
-    let date = new Date(d)
-    var dd = date.getDate();
-    var mm = date.getMonth()+1;
-    var yyyy = date.getFullYear();
-    if(dd<10){dd='0'+dd}
-    if(mm<10){mm='0'+mm};
-    return d = mm+'/'+dd+'/'+yyyy;
-  }
-
-  function getTime(timeInfo){
-    //Formats UTCTime into hh:mm A.M./P.M. format
-    let time = new Date(timeInfo);
-    let UTCHoursVal = time.getUTCHours() - 1;
-    var hours = UTCHoursVal;
-    let UTCMinutesVal = time.getUTCMinutes();
-    var minutes;
-    var aa;
-    if (UTCHoursVal === 4) {
-        hours = 12;
-        aa = "A.M.";
-    } else if (UTCHoursVal < 4 && UTCHoursVal>= 0){
-      hours = UTCHoursVal-4+12;
-      aa = "P.M.";
-    } else if (UTCHoursVal<16 && UTCHoursVal>=4){
-      hours = UTCHoursVal-4;
-      aa= "A.M.";
-    } else if (UTCHoursVal===16){
-      hours = 12;
-      aa= "P.M.";
-    } else if (UTCHoursVal<24 && UTCHoursVal >= 16) {
-      hours = UTCHoursVal-4-12;
-      aa="P.M.";
-    };
-
-
-    if(UTCMinutesVal < 10){
-      minutes = "0" + UTCMinutesVal;
-    } else {
-      minutes = UTCMinutesVal;
-    }
-    return hours + ":"+minutes + " " + aa;
-  }
 }
 
-EventHostController.$inject = ['MailService', 'WealthService', '$state', '$http', 'SERVER', '$cookies', '$stateParams', '$location'];
+EventHostController.$inject = ['MailService', 'WealthService', '$state', '$http', 'SERVER', '$cookies', '$stateParams', '$location', 'DateService'];
 export { EventHostController };
