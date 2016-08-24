@@ -22,9 +22,7 @@ function EventCreateController ($state, $scope, $http, SERVER, $cookies) {
       };
       $http.get(SERVER.URL + 'event-create', config).then((res) => {
       vm.user = res.data;
-      console.log(res);
       });
-      // console.log(vm.user);
   }
 
 
@@ -58,10 +56,6 @@ function EventCreateController ($state, $scope, $http, SERVER, $cookies) {
           image = Blob.url;  
       }); 
   }
-
-  // function submitStateChange(){
-  //   $state.go('root.host.eventHost');
-  // }
 
 }
 

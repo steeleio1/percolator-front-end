@@ -159,7 +159,7 @@ function createEventGuest(guestInfo, guestInstance){
 // this composes the email that will go out to the guest via the MailGun service.
 function emailGuest(egInfo, guestInstance){
 	let guestInfo = guestInstance.first_name + " " + guestInstance.last_name + " " + '<' + guestInstance.email + '>';
-	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.uuid;
+	let eventURL = "http://javahuddle.com/#/event-guest/rsvp/" + egInfo.uuid;
 	let emailMessage = vm.event.eventInfo.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
 		var data = {
 			from: 'Excited User <me@mg.javahuddle.com>',
@@ -233,7 +233,7 @@ function emailGuest(egInfo, guestInstance){
       minutes = UTCMinutesVal;
     }
     return hours + ":"+minutes + " " + aa;
-  }	
+  }
 }
 
 EventHostController.$inject = ['MailService', 'WealthService', '$state', '$http', 'SERVER', '$cookies', '$stateParams', '$location'];

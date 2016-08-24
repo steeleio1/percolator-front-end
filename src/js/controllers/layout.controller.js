@@ -34,7 +34,7 @@ function LayoutController($http, SERVER, $cookies, $state, HostService, $locatio
             },
             function errorCallback(res) {
                 if (res.status == 401) {
-                    alert("401 ERROR!!!!!");
+                    alert("Incorrect username and/or password");
                 } else if (res.status == 403) {
                     alert("403 Forbidden");
                 }
