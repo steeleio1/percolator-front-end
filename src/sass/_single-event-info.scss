@@ -53,14 +53,14 @@ $lightbrown: #804800;
 }
 
 .singleEventTitle {
-  @include responsive-font(2.29vw, 15px, 22px);
+  @include responsive-font(1.56vw, 15px, 20px);
     color: $orange;
     text-align: left;
     font-weight: bold !important;
 }
 
 .smallSingleEventTitle {
-  @include responsive-font(1.88vw, 15px, 18px);
+  @include responsive-font(1.4vw, 15px, 18px);
     color: $brown;
     text-align: left;
     font-weight: bold !important;
@@ -75,10 +75,33 @@ $lightbrown: #804800;
     width: 95vw;
 
 }
+
+.upperRowSignleEventInfo {
+  // border: solid green 1px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .singleEventBox {
+    // // border: solid red 1px;
+    // border: solid $brown 1px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-around;
+    // background: $coffeewhite; 
+    // margin-top: 3vw;
+    // margin-bottom: 3vw;
+    // border-radius: 10px;
+    // box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+    // @include responsive-width(61.7vw, 260px);
+    // padding: 2.4vw;
+}
+
+.singleInfoWrapper {
     // border: solid red 1px;
-    border: solid $lightbrown 1px;
+    border: solid $brown 1px;
     display: flex;
+    // align-items: center;
     justify-content: space-around;
     background: $coffeewhite; 
     margin-top: 3vw;
@@ -86,12 +109,7 @@ $lightbrown: #804800;
     border-radius: 10px;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
     @include responsive-width(61.7vw, 260px);
-    padding: 2.4vw;
-}
-
-.singleInfoWrapper {
-    display: flex;
-    flex-direction: row;    
+    padding: 2.4vw;  
     }
 
 .singleEventInfoWrapper1 {
@@ -134,7 +152,7 @@ $lightbrown: #804800;
 }
 
 .singleEventDesription {
-	border: solid $orange 1px;
+	border: solid $lightbrown 1px;
 	padding: 0.5vw;
 	// font-size: 1vw;
 	color: $orange;
@@ -143,9 +161,22 @@ $lightbrown: #804800;
 	// flex-direction: row;
 	// flex-flow: row wrap;
     @include responsive-font(1.35vw, 11px, 13px); 
-    @include responsive-width(18.75vw, 180px);
+    @include responsive-width(9.3vw, 120px);
 	// width: 20vw;
 	// overflow: scroll;
+}
+
+
+.RSVPContainer {
+  // border: solid black 1px;
+  width: 95vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;  
+  align-content: flex-end;
 }
 
 // ============== animation =============
