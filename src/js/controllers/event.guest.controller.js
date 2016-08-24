@@ -40,11 +40,19 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
         $http.post(SERVER.URL + 'event-guest/rsvp/' + uuid, payload).then(function(res) {
                 if (res.status == 200) {
                     console.log("200 OK");
-										if (egInfo.rsvp === "Yes") {
-												vm.getWEReport(res.data);
-                                                showRSVPConfirm();
-                                                $timeout(goHome(), 3000);
-										};
+					if (egInfo.rsvp === "Yes") {
+							vm.getWEReport(res.data);
+                            showRSVPConfirm();
+                            $timeout(goHome, 2000);
+					};
+                    if (egInfo.rsvp === "No"){
+                        showRSVPConfirm();
+                        $timeout(goHome, 2000);
+                    };
+                    if (egInfo.rsvp === "Maybe"){
+                        showRSVPConfirm();
+                        $timeout(goHome, 2000);
+                    }
                 }
             },
             function(res) {
