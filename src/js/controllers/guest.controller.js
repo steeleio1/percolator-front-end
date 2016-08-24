@@ -24,17 +24,13 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 
 	function getWEReport(){
 		var guestID = $stateParams.id;
-
 		// WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
 		$http.get(SERVER.URL + 'host/guests/' + guestID).then((res) => {
-			//We need to use this format to get the data. DO NOT use JSON.parse() here.
-			let proData = res.data.we_info.weInfo;
-			console.log("PRODATA:");
-			console.log(proData);
+			let proData = res.data.weInfo;
 			if (proData === null || undefined || ''){
 				vm.profile = {
-					fullname: res.data.identity.full_name,
-					email: res.data.identity.emails[0].email
+					fullname: res.data.weInfo.identity.full_name,
+					email: res.data.weInfo.identity.emails[0].email
 				}
 
 			} else {
@@ -62,7 +58,11 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 						let spouseName;
 					if (proData.identity.marital_status){
 						if (proData.identity.marital_status.value === "M"){
-							spouseName= proData.relationship.spouse.full_name;
+							if (proData.relationship){
+								if (proData.relationship.spouse){
+										spouseName= proData.relationship.spouse.full_name;
+								};
+						};
 						} else {
 							spouseName = '';
 						}
@@ -98,7 +98,7 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 						netWorthTier = 12;
 					}
 
-					let p2GVal;
+					let p2GVal = proData.giving.p2g_score.value;
 					let p2GText;
 					let p2G = proData.giving.p2g_score.text;
 					if (p2G === "1|5 - Excellent"){
@@ -216,7 +216,7 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 
 					vm.profile = {
 						fullname: proData.identity.full_name,
-						email: proData.identity.emails[0].email,
+						email: proData.identity.emails.email,
 						spouseName: spouseName,
 						kids: kids,
 						age: proData.identity.age,
@@ -250,7 +250,6 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 						totalPensions: proData.wealth.total_pensions.text,
 						investableAssets: proData.wealth.investable_assets.text
 					};
-					console.log(vm.profile);
 
 					let netWorthVal = vm.profile.netWorthTier;
 					let netWorthMax = 12;

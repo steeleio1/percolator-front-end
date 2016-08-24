@@ -7,6 +7,24 @@ function EventCreateController ($state, $scope, $http, SERVER, $cookies) {
 
   // Variable for storing uploadImage() filepicker image-url to hand to createEvent() eventInfo object
   let image = "";
+  let user = vm.user;
+
+  init();
+
+  function init() {
+
+    // *********************************************
+    // Need to fetch the user to populate the picture
+    // *********************************************
+      let token = $cookies.get('access_token');
+      let config = {
+        headers: { 'Authorization': `Bearer ${token}` }
+      };
+      $http.get(SERVER.URL + 'event-create', config).then((res) => {
+      vm.user = res.data;
+      });
+  }
+
 
   function createEvent(eventInfo) {
       eventInfo.photo_url = image;
@@ -38,10 +56,6 @@ function EventCreateController ($state, $scope, $http, SERVER, $cookies) {
           image = Blob.url;  
       }); 
   }
-
-  // function submitStateChange(){
-  //   $state.go('root.host.eventHost');
-  // }
 
 }
 

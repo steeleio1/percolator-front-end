@@ -4,15 +4,63 @@ $orange:  #e78200;
 $darkorange: #F44B0C;
 $lightbrown: #804800;
 
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    width: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      width: $max;
+    }
+  }
+  
+  @if $fallback {
+    width: $fallback;
+  }
+  
+  width: $responsive;
+}
+
 .singleEventTitle {
-  @include responsive-font(2.29vw, 15px, 22px);
+  @include responsive-font(1.56vw, 15px, 20px);
     color: $orange;
     text-align: left;
     font-weight: bold !important;
 }
 
 .smallSingleEventTitle {
-  @include responsive-font(1.88vw, 15px, 18px);
+  @include responsive-font(1.4vw, 15px, 18px);
     color: $brown;
     text-align: left;
     font-weight: bold !important;
@@ -27,55 +75,84 @@ $lightbrown: #804800;
     width: 95vw;
 
 }
-.singleEventBox {
-	// border: solid black 1px;
-	background: $coffeewhite;
-	border-radius: 10px;
-	display: flex;
-	flex-direction: row;
-	// justify-content: center;
-	padding: 2vw;
-    box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
 
+.upperRowSignleEventInfo {
+  // border: solid green 1px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.singleEventBox {
+    // // border: solid red 1px;
+    // border: solid $brown 1px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-around;
+    // background: $coffeewhite; 
+    // margin-top: 3vw;
+    // margin-bottom: 3vw;
+    // border-radius: 10px;
+    // box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+    // @include responsive-width(61.7vw, 260px);
+    // padding: 2.4vw;
 }
 
 .singleInfoWrapper {
+    // border: solid red 1px;
+    border: solid $brown 1px;
     display: flex;
-    flex-direction: row;    
+    // align-items: center;
+    justify-content: space-around;
+    background: $coffeewhite; 
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+    @include responsive-width(61.7vw, 260px);
+    padding: 2.4vw;  
     }
 
 .singleEventInfoWrapper1 {
-    // border: solid green 1px;
-    border-right: solid $lightbrown 1px;
+    // border: solid blue 1px;
+    // border-right: solid $brown 1px;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    width: 26vw;
-    padding: 1vw;	
+    flex-direction: column;
+    // width: 16vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 0.3vw;
+    margin-bottom: 0.3vw;
 }
 
 .singleEventInfoWrapper2 {
-    // border: solid green 1px;
-    border-right: solid $lightbrown 1px;
+    // border: solid blue 1px;
+    border-left: solid $lightbrown 1px;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    width: 26vw;
-    padding: 1vw;	
+    flex-direction: column;
+    // width: 16vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.3vw;	
 }
 
 .singleEventInfoWrapper3 {
-    // border: solid green 1px;
-    // border-right: solid $lightbrown 1px;
+    // border: solid blue 1px;
+    border-left: solid $lightbrown 1px;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    width: 26vw;
-    padding: 1vw;	
+    flex-direction: column;
+    // width: 16vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.3vw;	
 }
 
 .singleEventDesription {
-	border: solid $orange 1px;
+	border: solid $lightbrown 1px;
 	padding: 0.5vw;
 	// font-size: 1vw;
 	color: $orange;
@@ -84,9 +161,22 @@ $lightbrown: #804800;
 	// flex-direction: row;
 	// flex-flow: row wrap;
     @include responsive-font(1.35vw, 11px, 13px); 
-    @include responsive-width(18.75vw, 180px);
+    @include responsive-width(9.3vw, 120px);
 	// width: 20vw;
 	// overflow: scroll;
+}
+
+
+.RSVPContainer {
+  // border: solid black 1px;
+  width: 95vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;  
+  align-content: flex-end;
 }
 
 // ============== animation =============
@@ -127,9 +217,7 @@ $lightbrown: #804800;
 
 // ================== media ==================
 @media screen and (max-width: 768px){
-    h3{
-        font-size: 12px !important;
-    }
+
 .singleEventBox {
     // border: solid red 1px;
     display: flex;
@@ -137,35 +225,34 @@ $lightbrown: #804800;
     }
 .singleInfoWrapper {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    @include responsive-width(27vw, 260px);   
     }
 .singleEventInfoWrapper1 {
-    // border: solid green 1px;
-    border-right: none;
+    // border: solid red 1px;
     border-bottom: solid $lightbrown 1px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 61vw;
-    padding: 1vw;
+    height: auto;
+    @include responsive-width(27vw, 260px);
     }
 .singleEventInfoWrapper2 {
     // border: solid green 1px;
-    border-right: none;
+    border-left: none;
     border-bottom: solid $lightbrown 1px !important;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 61vw;
-    padding: 1vw;
+   @include responsive-width(27vw, 260px);
     }
 .singleEventInfoWrapper3 {
     // border: solid green 1px;
-    display: flex;
-    flex-direction: column;
+    border-left: none;
+    border-bottom: solid $lightbrown 1px !important;
     align-items: center;
-    width: 61vw;
-    padding: 1vw;   
-}
+   @include responsive-width(27vw, 260px);
+  }
 
 }
+

@@ -5,9 +5,105 @@ $orange:  #e78200;
 $darkorange: #F44B0C;
 $green: #84DB2E;
 
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
 
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    width: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      width: $max;
+    }
+  }
+  
+  @if $fallback {
+    width: $fallback;
+  }
+  
+  width: $responsive;
+}
+
+// =====================================
+
+.attendingContainer {
+	// border: solid red 1px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.RSVPContainer {
+	// border: solid red 1px;
+	display: flex;
+  width: 95vw;
+}
+
+.contactContainer {
+	// border: solid red 1px;
+}
 
 .RSVPBox {
 	display: flex;
 	justify-content: center;
 }
+
+.createRsvpAccountBox {
+	// border: solid red 1px;
+	display: flex;
+	justify-content: space-around;
+	background: $coffeewhite;
+	margin-bottom: 3vw;
+	border-radius: 10px;
+	padding: 2.4vw;
+  box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+   // @include responsive-width(61.7vw, 260px);
+}
+
+.contactCardRSVP {
+	// border: solid red 1px
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+ @include responsive-width(23.4vw, 300px);
+  border: solid $orange 1px;
+	border-radius: 10px;
+	background: $coffeewhite;
+	padding: 2vw;
+  box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+  height: 320px;
+}
+
+
+
+
+

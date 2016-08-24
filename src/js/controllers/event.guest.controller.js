@@ -31,12 +31,10 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 
     function submitRSVP(egInfo, guestInfo) {
         let uuid = $stateParams.uuid;
-				let guestName = {};
         let payload = {
             egInfo: egInfo,
             guestInfo: guestInfo
         };
-
         $http.post(SERVER.URL + 'event-guest/rsvp/' + uuid, payload).then(function(res) {
                 if (res.status == 200) {
                     console.log("200 OK");
@@ -45,7 +43,6 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
                 // Guest needs to be directed somewhere after submitting RSVP. "Thanks for RSVPing!"
 										};
                 } else {
-                    console.log(res);
                 }
             },
             function(res) {
@@ -73,7 +70,6 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
             state: guest.state,
             zip: guest.post_code
         }
-
         WealthService.getProfileByAddress(registrantData).then((res) => {
             let weInfo = res.data;
 						let payload = {
@@ -94,7 +90,6 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
                     console.log("201 OK - Successful WealthService Write");
                     // Guest needs to go somewhere after submitting RSVP. "Thanks for RSVPing!"
                 } else {
-                    console.log(res);
                 }
             });
         });
