@@ -36,6 +36,9 @@ function DateService(){
     } else if (UTCHoursVal<24 && UTCHoursVal >= 16) {
       hours = UTCHoursVal-4-12;
       aa="P.M.";
+    } else if (UTCHoursVal+1 === 0){
+      hours = 7;
+      aa="P.M.";
     };
 
 
