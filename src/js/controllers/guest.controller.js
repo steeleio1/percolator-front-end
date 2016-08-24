@@ -31,9 +31,6 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 			// let proData = JSON.parse(res.data.we_info);
 			let proData = res.data.weInfo;
 
-			//We need to use this format to get the data. DO NOT use JSON.parse() here.
-			let proData = res.data.we_info.weInfo;
-
 			if (proData === null || undefined || ''){
 				vm.profile = {
 					fullname: res.data.identity.full_name,
@@ -246,9 +243,7 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 						estimatedAnnualDonations: proData.giving.estimated_annual_donations.text,
 						p2G: p2G.substring(0,3),
 						p2GVal: p2GVal,
-						// p2GVal: 3,
 						p2GText: p2GText,
-						// p2GText: 'Average',
 						giftCapacityTier: giftCapacityTier,
 						giftCapacity: giftCapacityRaw,
 						cashOnHand: proData.wealth.cash_on_hand.text,
@@ -259,7 +254,6 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 						totalPensions: proData.wealth.total_pensions.text,
 						investableAssets: proData.wealth.investable_assets.text
 					};
-					console.log(vm.profile);
 
 					let netWorthVal = vm.profile.netWorthTier;
 					let netWorthMax = 12;
