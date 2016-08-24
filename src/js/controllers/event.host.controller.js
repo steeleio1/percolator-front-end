@@ -122,15 +122,11 @@ function createGuest(guestInfo){
 					headers: { 'Authorization': `Bearer ${token}` }
 							};
 				$http.post(SERVER.URL + 'guests', guestInfo, config).then(function (res) {
-<<<<<<< HEAD
 								if (res.status == 200) {
 													console.log("200 SUCCESS - CreateGuest End");
 										createEventGuest(res.data, guestInstance);
 								} else if (res.status == 201) {
 													console.log("201 OK - Guest Created - CreateGuest End");
-=======
-								if (res.status == 201) {
->>>>>>> c91894676b64c5b5496e32342cfb5f3b785c9647
 										createEventGuest(res.data, guestInstance);
 								} else {
 								}
@@ -156,7 +152,6 @@ function createEventGuest(guestInfo, guestInstance){
 				eventID: $stateParams.id
 			}
       $http.post(SERVER.URL + 'createEventGuest', payload, config).then(function (res) {
-<<<<<<< HEAD
 				if (res.status == 200) {
 						console.log("200 OK - EventGuest Created");
 										console.log("CreateEventGuest End");
@@ -166,12 +161,6 @@ function createEventGuest(guestInfo, guestInstance){
 						console.log("CreateEventGuest End");
 
 						emailGuest(res.data, guestInstance);
-
-=======
-				if (res.status == 201) {
-							emailGuest(res.data, guestInstance);
-				} else {
->>>>>>> c91894676b64c5b5496e32342cfb5f3b785c9647
 				}
 		});
   };
