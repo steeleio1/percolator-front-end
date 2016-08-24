@@ -197,6 +197,7 @@ function emailGuest(egInfo, guestInstance){
 	// };
 
 	function guestDetails(guestID) {
+		console.log(guestID);
 		$location.url('host/guests/' + guestID);
 	}
 
