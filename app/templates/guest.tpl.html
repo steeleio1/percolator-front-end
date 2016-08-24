@@ -74,7 +74,7 @@
 	</div>
 	<div class=chartsContainer>
 		<div class="chartBigBox">
-			<h3 class="guestPage"><span class="guestPage chartLabel">Net Worth: </span>{{vm.profile.netWorthRange}}</h3>
+			<h3 class="guestPage"><span class="guestPage chartLabel">Net Worth: </span><p class="guestPage tierValue">{{vm.profile.netWorthRange}}<p></h3>
 			<div class="chartContainer">
 				<canvas id="netWorth" class="worthCanvas chart-doughnut"
 				  chart-data="netWorthData" chart-labels="netWorthLabels">
@@ -85,18 +85,23 @@
 				</div>				
 			</div>
 		</div>
-		<div class="chartContainer">
+		<div class="chartBigBox">
 			<h3 class="guestPage"><span class="guestPage chartLabel">Cash on Hand:</span></h3>
-			<div class="cashOnHandBox">
-				<p>{{vm.profile.cashOnHand}}</p>
+			<div class="chartContainer">
+				<div class="cashOnHandBox">
+					<p>{{vm.profile.cashOnHand}}</p>
+				</div>
 			</div>
-		</div>
-		<div class="chartContainer">
-			<h3 class="guestPage"><span class="guestPage chartLabel">Propensity to Give (P2G) Score: </span>{{vm.profile.p2GText}}</h3>
-			<canvas id="p2G" class="p2GCanvas chart-pie"
-			  chart-data="p2GData" chart-labels="p2GLabels" >
-			</canvas>
-		</div>
+		</div>	
+		<div class="chartBigBox">
+			<h3 class="guestPage"><span class="guestPage chartLabel">Propensity to Give (P2G) Score: </span>
+			<p class="guestPage tierValue">{{vm.profile.p2GText}}</h3>
+			<div class="chartContainer">
+				<canvas id="p2G" class="p2GCanvas chart-pie"
+				  chart-data="p2GData" chart-labels="p2GLabels" >
+				</canvas>
+			</div>
+		</div>			
 		<div class="chartContainer">
 			<h3 class="guestPage"><span class="guestPage chartLabel">Gift Capacity: </span>{{vm.profile.giftCapacity}}</h3>
 			<canvas id="giftCapacity" class="giftCapacityCanvas chart-doughnut"
