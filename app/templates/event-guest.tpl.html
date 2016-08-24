@@ -253,13 +253,15 @@
 					</label>
 
 					<br>
-					<button type="submit" class="button is-primary">Submit RSVP</button>
-				</div>
+					<button type="submit" class="button is-primary" ng-click="vm.showRSVPConfirm()">Submit RSVP</button>
+					<br>
+					<p class="RSVPConfirm" ng-show="vm.rsvped">
+						Thanks for submitting your RSVP!
+					</p>
+				</form>
+			</div>
 		 </div>
 
-
-
-			</form>
 		</div>
 	</div>
 
