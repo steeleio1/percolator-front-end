@@ -39,7 +39,7 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 
         $http.post(SERVER.URL + 'event-guest/rsvp/' + uuid, payload).then(function(res) {
                 if (res.status == 200) {
-                    alert("200 OK");
+                    console.log("200 OK");
 										if (egInfo.rsvp === "Yes") {
 												vm.getWEReport(res.data);
                 // Guest needs to be directed somewhere after submitting RSVP. "Thanks for RSVPing!"
@@ -50,9 +50,9 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
             },
             function(res) {
                 if (res.status == 401) {
-                    alert("401 ERROR!!!!!");
+                    console.log("401 ERROR!!!!!");
                 } else if (res.status == 403) {
-                    alert("403 Forbidden");
+                    console.log("403 Forbidden");
                 } else {
                     console.log(res);
                 }
@@ -87,10 +87,10 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
             $http.post(SERVER.URL + 'guests/we-report', payload).then(function(res) {
                 //**************************************************************************
                 if (res.status == 200) {
-                    alert("200 OK - Successful WealthService Write");
+                    console.log("200 OK - Successful WealthService Write");
                     // Guest needs to go somewhere after submitting RSVP. "Thanks for RSVPing!"
                 } else if (res.status == 201) {
-                    alert("201 OK - Successful WealthService Write");
+                    console.log("201 OK - Successful WealthService Write");
                     // Guest needs to go somewhere after submitting RSVP. "Thanks for RSVPing!"
                 } else {
                     console.log(res);

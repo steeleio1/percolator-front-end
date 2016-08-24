@@ -14,37 +14,37 @@ function CreateAccountController($http, SERVER, $state, $cookies) {
 
         $http.post(SERVER.URL + 'register', user).then(function successCallback(res) {
                 if (res.status == 200) {
-                    alert("200 OK");
+                    console.log("200 OK");
                     $http.post(SERVER.URL + 'login', user).then(function successCallback(res) {
                         if (res.status == 200) {
-                            alert("200 OK");
+                            console.log("200 OK");
                             $cookies.put('access_token', res.data.access_token);
                             $state.go('root.host');
                         }
                     },
                     function errorCallback(res) {
                         if (res.status == 401) {
-                            alert("401 ERROR!!!!!");
+                            console.log("401 ERROR!!!!!");
                         } else if (res.status == 403) {
-                            alert("403 Forbidden");
+                            console.log("403 Forbidden");
                         }
 
                     });                    
                 }
                 else if (res.status == 201) {
-                    alert(res.status + " Account Created Successfully!");
+                    console.log(res.status + " Account Created Successfully!");
                     $http.post(SERVER.URL + 'login', user).then(function successCallback(res) {
                         if (res.status == 200) {
-                            alert("200 OK");
+                            console.log("200 OK");
                             $cookies.put('access_token', res.data.access_token);
                             $state.go('root.host');
                         }
                     },
                     function errorCallback(res) {
                         if (res.status == 401) {
-                            alert("401 ERROR!!!!!");
+                            console.log("401 ERROR!!!!!");
                         } else if (res.status == 403) {
-                            alert("403 Forbidden");
+                            console.log("403 Forbidden");
                         }
 
                     });
@@ -52,9 +52,9 @@ function CreateAccountController($http, SERVER, $state, $cookies) {
             },
             function errorCallback(res) {
                 if (res.status == 401) {
-                    alert("401 ERROR!!!!!");
+                    console.log("401 ERROR!!!!!");
                 } else if (res.status == 403) {
-                    alert("403 Forbidden");
+                    console.log("403 Forbidden");
                 }
 
             });

@@ -126,20 +126,18 @@ function createGuest(guestInfo){
 							};
 				$http.post(SERVER.URL + 'guests', guestInfo, config).then(function (res) {
 								if (res.status == 200) {
-										alert("200 OK - Guest Created");
-													console.log("CreateGuest End");
+													console.log("200 SUCCESS - CreateGuest End");
 										createEventGuest(res.data, guestInstance);
 								} else if (res.status == 201) {
-										alert("201 OK - Guest Created");
-													console.log("CreateGuest End");
+													console.log("201 OK - Guest Created - CreateGuest End");
 										createEventGuest(res.data, guestInstance);
 								}
 						},
 						function (res) {
 								if (res.status == 401) {
-										alert("401 ERROR!!!!!");
+										console.log("401: Error");
 								} else if (res.status == 403) {
-										alert("403 Forbidden");
+										console.log("403 Forbidden");
 								}
 						});
 }

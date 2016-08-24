@@ -16,18 +16,18 @@ function EventCreateController ($state, $scope, $http, SERVER, $cookies) {
       };
       $http.post(SERVER.URL + 'event-create', eventInfo, config).then(function successCallback(res) {
               if (res.status == 200) {
-                  alert("200 OK");
+                  console.log("200 OK");
                   $state.go('root.host.myEvents');
               } else if (res.status == 201) {
-                  alert("201 OK");
+                  console.log("201 OK");
                   $state.go('root.host.myEvents');
               }
           },
           function errorCallback(res) {
               if (res.status == 401) {
-                  alert("401 ERROR!!!!!");
+                  console.log("401 ERROR!!!!!");
               } else if (res.status == 403) {
-                  alert("403 Forbidden");
+                  console.log("403 Forbidden");
               }
 
           });
