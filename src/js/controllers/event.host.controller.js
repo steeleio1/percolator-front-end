@@ -232,9 +232,8 @@ function emailGuest(egInfo, guestInstance){
     } else {
       minutes = UTCMinutesVal;
     }
-    return hours + ":"+minutes + aa;
-  }
-
+    return hours + ":"+minutes + " " + aa;
+  }	
 }
 
 EventHostController.$inject = ['MailService', 'WealthService', '$state', '$http', 'SERVER', '$cookies', '$stateParams', '$location'];

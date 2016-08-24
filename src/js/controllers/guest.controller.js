@@ -27,17 +27,13 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 
 		// WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
 		$http.get(SERVER.URL + 'host/guests/' + guestID).then((res) => {
-			console.log(res);
-			//The following proData line was working, but oddly didn't need to parse the data.
-			//Then... it stopped working. Hooray computers.
-			// let proData = res.data.we_info.weInfo;
 
-			//Now, this works.  Honestly, the fact that this works makes more sense
-			//because the weInfo is stringifyed and therefore MUST be parsed to access as JSON
 			// let proData = JSON.parse(res.data.we_info);
 			let proData = res.data.weInfo;
 
-			console.log(proData);
+			//We need to use this format to get the data. DO NOT use JSON.parse() here.
+			let proData = res.data.we_info.weInfo;
+
 			if (proData === null || undefined || ''){
 				vm.profile = {
 					fullname: res.data.identity.full_name,

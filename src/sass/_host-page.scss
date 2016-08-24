@@ -70,11 +70,18 @@ $darkorange: #F44B0C;
     border-bottom: solid $lightbrown 1px;
 }
 
+.tabs {
+  border-top: solid $lightbrown 1px;
+  border-bottom: solid $lightbrown 1px;
+  border-radius: 10px;
+  padding: 2vw;
+}
+
 .hostPage {
 	// border: solid black 1px;
 	display: flex;
 	align-items: center;
-	flex-direction: column;	
+	flex-direction: column;
 	width: 100vw;	
 }
 
@@ -86,20 +93,15 @@ $darkorange: #F44B0C;
 
 .hostInfoWrapper {
 	// border: solid red 1px;
+  border: solid $lightbrown 1px;
 	display: flex;
 	justify-content: space-around;
 	background: $coffeewhite;
-	// width: 80vw;
-	margin-top: 3vw;
 	margin-bottom: 3vw;
 	border-radius: 10px;
-	// padding: 3vw;
-    box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
-   // width: 791px;
-   // height: 302px;
-   @include responsive-width(61.7vw, 480px);
-   height: 23.5vw;
-    min-height: 185px;
+	padding: 2.4vw;
+  box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+   @include responsive-width(61.7vw, 260px);
 }
 
 
@@ -139,7 +141,7 @@ $darkorange: #F44B0C;
 
 .hostDetailsWrapper2 {
 	// border: solid blue 1px;
-	border-left: solid $brown 1px;
+	border-left: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
@@ -152,7 +154,7 @@ $darkorange: #F44B0C;
 
 .hostDetailsWrapper3 {
 	// border: solid blue 1px;
-	border-left: solid $brown 1px;
+	border-left: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
@@ -167,11 +169,11 @@ $darkorange: #F44B0C;
 	// border: solid green 1px;
 	// display: flex;
 	// flex-direction: column;
-	margin: 0.3vw;
+	// margin: 0.3vw;
 }
 
 .hostDetailInfo {
-	// border: solid yellow 1px;
+	// border: solid blue 1px;
 	border-bottom: solid $lightbrown 1px; 
 	display: flex;
 	align-items: flex-end;
@@ -195,7 +197,7 @@ $darkorange: #F44B0C;
 }
 
 .addressWrapper {
-	color: $orange;
+	color: $lightbrown;
 	// @include responsive-width(18.75vw, 180px);
     @include responsive-font(1.35vw, 12px, 13px); 
 	// font-size: 1.3vmax;
@@ -261,7 +263,7 @@ $darkorange: #F44B0C;
 }
 
 // =================== media =============
-@media screen and (max-width: 500px){
+@media screen and (max-width: 568px){
 
 .hostPhoto {
 	height: 55px;

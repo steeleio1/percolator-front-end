@@ -20,6 +20,7 @@ import { run } from './utilities/run';
 import { HostService } from './services/host.service';
 import { WealthService } from './services/wealth.service';
 import { MailService } from './services/mailgun.service';
+import { DateService } from './services/date.service';
 
 //import Controllers
 import { LayoutController } from './controllers/layout.controller';
@@ -39,6 +40,7 @@ angular
 	.service('WealthService', WealthService)
 	.service('MailService', MailService)
 	.service('HostService', HostService)
+	.service('DateService', DateService)
 	.constant('SERVER', serverConstant)
 	.run (run)
 	.controller('LayoutController', LayoutController)
