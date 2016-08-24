@@ -137,13 +137,6 @@
 		              <div class="label-text">Email:</div>
 		                   <!--  <span class="help is-danger">This email is invalid</span> -->
 		            </label>
-
-		            <label class="createLabelAnim">
-		              <input type="password"
-		                     class="createInputAnim"
-		                     ng-model="egInfo.password" required>
-		              <div class="label-text">Password:</div>
-		            </label>
 		            <br>
 		        </div>
 
@@ -167,7 +160,7 @@
 		           <label class="createLabelAnim">
 		              <input type="text"
 		                     class="createInputAnim"
-		                     ng-model="egInfo.street_2" required>
+		                     ng-model="egInfo.street_2">
 		              <div class="label-text">Address-alt:</div>
 		            </label>
 
@@ -240,80 +233,12 @@
 		                     ng-model="egInfo.post_code" required>
 		              <div class="label-text">zip:</div>
 		            </label>
-		            
+					<p>
+						<button type="submit" class="button is-primary">Submit RSVP</button>
+					</p>		            
 		        </div>
 		    </div>
-			<p>
-				<button type="submit" class="button is-primary">Submit RSVP</button>
-			</p>
 			</form>
 		</div>
 	</div>
-	<div class="RSVPContainer">
-		<div class="RSVPYesList">
-			<p class="attending animated fadeInRight">
-				Yes
-			</p>
-			<div class="contactContainer">
-			    <article class="media animated fadeInRight">
-			      	<div class="media-content">
-				        <div class="content">
-				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
-				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-				          </p>
-				        </div>
-			      	</div>
-			      	<div class="media-right">
-			        	<button class="delete"></button>
-			      	</div>
-			    </article>
-			</div>
-		</div>
-		<div class="RSVPNoList">
-			<p class="declined animated fadeInRight">
-			No
-			</p>
-			<div class="contactContainer">
-			    <article class="media animated fadeInRight">
-			      	<div class="media-content">
-				        <div class="content">
-				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
-				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-				          </p>
-				        </div>
-			      	</div>
-			      	<div class="media-right">
-			        	<button class="delete"></button>
-			      	</div>
-			    </article>
-			</div>
-		</div>
-		<div class="RSVPMaybeList">
-			<p class="maybe animated fadeInRight">
-			Maybe
-			</p>
-			<div class="contactContainer">
-			    <article class="media animated fadeInRight">
-			      	<div class="media-content">
-				        <div class="content">
-				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
-				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-				          </p>
-				        </div>
-			      	</div>
-			      	<div class="media-right">
-			        	<button class="delete"></button>
-			      	</div>
-			    </article>
-			</div>
-		</div>
-	</div>
-
-
 </div>
