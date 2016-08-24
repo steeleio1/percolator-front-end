@@ -193,7 +193,7 @@ input:focus {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-  	@include responsive-font(2.08vw, 15px, 20px);
+  	@include responsive-font(1.40vw, 15px, 18px);
 	// font-size: 1.7vw;
 	// width: 10vmax;
 	white-space: nowrap;
@@ -364,8 +364,8 @@ input:focus {
     // border: solid green 1px;
     border-left: none;
 	justify-content: flex-end;
-   @include responsive-width(27vw, 260px);  
-}
+   @include responsive-width(18.75vw, 240px);  
+  }
 
 }
 

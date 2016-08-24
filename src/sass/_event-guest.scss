@@ -91,13 +91,16 @@ $green: #84DB2E;
 
 .contactCardRSVP {
 	// border: solid red 1px
- @include responsive-width(21.8vw, 280px);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+ @include responsive-width(23.4vw, 300px);
   border: solid $orange 1px;
 	border-radius: 10px;
 	background: $coffeewhite;
 	padding: 2vw;
   box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
-
+  height: 320px;
 }
 
 
