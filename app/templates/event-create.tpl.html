@@ -6,7 +6,7 @@
 
                 <figure class="media-left">
                   <p class="image is-64x64">
-                    <img src="http://www.fillmurray.com/100/100">
+                    <img src="{{vm.user.photo_url || 'images/coffeeCupVector.png'}}" alt="photo url">
                   </p>
                 </figure>
 
@@ -99,7 +99,7 @@
                           <option value="WI">Wisconsin</option>
                           <option value="WY">Wyoming</option>
                     </select>
-                      
+
                       <br>
                       <label>
                         <input type="text"
@@ -110,7 +110,7 @@
                     <br>
           </div>
 
-                <div class="eventWrapper2"> 
+                <div class="eventWrapper2">
                   <span class="createEventTitle">Event Date/Time:</span>
                       <label>
                         <input type="date"
@@ -162,8 +162,8 @@
                            ng-model="eventInfo.suggested_donation"
                            required>
                     <div class="label-text">Suggested Donation:</div>
-                  </label>                 
-              
+                  </label>
+
                   <label>
                     <input type="number"
                            ng-model="eventInfo.max_size"
@@ -201,7 +201,7 @@
               <div class="eventWrapper4">
                   <button class="button is-primary is-outlined is-small" type="submit">Submit</button>
                   <a><button href="/#/host"
-                          class="button is-link is-small">Cancel</button></a>           
+                          class="button is-link is-small">Cancel</button></a>
 <!--                 <a class="level-item">
                   <span class="icon is-small"><i class="fa fa-reply"></i></span>
                 </a>
@@ -211,9 +211,8 @@
                 <a class="level-item">
                   <span class="icon is-small"><i class="fa fa-heart"></i></span>
                 </a> -->
-              </div>  
+              </div>
 
     </div>
   </form>
 </div>
-

@@ -77,7 +77,6 @@ function EventHostController (MailService, WealthService, $state, $http, SERVER,
 
 				// Attempt at solving the previous with lodash groupBy
 				// var  = _.groupBy(res.data.allGuests, res.data.allGuests.rsvpInfo);
-
 					vm.event = res.data;
 	    });
 
@@ -88,7 +87,6 @@ function EventHostController (MailService, WealthService, $state, $http, SERVER,
 		var result = confirm("Confirm delete of this event?");
 			if (result) {
 				var eventID = $stateParams.id
-				console.log(eventID);
 				let token = $cookies.get('access_token');
 				let config = {
 					headers: { 'Authorization': `Bearer ${token}` }
@@ -118,21 +116,15 @@ function EventHostController (MailService, WealthService, $state, $http, SERVER,
 // First step of the process kicked off by the sendInvite function
 // this has the backend create the guest in the guest table
 function createGuest(guestInfo){
-			console.log("CreateGuest Start");
 				let guestInstance = guestInfo;
 				let token = $cookies.get('access_token');
 				let config = {
 					headers: { 'Authorization': `Bearer ${token}` }
 							};
 				$http.post(SERVER.URL + 'guests', guestInfo, config).then(function (res) {
-								if (res.status == 200) {
-										alert("200 OK - Guest Created");
-													console.log("CreateGuest End");
+								if (res.status == 201) {
 										createEventGuest(res.data, guestInstance);
-								} else if (res.status == 201) {
-										alert("201 OK - Guest Created");
-													console.log("CreateGuest End");
-										createEventGuest(res.data, guestInstance);
+								} else {
 								}
 						},
 						function (res) {
@@ -147,7 +139,6 @@ function createGuest(guestInfo){
 // Second step of the process kicked off by the sendInvite function
 // this has the backend create the eventguest in the eventguest join table
 function createEventGuest(guestInfo, guestInstance){
-				console.log("CreateEventGuest Start");
       let token = $cookies.get('access_token');
       let config = {
         headers: { 'Authorization': `Bearer ${token}` }
@@ -157,28 +148,18 @@ function createEventGuest(guestInfo, guestInstance){
 				eventID: $stateParams.id
 			}
       $http.post(SERVER.URL + 'createEventGuest', payload, config).then(function (res) {
-				if (res.status == 200) {
-						alert("200 OK - EventGuest Created");
-										console.log("CreateEventGuest End");
-						emailGuest(res.data, guestInstance);
-				} else if (res.status == 201) {
-						alert("201 OK - EventGuest Created");
-						console.log("CreateEventGuest End");
-
-						emailGuest(res.data, guestInstance);
-
+				if (res.status == 201) {
+							emailGuest(res.data, guestInstance);
+				} else {
 				}
 		});
   };
 
-
 // Third step of the process kicked off by the sendInvite function
 // this composes the email that will go out to the guest via the MailGun service.
 function emailGuest(egInfo, guestInstance){
-	console.log("EmailGuest Start");
-
 	let guestInfo = guestInstance.first_name + " " + guestInstance.last_name + " " + '<' + guestInstance.email + '>';
-	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.uuid;
+	let eventURL = "http://javahuddle.com/#/event-guest/rsvp/" + egInfo.uuid;
 	let emailMessage = vm.event.eventInfo.message + " Please use this link to RSVP.  We look forward to seeing you there! " + eventURL;
 		var data = {
 			from: 'Excited User <me@mg.javahuddle.com>',
@@ -186,17 +167,14 @@ function emailGuest(egInfo, guestInstance){
 			subject: 'You are invited to join us at ' + vm.event.eventInfo.title,
 			text: guestInstance.privateMessage + " " + emailMessage
 		};
-			console.log("EmailGuest End");
 		MailService.sendEmail(data);
 }
 
 // This function kicks off several steps neede to create the guest and send them an email.
 	function sendInvite(guest){
-		console.log("SendInvite Start");
 		//Should probably check validation of email against eventguest table to avoid duplicate invites
 		//Calls first step of sendInvite -> creating the guest
 		createGuest(guest);
-				console.log("SendInvite End");
 		$state.reload('root.host.eventHost');
 	}
 
@@ -254,9 +232,8 @@ function emailGuest(egInfo, guestInstance){
     } else {
       minutes = UTCMinutesVal;
     }
-    return hours + ":"+minutes + aa;
-  }	
-
+    return hours + ":"+minutes + " " + aa;
+  }
 }
 
 EventHostController.$inject = ['MailService', 'WealthService', '$state', '$http', 'SERVER', '$cookies', '$stateParams', '$location'];

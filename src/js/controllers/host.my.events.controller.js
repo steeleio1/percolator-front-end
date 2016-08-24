@@ -69,7 +69,7 @@ function HostMyEventsController ($state, $http, SERVER, $cookies, $location, $ro
     } else {
       minutes = UTCMinutesVal;
     }
-    return hours + ":"+minutes + aa;
+    return hours + ":"+minutes + " " + aa;
   }
 
 
