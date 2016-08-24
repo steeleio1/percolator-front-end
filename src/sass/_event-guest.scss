@@ -72,11 +72,6 @@ $green: #84DB2E;
 	// border: solid red 1px;
 }
 
-.RSVPBox {
-	display: flex;
-	justify-content: center;
-}
-
 .createRsvpAccountBox {
 	// border: solid red 1px;
 	display: flex;
@@ -103,7 +98,17 @@ $green: #84DB2E;
   height: 320px;
 }
 
+.radioButton {
+  margin: 0.5vw;
+  color: $brown;
+}
 
+.RSVPMessageText{
+  height: 50px;
+}
 
-
-
+.RSVPForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
