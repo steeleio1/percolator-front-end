@@ -1,4 +1,4 @@
-function EventGuestController(WealthService, $state, $http, SERVER, $stateParams, DateService) {
+function EventGuestController(WealthService, $state, $http, SERVER, $stateParams, DateService, $timeout) {
 
     // Sets up this as vm.
     let vm = this;
@@ -7,6 +7,8 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
     // Adds the function to the vm object
     vm.submitRSVP = submitRSVP;
     vm.getWEReport = getWEReport;
+    vm.rsvped = false;
+    vm.showRSVPConfirm = showRSVPConfirm;
 
     init();
 
@@ -40,9 +42,9 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
                     console.log("200 OK");
 										if (egInfo.rsvp === "Yes") {
 												vm.getWEReport(res.data);
-                // Guest needs to be directed somewhere after submitting RSVP. "Thanks for RSVPing!"
+                                                showRSVPConfirm();
+                                                $timeout(goHome(), 3000);
 										};
-                } else {
                 }
             },
             function(res) {
@@ -52,10 +54,17 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
                     console.log("403 Forbidden");
                 } else {
                     console.log(res);
-                    // WEbackup();    Just in case...
                 }
             });
 
+    }
+
+    function goHome () {
+        $state.go('root.home');
+    }
+
+    function showRSVPConfirm () {
+        vm.rsvped = true;
     }
 
     function getWEReport(guest) {
@@ -97,5 +106,5 @@ function EventGuestController(WealthService, $state, $http, SERVER, $stateParams
 
 }
 
-EventGuestController.$inject = ['WealthService', '$state', '$http', 'SERVER', '$stateParams', 'DateService'];
+EventGuestController.$inject = ['WealthService', '$state', '$http', 'SERVER', '$stateParams', 'DateService', '$timeout'];
 export { EventGuestController };

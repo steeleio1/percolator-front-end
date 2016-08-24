@@ -159,7 +159,7 @@
 		            </label>
 
 		              <br>
-		              <select name="state" ng-model="guestInfo.state">
+		              <select name="state" ng-model="guestInfo.state" required>
 		                <option value="">State:</option>
 		                <option value="AL">Alabama</option>
 		                <option value="AK">Alaska</option>
@@ -254,12 +254,14 @@
 
 					<br>
 					<button type="submit" class="button is-primary">Submit RSVP</button>
-				</div>
+					<br>
+					<p class="RSVPConfirm" ng-show="vm.rsvped">
+						Thanks for submitting your RSVP!
+					</p>
+				</form>
+			</div>
 		 </div>
 
-
-
-			</form>
 		</div>
 	</div>
 
