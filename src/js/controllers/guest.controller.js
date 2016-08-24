@@ -24,17 +24,13 @@ function GuestController (MailService, WealthService, $scope, $http, SERVER, $st
 
 	function getWEReport(){
 		var guestID = $stateParams.id;
-
 		// WealthService.getProfileByAddress(registrantDummyData).then((res)=>{
 		$http.get(SERVER.URL + 'host/guests/' + guestID).then((res) => {
-
-			// let proData = JSON.parse(res.data.we_info);
 			let proData = res.data.weInfo;
-
 			if (proData === null || undefined || ''){
 				vm.profile = {
-					fullname: res.data.identity.full_name,
-					email: res.data.identity.emails[0].email
+					fullname: res.data.weInfo.identity.full_name,
+					email: res.data.weInfo.identity.emails[0].email
 				}
 
 			} else {
