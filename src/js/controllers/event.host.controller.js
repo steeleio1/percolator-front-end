@@ -156,11 +156,11 @@ function createEventGuest(guestInfo, guestInstance){
 			}
       $http.post(SERVER.URL + 'createEventGuest', payload, config).then(function (res) {
 				if (res.status == 200) {
-						alert("200 OK - EventGuest Created");
+						console.log("200 OK - EventGuest Created");
 										console.log("CreateEventGuest End");
 						emailGuest(res.data, guestInstance);
 				} else if (res.status == 201) {
-						alert("201 OK - EventGuest Created");
+						console.log("201 OK - EventGuest Created");
 						console.log("CreateEventGuest End");
 
 						emailGuest(res.data, guestInstance);
