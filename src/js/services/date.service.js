@@ -44,7 +44,7 @@ function DateService(){
     } else {
       minutes = UTCMinutesVal;
     }
-    return hours + ":"+minutes + aa;
+    return hours + ":"+minutes + " " + aa;
   }
 }
 
