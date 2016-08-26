@@ -1,379 +1,280 @@
 <div class="singleEventContainer">
-
-	<div class="singleEventBox animateDown fadeInDown">
-
-
-      <div class="singleInfoWrapper">
-          <div class="eventPhotoBox">
-            <div class="eventPhoto">
-              <img src="{{vm.event.eventInfo.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
-           </div>
-          </div>
-
-        <div class="singleEventInfoWrapper1">
-            <span class="singleEventTitle">Event Info:</span>
-              <div class="eventCardInfoWrapper">
-                <div class="eventInfo">
-                {{vm.event.eventInfo.title}}
+    <div class="singleEventBox animateDown fadeInDown">
+        <div class="singleInfoWrapper">
+            <div class="eventPhotoBox">
+                <div class="eventPhoto">
+                    <img src="{{vm.event.eventInfo.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
                 </div>
-                  <span class="eventLabel">Event Name</span>
-              </div>
-           		<br>
-                 <span class="smallSingleEventTitle">Address:</span>
-                 <div class="addressWrapper">
-                   {{vm.event.eventInfo.street}}<br>
-                   {{vm.event.eventInfo.street_2}}<br>
-                   {{vm.event.eventInfo.city}}, {{vm.event.eventInfo.state}} <br>{{vm.event.eventInfo.post_code}} <br>
-                  </div>
-
-		</div>
-
-         <div class="singleEventInfoWrapper2">
-            <span class="singleEventTitle">Event Date/Time:</span>
-              <div class="eventCardInfoWrapper">
-                <div class="eventInfo dateTime">
-                {{vm.formatDate(vm.event.eventInfo.date)}}
+            </div>
+            <div class="singleEventInfoWrapper1">
+                <span class="singleEventTitle">Event Info:</span>
+                <div class="eventCardInfoWrapper">
+                    <div class="eventInfo">
+                        {{vm.event.eventInfo.title}}
+                    </div>
+                    <span class="eventLabel">Event Name</span>
                 </div>
-                  <span class="eventLabel">Event Date</span>
-              </div>
-
-              <div class="eventCardInfoWrapper">
-                <div class="eventInfo dateTime">
-                {{vm.getTime(vm.event.eventInfo.start_time)}}
+                <br>
+                <span class="smallSingleEventTitle">Address:</span>
+                <div class="addressWrapper">
+                    {{vm.event.eventInfo.street}}
+                    <br> {{vm.event.eventInfo.street_2}}
+                    <br> {{vm.event.eventInfo.city}}, {{vm.event.eventInfo.state}}
+                    <br>{{vm.event.eventInfo.post_code}}
+                    <br>
                 </div>
-                  <span class="eventLabel">Start Time</span>
-              </div>
-
-              <div class="eventCardInfoWrapper">
-                <div class="eventInfo dateTime">
-                {{vm.getTime(vm.event.eventInfo.end_time)}}
+            </div>
+            <div class="singleEventInfoWrapper2">
+                <span class="singleEventTitle">Event Date/Time:</span>
+                <div class="eventCardInfoWrapper">
+                    <div class="eventInfo dateTime">
+                        {{vm.formatDate(vm.event.eventInfo.date)}}
+                    </div>
+                    <span class="eventLabel">Event Date</span>
                 </div>
-                  <span class="eventLabel">End Time</span>
-              </div>
-
-                  <span class="singleEventDesription">{{vm.event.eventInfo.message}}</span>
-          </div>
-
-
-         <div class="singleEventInfoWrapper3">
-            <span class="singleEventTitle">RSVPs:</span>
-             <span class="smallSingleEventTitle">{{vm.rsvp.invites}} invited</span>
-      
-
-              <span class="attending">{{vm.rsvp.yes}} attending</span>
-              <span class="declined">{{vm.rsvp.no}} declined</span>
-              <span class="maybe">{{vm.rsvp.maybe}} maybe</span>
-              <span class="noResponse">{{vm.rsvp.not_responded}} no response</span>
-
-             <span class="singleEventTitle">Organization:</span>
-              <div class="eventCardInfoWrapper">
-                <div class="eventInfo">
-                {{vm.event.user.organization}}
+                <div class="eventCardInfoWrapper">
+                    <div class="eventInfo dateTime">
+                        {{vm.getTime(vm.event.eventInfo.start_time)}}
+                    </div>
+                    <span class="eventLabel">Start Time</span>
                 </div>
-                  <span class="eventLabel">Name</span>
-              </div>
-
-               <div class="eventCardInfoWrapper">
-                <div class="eventInfo">
-                {{vm.event.user.category}}
+                <div class="eventCardInfoWrapper">
+                    <div class="eventInfo dateTime">
+                        {{vm.getTime(vm.event.eventInfo.end_time)}}
+                    </div>
+                    <span class="eventLabel">End Time</span>
                 </div>
-                  <span class="eventLabel">Category</span>
-              </div>
-
-          </div>
-
-		</div>
-
-<!--           <button class="delete" ng-click="vm.deleteEvent(event.id)"></button> -->
-  </div>
-
+                <span class="singleEventDesription">{{vm.event.eventInfo.message}}</span>
+            </div>
+            <div class="singleEventInfoWrapper3">
+                <span class="singleEventTitle">RSVPs:</span>
+                <span class="smallSingleEventTitle">{{vm.rsvp.invites}} invited</span>
+                <span class="attending">{{vm.rsvp.yes}} attending</span>
+                <span class="declined">{{vm.rsvp.no}} declined</span>
+                <span class="maybe">{{vm.rsvp.maybe}} maybe</span>
+                <span class="noResponse">{{vm.rsvp.not_responded}} no response</span>
+                <span class="singleEventTitle">Organization:</span>
+                <div class="eventCardInfoWrapper">
+                    <div class="eventInfo">
+                        {{vm.event.user.organization}}
+                    </div>
+                    <span class="eventLabel">Name</span>
+                </div>
+                <div class="eventCardInfoWrapper">
+                    <div class="eventInfo">
+                        {{vm.event.user.category}}
+                    </div>
+                    <span class="eventLabel">Category</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
- 	        <!--  =========================== -->
-<!-- 	          <p>
-	            <strong>{{vm.event.eventInfo.title}}</strong>
-	            <br>
-	            <br>
-	           <small><strong>Location:</strong> {{vm.event.eventInfo.title}}</small>
-	           <br>
-	           <small><strong>Address:</strong></small>
-	           <br>
-	           <small>{{vm.event.eventInfo.street}}</small>
-	           <br>
-	           <small>{{vm.event.eventInfo.street_2}}</small>
-	           <br>
-	           <small>{{vm.event.eventInfo.city}}, </small><small>{{vm.event.eventInfo.state}} </small><small>{{vm.event.eventInfo.post_code}}</small>
-	           <br>
-	           <small><strong>Date and Time:</strong></small>
-	           <br>
-	           <small>{{vm.event.eventInfo.date}}: {{vm.event.eventInfo.start_time}}-{{vm.event.eventInfo.end_time}}</small>
-	           <br> -->
-<!-- 	           <small><strong>RSVPs:</strong></small>
-	          <small class="invites">{{vm.rsvp.invites}} invited</small> | <small class="attending">{{vm.rsvp.yes}} attending</small> | <small class="declined">{{vm.rsvp.no}} declined</small> | <small class="maybe">{{vm.rsvp.maybe}} maybe</small> | <small class="notresponded">{{vm.rsvp.not_responded}} not responded</small> -->
-<!-- 	           <br>
-	           <small><strong>Organization:</strong> {{vm.event.eventInfo.organization}}</small>
-	           <br>
-	           <small><strong>Category:</strong> {{vm.event.eventInfo.category}}</small>
-	           <br>
-	            <small><strong>Event Description:</strong></small>
-	            <br>
-	            <small>{{vm.event.eventInfo.message}}</small>
-	          </p> -->
-
-
-
-
-  	<div class="inviteButtonRow">
-  		<button class="Btn button is-primary is-outlined" ng-click="vm.showInviteNew(); vm.hideInviteMyContacts()">
-  			Invite New
-  		</button>
-<!--   		<button class="Btn button is-primary is-outlined" ng-click="vm.showInviteMyContacts(); vm.hideInviteNew()">
-  			Invite My Contacts
-  		</button> -->
-  	</div>
-
-  	<div class="inviteNewContainer" ng-show="vm.inviteNew">
-  		<form ng-submit="vm.sendInvite(guest)">
-  			<p class="control">
-			  <input ng-model="guest.first_name" class="input is-primary" type="text" placeholder="First Name" required>
-			</p>
-  			<p class="control">
-			  <input ng-model="guest.last_name" class="input is-primary" type="text" placeholder="Last Name" required>
-			</p>
-  			<p class="control">
-			  <input ng-model="guest.email" class="input is-primary"  placeholder="Email" required>
-			</p>
-  			<p class="control">
-			  <input ng-model="guest.privateMessage" class="input is-primary"  placeholder="Message to this guest" required>
-			</p>
-
-<!--   			<input ng-model="guest.first_name" type="text" placeholder="First Name" required> -->
-<!--   			<input ng-model="guest.last_name" type="text" placeholder="Last Name" required> -->
-<!--   			<input ng-model="guest.email" placeholder="Email" required> -->
-<!-- 				<input ng-model="guest.privateMessage" placeholder="Message to this guest" required> -->
-  			<br>
-  			<div class="buttonContainer">
-  				<button class="Btn button is-primary is-outlined is-small" type="submit">Send Invite</button>
-  				<button class="Btn button is-primary is-outlined is-small" ng-click="vm.hideInviteNew()">Cancel</button>
-  			</div>
-  		</form>
-  	</div>
-
-  	<div class="inviteMyContactsContainer" ng-show="vm.inviteMyContacts">
-  		<form>
-
-			 <p class="control">
-			  <input class="input is-primary" type="text" placeholder="First Name">
-			</p>
-			 <p class="control">
-			  <input class="input is-primary" type="text" placeholder="Last Name">
-			</p>
-  			<button class="Btn button is-primary is-outlined is-small">Send Invite</button>
-  			<button class="Btn button is-primary is-outlined is-small" ng-click=vm.hideInviteMyContacts()>Cancel</button>
-  		</form>
-  	</div>
-
-
-
+<div class="inviteButtonRow">
+    <button class="Btn button is-primary is-outlined" ng-click="vm.showInviteNew(); vm.hideInviteMyContacts()">
+        Invite New Guest
+    </button>
+</div>
+<div class="inviteNewContainer" ng-show="vm.inviteNew">
+    <form ng-submit="vm.sendInvite(guest)">
+        <p class="control">
+            <input ng-model="guest.first_name" class="input is-primary" type="text" placeholder="First Name" required>
+        </p>
+        <p class="control">
+            <input ng-model="guest.last_name" class="input is-primary" type="text" placeholder="Last Name" required>
+        </p>
+        <p class="control">
+            <input ng-model="guest.email" class="input is-primary" placeholder="Email" required>
+        </p>
+        <p class="control">
+            <input ng-model="guest.privateMessage" class="input is-primary" placeholder="Message to this guest" required>
+        </p>
+        <br>
+        <div class="buttonContainer">
+            <button class="Btn button is-primary is-outlined is-small" type="submit">Send Invite</button>
+            <button class="Btn button is-primary is-outlined is-small" ng-click="vm.hideInviteNew()">Cancel</button>
+        </div>
+    </form>
+</div>
+<div class="inviteMyContactsContainer" ng-show="vm.inviteMyContacts">
+    <form>
+        <p class="control">
+            <input class="input is-primary" type="text" placeholder="First Name">
+        </p>
+        <p class="control">
+            <input class="input is-primary" type="text" placeholder="Last Name">
+        </p>
+        <button class="Btn button is-primary is-outlined is-small">Send Invite</button>
+        <button class="Btn button is-primary is-outlined is-small" ng-click=vm.hideInviteMyContacts()>Cancel</button>
+    </form>
+</div>
 <div class="RSVPContainer">
-
-<!-- YES -->
-	<div class="RSVPYesList" ng-repeat="yesGuest in vm.yesGuests track by $index">
-
-			<p class="attending animated fadeInRight">Yes</p>
-	      	<div class="contactContainer">
-	          <div class="media animated fadeInRight">
-	              <div class="media-content">
-	                <div class="contactCardRSVP">
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      {{yesGuest.first_name}} {{yesGuest.last_name}}
-	                      </div>
-	                        <span class="eventLabel">Name</span>
-	                    </div>  
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      {{yesGuest.email}}
-	                      </div>
-	                        <span class="eventLabel">Email</span>
-	                    </div>
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      	{{yesGuest.mobile_number}}
-	                      </div>
-	                        <span class="eventLabel">Mobile Number:</span>
-	                    </div> 
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      	{{yesGuest.home_number}}
-	                      </div>
-	                        <span class="eventLabel">Home Number:</span>
-	                    </div>                                        
-	                  <br>
-	                  	<div class="media-right">
-								<button class="Btn button is-primary" ng-click=vm.guestDetails(yesGuest.id)>
-									View Contact Details
-								</button>
-						</div>	               
-	                    <button class="delete"></button>
-	                
-	                </div>
-	              </div>
-	          </div>
-	      </div>
-		</div>
-
-<!-- NO -->
-		<div class="RSVPNoList" ng-repeat="noGuest in vm.noGuests track by $index">
-
-			<p class="declined animated fadeInRight">No</p>
-	      	<div class="contactContainer">
-	          <div class="media animated fadeInRight">
-	              <div class="media-content">
-	                <div class="contactCardRSVP">
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      {{noGuest.first_name}} {{noGuest.last_name}}
-	                      </div>
-	                        <span class="eventLabel">Name</span>
-	                    </div>  
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      {{noGuest.email}}
-	                      </div>
-	                        <span class="eventLabel">Email</span>
-	                    </div>
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      	{{noGuest.mobile_number}}
-	                      </div>
-	                        <span class="eventLabel">Mobile Number:</span>
-	                    </div> 
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      	{{noGuest.home_number}}
-	                      </div>
-	                        <span class="eventLabel">Home Number:</span>
-	                    </div>                                        
-	                  <br>
-	                  	<div class="media-right">
-								<button class="Btn button is-primary" ng-click=vm.guestDetails(noGuest.id)>
-									View Contact Details
-								</button>
-						</div>
-	                    <button class="delete"></button>
-	                
-	                </div>
-	              </div>
-	          </div>
-	      </div>
-		</div>
-
-
-		
-<!-- MAYBE -->
-		<div class="RSVPMaybeList" ng-repeat="maybeGuest in vm.maybeGuests track by $index">
-			<p class="maybe animated fadeInRight">Maybe</p>
-	      	<div class="contactContainer">
-	          <div class="media animated fadeInRight">
-	              <div class="media-content">
-	                <div class="contactCardRSVP">
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                     {{maybeGuest.first_name}} {{maybeGuest.last_name}}
-	                      </div>
-	                        <span class="eventLabel">Name</span>
-	                    </div>  
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      {{maybeGuest.email}}
-	                      </div>
-	                        <span class="eventLabel">Email</span>
-	                    </div>
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      	{{maybeGuest.mobile_number}}
-	                      </div>
-	                        <span class="eventLabel">Mobile Number:</span>
-	                    </div> 
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      	{{maybeGuest.home_number}}
-	                      </div>
-	                        <span class="eventLabel">Home Number:</span>
-	                    </div>                                        
-	                  <br>
-	                  	<div class="media-right">
-								<button class="Btn button is-primary" ng-click=vm.guestDetails(noGuest.id)>
-									View Contact Details
-								</button>
-						</div>
-	                    <button class="delete"></button>
-	                
-	                </div>
-	              </div>
-	          </div>
-	      </div>
-		</div>
-
-
-<!-- NOT RESPONDED -->
-
-		<div class="RSVPNotRespondedList" ng-repeat="nrGuest in vm.nrGuests track by $index">
-			<p class="notresponded animated fadeInRight">Not Responded</p>
-	      	<div class="contactContainer">
-	          <div class="media animated fadeInRight">
-	              <div class="media-content">
-	                <div class="contactCardRSVP">
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                     {{nrGuest.first_name}} {{nrGuest.last_name}}
-	                      </div>
-	                        <span class="eventLabel">Name</span>
-	                    </div>  
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      {{nrGuest.email}}
-	                      </div>
-	                        <span class="eventLabel">Email</span>
-	                    </div>
-
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      	{{nrGuest.mobile_number}}
-	                      </div>
-	                        <span class="eventLabel">Mobile Number:</span>
-	                    </div> 
-	                    <div class="eventCardInfoWrapper">
-	                      <div class="eventInfo">
-	                      	 {{nrGuest.home_number}}
-	                      </div>
-	                        <span class="eventLabel">Home Number:</span>
-	                    </div>                                        
-	                  <br>
-	                  	<div class="media-right">
-								<button class="Btn button is-primary" ng-click=vm.guestDetails(noGuest.id)>
-									View Contact Details
-								</button>
-						</div>
-	                    <button class="delete"></button>
-	                
-	                </div>
-	              </div>
-	          </div>
-	      </div>
-		</div>
-
-	</div>
-
+    <div class="RSVPYesList" ng-repeat="yesGuest in vm.yesGuests track by $index">
+        <p class="attending animated fadeInRight">Yes</p>
+        <div class="contactContainer">
+            <div class="media animated fadeInRight">
+                <div class="media-content">
+                    <div class="contactCardRSVP">
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{yesGuest.first_name}} {{yesGuest.last_name}}
+                            </div>
+                            <span class="eventLabel">Name</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{yesGuest.email}}
+                            </div>
+                            <span class="eventLabel">Email</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{yesGuest.mobile_number}}
+                            </div>
+                            <span class="eventLabel">Mobile Number:</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{yesGuest.home_number}}
+                            </div>
+                            <span class="eventLabel">Home Number:</span>
+                        </div>
+                        <br>
+                        <div class="media-right">
+                            <button class="Btn button is-primary" ng-click=vm.guestDetails(yesGuest.id)>
+                                View Contact Details
+                            </button>
+                        </div>
+                        <button class="delete"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="RSVPNoList" ng-repeat="noGuest in vm.noGuests track by $index">
+        <p class="declined animated fadeInRight">No</p>
+        <div class="contactContainer">
+            <div class="media animated fadeInRight">
+                <div class="media-content">
+                    <div class="contactCardRSVP">
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{noGuest.first_name}} {{noGuest.last_name}}
+                            </div>
+                            <span class="eventLabel">Name</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{noGuest.email}}
+                            </div>
+                            <span class="eventLabel">Email</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{noGuest.mobile_number}}
+                            </div>
+                            <span class="eventLabel">Mobile Number:</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{noGuest.home_number}}
+                            </div>
+                            <span class="eventLabel">Home Number:</span>
+                        </div>
+                        <br>
+                        <div class="media-right">
+                            <button class="Btn button is-primary" ng-click=vm.guestDetails(noGuest.id)>
+                                View Contact Details
+                            </button>
+                        </div>
+                        <button class="delete"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="RSVPMaybeList" ng-repeat="maybeGuest in vm.maybeGuests track by $index">
+        <p class="maybe animated fadeInRight">Maybe</p>
+        <div class="contactContainer">
+            <div class="media animated fadeInRight">
+                <div class="media-content">
+                    <div class="contactCardRSVP">
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{maybeGuest.first_name}} {{maybeGuest.last_name}}
+                            </div>
+                            <span class="eventLabel">Name</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{maybeGuest.email}}
+                            </div>
+                            <span class="eventLabel">Email</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{maybeGuest.mobile_number}}
+                            </div>
+                            <span class="eventLabel">Mobile Number:</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{maybeGuest.home_number}}
+                            </div>
+                            <span class="eventLabel">Home Number:</span>
+                        </div>
+                        <br>
+                        <div class="media-right">
+                            <button class="Btn button is-primary" ng-click=vm.guestDetails(noGuest.id)>
+                                View Contact Details
+                            </button>
+                        </div>
+                        <button class="delete"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="RSVPNotRespondedList" ng-repeat="nrGuest in vm.nrGuests track by $index">
+        <p class="notresponded animated fadeInRight">Not Responded</p>
+        <div class="contactContainer">
+            <div class="media animated fadeInRight">
+                <div class="media-content">
+                    <div class="contactCardRSVP">
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{nrGuest.first_name}} {{nrGuest.last_name}}
+                            </div>
+                            <span class="eventLabel">Name</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{nrGuest.email}}
+                            </div>
+                            <span class="eventLabel">Email</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{nrGuest.mobile_number}}
+                            </div>
+                            <span class="eventLabel">Mobile Number:</span>
+                        </div>
+                        <div class="eventCardInfoWrapper">
+                            <div class="eventInfo">
+                                {{nrGuest.home_number}}
+                            </div>
+                            <span class="eventLabel">Home Number:</span>
+                        </div>
+                        <br>
+                        <div class="media-right">
+                            <button class="Btn button is-primary" ng-click=vm.guestDetails(noGuest.id)>
+                                View Contact Details
+                            </button>
+                        </div>
+                        <button class="delete"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -51,6 +51,16 @@ $lightbrown: #804800;
   
   width: $responsive;
 }
+// =================================
+.radio {
+ transform: none !important; 
+  label {
+    transform: none !important;
+  }
+  input {
+    transform: none !important;
+  }
+}
 
 .singleEventTitle {
   @include responsive-font(1.56vw, 15px, 20px);
