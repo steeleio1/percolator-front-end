@@ -28,7 +28,6 @@ import { HomeController } from './controllers/home.controller';
 import { CreateAccountController } from './controllers/create.account.controller';
 import { HostController } from './controllers/host.controller';
 import { HostMyEventsController } from './controllers/host.my.events.controller';
-import { HostMyContactsController } from './controllers/host.my.contacts.controller';
 import { GuestController } from './controllers/guest.controller';
 import { EventHostController } from './controllers/event.host.controller';
 import { EventGuestController } from './controllers/event.guest.controller';
@@ -48,7 +47,6 @@ angular
 	.controller('CreateAccountController', CreateAccountController)
 	.controller('HostController', HostController)
 	.controller('HostMyEventsController', HostMyEventsController)
-	.controller('HostMyContactsController', HostMyContactsController)
 	.controller('GuestController', GuestController)
 	.controller('EventHostController', EventHostController)
 	.controller('EventGuestController', EventGuestController)

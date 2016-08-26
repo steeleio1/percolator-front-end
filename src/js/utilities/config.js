@@ -35,13 +35,6 @@ function config ($stateProvider, $urlRouterProvider, $ChartJsProvider) {
       templateUrl: 'templates/host.event.tpl.html',
       controller: 'EventHostController as vm'
     })
-    // Host state - view all contacts for authorized user
-    .state('root.host.myContacts', {
-      url: '/my-contacts',
-      templateUrl: 'templates/host.my-contacts.tpl.html',
-      controller: 'HostMyContactsController as vm'
-    })
-
     .state('root.guest', {
     	url: '/host/guests/:id',
     	templateUrl: 'templates/guest.tpl.html',
@@ -57,13 +50,7 @@ function config ($stateProvider, $urlRouterProvider, $ChartJsProvider) {
       templateUrl: 'templates/event-create.tpl.html',
       controller: 'EventCreateController as vm'
     })
-
   $urlRouterProvider.otherwise('/');
-
-//   $ChartJsProvider.setOptions(
-//     { colors : [ '#00ADF9', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] }
-// );
-
 }
 
 config.$inject = ['$stateProvider', '$urlRouterProvider', 'ChartJsProvider'];
