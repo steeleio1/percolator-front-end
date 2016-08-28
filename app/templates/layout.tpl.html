@@ -1,45 +1,33 @@
 <div class="MainBox">
-  <div class="layoutBox">
-      <nav class="navBar navAnimated navFadeIn">
-      	<a href="/#/">
-        		<img class="Logo" src="images/JavaHuddleLogo.png">
-        	</a>
-          <div class="btnWrapper" ng-hide="vm.loggedIn()">
-
-           <a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.showLogin()">Sign in</a>
-            <a href="/#/create-account" class="Btn button is-primary is-outlined" ng-click="vm.cancelLogin()">Sign Up</a>
-  			<div ng-show="vm.login">
-    			<form ng-submit="vm.loginUser(user)" class="signInForm">
-  						<p class="control has-icon has-icon-right">
-  						  <input class="input is primary /*is-danger*/" type="email" ng-model="user.email" placeholder="Email" required>
-  						  <i class="fa fa-check"></i>
-  						  <!-- <span class="help is-danger">Username is Incorrect</span> -->
-  						</p>
-
-  						<p class="control has-icon has-icon-right">
-  						  <input class="input is primary /*is-danger*/" type="password" ng-model="user.password" placeholder="Password"  required>
-  						  <i class="fa fa-check"></i>
-  						  <!-- <span class="help is-danger">Password Incorrect</span> -->
-  						</p>
-             			 <button type="submit" name="button" class="button is-primary is-outlined" ng-click="vm.cancelLogin()">Submit</button>
-  				</form>
-  			</div>
-
-          </div>
-          <div class="btnWrapper" ng-show="vm.loggedIn()">
-            <button type="submit"
-                    class="button is-primary is-outlined"
-                    ng-click="vm.dashboard()">Dashboard
-            </button>
-          	<a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.logOut()">Log Out</a>
-          </div>
-      </nav>
-  </div>
-  <div ui-view></div>
+	<div class="layoutBox">
+		<nav class="navBar navAnimated navFadeIn">
+			<a href="/#/">
+				<img class="Logo" src="images/JavaHuddleLogo.png">
+			</a>
+			<div class="btnWrapper" ng-hide="vm.loggedIn()">
+				<a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.showLogin()">Sign in</a>
+				<a href="/#/create-account" class="Btn button is-primary is-outlined" ng-click="vm.cancelLogin()">Sign Up</a>
+				<div ng-show="vm.login">
+					<form ng-submit="vm.loginUser(user)" class="signInForm">
+						<p class="control has-icon has-icon-right">
+							<input class="input is primary /*is-danger*/" type="email" ng-model="user.email" placeholder="Email" required>
+							<i class="fa fa-check"></i>
+						</p>
+						<p class="control has-icon has-icon-right">
+							<input class="input is primary /*is-danger*/" type="password" ng-model="user.password" placeholder="Password"  required>
+							<i class="fa fa-check"></i>
+						</p>
+						<button type="submit" name="button" class="button is-primary is-outlined" ng-click="vm.cancelLogin()">Submit
+						</button>
+					</form>
+				</div>
+			</div>
+			<div class="btnWrapper" ng-show="vm.loggedIn()">
+				<button type="submit" class="button is-primary is-outlined" ng-click="vm.dashboard()">Dashboard
+				</button>
+				<a class="Btn button is-primary is-outlined" href="/#/" ng-click="vm.logOut()">Log Out</a>
+			</div>
+		</nav>
+	</div>
+	<div ui-view></div>
 </div>
-
-
-<!-- <div class="modal">
-  <div class="modal-background"></div>
-  <button class="modal-close"></button>
-</div> -->
