@@ -1,5 +1,7 @@
 # JavaHuddle
 
+[Live on the Web here](http://javahuddle.com)
+
 An app for nonprofit fundraisers and entrepreneurs that allows them to schedule coffee huddles with donors and investors,
 and also provides thorough wealth statistics on invitees immediately upon RSVP.
 
